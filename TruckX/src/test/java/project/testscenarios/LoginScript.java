@@ -23,6 +23,14 @@ public class LoginScript extends ConfigurationSetup {
 		ExcelUtility ex=new ExcelUtility();
 		
 		ex.configureExcel();
+		
+		//	ex.fetchsheet("Login");
+		
+		//	System.out.println(ex.numberOfRows());
+				
+		//	System.out.println(ex.numberOfCols(1));
+				
+		//	ex.fetchdata();
 	}
 	
 	@Test(priority = 1)
