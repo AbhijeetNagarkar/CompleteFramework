@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="methods" name="Failed suite [Test Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="project.report.ExtentReportListener"/>
+  </listeners>
+  <test thread-count="5" parallel="methods" name="Test Cases 1(failed)">
+    <classes>
+      <class name="project.testscenarios.TestWorkFlow1">
+        <parameter name="Browser" value="FireFox"/>
+        <methods>
+          <include name="SelectingBus"/>
+          <include name="SelectingDestination"/>
+          <include name="preRequisite"/>
+          <include name="beforeTestSetup"/>
+          <include name="ConfigurationSetup"/>
+          <include name="SearchBuses"/>
+          <include name="SelectingSource"/>
+          <include name="SelectingDate"/>
+          <include name="selectSeats"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- project.testscenarios.TestWorkFlow1 -->
+    </classes>
+  </test> <!-- Test Cases 1(failed) -->
+</suite> <!-- Failed suite [Test Suite] -->

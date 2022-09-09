@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Test Suite" parallel="true" >
+<listeners>
+		<listener class-name="project.report.ExtentReportListener" />
+	</listeners>
+  <test thread-count="1" name="TruckX Test Automation" parallel="true" >
+     <classes>
+          <class name="project.testscenarios.LoginScript"/>    
+     </classes>
+  </test> <!-- Test -->
+</suite>
+ 
