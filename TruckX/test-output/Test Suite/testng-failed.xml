@@ -4,23 +4,22 @@
   <listeners>
     <listener class-name="project.report.ExtentReportListener"/>
   </listeners>
-  <test thread-count="5" parallel="methods" name="Test Cases 1(failed)">
+  <test thread-count="5" name="TruckX Test Automation(failed)">
     <classes>
-      <class name="project.testscenarios.TestWorkFlow1">
-        <parameter name="Browser" value="FireFox"/>
+      <class name="project.testscenarios.DashboardScript">
         <methods>
-          <include name="SelectingBus"/>
-          <include name="SelectingDestination"/>
+          <include name="navigatingTrucksPage"/>
           <include name="preRequisite"/>
-          <include name="beforeTestSetup"/>
-          <include name="ConfigurationSetup"/>
-          <include name="SearchBuses"/>
-          <include name="SelectingSource"/>
-          <include name="SelectingDate"/>
-          <include name="selectSeats"/>
           <include name="closeBrowser"/>
         </methods>
-      </class> <!-- project.testscenarios.TestWorkFlow1 -->
+      </class> <!-- project.testscenarios.DashboardScript -->
+      <class name="project.testscenarios.TruckScript">
+        <methods>
+          <include name="creatingNewTruck"/>
+          <include name="preRequisite"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- project.testscenarios.TruckScript -->
     </classes>
-  </test> <!-- Test Cases 1(failed) -->
+  </test> <!-- TruckX Test Automation(failed) -->
 </suite> <!-- Failed suite [Test Suite] -->

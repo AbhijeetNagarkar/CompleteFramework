@@ -8,7 +8,7 @@ public class GlobalDeclaration {
 
 	public static final String lOGINPASSWORD = "Abcd1234";
 	
-	public static final String SENDEMAIL = "yes";
+	public static final String SENDEMAIL = "no";
 	
 	public static final String ExtendReportPath = System.getProperty("user.dir")+File.separator+"Reports"+File.separator + "Extent_Results.html";
 		

@@ -7,6 +7,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.log4j.Logger;
 
 public class ExcelUtility {
 
@@ -14,16 +15,20 @@ public class ExcelUtility {
 	FileInputStream fs;
 	XSSFSheet sheet;
 	
+	public static Logger log = Logger.getLogger(ExcelUtility.class);
+	
 	public void configureExcel() throws IOException
 	{
 		 fs = new FileInputStream(new File(ExcelFile));
 		//Creating a workbook
 		 workbook = new XSSFWorkbook(fs);
+		 log.info("Configuring Excel and getting workbook");
 		
 	}
 	public void fetchsheet(String sheetname)
 	{
 		sheet = workbook.getSheet(sheetname);
+		log.info("Fetching "+sheetname+" sheet from excel");
 	}
 	public void fetchdata()
 	{
@@ -34,6 +39,7 @@ public class ExcelUtility {
 			}
 			
 		}
+		log.info("Fetched data from Excel");
 	}
 	public int numberOfRows()
 	{
