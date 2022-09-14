@@ -1,0 +1,19 @@
+pipeline {
+    agent { label 'linux-slave1' }
+    
+    tools { 
+        maven 'maven'
+    }
+  
+    stages {
+      stage('Test run') {
+          
+        steps {
+          sh 'cd ./TruckX/'
+          sh 'pwd'
+          sh 'mvn -version'
+          sh 'mvn clean install'
+        }
+      }
+    }
+  }
