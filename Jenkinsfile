@@ -9,8 +9,6 @@ pipeline {
       stage('Test run') {
           
         steps {
-          sh 'cd ./TruckX/'
-          sh 'pwd'
           sh 'mvn -version'
           sh 'mvn clean install'
         }
