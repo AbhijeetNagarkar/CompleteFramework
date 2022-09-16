@@ -12,6 +12,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import project.utility.PageLoadTime;
+
 public class WebPageTruck {
 	
 		WebDriver driver;
@@ -30,7 +32,7 @@ public class WebPageTruck {
 			
 		PageFactory.initElements(driver,this);
 			
-		wait=new WebDriverWait(driver,30);
+		wait=new WebDriverWait(driver,60);
 	}
 
 	@FindBy(xpath = "//button[@label=\"+ Add Truck\"]")
@@ -86,7 +88,20 @@ public class WebPageTruck {
 	
 	public void clickOnAddTruckDashboard()
 	{
+		starttime=System.currentTimeMillis();
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.className("ant-table-content")));
+		
 		wait.until(ExpectedConditions.elementToBeClickable(addTruckButtonDashboard));
+		
+		totaltime=System.currentTimeMillis();
+		
+		totaltime=System.currentTimeMillis()-starttime;  //calcualting navingation time
+		
+		totaltime=totaltime/1000;   //for seconds conversion 
+		
+		PageLoadTime.GetMap().put("Trucks", String.valueOf(totaltime));
+		
+		log.info("Time taken to Load Vehicle Trucks Page : "+totaltime+" seconds");
 		
 		addTruckButtonDashboard.click();
 		
@@ -150,7 +165,7 @@ public class WebPageTruck {
 		
 		liabilityInsuranceNo.sendKeys(number);
 		
-		log.info("Entered Insurance Name : "+number);
+		log.info("Entered Insurance Number : "+number);
 		
 	}
 	public void EnterCargoInsuranceName(String name)
@@ -159,7 +174,7 @@ public class WebPageTruck {
 		
 		cargoInsuranceName.sendKeys(name);
 		
-		log.info("Entered Insurance Name : "+name);
+		log.info("Entered Cargo Name : "+name);
 		
 	}
 	public void EnterCargoInsuranceNumber(String number)
@@ -168,7 +183,7 @@ public class WebPageTruck {
 		
 		cargoInsuranceNo.sendKeys(number);
 		
-		log.info("Entered Insurance Name : "+number);
+		log.info("Entered Cargo Number : "+number);
 		
 	}
 	

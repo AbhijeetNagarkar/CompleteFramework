@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 
 import java.util.HashMap;
-
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import project.utility.ConfigurationSetup;
@@ -35,7 +34,7 @@ public class TruckScript extends ConfigurationSetup{
 	}
 	
 	@Test(priority = 5)
-	public void CreatingNewTruck() throws InterruptedException 
+	public void CreatingNewTruck()
 	{
 		
 		repo=ObjectRepository.GetInstance();
@@ -55,76 +54,75 @@ public class TruckScript extends ConfigurationSetup{
 		map.put("Inumber","Test Insurance Number");
 		map.put("Cname", "Test Cargo Insurance Name");
 		map.put("Cnumber", "Test Cargo Insurance Number");
-				
-		repo.truckPageObject().EntertruckIdentifier(map.get("identifier"));
-	
-		String val = repo.truckPageObject().EntervinNo(map.get("vinnum"));
-		
-		if(val.equals("Incorrect"))
+		try
 		{
-			vin=getVin();
-			map.put("vinnum", vin);
-			val = repo.truckPageObject().EntervinNo(map.get("vinnum"));
+			repo.truckPageObject().EntertruckIdentifier(map.get("identifier"));
+		
+			String val = repo.truckPageObject().EntervinNo(map.get("vinnum"));
+			
 			if(val.equals("Incorrect"))
-				Assert.fail("Tried Entering Random VIN Twice but got Incorrect");
-		}
+			{
+				vin=getVin();
+				map.put("vinnum", vin);
+				val = repo.truckPageObject().EntervinNo(map.get("vinnum"));
+				if(val.equals("Incorrect"))
+					Assert.fail("Tried Entering Random VIN Twice but got Incorrect");
+			}
 	
-		repo.truckPageObject().clickOnNextButton();
-		
-		repo.truckPageObject().EnterRegistrationNumber(map.get("regno"));
-		
-		repo.truckPageObject().clickOnNextButton();
-		
-		repo.truckPageObject().EnterInsuranceName(map.get("Iname"));
-		
-		repo.truckPageObject().EnterInsuranceNumber(map.get("Inumber"));
-		
-		repo.truckPageObject().EnterCargoInsuranceName(map.get("Cname"));
-		
-		repo.truckPageObject().EnterCargoInsuranceNumber(map.get("Cnumber"));
-		
-		repo.truckPageObject().clickOnNextButton();
-		
-		String retval=repo.truckPageObject().clickOnaddTruck();
-		
-		if(retval.equals("duplicate"))
-		{
-			vin=getVin();
-			map.put("vinnum", vin);
+			repo.truckPageObject().clickOnNextButton();
 			
-			repo.truckPageObject().clickOnBackButton();
-			
-			repo.truckPageObject().clickOnBackButton();
-			
-			repo.truckPageObject().clickOnBackButton();
-			
-			repo.truckPageObject().EntervinNo(map.get("vinnum"));
+			repo.truckPageObject().EnterRegistrationNumber(map.get("regno"));
 			
 			repo.truckPageObject().clickOnNextButton();
 			
-			repo.truckPageObject().clickOnNextButton();
+			repo.truckPageObject().EnterInsuranceName(map.get("Iname"));
+			
+			repo.truckPageObject().EnterInsuranceNumber(map.get("Inumber"));
+			
+			repo.truckPageObject().EnterCargoInsuranceName(map.get("Cname"));
+			
+			repo.truckPageObject().EnterCargoInsuranceNumber(map.get("Cnumber"));
 			
 			repo.truckPageObject().clickOnNextButton();
 			
-			retval=repo.truckPageObject().clickOnaddTruck();
+			String retval=repo.truckPageObject().clickOnaddTruck();
 			
 			if(retval.equals("duplicate"))
-				Assert.fail("Tried Entering Random VIN Twice but got duplicate");
+			{
+				vin=getVin();
+				map.put("vinnum", vin);
+				
+				repo.truckPageObject().clickOnBackButton();
+				
+				repo.truckPageObject().clickOnBackButton();
+				
+				repo.truckPageObject().clickOnBackButton();
+				
+				repo.truckPageObject().EntervinNo(map.get("vinnum"));
+				
+				repo.truckPageObject().clickOnNextButton();
+				
+				repo.truckPageObject().clickOnNextButton();
+				
+				repo.truckPageObject().clickOnNextButton();
+				
+				retval=repo.truckPageObject().clickOnaddTruck();
+				
+				if(retval.equals("duplicate"))
+					Assert.fail("Tried Entering Random VIN Twice but got duplicate");
+				
+			}
+			
+			repo.truckPageObject().closePopUp();
+		
+			
 			
 		}
-		
-		repo.truckPageObject().closePopUp();
+		catch (InterruptedException e) {
+			
+			log.info(e.getMessage());
+			Assert.fail(e.getMessage());
+		}
+	
 	}
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 }

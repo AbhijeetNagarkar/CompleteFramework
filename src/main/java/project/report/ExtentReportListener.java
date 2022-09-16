@@ -18,6 +18,9 @@ import com.relevantcodes.extentreports.ExtentTest;
 
 import com.relevantcodes.extentreports.LogStatus;
 import project.utility.EmailSendUtils;
+import project.utility.ExcelUtility;
+import project.utility.PageLoadTime;
+
 import static project.constants.GlobalDeclaration.*;
 
 public class ExtentReportListener implements ITestListener, ISuiteListener {
@@ -89,6 +92,20 @@ public class ExtentReportListener implements ITestListener, ISuiteListener {
 		report.flush();
 		
 		logger.log(LogStatus.INFO,"End suite testing " + suite.getName());
+		
+		System.out.println(PageLoadTime.GetMap().toString());
+		
+		ExcelUtility ex = new ExcelUtility();
+		
+		try {
+			
+			ex.addloadingtimedata(PageLoadTime.GetMap());
+			
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	      
 	    EmailSendUtils.sendEmail(count_totalTCs, count_passedTCs, count_failedTCs, count_skippedTCs);
 	}
