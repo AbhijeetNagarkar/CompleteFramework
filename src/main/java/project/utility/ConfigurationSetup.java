@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -13,15 +14,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.safari.SafariDriver;
-import org.openqa.selenium.safari.SafariOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
+import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -119,12 +118,10 @@ public class ConfigurationSetup
 								 break;
 								 
 				case "IE"      : WebDriverManager.iedriver().setup();
-								 InternetExplorerOptions ieoptions =new InternetExplorerOptions();
 								 driver = new InternetExplorerDriver();
 								 break;
 								 
 				case "Safari"  : WebDriverManager.safaridriver().setup();
-								 SafariOptions opt = new SafariOptions();
 								 driver = new SafariDriver();			
 								 break;
 				default 	   : break; 
@@ -138,22 +135,38 @@ public class ConfigurationSetup
 		public void navigateToUrl(String url)
 		{
 			starttime=System.currentTimeMillis();
-			driver.get(url);
-			log.info(" Navigating to "+url);
-			@SuppressWarnings("deprecation")
-			FluentWait<WebDriver> fwait = new FluentWait<WebDriver>(driver)
-					.withTimeout(60, TimeUnit.SECONDS)
-					.pollingEvery(1, TimeUnit.SECONDS)
-					.ignoring(Exception.class);
+			try
+			{
+				log.info(" Navigating to "+url);
+				driver.get(url);
 			
-			fwait.until(ExpectedConditions.visibilityOfElementLocated(By.id("userName")));
-			
-			totaltime=System.currentTimeMillis()-starttime;
-			
-			totaltime=totaltime/1000;
-			
-			log.info("Time taken to Load Login Page : "+totaltime+" seconds");
-			
+				@SuppressWarnings("deprecation")
+				FluentWait<WebDriver> fwait = new FluentWait<WebDriver>(driver)
+						.withTimeout(60, TimeUnit.SECONDS)
+						.pollingEvery(1, TimeUnit.SECONDS)
+						.ignoring(Exception.class);
+				
+				fwait.until(ExpectedConditions.visibilityOfElementLocated(By.id("userName")));
+				
+				totaltime=System.currentTimeMillis()-starttime;
+				
+				totaltime=totaltime/1000;
+				
+				PageLoadTime.SetMap(new HashMap<String,String>());
+				
+				PageLoadTime.GetMap().put("Login", String.valueOf(totaltime));
+				
+				log.info("Time taken to Load Login Page : "+totaltime+" seconds");
+				
+				ObjectRepository.SetInstance(new WebPageObjectCreation(driver));
+				
+				Driver.SetDriver(getDriverInstance());
+			}
+			catch(Exception e)
+			{
+				log.info("Site is down, unable to load page and caught and exception : "+e.getMessage());
+				Assert.fail("Site is down, unable to load page and caught and exception : "+e.getMessage());
+			}
 			
 			
 		}
