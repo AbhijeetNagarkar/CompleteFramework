@@ -73,10 +73,4 @@ First way, Right click on pom.xml -> Run As -> Maven Clean
 
 Second way, open command project and go to project directory
            hit command as :  mvn clean install
-   
-
-                     
-                     
-         
-
 

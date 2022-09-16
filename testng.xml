@@ -8,7 +8,7 @@
      <classes>
           <class name="project.testscenarios.LoginScript"/>  
           <class name="project.testscenarios.DashboardScript"/>
-          <class name="project.testscenarios.TruckScript"/> 
+          <class name="project.testscenarios.TruckScript"/>   
       </classes>
   </test> 
  

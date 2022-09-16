@@ -10,6 +10,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import project.utility.PageLoadTime;
+
 import static project.constants.GlobalDeclaration.*;
 
 import java.util.List;
@@ -112,15 +115,24 @@ public class WebPageLogin {
 			
 			if(driver.findElement(By.xpath("//div[@class=\"flex flex-col\"]//*[text()=\"Logbook\"]")).getText().equalsIgnoreCase("Logbook"))
 			{
-				fwait = new FluentWait<WebDriver>(driver)
-				.withTimeout(120, TimeUnit.SECONDS)
-				.pollingEvery(1, TimeUnit.SECONDS)
-				.ignoring(Exception.class);
-				
-				fwait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class=\"driver-details\"]")));
+				try
+				{
+					fwait = new FluentWait<WebDriver>(driver)
+					.withTimeout(120, TimeUnit.SECONDS)
+					.pollingEvery(1, TimeUnit.SECONDS)
+					.ignoring(Exception.class);
+					
+					fwait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class=\"driver-details\"]")));
+				}
+				catch(Exception e)
+				{
+					log.info(e.getMessage());
+				}
 				totaltime=System.currentTimeMillis()-starttime;  //calcualting navingation time
 				
 				totaltime=totaltime/1000;   //for seconds conversion 
+				
+				PageLoadTime.GetMap().put("Dashboard", String.valueOf(totaltime));
 				
 				log.info("Time taken to Load Dashboard Page : "+totaltime+" seconds");
 				

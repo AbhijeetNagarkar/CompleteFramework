@@ -1,7 +1,6 @@
 package project.testscenarios;
 
 import java.io.IOException;
-
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -16,15 +15,10 @@ public class LoginScript extends ConfigurationSetup {
 	WebDriver driver;
 	
 	public static Logger log = Logger.getLogger(LoginScript.class);
+
 	@Test(priority = 0)
 	public void ConfigurationSetup() throws InterruptedException, IOException
 	{
-		Driver.SetDriver(getDriverInstance());
-			
-		driver=Driver.GetDriver();
-			
-		ObjectRepository.SetInstance(new WebPageObjectCreation(driver));
-			
 		repo = ObjectRepository.GetInstance();
 	}
 	
