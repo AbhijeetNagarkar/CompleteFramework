@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.HashMap;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -112,9 +113,10 @@ public class ConfigurationSetup
 								 		 
 				case "Chrome"  : WebDriverManager.chromedriver().setup();
 								 ChromeOptions chrome_options = new ChromeOptions();
-								 chrome_options.addArguments("--no-sandbox");
-								 chrome_options.addArguments("--headless");
+								// chrome_options.addArguments("--no-sandbox");
+								// chrome_options.addArguments("--headless");
 								 driver = new ChromeDriver(chrome_options);
+								
 								 break;
 								 
 				case "IE"      : WebDriverManager.iedriver().setup();
@@ -127,7 +129,7 @@ public class ConfigurationSetup
 				default 	   : break; 
 			}
 			log.info(browser+" setup completed successfully");
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			driver.manage().window().maximize();
 			
 		}
@@ -140,10 +142,11 @@ public class ConfigurationSetup
 				log.info(" Navigating to "+url);
 				driver.get(url);
 			
+				
 				@SuppressWarnings("deprecation")
 				FluentWait<WebDriver> fwait = new FluentWait<WebDriver>(driver)
-						.withTimeout(60, TimeUnit.SECONDS)
-						.pollingEvery(1, TimeUnit.SECONDS)
+						.withTimeout(Duration.ofSeconds(30))
+						.pollingEvery(Duration.ofSeconds(1))
 						.ignoring(Exception.class);
 				
 				fwait.until(ExpectedConditions.visibilityOfElementLocated(By.id("userName")));
@@ -186,7 +189,7 @@ public class ConfigurationSetup
 		public void closeBrowser() throws InterruptedException 
 		{
 			Thread.sleep(5000);
-			driver.quit();
+			//driver.quit();
 			log.info("Closing browser");
 			
 		}

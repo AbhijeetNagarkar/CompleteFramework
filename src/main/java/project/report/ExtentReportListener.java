@@ -50,14 +50,14 @@ public class ExtentReportListener implements ITestListener, ISuiteListener {
 		logger.log(LogStatus.INFO, "Executing test: " + result.getMethod().getMethodName());
 		logger.log(LogStatus.INFO, "Inprocess");
 		
-	}
+		}
 
 	@Override
 	public void onTestSuccess(ITestResult result) 
 	{
 		count_passedTCs = count_passedTCs + 1;
 		
-		logger.log(LogStatus.INFO, "Finished executing test");
+		logger.log(LogStatus.PASS, "Finished executing test");
 		
 	}
 
