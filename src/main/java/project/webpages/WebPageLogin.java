@@ -15,6 +15,7 @@ import project.utility.PageLoadTime;
 
 import static project.constants.GlobalDeclaration.*;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -112,14 +113,15 @@ public class WebPageLogin {
 		log.info("validating User Name and Password");
 		if(flag==1)
 		{
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class=\"flex flex-col\"]//*[text()=\"Logbook\"]")));
 			
 			if(driver.findElement(By.xpath("//div[@class=\"flex flex-col\"]//*[text()=\"Logbook\"]")).getText().equalsIgnoreCase("Logbook"))
 			{
 				try
 				{
 					fwait = new FluentWait<WebDriver>(driver)
-					.withTimeout(120, TimeUnit.SECONDS)
-					.pollingEvery(1, TimeUnit.SECONDS)
+					.withTimeout(30,TimeUnit.SECONDS)
+					.pollingEvery(1,TimeUnit.SECONDS)
 					.ignoring(Exception.class);
 					
 					fwait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class=\"driver-details\"]")));
@@ -137,6 +139,8 @@ public class WebPageLogin {
 				log.info("Time taken to Load Dashboard Page : "+totaltime+" seconds");
 				
 				log.info("valid username/password validated successfully");
+				
+			
 				
 				return true;
 			}

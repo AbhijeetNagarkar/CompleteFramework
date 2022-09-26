@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 import project.webpages.WebPageDashboard;
 import project.webpages.WebPageLogin;
+import project.webpages.WebPageTrailer;
 import project.webpages.WebPageTruck;
 
 public class WebPageObjectCreation {
@@ -26,7 +27,8 @@ public class WebPageObjectCreation {
 	
 	WebPageTruck truckPage;
 	
-		
+	WebPageTrailer trailerPage;
+	
 	public WebPageLogin loginPageObject()
 	{
 		if(loginPage==null)
@@ -53,5 +55,15 @@ public class WebPageObjectCreation {
 			truckPage = new WebPageTruck(driver);
 		}
 		return truckPage;
+	}
+	
+	public WebPageTrailer trailerPageObject()
+	{
+		if(trailerPage==null)
+		{
+			log.info("Trailer page object created");
+			trailerPage = new WebPageTrailer(driver);
+		}
+		return trailerPage;
 	}
 }

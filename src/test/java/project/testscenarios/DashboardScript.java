@@ -13,15 +13,40 @@ public class DashboardScript extends ConfigurationSetup{
 	public static Logger log = Logger.getLogger(DashboardScript.class);
 	
 	@Test(priority = 4)
-	public void navigatingTrucksPage() 
+	public void navigatingTrucksPage() throws InterruptedException 
 	{
 		
 		repo=ObjectRepository.GetInstance();
-			
+		
 		repo.dashboardPageObject().clickOnVehicle();
 				
 		repo.dashboardPageObject().clickOnTrucks();
+		
+		Thread.sleep(5000);
+		
+		
 	
+	
+		/*
+		repo.dashboardPageObject().clickOnVehicle();
+		
+		repo.dashboardPageObject().clickOnDeletedTrucks();
+		
+		Thread.sleep(5000);
+		
+		repo.dashboardPageObject().clickOnVehicle();
+		
+		repo.dashboardPageObject().clickOnTrailers();
+		
+		Thread.sleep(5000);
+		
+		repo.dashboardPageObject().clickOnVehicle();
+		
+		repo.dashboardPageObject().clickOnDeletedTrailers();
+		
+		Thread.sleep(10000);
+		
+		*/
 	}
 	
 }
