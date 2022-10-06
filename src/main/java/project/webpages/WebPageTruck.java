@@ -2,16 +2,16 @@ package project.webpages;
 
 import java.util.HashMap;
 import java.util.List;
-
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import project.utility.PageLoadTime;
 
 public class WebPageTruck {
@@ -32,7 +32,7 @@ public class WebPageTruck {
 			
 		PageFactory.initElements(driver,this);
 			
-		wait=new WebDriverWait(driver,60);
+		wait=new WebDriverWait(driver,20);
 	}
 
 	@FindBy(xpath = "//button[@label=\"+ Add Truck\"]")
@@ -86,9 +86,45 @@ public class WebPageTruck {
 	@FindBy(xpath="//p//span")
 	List<WebElement> elements;
 	
+	@FindBy(xpath = "//*[name()=\"svg\" and @data-icon=\"delete\"]")
+	WebElement deleteTruckButton;
+	
+	@FindBy(xpath = "//div[@id=\"delete_confirm\"]//input")
+	WebElement deleteTruckInput;
+	
+	@FindBy(xpath = "//div[@class=\"action-buttons\"]//button[@label=\"Delete\"]")
+	WebElement deleteTruckConfirm;
+	
+	@FindBy(xpath = "//span[text()=\"Action\"]")
+	WebElement action;
+	
+	@FindBy(xpath = "//div[@class=\"px-8 py-2\"]//input")
+	WebElement activateInput;
+	
+	@FindBy(xpath = "//div[@class=\"px-8 py-2\"]//button")
+	WebElement activateButton;
+	
+	@FindBy(xpath = "//span[text()=\"Driver\"]")
+	WebElement tableheaderdriver;
+	
+	@FindBy(xpath = "//input[@placeholder=\"Search Vehicle\"]")
+	WebElement searchDeletedTruck;
+	
+	@FindBy(xpath = "//button[text()=\"Activate\"]")
+	WebElement activateDeletedTruck;
+	
+	
+	
+	
+	
+	
+
 	public void clickOnAddTruckDashboard()
 	{
 		starttime=System.currentTimeMillis();
+		
+	//	tableheaderdriver.click();
+		
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.className("ant-table-content")));
 		
 		wait.until(ExpectedConditions.elementToBeClickable(addTruckButtonDashboard));
@@ -109,7 +145,7 @@ public class WebPageTruck {
 	}
 	public void EntertruckIdentifier(String identifier)
 	{
-		wait.until(ExpectedConditions.elementToBeClickable(truckIdentifier));
+		wait.until(ExpectedConditions.visibilityOf(truckIdentifier));
 		
 		truckIdentifier.sendKeys(identifier);
 		
@@ -216,6 +252,8 @@ public class WebPageTruck {
 	
 	public String clickOnaddTruck() throws InterruptedException
 	{
+		
+		
 		wait.until(ExpectedConditions.elementToBeClickable(addTruck));
 		
 		addTruck.click();
@@ -243,7 +281,10 @@ public class WebPageTruck {
 	
 	public void searchTruckonDashboard(String vin) throws InterruptedException
 	{
+		
 		Thread.sleep(5000);
+	//	tableheaderdriver.click();
+		searchTruck.clear();
 		searchTruck.sendKeys(vin);
 		log.info("Searching for Truck with VIN : "+vin);
 		
@@ -254,19 +295,39 @@ public class WebPageTruck {
 		Thread.sleep(5000);
 		String vno = tabledata.get(1).getText();
 		String chsno=tabledata.get(3).getText();
+		//3TMJU62N86M017395  
 		if(vno.equalsIgnoreCase(map.get("identifier")) && chsno.equalsIgnoreCase(map.get("vinnum")))
 		{
-			log.info("New Truck validated successfully on Dashboard");
+			log.info("New/Activated Truck validated successfully on Dashboard");
 			return true;
 		}
 		else 
 		{
-			log.info("New Truck details incorrect on Dashboard");
+			log.info("New/Activated Truck details incorrect on Dashboard");
 			return false;
 		}
 			
 	}
-	
+	public boolean verifyDeletedTruckonDashboard(HashMap<String,String> map) throws InterruptedException {
+		
+		Thread.sleep(5000);
+		try
+		{
+			String vno = tabledata.get(1).getText();
+			String chsno=tabledata.get(3).getText();
+			if(vno.equalsIgnoreCase(map.get("identifier")) && chsno.equalsIgnoreCase(map.get("vinnum")))
+			{
+				log.info("New Truck validated successfully on Dashboard");
+				return true;
+			}
+		}
+		catch(Exception e)
+		{
+			log.info("Truck in not available on Dashboard");
+			return false;
+		}
+		return false;
+	}
 	
 	public boolean verifyTruckDetails(HashMap<String,String> map) throws InterruptedException {
 				
@@ -302,6 +363,76 @@ public class WebPageTruck {
 		
 		
 	}
-	
+public boolean DeleteTruck() throws InterruptedException  {
+		
+		
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", deleteTruckButton);
+		
+		(new Actions(driver)).moveToElement(deleteTruckButton);
+		
+		deleteTruckButton.click();
+			
+		log.info("Clicking on Delete Truck button on Dashboard");
+				
+		deleteTruckInput.sendKeys("DELETE");
+		
+		wait.until(ExpectedConditions.elementToBeClickable(deleteTruckConfirm));
+		
+		deleteTruckConfirm.click();
+		
+		log.info("Inserted Delete Command and clicked on confirm Delete");
+		return false;
+			
+	}
+	public void ActivateTruck(String truckno) throws InterruptedException
+	{
+		starttime=System.currentTimeMillis();
+		
+		action.click();
+				
+		searchDeletedTruck.clear();
+		
+		searchDeletedTruck.sendKeys(truckno);
+		
+		totaltime=System.currentTimeMillis();
+		
+		totaltime=System.currentTimeMillis()-starttime;  //calcualting navingation time
+		
+		totaltime=totaltime/1000;   //for seconds conversion 
+		
+		PageLoadTime.GetMap().put("Deleted Trucks", String.valueOf(totaltime));
+		
+		log.info("Found deleted truck "+truckno);
+		
+		activateDeletedTruck.click();
+		
+		log.info("Clicked on Activate Truck Button");
+		
+		activateInput.sendKeys("ACTIVATE");
+		
+		log.info("Inserted Activate text in text box");
+		
+		Thread.sleep(2000);
+		
+		wait.until(ExpectedConditions.elementToBeClickable(activateButton));
+		
+		activateButton.click();
+		
+		log.info("Clicked on Activate Truck to reactivate Truck");
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
 
 }

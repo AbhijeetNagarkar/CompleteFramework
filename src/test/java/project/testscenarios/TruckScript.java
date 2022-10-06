@@ -10,6 +10,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import project.utility.ConfigurationSetup;
 import project.utility.ObjectRepository;
+import project.utility.TestData;
 import project.utility.WebPageObjectCreation;
 
 public class TruckScript extends ConfigurationSetup{
@@ -33,11 +34,22 @@ public class TruckScript extends ConfigurationSetup{
 		return str;
 	}
 	
-	@Test(priority = 5)
-	public void CreatingNewTruck()
+	
+	@Test(priority = 4)
+	public void navigatingTrucksPage() throws InterruptedException 
 	{
 		
 		repo=ObjectRepository.GetInstance();
+		
+		repo.dashboardPageObject().clickOnVehicle();
+				
+		repo.dashboardPageObject().clickOnTrucks();
+		
+		Thread.sleep(7000);
+	}
+	@Test(priority = 5, dependsOnMethods = "navigatingTrucksPage" )
+	public void CreatingNewTruck()
+	{
 		
 		repo.truckPageObject().clickOnAddTruckDashboard();
 		
@@ -54,6 +66,8 @@ public class TruckScript extends ConfigurationSetup{
 		map.put("Inumber","Test Insurance Number");
 		map.put("Cname", "Test Cargo Insurance Name");
 		map.put("Cnumber", "Test Cargo Insurance Number");
+		
+		TestData.SetVehicleData(map);
 		try
 		{
 			repo.truckPageObject().EntertruckIdentifier(map.get("identifier"));
@@ -110,19 +124,47 @@ public class TruckScript extends ConfigurationSetup{
 				
 				if(retval.equals("duplicate"))
 					Assert.fail("Tried Entering Random VIN Twice but got duplicate");
-				
 			}
-			
 			repo.truckPageObject().closePopUp();
-		
-			
-			
 		}
 		catch (InterruptedException e) {
 			
 			log.info(e.getMessage());
 			Assert.fail(e.getMessage());
 		}
+}
 	
+	@Test(priority = 6, dependsOnMethods = "CreatingNewTruck")
+	public void SearchTruckOnDashboard() throws InterruptedException 
+	{
+		repo=ObjectRepository.GetInstance();
+		repo.truckPageObject().searchTruckonDashboard(map.get("vinnum"));
 	}
+	
+	@Test(priority = 7, dependsOnMethods = "SearchTruckOnDashboard")
+	public void VerifyTruckOnDashboard() throws InterruptedException 
+	{
+		boolean flag=repo.truckPageObject().verifyTruckonDashboard(map);
+		if(flag)
+		{
+			//System.out.println("Validated successfully on dashboard");
+		}
+		else Assert.fail("Incorrect data showing on Dashboard for Newly Added Truck");
+	}
+	
+	@Test(priority = 8, dependsOnMethods = "VerifyTruckOnDashboard")
+	public void VerifyTruckOnVehicleDetails() throws InterruptedException
+	{
+		boolean flag=repo.truckPageObject().verifyTruckDetails(map);
+		
+		if(flag)
+		{
+			//System.out.println("Validated successfully on Vehicle Details Page");
+		}
+		else Assert.fail("Incorrect data showing on Vehicle Details for Newly Added Truck");
+		
+		
+		
+	}
+	
 }

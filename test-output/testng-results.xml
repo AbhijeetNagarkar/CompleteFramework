@@ -1,56 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="4" total="10" passed="6" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-15T20:50:16 IST" name="Test Suite" finished-at="2022-09-15T20:51:18 IST" duration-ms="62246">
+  <suite started-at="2022-10-06T13:27:56 IST" name="Test Suite" finished-at="2022-10-06T13:28:13 IST" duration-ms="17584">
     <groups>
     </groups>
-    <test started-at="2022-09-15T20:50:16 IST" name="TruckX Test Automation" finished-at="2022-09-15T20:51:18 IST" duration-ms="62246">
+    <test started-at="2022-10-06T13:27:56 IST" name="TruckX Test Automation" finished-at="2022-10-06T13:28:13 IST" duration-ms="17584">
       <class name="project.testscenarios.LoginScript">
-        <test-method is-config="true" signature="preRequisite(org.testng.ITestContext)[pri:0, instance:project.testscenarios.LoginScript@69e153c5]" started-at="2022-09-15T20:48:30 IST" name="preRequisite" finished-at="2022-09-15T20:50:16 IST" duration-ms="106026" status="PASS">
+        <test-method is-config="true" signature="preRequisite(org.testng.ITestContext)[pri:0, instance:project.testscenarios.LoginScript@17f62e33]" started-at="2022-10-06T13:27:30 IST" name="preRequisite" finished-at="2022-10-06T13:27:56 IST" duration-ms="25531" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@4654e373]]>
+                <![CDATA[org.testng.TestRunner@4ed15347]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- preRequisite -->
-        <test-method signature="ConfigurationSetup()[pri:0, instance:project.testscenarios.LoginScript@69e153c5]" started-at="2022-09-15T20:50:16 IST" name="ConfigurationSetup" finished-at="2022-09-15T20:50:16 IST" duration-ms="14" status="PASS">
+        <test-method signature="ConfigurationSetup()[pri:0, instance:project.testscenarios.LoginScript@17f62e33]" started-at="2022-10-06T13:27:56 IST" name="ConfigurationSetup" finished-at="2022-10-06T13:27:56 IST" duration-ms="8" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ConfigurationSetup -->
-        <test-method signature="blankUserNameandPassword()[pri:1, instance:project.testscenarios.LoginScript@69e153c5]" started-at="2022-09-15T20:50:16 IST" name="blankUserNameandPassword" finished-at="2022-09-15T20:50:24 IST" duration-ms="7358" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- blankUserNameandPassword -->
-        <test-method signature="inValidUserNameandPassword()[pri:2, instance:project.testscenarios.LoginScript@69e153c5]" started-at="2022-09-15T20:50:24 IST" name="inValidUserNameandPassword" finished-at="2022-09-15T20:50:30 IST" duration-ms="6799" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- inValidUserNameandPassword -->
-        <test-method signature="validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@69e153c5]" started-at="2022-09-15T20:50:30 IST" name="validUserNameandPassword" finished-at="2022-09-15T20:50:40 IST" duration-ms="9364" status="PASS">
+        <test-method signature="validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@17f62e33]" started-at="2022-10-06T13:27:56 IST" name="validUserNameandPassword" finished-at="2022-10-06T13:28:06 IST" duration-ms="10354" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validUserNameandPassword -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:project.testscenarios.LoginScript@69e153c5]" started-at="2022-09-15T20:51:18 IST" name="closeBrowser" finished-at="2022-09-15T20:51:24 IST" duration-ms="5165" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:project.testscenarios.LoginScript@17f62e33]" started-at="2022-10-06T13:28:13 IST" name="closeBrowser" finished-at="2022-10-06T13:28:18 IST" duration-ms="5215" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- project.testscenarios.LoginScript -->
-      <class name="project.testscenarios.DashboardScript">
-        <test-method signature="navigatingTrucksPage()[pri:4, instance:project.testscenarios.DashboardScript@5d0bf09b]" started-at="2022-09-15T20:50:40 IST" name="navigatingTrucksPage" finished-at="2022-09-15T20:50:40 IST" duration-ms="176" status="PASS">
+      <class name="project.testscenarios.TrackingDevicesScript">
+        <test-method signature="navigatingDevicesPage()[pri:25, instance:project.testscenarios.TrackingDevicesScript@543295b0]" started-at="2022-10-06T13:28:06 IST" name="navigatingDevicesPage" finished-at="2022-10-06T13:28:13 IST" duration-ms="7179" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- navigatingTrucksPage -->
-      </class> <!-- project.testscenarios.DashboardScript -->
-      <class name="project.testscenarios.TruckScript">
-        <test-method signature="CreatingNewTruck()[pri:5, instance:project.testscenarios.TruckScript@793f29ff]" started-at="2022-09-15T20:50:40 IST" name="CreatingNewTruck" finished-at="2022-09-15T20:51:18 IST" duration-ms="38449" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CreatingNewTruck -->
-      </class> <!-- project.testscenarios.TruckScript -->
+        </test-method> <!-- navigatingDevicesPage -->
+      </class> <!-- project.testscenarios.TrackingDevicesScript -->
     </test> <!-- TruckX Test Automation -->
   </suite> <!-- Test Suite -->
 </testng-results>

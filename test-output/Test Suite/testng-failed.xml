@@ -6,13 +6,11 @@
   </listeners>
   <test thread-count="5" name="TruckX Test Automation(failed)">
     <classes>
-      <class name="project.testscenarios.LoginScript">
+      <class name="project.testscenarios.TrackingDevicesScript">
         <methods>
-          <include name="validUserNameandPassword"/>
-          <include name="preRequisite"/>
-          <include name="closeBrowser"/>
+          <include name="navigatingDevicesPage"/>
         </methods>
-      </class> <!-- project.testscenarios.LoginScript -->
+      </class> <!-- project.testscenarios.TrackingDevicesScript -->
     </classes>
   </test> <!-- TruckX Test Automation(failed) -->
 </suite> <!-- Failed suite [Test Suite] -->
