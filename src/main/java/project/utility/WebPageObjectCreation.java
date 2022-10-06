@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 import project.webpages.WebPageDashboard;
 import project.webpages.WebPageLogin;
+import project.webpages.WebPageTrackingDevices;
 import project.webpages.WebPageTrailer;
 import project.webpages.WebPageTruck;
 
@@ -28,6 +29,8 @@ public class WebPageObjectCreation {
 	WebPageTruck truckPage;
 	
 	WebPageTrailer trailerPage;
+	
+	WebPageTrackingDevices trackingPage;
 	
 	public WebPageLogin loginPageObject()
 	{
@@ -66,4 +69,15 @@ public class WebPageObjectCreation {
 		}
 		return trailerPage;
 	}
+	public WebPageTrackingDevices trackingDevicesPageObject()
+	{
+		if(trackingPage==null)
+		{
+			log.info("Tracking Devices page object created");
+			trackingPage = new WebPageTrackingDevices(driver);
+		}
+		return trackingPage;
+	}
+	
+	
 }

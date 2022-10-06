@@ -1,8 +1,5 @@
 package project.webpages;
 
-import java.time.Duration;
-import java.util.concurrent.TimeUnit;
-
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,9 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import project.utility.Driver;
-
 
 
 public class WebPageDashboard {
@@ -53,6 +48,13 @@ public class WebPageDashboard {
 	
 	@FindBy(xpath = "//div[@class=\"custom-drop-submenu\"]//div[text()=\"Deleted Trailers\"]")
 	WebElement deletedtrailers;
+	
+	@FindBy(xpath = "//div[@class=\"flex flex-col\"]//span[text()=\"Devices\"]")
+	WebElement devices;
+	
+	@FindBy(xpath = "//div[@class=\"custom-drop-submenu\"]//div[text()=\"Tracking Devices\"]")
+	WebElement trackingdevices;
+	
 	
 	public void clickOnVehicle()
 	{
@@ -101,6 +103,24 @@ public class WebPageDashboard {
 	public void refresh()
 	{
 		Driver.GetDriver().navigate().refresh();
+	}
+	
+	public void clickOnDevices()
+	{
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class=\"flex flex-col\"]//span[text()=\"Devices\"]")));
+		
+		devices.click();
+		
+		log.info("Clicked on Devices from Menu");
+	}
+	
+	public void clickOnTrackingDevices()
+	{
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class=\"custom-drop-submenu\"]//div[text()=\"Tracking Devices\"]")));
+		
+		trackingdevices.click();
+		
+		log.info("Clicked on Tracking Devices from Sub Menu");
 	}
 
 }

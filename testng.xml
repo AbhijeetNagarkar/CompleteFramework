@@ -7,8 +7,9 @@
   <test thread-count="1" name="TruckX Test Automation" parallel="false" preserve-order="true" >
      <classes>
           <class name="project.testscenarios.LoginScript"/>  
-          <class name="project.testscenarios.TruckScript"/>  
+       	  <class name="project.testscenarios.TruckScript"/>  
           <class name="project.testscenarios.TrailerScript"/>   
+          <class name="project.testscenarios.TrackingDevicesScript"/>  
       </classes>
   </test> 
  

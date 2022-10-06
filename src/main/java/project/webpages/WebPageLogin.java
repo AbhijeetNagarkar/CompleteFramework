@@ -10,12 +10,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import project.utility.PageLoadTime;
-
 import static project.constants.GlobalDeclaration.*;
-
-import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -113,12 +109,13 @@ public class WebPageLogin {
 		log.info("validating User Name and Password");
 		if(flag==1)
 		{
+			try
+			{
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class=\"flex flex-col\"]//*[text()=\"Logbook\"]")));
 			
-			if(driver.findElement(By.xpath("//div[@class=\"flex flex-col\"]//*[text()=\"Logbook\"]")).getText().equalsIgnoreCase("Logbook"))
-			{
-				try
+				if(driver.findElement(By.xpath("//div[@class=\"flex flex-col\"]//*[text()=\"Logbook\"]")).getText().equalsIgnoreCase("Logbook"))
 				{
+				
 					fwait = new FluentWait<WebDriver>(driver)
 					.withTimeout(30,TimeUnit.SECONDS)
 					.pollingEvery(1,TimeUnit.SECONDS)
@@ -126,10 +123,13 @@ public class WebPageLogin {
 					
 					fwait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class=\"driver-details\"]")));
 				}
-				catch(Exception e)
-				{
-					log.info(e.getMessage());
-				}
+				else return false;
+			}
+			catch(Exception e)
+			{
+				log.info(e.getMessage());
+			}
+				
 				totaltime=System.currentTimeMillis()-starttime;  //calcualting navingation time
 				
 				totaltime=totaltime/1000;   //for seconds conversion 
@@ -139,12 +139,10 @@ public class WebPageLogin {
 				log.info("Time taken to Load Dashboard Page : "+totaltime+" seconds");
 				
 				log.info("valid username/password validated successfully");
-				
 			
-				
 				return true;
-			}
-			return false;
+		
+			
 		}
 		else if(flag==2)
 		{

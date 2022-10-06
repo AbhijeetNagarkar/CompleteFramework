@@ -45,9 +45,9 @@ public class TruckScript extends ConfigurationSetup{
 				
 		repo.dashboardPageObject().clickOnTrucks();
 		
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 	}
-	@Test(priority = 5)
+	@Test(priority = 5, dependsOnMethods = "navigatingTrucksPage" )
 	public void CreatingNewTruck()
 	{
 		
@@ -124,29 +124,24 @@ public class TruckScript extends ConfigurationSetup{
 				
 				if(retval.equals("duplicate"))
 					Assert.fail("Tried Entering Random VIN Twice but got duplicate");
-				
 			}
-			
 			repo.truckPageObject().closePopUp();
-		
-			
-			
 		}
 		catch (InterruptedException e) {
 			
 			log.info(e.getMessage());
 			Assert.fail(e.getMessage());
 		}
+}
 	
-	}
-	@Test(priority = 6)
+	@Test(priority = 6, dependsOnMethods = "CreatingNewTruck")
 	public void SearchTruckOnDashboard() throws InterruptedException 
 	{
 		repo=ObjectRepository.GetInstance();
 		repo.truckPageObject().searchTruckonDashboard(map.get("vinnum"));
 	}
 	
-	@Test(priority = 7)
+	@Test(priority = 7, dependsOnMethods = "SearchTruckOnDashboard")
 	public void VerifyTruckOnDashboard() throws InterruptedException 
 	{
 		boolean flag=repo.truckPageObject().verifyTruckonDashboard(map);
@@ -155,11 +150,9 @@ public class TruckScript extends ConfigurationSetup{
 			//System.out.println("Validated successfully on dashboard");
 		}
 		else Assert.fail("Incorrect data showing on Dashboard for Newly Added Truck");
-			
-			
 	}
 	
-	@Test(priority = 8)
+	@Test(priority = 8, dependsOnMethods = "VerifyTruckOnDashboard")
 	public void VerifyTruckOnVehicleDetails() throws InterruptedException
 	{
 		boolean flag=repo.truckPageObject().verifyTruckDetails(map);
@@ -173,16 +166,5 @@ public class TruckScript extends ConfigurationSetup{
 		
 		
 	}
-	
-	@Test(priority = 9)
-	public void navigatingTrailerPage() throws InterruptedException
-	{
-		repo.dashboardPageObject().clickOnVehicle();
-		
-		repo.dashboardPageObject().clickOnTrailers();
-		
-		Thread.sleep(5000);
-	}
-	
 	
 }
