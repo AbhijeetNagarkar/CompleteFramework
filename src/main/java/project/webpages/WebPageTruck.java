@@ -1,9 +1,7 @@
 package project.webpages;
 
-import java.time.Duration;
 import java.util.HashMap;
 import java.util.List;
-
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -14,7 +12,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import project.utility.PageLoadTime;
 
 public class WebPageTruck {
@@ -101,21 +98,32 @@ public class WebPageTruck {
 	@FindBy(xpath = "//span[text()=\"Action\"]")
 	WebElement action;
 	
-	@FindBy(xpath = "//div[@id=\"activate_confirm\"]//input")
+	@FindBy(xpath = "//div[@class=\"px-8 py-2\"]//input")
 	WebElement activateInput;
 	
-	@FindBy(xpath = "//div[@class=\"action-buttons\"]//button[@label=\"Activate\"]")
+	@FindBy(xpath = "//div[@class=\"px-8 py-2\"]//button")
 	WebElement activateButton;
 	
 	@FindBy(xpath = "//span[text()=\"Driver\"]")
 	WebElement tableheaderdriver;
+	
+	@FindBy(xpath = "//input[@placeholder=\"Search Vehicle\"]")
+	WebElement searchDeletedTruck;
+	
+	@FindBy(xpath = "//button[text()=\"Activate\"]")
+	WebElement activateDeletedTruck;
+	
+	
+	
+	
+	
 	
 
 	public void clickOnAddTruckDashboard()
 	{
 		starttime=System.currentTimeMillis();
 		
-		tableheaderdriver.click();
+	//	tableheaderdriver.click();
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.className("ant-table-content")));
 		
@@ -137,7 +145,7 @@ public class WebPageTruck {
 	}
 	public void EntertruckIdentifier(String identifier)
 	{
-		wait.until(ExpectedConditions.elementToBeClickable(truckIdentifier));
+		wait.until(ExpectedConditions.visibilityOf(truckIdentifier));
 		
 		truckIdentifier.sendKeys(identifier);
 		
@@ -355,6 +363,76 @@ public class WebPageTruck {
 		
 		
 	}
+public boolean DeleteTruck() throws InterruptedException  {
+		
+		
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", deleteTruckButton);
+		
+		(new Actions(driver)).moveToElement(deleteTruckButton);
+		
+		deleteTruckButton.click();
+			
+		log.info("Clicking on Delete Truck button on Dashboard");
+				
+		deleteTruckInput.sendKeys("DELETE");
+		
+		wait.until(ExpectedConditions.elementToBeClickable(deleteTruckConfirm));
+		
+		deleteTruckConfirm.click();
+		
+		log.info("Inserted Delete Command and clicked on confirm Delete");
+		return false;
+			
+	}
+	public void ActivateTruck(String truckno) throws InterruptedException
+	{
+		starttime=System.currentTimeMillis();
+		
+		action.click();
+				
+		searchDeletedTruck.clear();
+		
+		searchDeletedTruck.sendKeys(truckno);
+		
+		totaltime=System.currentTimeMillis();
+		
+		totaltime=System.currentTimeMillis()-starttime;  //calcualting navingation time
+		
+		totaltime=totaltime/1000;   //for seconds conversion 
+		
+		PageLoadTime.GetMap().put("Deleted Trucks", String.valueOf(totaltime));
+		
+		log.info("Found deleted truck "+truckno);
+		
+		activateDeletedTruck.click();
+		
+		log.info("Clicked on Activate Truck Button");
+		
+		activateInput.sendKeys("ACTIVATE");
+		
+		log.info("Inserted Activate text in text box");
+		
+		Thread.sleep(2000);
+		
+		wait.until(ExpectedConditions.elementToBeClickable(activateButton));
+		
+		activateButton.click();
+		
+		log.info("Clicked on Activate Truck to reactivate Truck");
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
 		
 
 }
