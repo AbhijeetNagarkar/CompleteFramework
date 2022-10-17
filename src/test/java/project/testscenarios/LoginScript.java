@@ -2,12 +2,12 @@ package project.testscenarios;
 
 import java.io.IOException;
 import java.util.HashMap;
-
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
+import project.mediator.Driver;
+import project.mediator.ObjectRepository;
 import project.utility.*;
 
 public class LoginScript extends ConfigurationSetup {
@@ -27,7 +27,7 @@ public class LoginScript extends ConfigurationSetup {
 	{
 		repo = ObjectRepository.GetInstance();
 	}
-	/*
+	
 	@Test(priority = 1)
 	public void blankUserNameandPassword() throws InterruptedException
 	{
@@ -39,7 +39,7 @@ public class LoginScript extends ConfigurationSetup {
 		
 		Assert.assertTrue(repo.loginPageObject().validate());
 		
-		refreshPage();
+		Driver.Refresh();
 		
 	}
 	
@@ -54,10 +54,10 @@ public class LoginScript extends ConfigurationSetup {
 		
 		Assert.assertTrue(repo.loginPageObject().validate());
 				
-		refreshPage();
+		Driver.Refresh();
 		
 	}
-	*/
+	
 	@Test(priority = 3,alwaysRun = true)
 	public void validUserNameandPassword() throws InterruptedException
 	{

@@ -10,8 +10,11 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import project.utility.PageLoadTime;
-import static project.constants.GlobalDeclaration.*;
+import org.testng.Assert;
+
+import project.mediator.PageLoadTime;
+import project.mediator.TestData;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -32,13 +35,14 @@ public class WebPageLogin {
 	
 	long totaltime=0;
 	
+	HashMap<String,String> logindata;
 		
 	public WebPageLogin(WebDriver driverinstance)
 	{
 			driver=driverinstance;
 			PageFactory.initElements(driver,this);
-			wait = new WebDriverWait(driver,60);
-			
+			wait = new WebDriverWait(driver,30);
+			logindata=TestData.GetLoginData();
 	}
 
 	@FindBy(id = "userName")
@@ -58,48 +62,91 @@ public class WebPageLogin {
 	
 	public void clear()
 	{
+		try
+		{
 		userName.clear();
 		password.clear();
 		log.info("clearing user name and password field");
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to clear User Name and Password field");
+		}
 	}
 	public void enterUserName()
 	{
-		flag=1;
-		clear();
-		wait.until(ExpectedConditions.elementToBeClickable(userName));
-		userName.sendKeys(USERNAME);
-		log.info("User Name Entered");
+		try
+		{
+			flag=1;
+			clear();
+			wait.until(ExpectedConditions.elementToBeClickable(userName));
+			userName.sendKeys(logindata.get("User Name"));
+			log.info("User Name Entered");
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to Enter User Name in Login Page");
+		}
+		
 	}
 	public void enterUserPassword()
 	{
+		try
+		{
 		wait.until(ExpectedConditions.elementToBeClickable(password));
-		password.sendKeys(lOGINPASSWORD);
+		password.sendKeys(logindata.get("Password"));
 		log.info("Password Entered");
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to Enter User Password in Login Page");
+		}
 	}
 	
 	public void enterUserName(String name)
 	{
-		if(name=="")
-			flag=2;
-		else flag=3;
-		clear();
-		wait.until(ExpectedConditions.elementToBeClickable(userName));
-		userName.sendKeys(name);
-		log.info("User Name Entered");
+		try
+		{
+			if(name=="")
+				flag=2;
+			else flag=3;
+			clear();
+			wait.until(ExpectedConditions.elementToBeClickable(userName));
+			userName.sendKeys(name);
+			log.info("User Name Entered");
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to Enter User Name in Login Page");
+		}
 	}
 	public void enterUserPassword(String pass)
 	{
+		try
+		{
 		wait.until(ExpectedConditions.elementToBeClickable(password));
 		password.sendKeys(pass);
 		log.info("Password Entered");
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to Enter User Password in Login Page");
+		}
 	}
 	
 	public void signIn()
 	{
+		try
+		{
 		wait.until(ExpectedConditions.elementToBeClickable(submit));
 		submit.click();
 		starttime=System.currentTimeMillis();
 		log.info("Clicked on Sign In");
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to clicked on Sign In button of Login Page");
+		}
 	}
 	
 	@SuppressWarnings("deprecation")

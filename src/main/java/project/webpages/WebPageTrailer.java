@@ -1,16 +1,19 @@
 package project.webpages;
 
+import java.util.HashMap;
 import java.util.List;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import project.utility.PageLoadTime;
+import org.testng.Assert;
+
+import project.mediator.PageLoadTime;
+import project.mediator.TestData;
 
 public class WebPageTrailer {
 	
@@ -24,13 +27,19 @@ public class WebPageTrailer {
 	
 	long totaltime=0;
 	
+	HashMap<String,String> trailermap,truckmap;
+	
 	public WebPageTrailer(WebDriver driverinstance)
 	{
 		driver=driverinstance;
 			
 		PageFactory.initElements(driver,this);
 			
-		wait=new WebDriverWait(driver,20);
+		wait=new WebDriverWait(driver,10);
+		
+		trailermap = TestData.GetTrailerData();
+		
+		truckmap = TestData.GetVehicleData();
 	}
 	
 	@FindBy(xpath = "//button[text() =\"+ Add Trailer\"]")
@@ -66,7 +75,7 @@ public class WebPageTrailer {
 	@FindBy(xpath = "//button[text()=\"No\"]")
 	WebElement noButton;
 	
-	@FindBy(xpath = "//tbody[@class=\"rc-table-tbody\"]//td[@class=\"rc-table-cell\"]//div")
+	@FindBy(xpath = "//td[@class=\"rc-table-cell\"]//div")
 	List<WebElement> dashtable;
 		
 	@FindBy(xpath = "//div[@class=\"relative w-full h-full\"]//input")
@@ -100,10 +109,6 @@ public class WebPageTrailer {
 	WebElement spanaction;
 	
 	
-	
-	
-	
-	
 	public void clickOnAddTrailerDashboard()
 	{
 		starttime=System.currentTimeMillis();
@@ -120,19 +125,32 @@ public class WebPageTrailer {
 		PageLoadTime.GetMap().put("Trailer", String.valueOf(totaltime));
 		
 		log.info("Time taken to Load Vehicle Trailer Page : "+totaltime+" seconds");
-		
-		addTrailerButtonDashboard.click();
-		
-		log.info("Clicked on Add Trailer on Dashboard");
+		try
+		{
+			addTrailerButtonDashboard.click();
+			
+			log.info("Clicked on Add Trailer on Dashboard");
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to Click on Add Trailer button on Dashboard");
+		}
 	}
 	
-	public void EntertrailerIdentifier(String identifier)
+	public void EntertrailerIdentifier()
 	{
+		try
+		{
 		wait.until(ExpectedConditions.elementToBeClickable(trailerIdentifier));
 		
-		trailerIdentifier.sendKeys(identifier);
+		trailerIdentifier.sendKeys(trailermap.get("Trailer Identifier"));
 		
-		log.info("Entered Trailer Identifier : "+identifier);
+		log.info("Entered Trailer Identifier : "+trailermap.get("Trailer Identifier"));
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to Enter Trailer Identifier");
+		}
 	}
 	
 	public void ClickOnSave()
@@ -150,15 +168,14 @@ public class WebPageTrailer {
 		
 		} 
 		catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Assert.fail("Unable to click on Save Button of New Trailer creation");
 		}
 	}
+	
 	public void ClickOnUpdate()
 	{
 		try 
 		{
-			
 		Thread.sleep(3000);
 		
 		updateButton.click();
@@ -166,31 +183,32 @@ public class WebPageTrailer {
 		log.info("Clicked on Update Trailer Button");
 		
 		Thread.sleep(3000);
-		
 		} 
 		catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Assert.fail("Unable to click on Update Button of Edit Trailer");
 		}
 	}
 	
-	public void SearchTrailer(String trailername) throws InterruptedException
+	public void SearchTrailer() throws InterruptedException
 	{
-		
-		
+		try
+		{
 		Thread.sleep(3000);
 		
 		wait.until(ExpectedConditions.elementToBeClickable(searchTrailer));
 		
 		searchTrailer.clear();
 		
-		searchTrailer.sendKeys(trailername);
+		searchTrailer.sendKeys(trailermap.get("Trailer Identifier"));
 		
-		log.info("Search Trailer : "+trailername);
+		log.info("Search Trailer : "+trailermap.get("Trailer Identifier") );
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to Search Trailer on Dashboard");
+		}
 	}
-		
 
-	
 	public void ClickOnTruckDropdown()
 	{
 		try
@@ -199,88 +217,86 @@ public class WebPageTrailer {
 			
 			truckDropdown.click();
 			
+			Thread.sleep(2000);
+			
 			log.info("Clicked on Truck Dropdown in Assign Trailer");
 		}
 		catch(Exception e)
 		{
-			
+			Assert.fail("Unable to click on Truck Dropdown of Assign Truck");
 		}
-		
 	}
-	public String SelectTruckFromDropDown()
+	
+	public String SelectTruckFromDropDown() throws InterruptedException
 	{
-		List<WebElement> op=driver.findElements(By.xpath("//div[@class=\" css-1u0owcj-option\"]//div//span"));
-		
-	//	System.out.println(op.size());
-		
-	//	op.get(0).click();
-		
-		return op.get(0).getText();
-		
-		/*
-		if(op.size() == 0)
-		{	ClickOnTruckDropdown();
-		}
-		for(WebElement ele : op)
+		try
 		{
-			if(identifier.equalsIgnoreCase(ele.getText()))
-			{
-				try
-				{
-					ele.click();
-					log.info("Selected Truck "+identifier+" to assign tailer ");
-					break;
-				}
-				catch(Exception e)
-				{
-					ClickOnTruckDropdown();
-					ele.click();
-					log.info("Selected Truck "+identifier+" to assign tailer ");
-					break;
-				}
-			}
-			
-		}*/
+		Thread.sleep(2000);
 		
+		driver.findElements(By.xpath("//div[@class=\" css-1u0owcj-option\"]//div//span[text()='"+truckmap.get("Truck Identifier")+"']")).get(0).click();
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to select truck to Assign Trailer");
+		}
+		return truckmap.get("Truck Identifier");
 	}
-
 
 	public void ClickOnNoMore() throws InterruptedException
 	{
+		try
+		{
 		wait.until(ExpectedConditions.elementToBeClickable(nomore));
 		
 		nomore.click();
 		
 		log.info("Clicked on No More Additional Trailer Button");
-		
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to click on No More Trailer Creation");
+		}
 		Thread.sleep(3000);
 	}
 
-
 	public void ClickOnYes() throws InterruptedException
 	{
+		try
+		{
 		wait.until(ExpectedConditions.elementToBeClickable(yesButton));
 		
 		yesButton.click();
 		
 		log.info("Clicked on Yes to confirm ");
-		
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to click on Yes to Confirm");
+		}
 		Thread.sleep(3000);
 	}
 	
 	public void ClickOnNo() throws InterruptedException
 	{
+		try
+		{
 		wait.until(ExpectedConditions.elementToBeClickable(noButton));
 		
 		noButton.click();
 		
 		log.info("Clicked on No to confirm ");
-		
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to click on No to Confirm prompt");
+		}
 		Thread.sleep(3000);
-		
 	}
+	
 	public void ClickOnAssign()
 	{
+		try
+		{
 		action.click();
 		
 		wait.until(ExpectedConditions.elementToBeClickable(assignButton));
@@ -288,18 +304,30 @@ public class WebPageTrailer {
 		assignButton.click();
 		
 		log.info("Clicked on Assign Trailer Button");
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to click On Assign button of Trailer page");
+		}
 	}
 
 	public void ClickOnUnAssign()
 	{
+		try
+		{
 		wait.until(ExpectedConditions.elementToBeClickable(unassignButton));
 		
 		unassignButton.click();
 		
 		log.info("Clicked on Un Assign Trailer Button");
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to click on UnAssign button of Trailer Page");
+		}
 	}
 
-	public boolean VerifyUnAssignedTrailerOnDashboard(String vin, String string) throws InterruptedException 
+	public boolean VerifyUnAssignedTrailerOnDashboard() throws InterruptedException 
 	{
 			try
 			{
@@ -309,9 +337,10 @@ public class WebPageTrailer {
 			{
 				
 			}
-			return VerifyTrailer(vin,string);
+			return VerifyTrailer(trailermap.get("Trailer Identifier"),"");
 	}
-	public boolean VerifyAssignedTrailerOnDashboard(String vin, String string) throws InterruptedException 
+	
+	public boolean VerifyAssignedTrailerOnDashboard() throws InterruptedException 
 	{
 			try
 			{
@@ -321,9 +350,10 @@ public class WebPageTrailer {
 			{
 				
 			}
-			return VerifyTrailer(vin,string);
+			return VerifyTrailer(trailermap.get("Trailer Identifier"),truckmap.get("Truck Identifier"));
 		
 	}
+	
 	public boolean VerifyTrailer(String vin, String string) throws InterruptedException
 	{	
 		Thread.sleep(5000);
@@ -336,26 +366,31 @@ public class WebPageTrailer {
 				{
 					return true;
 				}
-				else if(string.equalsIgnoreCase(dashtable.get(0).getText()))
+				else if(string.equalsIgnoreCase(dashtable.get(1).getText()))
 				{
-					System.out.println();
 					return true;
 				}
 		}
 		return false;
-		
 	}
 	
 	public void DeleteTrailer() throws InterruptedException
 	{
+		try
+		{
 		wait.until(ExpectedConditions.elementToBeClickable(deleteButtonOnDashboard));
 		
 		deleteButtonOnDashboard.click();
 		
 		log.info("Clicked on Delete Trailer Button");
-		
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to click on Delete Trailer button on Trailer Page");
+		}
 		Thread.sleep(2000);
-		
+		try
+		{
 		deleteInput.sendKeys("DELETE");
 		
 		Thread.sleep(2000);
@@ -363,9 +398,12 @@ public class WebPageTrailer {
 		deleteButton.click();
 		
 		log.info("Inserted Delete text and clicked on Delete button");
-		
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to click on Delete Button of Delete Prompt");
+		}
 		Thread.sleep(3000);
-		
 	}
 	
 	public boolean VerifyDeletedTrailer()
@@ -381,8 +419,10 @@ public class WebPageTrailer {
 		return false;
 	}
 	
-	public void EditTrailer(String trailerno) throws InterruptedException
+	public void EditTrailer() throws InterruptedException
 	{
+		try
+		{
 		action.click();
 		
 		wait.until(ExpectedConditions.elementToBeClickable(editButton));
@@ -392,34 +432,51 @@ public class WebPageTrailer {
 		log.info("Clicked on Edit Trailer button ");
 		
 		Thread.sleep(2000);
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to click on Edit Trailer Button");
+		}
 		
+		trailermap.put("Trailer Identifier",(trailermap.get("Trailer Identifier"))+"123");
+		
+		try
+		{
 		edittraileridentifier.clear();
 		
-		edittraileridentifier.sendKeys(trailerno);
+		edittraileridentifier.sendKeys(trailermap.get("Trailer Identifier"));
 		
 		Thread.sleep(3000);
 		
 		updateButton.click();
 		
-		log.info("Clicked on Update trailer button ");
+		log.info("Clicked on Update trailer button");
 		
 		Thread.sleep(3000);
 		
 		action.click();
-		
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to click on Update trailer button on Edit prompt");
+		}
 	}
 
-	public void ActivateTrailer(String trailerno) throws InterruptedException
+	public void ActivateTrailer() throws InterruptedException
 	{
-		
 		spanaction.click();
 		
 		starttime=System.currentTimeMillis();
+		try
+		{
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//tr//td//div[text()='"+trailermap.get("Trailer Identifier")+"']")));
 		
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//tr//td//div[text()='"+trailerno+"']")));
-		
-		driver.findElement(By.xpath("//tr//td//div[text()='"+trailerno+"']")).click();
-		
+		driver.findElement(By.xpath("//tr//td//div[text()='"+trailermap.get("Trailer Identifier")+"']")).click();
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to find deleted trailer on Deleted Trailer Page");
+		}
 		totaltime=System.currentTimeMillis();
 		
 		totaltime=System.currentTimeMillis()-starttime;  //calcualting navingation time
@@ -428,16 +485,24 @@ public class WebPageTrailer {
 		
 		PageLoadTime.GetMap().put("Deleted Trailers", String.valueOf(totaltime));
 		
-		log.info("Found deleted trailer "+trailerno);
+		log.info("Found deleted trailer "+trailermap.get("Trailer Identifier"));
 		
 		Thread.sleep(2000);
 		
-		driver.findElements(By.xpath("//tr//td//div[text()='"+trailerno+"']//following::button")).get(0).click();
+		try
+		{		
+		driver.findElements(By.xpath("//tr//td//div[text()='"+trailermap.get("Trailer Identifier")+"']//following::button")).get(0).click();
 		
 		log.info("Clicked on Activate Trailer Button");
-		
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to click on Activate Trailer button on Delete Trailer Page");
+		}
 		Thread.sleep(2000);
 		
+		try
+		{
 		activateInput.sendKeys("ACTIVATE");
 		
 		log.info("Inserted Activate text in text box");
@@ -449,14 +514,14 @@ public class WebPageTrailer {
 		activateButton.click();
 		
 		log.info("Clicked on Activate Trailer to reactivate trailer");
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to click on Activate button on Activate Trailer Prompt");
+		}
 	}
 	public void changeFocus()
 	{
 		action.click();
 	}
-
-
-	
-
-	
-	}
+}

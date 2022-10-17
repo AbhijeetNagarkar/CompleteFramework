@@ -8,7 +8,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import project.utility.Driver;
+
+import project.mediator.Driver;
 
 
 public class WebPageDashboard {
@@ -30,14 +31,14 @@ public class WebPageDashboard {
 			
 			PageFactory.initElements(driver,this);
 			
-			wait = new WebDriverWait(driver,20);
+			wait = new WebDriverWait(driver,10);
 			
 	}
 
 	@FindBy(xpath = "//div[@class=\"flex flex-col\"]//span[text()=\"Vehicles\"]")
 	WebElement vehicles;
 	
-	@FindBy(xpath = "//div[@class=\"custom-drop-submenu\"]//span[text()=\"Trucks\"]")
+	@FindBy(xpath = "//div[@class=\"custom-drop-submenu\"]//*[text()=\"Trucks\"]")
 	WebElement trucks;
 	
 	@FindBy(xpath = "//div[@class=\"custom-drop-submenu\"]//div[text()=\"Deleted Trucks\"]")
@@ -55,6 +56,9 @@ public class WebPageDashboard {
 	@FindBy(xpath = "//div[@class=\"custom-drop-submenu\"]//div[text()=\"Tracking Devices\"]")
 	WebElement trackingdevices;
 	
+	@FindBy(xpath = "//div[@class=\"custom-drop-submenu\"]//*[text()=\"Deleted Devices\"]")
+	WebElement deleteddevices;
+	
 	
 	public void clickOnVehicle()
 	{
@@ -65,62 +69,129 @@ public class WebPageDashboard {
 		
 		log.info("Clicked on Vehicles Menu");
 	}
-	public void clickOnTrucks()
+	public void clickOnTrucks() throws InterruptedException
 	{
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class=\"custom-drop-submenu\"]//span[text()=\"Trucks\"]")));
-		
+		try {
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class=\"custom-drop-submenu\"]//*[text()=\"Trucks\"]")));
+		Thread.sleep(1000);
 		trucks.click();
-		
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			vehicles.click();
+			Thread.sleep(1000);
+			trucks.click();
+		}
 		log.info("Clicked on Trucks from Sub Menu");
+		
+		Thread.sleep(2000);
 	}
 	
-	public void clickOnDeletedTrucks()
+	public void clickOnDeletedTrucks() throws InterruptedException
 	{
+		try {
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class=\"custom-drop-submenu\"]//div[text()=\"Deleted Trucks\"]")));
 		
 		deletedtruck.click();
-		
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			vehicles.click();
+			Thread.sleep(1000);
+			deletedtruck.click();
+		}
 		log.info("Clicked on Deleted Trucks from Sub Menu");
+		
+		Thread.sleep(2000);
 	}
 	
-	public void clickOnTrailers()
+	public void clickOnTrailers() throws InterruptedException
 	{
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class=\"custom-drop-submenu\"]//span[text()=\"Trailers\"]")));
+		try {
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class=\"custom-drop-submenu\"]//*[text()=\"Trailers\"]")));
 		
 		trailers.click();
-		
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			vehicles.click();
+			Thread.sleep(1000);
+			trailers.click();
+		}
 		log.info("Clicked on Trailers from Sub Menu");
+		
+		Thread.sleep(2000);
 	}
 	
-	public void clickOnDeletedTrailers()
+	public void clickOnDeletedTrailers() throws InterruptedException
 	{
+		try {
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class=\"custom-drop-submenu\"]//div[text()=\"Deleted Trailers\"]")));
 		
 		deletedtrailers.click();
-		
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			vehicles.click();
+			Thread.sleep(1000);
+			deletedtrailers.click();
+		}
 		log.info("Clicked on Deleted Trailers from Sub Menu");
+		
+		Thread.sleep(2000);
 	}
 	public void refresh()
 	{
 		Driver.GetDriver().navigate().refresh();
 	}
 	
-	public void clickOnDevices()
+	public void clickOnDevices() throws InterruptedException
 	{
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class=\"flex flex-col\"]//span[text()=\"Devices\"]")));
 		
 		devices.click();
 		
 		log.info("Clicked on Devices from Menu");
+		
+		Thread.sleep(000);
 	}
 	
-	public void clickOnTrackingDevices()
+	public void clickOnTrackingDevices() throws InterruptedException
 	{
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class=\"custom-drop-submenu\"]//div[text()=\"Tracking Devices\"]")));
-		
-		trackingdevices.click();
-		
+		try
+		{
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class=\"custom-drop-submenu\"]//div[text()=\"Tracking Devices\"]")));
+			
+			trackingdevices.click();
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			devices.click();
+			Thread.sleep(1000);
+			trackingdevices.click();
+		}
 		log.info("Clicked on Tracking Devices from Sub Menu");
+		
+		Thread.sleep(2000);
 	}
+	public void clickOnDeletedDevices() throws InterruptedException
+	{
+		try
+		{
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class=\"custom-drop-submenu\"]//*[text()=\"Deleted Devices\"]")));
+		
+			deleteddevices.click();
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			devices.click();
+			Thread.sleep(1000);
+			deleteddevices.click();
+		}
+		log.info("Clicked on Deleted Devices from Sub Menu");
+		
+		Thread.sleep(2000);
+	}
+
 
 }

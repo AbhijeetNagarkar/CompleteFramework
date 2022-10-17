@@ -21,9 +21,6 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
-/**
- * https://www.codejava.net/java-ee/javamail/send-e-mail-with-attachment-in-java
- */
 public class EmailAttachmentsSender {
 
     public static void sendEmailWithAttachments(String host, String port, final String userName, final String password,

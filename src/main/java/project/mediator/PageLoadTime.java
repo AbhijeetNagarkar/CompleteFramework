@@ -1,4 +1,4 @@
-package project.utility;
+package project.mediator;
 
 import java.util.HashMap;
 

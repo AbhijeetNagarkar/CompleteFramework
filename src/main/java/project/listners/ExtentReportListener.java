@@ -1,4 +1,4 @@
-package project.report;
+package project.listners;
 
 
 import java.io.File;
@@ -19,9 +19,9 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import project.utility.EmailSendUtils;
 import project.utility.ExcelUtility;
-import project.utility.PageLoadTime;
+import project.mediator.*;
 
-import static project.constants.GlobalDeclaration.*;
+import static project.constants.FilePathDeclaration.*;
 
 public class ExtentReportListener implements ITestListener, ISuiteListener {
 

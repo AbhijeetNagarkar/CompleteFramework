@@ -1,14 +1,10 @@
 package project.testscenarios;
 
-import static io.restassured.RestAssured.given;
-
 import java.util.HashMap;
-
 import org.apache.log4j.Logger;
+import org.testng.Assert;
 import org.testng.annotations.Test;
-import io.restassured.http.ContentType;
-import io.restassured.response.Response;
-import project.utility.ObjectRepository;
+import project.mediator.ObjectRepository;
 import project.utility.WebPageObjectCreation;
 
 public class TrackingDevicesScript {
@@ -17,26 +13,13 @@ public class TrackingDevicesScript {
 	
 	String vin;
 	
-	HashMap<String,String> map=new HashMap<String,String>();
+	HashMap<String,String> devicemap;
 	
 	public static Logger log = Logger.getLogger(TruckScript.class);
 	
-	private String getVin() {
-		// TODO Auto-generated method stub
-		Response res = (Response) given().accept(ContentType.JSON).
-				   when().get("http://randomvin.com/getvin.php?type=fake")
-				   .then().assertThat().statusCode(200).extract().body();
-				
-		String str = res.getBody().asString().trim();
-		
-		return str;
-	}
-	
-	
 	@Test(priority = 25)
-	public void navigatingDevicesPage() throws InterruptedException 
+	public void NavigatingDevicesPage() throws InterruptedException 
 	{
-		
 		repo=ObjectRepository.GetInstance();
 		
 		repo.dashboardPageObject().clickOnDevices();
@@ -44,6 +27,57 @@ public class TrackingDevicesScript {
 		repo.dashboardPageObject().clickOnTrackingDevices();
 		
 		Thread.sleep(7000);
+		
 	}
-
+	@Test(priority = 26)
+	public void AddNewDevice() throws InterruptedException 
+	{
+		repo.trackingDevicesPageObject().clickOnAddDevices();
+		
+		repo.trackingDevicesPageObject().EnterDeviceName();
+		
+		repo.trackingDevicesPageObject().EnterDeviceId();
+		
+		repo.trackingDevicesPageObject().selectDeviceType();
+		
+		repo.trackingDevicesPageObject().clickOnConfirm();
+		
+		
+	}
+	@Test(priority = 27)
+	public void SearchAndFilterDevice() throws InterruptedException 
+	{
+		
+		repo.trackingDevicesPageObject().filter();
+		
+		Assert.assertTrue(repo.trackingDevicesPageObject().verifyFilteration(), "Device Filter functionality not working");
+		
+		repo.trackingDevicesPageObject().search();
+		
+		Assert.assertTrue(repo.trackingDevicesPageObject().verifyDevice(), "Result not showing as per Search text");
+		
+		
+	}
+	
+	@Test(priority = 28)
+	public void EditDevice() throws InterruptedException 
+	{
+		Assert.assertTrue(repo.trackingDevicesPageObject().EditDevice(),"Incorrect data showing after Edit");
+		
+	}
+	@Test(priority = 29)
+	public void DeleteDevice() throws InterruptedException 
+	{
+		Assert.assertTrue(repo.trackingDevicesPageObject().deleteDevice(), "Delete device functionality not working ");
+		
+		repo.dashboardPageObject().clickOnDevices();
+		
+		repo.dashboardPageObject().clickOnDeletedDevices();
+		
+		repo.trackingDevicesPageObject().search();
+		
+		Assert.assertTrue(repo.trackingDevicesPageObject().verifyDeviceonDeletedDevices(), "Deleted device not found on Deleted Devices Page");
+		
+		Thread.sleep(20000);
+	}
 }

@@ -1,17 +1,12 @@
 package project.testscenarios;
 
-import static io.restassured.RestAssured.given;
-
 import java.util.HashMap;
-
 import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import io.restassured.http.ContentType;
-import io.restassured.response.Response;
-import project.utility.ObjectRepository;
-import project.utility.TestData;
+import project.RandomVinAPI.RandomVin;
+import project.mediator.ObjectRepository;
+import project.mediator.TestData;
 import project.utility.WebPageObjectCreation;
 
 public class TrailerScript {
@@ -22,24 +17,15 @@ public class TrailerScript {
 	
 	boolean flag;
 	
-	HashMap<String,String> map=new HashMap<String,String>();
+	HashMap<String,String> vehiclemap,trailermap;
 	
 	public static Logger log = Logger.getLogger(TruckScript.class);
 	
-	private String getVin() {
-		// TODO Auto-generated method stub
-		Response res = (Response) given().accept(ContentType.JSON).
-				   when().get("http://randomvin.com/getvin.php?type=fake")
-				   .then().assertThat().statusCode(200).extract().body();
-				
-		String str = res.getBody().asString().trim();
-		
-		return str;
-	}
 	@Test(priority = 9)
-	public void navigatingTrailerPage() throws InterruptedException
+	public void NavigatingTrailerPage() throws InterruptedException
 	{
 		repo=ObjectRepository.GetInstance();
+		
 		repo.dashboardPageObject().clickOnVehicle();
 		
 		repo.dashboardPageObject().clickOnTrailers();
@@ -48,58 +34,59 @@ public class TrailerScript {
 	}
 	
 	
-	@Test(priority = 10, dependsOnMethods = "navigatingTrailerPage" )
+	@Test(priority = 10, dependsOnMethods = "NavigatingTrailerPage" )
 	public void CreatingNewTrailer() throws InterruptedException
 	{
 		
 		repo=ObjectRepository.GetInstance();
 		
-		map=TestData.GetVehicleData();
+		vehiclemap=TestData.GetVehicleData();
+		
+		trailermap=TestData.GetTrailerData();
 		
 		repo.trailerPageObject().clickOnAddTrailerDashboard();
 		
 		log.info("Calling API to generate Random VIN");
 		
-		vin=getVin();
+		vin=RandomVin.getVin();
 		
 		log.info("API Response for Random VIN : "+vin);
 		
-		map.put("traileridentifier", vin);
+		trailermap.put("Trailer Identifier", vin);
 		
-		repo.trailerPageObject().EntertrailerIdentifier(map.get("traileridentifier"));
+		repo.trailerPageObject().EntertrailerIdentifier();
 		
 		repo.trailerPageObject().ClickOnSave();
 		
 		repo.trailerPageObject().ClickOnNo();
 		
 	}
+	
 	@Test(priority = 11,dependsOnMethods = "CreatingNewTrailer")
 	public void VerifyNewlyAddedTrailer() throws InterruptedException
 	{	
-		repo.trailerPageObject().SearchTrailer(map.get("traileridentifier"));
+		repo.trailerPageObject().SearchTrailer();
 		
-		flag=repo.trailerPageObject().VerifyUnAssignedTrailerOnDashboard(map.get("traileridentifier"),"");
+		flag=repo.trailerPageObject().VerifyUnAssignedTrailerOnDashboard();
 		
 		if(flag)
 			log.info("Trailer validated on Dashboard successfully");
 		else 
 			Assert.fail("Incorrect details showing on Trailer Dashboard");
-			
-	
 	}
-	
-	/*
+		
 	@Test(priority = 12,dependsOnMethods = "VerifyNewlyAddedTrailer")
 	public void AssignTrailerToTruck() throws InterruptedException
 	{
-	
+		repo.dashboardPageObject().refresh();
+		
+		repo.trailerPageObject().SearchTrailer();
+		
 		repo.trailerPageObject().ClickOnAssign();
 		
 		repo.trailerPageObject().ClickOnTruckDropdown(); //
 		
-		String selectedtruck = repo.trailerPageObject().SelectTruckFromDropDown();
-		
-		map.put("selectedtruck", selectedtruck);
+		repo.trailerPageObject().SelectTruckFromDropDown();
 		
 		repo.trailerPageObject().ClickOnUpdate();
 	}
@@ -107,7 +94,7 @@ public class TrailerScript {
 	@Test(priority = 13, dependsOnMethods = "AssignTrailerToTruck")
 	public void VerifyAssignedTrailerToTruck() throws InterruptedException
 	{
-		flag=repo.trailerPageObject().VerifyAssignedTrailerOnDashboard(map.get("traileridentifier"),map.get("selectedtruck"));
+		flag=repo.trailerPageObject().VerifyAssignedTrailerOnDashboard();
 		
 		if(flag)
 			log.info("Trailer validated after Assigned on Dashboard successfully");
@@ -125,23 +112,21 @@ public class TrailerScript {
 	@Test(priority = 15, dependsOnMethods = "UnAssignTrailerFromTruck")
 	public void VerifyUnAssignedTrailerToTruck() throws InterruptedException
 	{
-		flag=repo.trailerPageObject().VerifyUnAssignedTrailerOnDashboard(map.get("traileridentifier"),"");
+		flag=repo.trailerPageObject().VerifyUnAssignedTrailerOnDashboard();
 		
 		if(flag)
 			log.info("Trailer validated after UnAssigned on Dashboard successfully");
 		else 
 			Assert.fail("Incorrect details showing on Trailer Dashboard");
 	}
-	*/
+	
 	@Test(priority = 16, dependsOnMethods = "VerifyNewlyAddedTrailer")
 	public void EditTrailer() throws InterruptedException
 	{
 	
-		map.put("traileridentifier",(map.get("traileridentifier"))+"123");
+		repo.trailerPageObject().EditTrailer();
 		
-		repo.trailerPageObject().EditTrailer(map.get("traileridentifier"));
-		
-		flag=repo.trailerPageObject().VerifyUnAssignedTrailerOnDashboard(map.get("traileridentifier"),"");
+		flag=repo.trailerPageObject().VerifyUnAssignedTrailerOnDashboard();
 		
 		if(flag)
 			log.info("Trailer validated after Edit on Dashboard successfully");
@@ -153,7 +138,7 @@ public class TrailerScript {
 	{
 		repo.trailerPageObject().DeleteTrailer();
 		
-		repo.trailerPageObject().SearchTrailer(map.get("traileridentifier"));
+		repo.trailerPageObject().SearchTrailer();
 		
 		flag=repo.trailerPageObject().VerifyDeletedTrailer();
 		
@@ -165,7 +150,7 @@ public class TrailerScript {
 			
 	}
 	@Test(priority = 18)
-	public void navigatingDeletedTrailerPage() throws InterruptedException
+	public void NavigatingDeletedTrailerPage() throws InterruptedException
 	{
 		repo.dashboardPageObject().clickOnVehicle();
 		
@@ -173,16 +158,16 @@ public class TrailerScript {
 		
 		Thread.sleep(5000);
 	}
-	@Test(priority = 19, dependsOnMethods ="navigatingDeletedTrailerPage" )
+	@Test(priority = 19, dependsOnMethods ="NavigatingDeletedTrailerPage" )
 	public void ActivateTrailer() throws InterruptedException
 	{
-		repo.trailerPageObject().ActivateTrailer(map.get("traileridentifier"));
+		repo.trailerPageObject().ActivateTrailer();
 		
 		Thread.sleep(3000);
 	}
 	
 	@Test(priority = 20, dependsOnMethods = "ActivateTrailer")
-	public void verifyActivateTrailer() throws InterruptedException
+	public void VerifyActivateTrailer() throws InterruptedException
 	{
 		repo.dashboardPageObject().clickOnVehicle();
 		
@@ -190,9 +175,9 @@ public class TrailerScript {
 		
 		repo.trailerPageObject().changeFocus();
 		
-		repo.trailerPageObject().SearchTrailer(map.get("traileridentifier"));
+		repo.trailerPageObject().SearchTrailer();
 		
-		flag=repo.trailerPageObject().VerifyUnAssignedTrailerOnDashboard(map.get("traileridentifier"),"");
+		flag=repo.trailerPageObject().VerifyUnAssignedTrailerOnDashboard();
 		
 		if(flag)
 			log.info("Trailer validated after Activating on Dashboard successfully");
@@ -211,15 +196,15 @@ public class TrailerScript {
 		
 		repo.dashboardPageObject().clickOnTrucks();
 		
-		repo.truckPageObject().searchTruckonDashboard(map.get("vinnum")); 
+		repo.truckPageObject().searchTruckonDashboard(); 
 		
 		repo.truckPageObject().DeleteTruck();
 		
 		Thread.sleep(3000);
 		
-		repo.truckPageObject().searchTruckonDashboard(map.get("vinnum"));
+		repo.truckPageObject().searchTruckonDashboard();
 		
-		flag=repo.truckPageObject().verifyDeletedTruckonDashboard(map);
+		flag=repo.truckPageObject().verifyDeletedTruckonDashboard();
 		
 		if(flag)
 			Assert.fail("Deleted Truck showing as Active");
@@ -227,7 +212,7 @@ public class TrailerScript {
 			log.info("Verified Deleted Truck on Dashboard");
 	}
 	@Test(priority = 22)
-	public void navigatingDeletedTruckPage() throws InterruptedException
+	public void NavigatingDeletedTruckPage() throws InterruptedException
 	{
 		repo.dashboardPageObject().clickOnVehicle();
 		
@@ -238,20 +223,20 @@ public class TrailerScript {
 	@Test(priority = 23)
 	public void ActivateTruck() throws InterruptedException
 	{
-		repo.truckPageObject().ActivateTruck(map.get("vinnum"));
+		repo.truckPageObject().ActivateTruck();
 			
 		Thread.sleep(3000);
 	}
 	@Test(priority = 24)
-	public void verifyActivateTruck() throws InterruptedException
+	public void VerifyActivateTruck() throws InterruptedException
 	{
 		repo.dashboardPageObject().clickOnVehicle();
 		
 		repo.dashboardPageObject().clickOnTrucks();
 		
-		repo.truckPageObject().searchTruckonDashboard(map.get("vinnum"));
+		repo.truckPageObject().searchTruckonDashboard();
 		
-		flag=repo.truckPageObject().verifyTruckonDashboard(map);
+		flag=repo.truckPageObject().verifyTruckonDashboard();
 		
 		if(flag)
 			log.info("Truck validated after Activating on Dashboard successfully");
