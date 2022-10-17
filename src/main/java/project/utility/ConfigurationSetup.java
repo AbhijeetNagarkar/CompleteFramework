@@ -88,8 +88,8 @@ public class ConfigurationSetup
 								 		 
 				case "Chrome"  : WebDriverManager.chromedriver().setup();
 								 ChromeOptions chrome_options = new ChromeOptions();
-								// chrome_options.addArguments("--no-sandbox");
-								// chrome_options.addArguments("--headless");
+								 chrome_options.addArguments("--no-sandbox");
+								 chrome_options.addArguments("--headless");
 								 driver = new ChromeDriver(chrome_options);
 								
 								 break;
