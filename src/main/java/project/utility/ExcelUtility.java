@@ -1,6 +1,6 @@
 package project.utility;
 
-import static project.constants.GlobalDeclaration.*;
+import static project.constants.FilePathDeclaration.*;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -28,33 +28,31 @@ public class ExcelUtility {
 	
 	public static Logger log = Logger.getLogger(ExcelUtility.class);
 	
-	public void configureInputExcel() throws IOException
+	public HashMap<String,String> fetchdata(String sheet) throws IOException
 	{
+		HashMap<String, String> map = new HashMap<>();
+		
 		inputifs = new FileInputStream(new File(InputExcelFile));
-	}
-
-	
-	public void Inputfetchsheet(String sheetname)
-	{
-		sheetinput = inputworkbook.getSheet(sheetname);
-		log.info("Fetching Input "+sheetname+" sheet from excel");
-	}
-	
-	public void fetchdata()
-	{
-		for (int i = 0; i <= sheetinput.getLastRowNum(); i++) {
-			
-			for (int j = 0; j < sheetinput.getRow(i).getLastCellNum(); j++) {
-				System.out.println(sheetinput.getRow(i).getCell(j));
-			}
-			
+		
+		inputworkbook = new XSSFWorkbook(inputifs);
+		
+		sheetinput = inputworkbook.getSheet(sheet);
+		
+		for (int i = 0; i <= sheetinput.getLastRowNum(); i++) 
+		{
+			String key = (sheetinput.getRow(i).getCell(0)).getStringCellValue();
+			String val = (sheetinput.getRow(i).getCell(1)).getStringCellValue();
+			map.put(key,val);
 		}
-		log.info("Fetched data from Excel");
+	
+		return map;
 	}
+	
 	public int numberOfRows()
 	{
 		return (sheetinput.getLastRowNum());
 	}
+	
 	public int numberOfCols(int rowno)
 	{
 		return (sheetinput.getRow(rowno).getLastCellNum());
@@ -98,7 +96,6 @@ public class ExcelUtility {
 					}
 					if(flag==0)
 					{
-					
 							XSSFRow last = sheetoutput.createRow(lastrow);
 							XSSFCell cell1 = last.createCell(0);
 							XSSFCell cell2 = last.createCell(temp);
@@ -124,6 +121,5 @@ public class ExcelUtility {
 			outputofs.close();
 			log.info(e.getMessage());
 		}
-		
 	}
 }

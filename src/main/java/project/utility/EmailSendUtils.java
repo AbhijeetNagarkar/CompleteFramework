@@ -2,7 +2,9 @@ package project.utility;
 
 import javax.mail.MessagingException;
 
-import static project.constants.GlobalDeclaration.*;
+import project.mediator.TestData;
+
+import static project.constants.FilePathDeclaration.*;
 import static project.utility.EmailConfig.*;
 
 public class EmailSendUtils {
@@ -10,7 +12,7 @@ public class EmailSendUtils {
     public static void sendEmail(int count_totalTCs, int count_passedTCs, int count_failedTCs, int count_skippedTCs) {
 
         try {
-			if (SENDEMAIL.equalsIgnoreCase("yes")) {
+			if ((TestData.GetConfigurationData().get("Send Mail")).equalsIgnoreCase("yes")) {
 			    System.out.println("****************************************");
 			    System.out.println("Send Email - START");
 			    System.out.println("****************************************");

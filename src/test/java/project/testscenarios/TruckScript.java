@@ -1,16 +1,11 @@
 package project.testscenarios;
 
-import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import static io.restassured.RestAssured.*;
-
-import java.util.HashMap;
-import io.restassured.http.ContentType;
-import io.restassured.response.Response;
+import project.RandomVinAPI.RandomVin;
+import project.mediator.ObjectRepository;
+import project.mediator.TestData;
 import project.utility.ConfigurationSetup;
-import project.utility.ObjectRepository;
-import project.utility.TestData;
 import project.utility.WebPageObjectCreation;
 
 public class TruckScript extends ConfigurationSetup{
@@ -19,24 +14,8 @@ public class TruckScript extends ConfigurationSetup{
 	
 	String vin;
 	
-	HashMap<String,String> map=new HashMap<String,String>();
-	
-	public static Logger log = Logger.getLogger(TruckScript.class);
-	
-	private String getVin() {
-		// TODO Auto-generated method stub
-		Response res = (Response) given().accept(ContentType.JSON).
-				   when().get("http://randomvin.com/getvin.php?type=fake")
-				   .then().assertThat().statusCode(200).extract().body();
-				
-		String str = res.getBody().asString().trim();
-		
-		return str;
-	}
-	
-	
 	@Test(priority = 4)
-	public void navigatingTrucksPage() throws InterruptedException 
+	public void NavigatingTrucksPage() throws InterruptedException 
 	{
 		
 		repo=ObjectRepository.GetInstance();
@@ -47,55 +26,50 @@ public class TruckScript extends ConfigurationSetup{
 		
 		Thread.sleep(7000);
 	}
-	@Test(priority = 5, dependsOnMethods = "navigatingTrucksPage" )
+	@Test(priority = 5, dependsOnMethods = "NavigatingTrucksPage" )
 	public void CreatingNewTruck()
 	{
-		
 		repo.truckPageObject().clickOnAddTruckDashboard();
 		
 		log.info("Calling API to generate Random VIN");
 		
-		vin=getVin();
+		vin=RandomVin.getVin();
+		
+		if(vin.equalsIgnoreCase(""))
+			vin=RandomVin.getVin();
 		
 		log.info("API Response for Random VIN : "+vin);
-				
-		map.put("identifier", vin+"123");
-		map.put("vinnum", vin);
-		map.put("regno", "MH12AB1010");
-		map.put("Iname", "Test Insurance Name");
-		map.put("Inumber","Test Insurance Number");
-		map.put("Cname", "Test Cargo Insurance Name");
-		map.put("Cnumber", "Test Cargo Insurance Number");
-		
-		TestData.SetVehicleData(map);
+	
+		TestData.GetVehicleData().put("Truck Identifier", vin+"123");
+		TestData.GetVehicleData().put("VIN Number", vin);
 		try
 		{
-			repo.truckPageObject().EntertruckIdentifier(map.get("identifier"));
+			repo.truckPageObject().EntertruckIdentifier();
 		
-			String val = repo.truckPageObject().EntervinNo(map.get("vinnum"));
+			String val = repo.truckPageObject().EntervinNo();
 			
 			if(val.equals("Incorrect"))
 			{
-				vin=getVin();
-				map.put("vinnum", vin);
-				val = repo.truckPageObject().EntervinNo(map.get("vinnum"));
+				vin=RandomVin.getVin();
+				TestData.GetVehicleData().put("VIN Number", vin);
+				val = repo.truckPageObject().EntervinNo();
 				if(val.equals("Incorrect"))
 					Assert.fail("Tried Entering Random VIN Twice but got Incorrect");
 			}
 	
 			repo.truckPageObject().clickOnNextButton();
 			
-			repo.truckPageObject().EnterRegistrationNumber(map.get("regno"));
+			repo.truckPageObject().EnterRegistrationNumber();
 			
 			repo.truckPageObject().clickOnNextButton();
 			
-			repo.truckPageObject().EnterInsuranceName(map.get("Iname"));
+			repo.truckPageObject().EnterInsuranceName();
 			
-			repo.truckPageObject().EnterInsuranceNumber(map.get("Inumber"));
+			repo.truckPageObject().EnterInsuranceNumber();
 			
-			repo.truckPageObject().EnterCargoInsuranceName(map.get("Cname"));
+			repo.truckPageObject().EnterCargoInsuranceName();
 			
-			repo.truckPageObject().EnterCargoInsuranceNumber(map.get("Cnumber"));
+			repo.truckPageObject().EnterCargoInsuranceNumber();
 			
 			repo.truckPageObject().clickOnNextButton();
 			
@@ -103,8 +77,8 @@ public class TruckScript extends ConfigurationSetup{
 			
 			if(retval.equals("duplicate"))
 			{
-				vin=getVin();
-				map.put("vinnum", vin);
+				vin=RandomVin.getVin();
+				TestData.GetVehicleData().put("VIN Number", vin);
 				
 				repo.truckPageObject().clickOnBackButton();
 				
@@ -112,7 +86,7 @@ public class TruckScript extends ConfigurationSetup{
 				
 				repo.truckPageObject().clickOnBackButton();
 				
-				repo.truckPageObject().EntervinNo(map.get("vinnum"));
+				repo.truckPageObject().EntervinNo();
 				
 				repo.truckPageObject().clickOnNextButton();
 				
@@ -138,15 +112,16 @@ public class TruckScript extends ConfigurationSetup{
 	public void SearchTruckOnDashboard() throws InterruptedException 
 	{
 		repo=ObjectRepository.GetInstance();
-		repo.truckPageObject().searchTruckonDashboard(map.get("vinnum"));
+		repo.truckPageObject().searchTruckonDashboard();
 	}
 	
 	@Test(priority = 7, dependsOnMethods = "SearchTruckOnDashboard")
 	public void VerifyTruckOnDashboard() throws InterruptedException 
 	{
-		boolean flag=repo.truckPageObject().verifyTruckonDashboard(map);
+		boolean flag=repo.truckPageObject().verifyTruckonDashboard();
 		if(flag)
 		{
+			
 			//System.out.println("Validated successfully on dashboard");
 		}
 		else Assert.fail("Incorrect data showing on Dashboard for Newly Added Truck");
@@ -155,7 +130,7 @@ public class TruckScript extends ConfigurationSetup{
 	@Test(priority = 8, dependsOnMethods = "VerifyTruckOnDashboard")
 	public void VerifyTruckOnVehicleDetails() throws InterruptedException
 	{
-		boolean flag=repo.truckPageObject().verifyTruckDetails(map);
+		boolean flag=repo.truckPageObject().verifyTruckDetails();
 		
 		if(flag)
 		{
