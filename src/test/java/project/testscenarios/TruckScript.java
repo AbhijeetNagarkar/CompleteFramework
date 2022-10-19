@@ -35,6 +35,9 @@ public class TruckScript extends ConfigurationSetup{
 		
 		vin=RandomVin.getVin();
 		
+		if(vin.equalsIgnoreCase(""))
+			vin=RandomVin.getVin();
+		
 		log.info("API Response for Random VIN : "+vin);
 	
 		TestData.GetVehicleData().put("Truck Identifier", vin+"123");

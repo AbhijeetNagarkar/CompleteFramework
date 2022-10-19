@@ -76,7 +76,7 @@ public class ExtentReportListener implements ITestListener, ISuiteListener {
 		} catch(IOException e) {
 			System.out.println("Failed to take screenshot");
 		}
-		logger.log(LogStatus.FAIL, "Test failed, attaching screenshot in screenshots folder");
+		logger.log(LogStatus.FAIL,result.getThrowable().getMessage());
 	}
 
 	@Override

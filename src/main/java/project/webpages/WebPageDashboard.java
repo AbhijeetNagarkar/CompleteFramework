@@ -140,13 +140,16 @@ public class WebPageDashboard {
 		
 		Thread.sleep(2000);
 	}
-	public void refresh()
+	public void refresh() throws InterruptedException
 	{
-		Driver.GetDriver().navigate().refresh();
-	}
+		driver.navigate().refresh();
+		Thread.sleep(2000);
+		}
 	
 	public void clickOnDevices() throws InterruptedException
 	{
+		driver.navigate().refresh();
+		
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class=\"flex flex-col\"]//span[text()=\"Devices\"]")));
 		
 		devices.click();

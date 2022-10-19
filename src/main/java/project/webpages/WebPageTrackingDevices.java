@@ -139,13 +139,13 @@ public class WebPageTrackingDevices {
 	{
 		try
 		{
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		
 		driver.findElements(By.xpath("//div[@class=\" pt-2\"]//*[name()=\"svg\"]")).get(0).click();
 		
 		log.info("Clicked on drop down to select option");
 		
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		
 		if(devicemap.get("Device Type").equalsIgnoreCase("Dash camera"))
 			driver.findElements(By.xpath("//*[@class=\" css-113f9vn\"]//div/span[text()=\"Cloud Dashcam\"]")).get(0).click();
@@ -167,7 +167,7 @@ public class WebPageTrackingDevices {
 		confirmButton.click();
 		
 		log.info("Clicked on Confirm button");
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		}
 		catch(Exception e)
 		{
@@ -178,7 +178,7 @@ public class WebPageTrackingDevices {
 			wait.until(ExpectedConditions.visibilityOf(alertmsg));
 			EnterDeviceId();
 			confirmButton.click();
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 		}
 		catch(Exception e)
 		{
@@ -214,7 +214,7 @@ public class WebPageTrackingDevices {
 	{
 		try
 		{
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			driver.findElement(By.xpath("//tr//td[@class=\"rc-table-cell\"]//div[text()='"+devicemap.get("deviceId")+"']"));
 			log.info("Created device "+devicemap.get("deviceId")+" found on Dashboard");
 			return true;
@@ -230,7 +230,7 @@ public class WebPageTrackingDevices {
 	{
 		try
 		{
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			driver.findElements(By.xpath("//tr//td[@class=\"rc-table-cell\"]//div[text()='"+devicemap.get("deviceId")+"']//following::button")).get(0).click();
 			log.info("Clicked on Delete device");
 			deleteYesButton.click();
@@ -248,11 +248,13 @@ public class WebPageTrackingDevices {
 	{
 		try
 		{
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		
 		search.sendKeys(devicemap.get("deviceId"));
 		
 		log.info("searching for : "+devicemap.get("deviceId"));
+		
+		Thread.sleep(2000);
 		}
 		catch(Exception e)
 		{
@@ -268,7 +270,7 @@ public class WebPageTrackingDevices {
 		
 		log.info("Clicked on filter drop down");
 		
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		
 		if(devicemap.get("Device Type").equalsIgnoreCase("Dash camera") || devicemap.get("Device Type").equalsIgnoreCase("Cloud Dashcam"))
 		filterDashcamoption.click();
@@ -309,7 +311,7 @@ public class WebPageTrackingDevices {
 		//td[@class="rc-table-cell"]//*[text()="860112047139268"]
 		try
 		{
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			driver.findElement(By.xpath("//td[@class=\"rc-table-cell\"]//*[text()='"+devicemap.get("deviceId")+"']"));
 			log.info("Deleted device "+devicemap.get("deviceId")+" found on Deleted Device Page");
 			return true;
@@ -329,7 +331,7 @@ public class WebPageTrackingDevices {
 		
 		log.info("Clicked on Edit button ");
 		
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		}
 		catch(Exception e)
 		{
@@ -341,11 +343,11 @@ public class WebPageTrackingDevices {
 		
 		log.info("Clicked on Select Assest Drop down");
 		
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		
 		driver.findElements(By.xpath("//div[@class=\" css-hjiaga-menu\"]//div//div//span")).get(0).click();
 		
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		
 		}
 		catch(Exception e)
@@ -361,7 +363,7 @@ public class WebPageTrackingDevices {
 		
 		log.info("Clicked on Save button to update Device details");
 		
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		}
 		catch(Exception e)
 		{

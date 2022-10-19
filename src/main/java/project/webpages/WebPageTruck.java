@@ -173,7 +173,7 @@ public class WebPageTruck {
 		
 		vinNo.sendKeys(truckmap.get("VIN Number"));
 		
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		
 		log.info("Entered VIN Number : "+truckmap.get("VIN Number"));
 		}
@@ -362,6 +362,7 @@ public class WebPageTruck {
 		searchTruck.clear();
 		searchTruck.sendKeys(truckmap.get("VIN Number"));
 		log.info("Searching for Truck with VIN : "+truckmap.get("VIN Number"));
+		Thread.sleep(2000);
 		}
 		catch(Exception e)
 		{

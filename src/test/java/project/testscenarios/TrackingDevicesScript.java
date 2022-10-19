@@ -29,7 +29,7 @@ public class TrackingDevicesScript {
 		Thread.sleep(7000);
 		
 	}
-	@Test(priority = 26)
+	@Test(priority = 26, dependsOnMethods = "NavigatingDevicesPage")
 	public void AddNewDevice() throws InterruptedException 
 	{
 		repo.trackingDevicesPageObject().clickOnAddDevices();
