@@ -12,7 +12,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import project.utility.PageLoadTime;
+import org.testng.Assert;
+
+import project.mediator.PageLoadTime;
+import project.mediator.TestData;
 
 public class WebPageTruck {
 	
@@ -25,6 +28,8 @@ public class WebPageTruck {
 		long starttime=0;
 		
 		long totaltime=0;
+		
+		HashMap<String,String> truckmap;
 	
 	public WebPageTruck(WebDriver driverinstance)
 	{
@@ -32,7 +37,9 @@ public class WebPageTruck {
 			
 		PageFactory.initElements(driver,this);
 			
-		wait=new WebDriverWait(driver,20);
+		wait=new WebDriverWait(driver,10);
+		
+		truckmap=TestData.GetVehicleData();
 	}
 
 	@FindBy(xpath = "//button[@label=\"+ Add Truck\"]")
@@ -113,17 +120,9 @@ public class WebPageTruck {
 	@FindBy(xpath = "//button[text()=\"Activate\"]")
 	WebElement activateDeletedTruck;
 	
-	
-	
-	
-	
-	
-
 	public void clickOnAddTruckDashboard()
 	{
 		starttime=System.currentTimeMillis();
-		
-	//	tableheaderdriver.click();
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.className("ant-table-content")));
 		
@@ -138,31 +137,50 @@ public class WebPageTruck {
 		PageLoadTime.GetMap().put("Trucks", String.valueOf(totaltime));
 		
 		log.info("Time taken to Load Vehicle Trucks Page : "+totaltime+" seconds");
-		
+		try
+		{
 		addTruckButtonDashboard.click();
 		
 		log.info("Clicked on Add Truck on Dashboard");
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to click on Add Truck Button on Truck Dashboard");
+		}
 	}
-	public void EntertruckIdentifier(String identifier)
+	public void EntertruckIdentifier()
 	{
+		try
+		{
 		wait.until(ExpectedConditions.visibilityOf(truckIdentifier));
 		
-		truckIdentifier.sendKeys(identifier);
+		truckIdentifier.sendKeys(truckmap.get("Truck Identifier"));
 		
-		log.info("Entered Truck Identifier : "+identifier);
+		log.info("Entered Truck Identifier : "+truckmap.get("Truck Identifier"));
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to Enter Truck Identifier in New Truck Creation Prompt");
+		}
 	}
-	public String EntervinNo(String vin) throws InterruptedException
+	public String EntervinNo() throws InterruptedException
 	{
+		try
+		{
 		wait.until(ExpectedConditions.elementToBeClickable(vinNo));
 		
 		vinNo.clear();
 		
-		vinNo.sendKeys(vin);
+		vinNo.sendKeys(truckmap.get("VIN Number"));
 		
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		
-		log.info("Entered VIN Number : "+vin);
-		
+		log.info("Entered VIN Number : "+truckmap.get("VIN Number"));
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to Enter VIN Number in New Truck Creation Prompt");
+		}
 		try
 		{
 			String msg=driver.findElement(By.xpath("//div[@class=\"ant-form-explain\"]")).getText();
@@ -177,88 +195,145 @@ public class WebPageTruck {
 		}
 		return "Correct";
 	}
-	public void EnterRegistrationNumber(String reg)
+	public void EnterRegistrationNumber()
 	{
+		try
+		{
 		wait.until(ExpectedConditions.elementToBeClickable(regNo));
 		
-		regNo.sendKeys(reg);
+		regNo.sendKeys(truckmap.get("Registration No"));
 		
-		log.info("Entered Registration Number : "+reg);
-		
+		log.info("Entered Registration Number : "+truckmap.get("Registration No"));
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to Enter Registration Number in New Truck Creation Prompt");
+		}
 	}
-	public void EnterInsuranceName(String name)
+	public void EnterInsuranceName()
 	{
+		try
+		{
 		wait.until(ExpectedConditions.elementToBeClickable(liabilityInsuranceName));
 		
-		liabilityInsuranceName.sendKeys(name);
+		liabilityInsuranceName.sendKeys(truckmap.get("Insurance Name"));
 		
-		log.info("Entered Insurance Name : "+name);
-		
+		log.info("Entered Insurance Name : "+truckmap.get("Insurance Name"));
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to Enter Insurance Name in New Truck Creation Prompt");
+		}
 	}
-	public void EnterInsuranceNumber(String number)
+	public void EnterInsuranceNumber()
 	{
+		try
+		{
 		wait.until(ExpectedConditions.elementToBeClickable(liabilityInsuranceNo));
 		
-		liabilityInsuranceNo.sendKeys(number);
+		liabilityInsuranceNo.sendKeys(truckmap.get("Insurance Number"));
 		
-		log.info("Entered Insurance Number : "+number);
-		
+		log.info("Entered Insurance Number : "+truckmap.get("Insurance Number"));
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to Enter Insurance Number in New Truck Creation Prompt");
+		}
 	}
-	public void EnterCargoInsuranceName(String name)
+	public void EnterCargoInsuranceName()
 	{
+		try
+		{
 		wait.until(ExpectedConditions.elementToBeClickable(cargoInsuranceName));
 		
-		cargoInsuranceName.sendKeys(name);
+		cargoInsuranceName.sendKeys(truckmap.get("Cargo Insurance Name"));
 		
-		log.info("Entered Cargo Name : "+name);
-		
+		log.info("Entered Cargo Name : "+truckmap.get("Cargo Insurance Name"));
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to Enter Cargo Insurance Name in New Truck Creation Prompt");
+		}
 	}
-	public void EnterCargoInsuranceNumber(String number)
+	public void EnterCargoInsuranceNumber()
 	{
+		try
+		{
 		wait.until(ExpectedConditions.elementToBeClickable(cargoInsuranceNo));
 		
-		cargoInsuranceNo.sendKeys(number);
+		cargoInsuranceNo.sendKeys(truckmap.get("Cargo Insurance Number"));
 		
-		log.info("Entered Cargo Number : "+number);
-		
+		log.info("Entered Cargo Number : "+truckmap.get("Cargo Insurance Number"));
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to Enter Cargo Insurance Number in New Truck Creation Prompt");
+		}
 	}
 	
 	public void clickOnNextButton()
 	{
+		try
+		{
 		wait.until(ExpectedConditions.elementToBeClickable(nextButton));
 		
 		nextButton.click();
 		
 		log.info("Clicked On Next");
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to click on Next button of New Truck Creation Prompt");
+		}
 	}
 	
 	public void clickOnBackButton()
 	{
+		try
+		{
 		wait.until(ExpectedConditions.elementToBeClickable(backButton));
 		
 		backButton.click();
 		
 		log.info("Clicked On Back");
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to click on Back button of New Truck Creation Prompt");
+		}
 	}
 	
 	public void closePopUp() throws InterruptedException
 	{
+		try
+		{
 		wait.until(ExpectedConditions.elementToBeClickable(closepopup));
 		
 		closepopup.click();
 		
 		log.info("Clicked on Close button of Successfully Added Truck Pop Up");
+		}
+	
+		catch(Exception e)
+		{
+			Assert.fail("Unable to click on close Pop up button of New Truck Creation Prompt");
+		}
 	}
 	
 	public String clickOnaddTruck() throws InterruptedException
 	{
-		
-		
+		try
+		{
 		wait.until(ExpectedConditions.elementToBeClickable(addTruck));
 		
 		addTruck.click();
 		
 		log.info("Clicked On Add Truck");
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to Click on Add Truck Button on Truck Dashboard");
+		}
 		
 		Thread.sleep(2000);
 		
@@ -279,24 +354,29 @@ public class WebPageTruck {
 		return "unique";
 	}
 	
-	public void searchTruckonDashboard(String vin) throws InterruptedException
+	public void searchTruckonDashboard() throws InterruptedException
 	{
-		
+		try
+		{
 		Thread.sleep(5000);
-	//	tableheaderdriver.click();
 		searchTruck.clear();
-		searchTruck.sendKeys(vin);
-		log.info("Searching for Truck with VIN : "+vin);
-		
+		searchTruck.sendKeys(truckmap.get("VIN Number"));
+		log.info("Searching for Truck with VIN : "+truckmap.get("VIN Number"));
+		Thread.sleep(2000);
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to Search Truck in Truck Dashboard");
+		}
 	}
 	
-	public boolean verifyTruckonDashboard(HashMap<String,String> map) throws InterruptedException {
+	public boolean verifyTruckonDashboard() throws InterruptedException {
 		
 		Thread.sleep(5000);
 		String vno = tabledata.get(1).getText();
 		String chsno=tabledata.get(3).getText();
 		//3TMJU62N86M017395  
-		if(vno.equalsIgnoreCase(map.get("identifier")) && chsno.equalsIgnoreCase(map.get("vinnum")))
+		if(vno.equalsIgnoreCase(truckmap.get("Truck Identifier")) && chsno.equalsIgnoreCase(truckmap.get("VIN Number")))
 		{
 			log.info("New/Activated Truck validated successfully on Dashboard");
 			return true;
@@ -308,14 +388,14 @@ public class WebPageTruck {
 		}
 			
 	}
-	public boolean verifyDeletedTruckonDashboard(HashMap<String,String> map) throws InterruptedException {
+	public boolean verifyDeletedTruckonDashboard() throws InterruptedException {
 		
 		Thread.sleep(5000);
 		try
 		{
 			String vno = tabledata.get(1).getText();
 			String chsno=tabledata.get(3).getText();
-			if(vno.equalsIgnoreCase(map.get("identifier")) && chsno.equalsIgnoreCase(map.get("vinnum")))
+			if(vno.equalsIgnoreCase(truckmap.get("Truck Identifier")) && chsno.equalsIgnoreCase(truckmap.get("VIN Number")))
 			{
 				log.info("New Truck validated successfully on Dashboard");
 				return true;
@@ -329,7 +409,7 @@ public class WebPageTruck {
 		return false;
 	}
 	
-	public boolean verifyTruckDetails(HashMap<String,String> map) throws InterruptedException {
+	public boolean verifyTruckDetails() throws InterruptedException {
 				
 	//	Thread.sleep(5000);
 		
@@ -345,10 +425,10 @@ public class WebPageTruck {
 		String Cname=(elements.get(9)).getText();
 		String Cnumber=(elements.get(10)).getText();
 		
-		if(vno.equalsIgnoreCase(map.get("identifier")) && chsno.equalsIgnoreCase(map.get("vinnum")) &&
-			regno.equalsIgnoreCase(map.get("regno")) && Iname.equalsIgnoreCase(map.get("Iname")) &&
-			Inumber.equalsIgnoreCase(map.get("Inumber")) && Cname.equalsIgnoreCase(map.get("Cname")) &&
-			Cnumber.equalsIgnoreCase(map.get("Cnumber")))
+		if(vno.equalsIgnoreCase(truckmap.get("Truck Identifier")) && chsno.equalsIgnoreCase(truckmap.get("VIN Number")) &&
+			regno.equalsIgnoreCase(truckmap.get("Registration No")) && Iname.equalsIgnoreCase(truckmap.get("Insurance Name")) &&
+			Inumber.equalsIgnoreCase(truckmap.get("Insurance Number")) && Cname.equalsIgnoreCase(truckmap.get("Cargo Insurance Name")) &&
+			Cnumber.equalsIgnoreCase(truckmap.get("Cargo Insurance Number")))
 		{
 			log.info("New Truck Validated Successfully on Vehicle Details");
 			return true;
@@ -370,10 +450,19 @@ public boolean DeleteTruck() throws InterruptedException  {
 		
 		(new Actions(driver)).moveToElement(deleteTruckButton);
 		
+		try
+		{
 		deleteTruckButton.click();
 			
 		log.info("Clicking on Delete Truck button on Dashboard");
-				
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to click on Delete Truck Button On Truck Dashboard");
+		}
+		
+		try
+		{
 		deleteTruckInput.sendKeys("DELETE");
 		
 		wait.until(ExpectedConditions.elementToBeClickable(deleteTruckConfirm));
@@ -381,19 +470,31 @@ public boolean DeleteTruck() throws InterruptedException  {
 		deleteTruckConfirm.click();
 		
 		log.info("Inserted Delete Command and clicked on confirm Delete");
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to click on Delete Truck Button On Delete Truck Prompt");
+		}
 		return false;
 			
 	}
-	public void ActivateTruck(String truckno) throws InterruptedException
+	public void ActivateTruck() throws InterruptedException
 	{
 		starttime=System.currentTimeMillis();
 		
 		action.click();
-				
-		searchDeletedTruck.clear();
 		
-		searchDeletedTruck.sendKeys(truckno);
-		
+		try
+		{
+			searchDeletedTruck.clear();
+			
+			searchDeletedTruck.sendKeys(truckmap.get("VIN Number"));
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to search deleted Truck on Deleted Truck Page");
+		}
+			
 		totaltime=System.currentTimeMillis();
 		
 		totaltime=System.currentTimeMillis()-starttime;  //calcualting navingation time
@@ -402,37 +503,35 @@ public boolean DeleteTruck() throws InterruptedException  {
 		
 		PageLoadTime.GetMap().put("Deleted Trucks", String.valueOf(totaltime));
 		
-		log.info("Found deleted truck "+truckno);
+		log.info("Found deleted truck "+truckmap.get("VIN Number"));
 		
-		activateDeletedTruck.click();
-		
-		log.info("Clicked on Activate Truck Button");
-		
-		activateInput.sendKeys("ACTIVATE");
-		
-		log.info("Inserted Activate text in text box");
-		
-		Thread.sleep(2000);
-		
-		wait.until(ExpectedConditions.elementToBeClickable(activateButton));
-		
-		activateButton.click();
-		
-		log.info("Clicked on Activate Truck to reactivate Truck");
+		try
+		{
+			activateDeletedTruck.click();
+			
+			log.info("Clicked on Activate Truck Button");
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to click on Activate button on Delete Truck Page");
+		}
+		try
+		{
+			activateInput.sendKeys("ACTIVATE");
+			
+			log.info("Inserted Activate text in text box");
+			
+			Thread.sleep(2000);
+			
+			wait.until(ExpectedConditions.elementToBeClickable(activateButton));
+			
+			activateButton.click();
+			
+			log.info("Clicked on Activate Truck to reactivate Truck");
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to click on Activate Button on Activate Deleted Truck Prompt");
+		}
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-		
-
 }

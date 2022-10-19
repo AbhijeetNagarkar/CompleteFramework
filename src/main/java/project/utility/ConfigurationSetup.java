@@ -1,14 +1,9 @@
 package project.utility;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.HashMap;
-import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
@@ -26,15 +21,16 @@ import org.testng.ITestContext;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import static project.constants.GlobalDeclaration.*;
+import project.mediator.Driver;
+import project.mediator.ObjectRepository;
+import project.mediator.PageLoadTime;
+import project.mediator.TestData;
+
+import static project.constants.FilePathDeclaration.*;
 
 public class ConfigurationSetup
 {
 		private WebDriver driver;
-		
-		private String browser;
-		
-		private String url;
 		
 		public static Logger log;
 		
@@ -49,17 +45,15 @@ public class ConfigurationSetup
 		{
 			configureLogger();
 			
-			configureSetup();
+			loadTestData();
+						
+			browserSetup(TestData.GetConfigurationData().get("Browser"));
 			
-			browserSetup(browser);
-			
-			navigateToUrl(url);
+			navigateToUrl(TestData.GetConfigurationData().get("Environment"));
 			
 			context.setAttribute("WebDriver", driver);
-			
 		}
-		
-		
+				
 		private void configureLogger() 
 		{
 			PropertyConfigurator.configure(log4jPath);
@@ -67,40 +61,21 @@ public class ConfigurationSetup
 			log = Logger.getLogger(ConfigurationSetup.class);
 					
 			log.info("Configured Logger File");
-			log.debug("Before Suite Invoked");
 		}
 		
-		private void configureSetup() throws IOException 
+		private void loadTestData() throws IOException 
 		{
-			Properties prop = new Properties();
-			FileInputStream stream = null;
-			try 
-			{
-				log.info("Opening Run Config File to setup properties");
-				stream = new FileInputStream(new File(RunConfigPath));
-				prop.load(stream);
-				log.info("Run Config File is loaded");
-			}
-			catch (FileNotFoundException e) 
-			{
-				System.out.println("File not available to create test configuration");
-				log.error("Run Config File Not available");
-			}
-			catch (Exception e) 
-			{
-				e.printStackTrace();
-			}
-			finally
-			{
-				stream.close();
-			}
+			ExcelUtility xls = new ExcelUtility();
 			
-			browser = prop.getProperty("BrowserName");
-			log.info("Running on "+browser);
-			url = prop.getProperty("URL");
-			log.info("Targetting on "+url);
+			TestData.SetVehicleData(xls.fetchdata("Truck"));
+			TestData.SetTrailerData(xls.fetchdata("Trailer"));
+			TestData.SetDeviceData(xls.fetchdata("Device"));
+			TestData.SetLoginData(xls.fetchdata("Login"));
+			TestData.SetConfigurationData(xls.fetchdata("Configuration"));
 			
+			log.info("Test Data Loaded for Test Script");
 		}
+
 		public void browserSetup(String browser)
 		{
 			switch(browser)
@@ -129,7 +104,7 @@ public class ConfigurationSetup
 				default 	   : break; 
 			}
 			log.info(browser+" setup completed successfully");
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			driver.manage().window().maximize();
 			
 		}
@@ -141,13 +116,11 @@ public class ConfigurationSetup
 			{
 				log.info(" Navigating to "+url);
 				driver.get(url);
-			
-				
-				@SuppressWarnings("deprecation")
+	
 				FluentWait<WebDriver> fwait = new FluentWait<WebDriver>(driver)
-						.withTimeout(Duration.ofSeconds(30))
-						.pollingEvery(Duration.ofSeconds(1))
-						.ignoring(Exception.class);
+				.withTimeout(Duration.ofSeconds(120))
+				.pollingEvery(Duration.ofSeconds(1))
+				.ignoring(Exception.class);
 				
 				fwait.until(ExpectedConditions.visibilityOfElementLocated(By.id("userName")));
 				
@@ -163,27 +136,14 @@ public class ConfigurationSetup
 				
 				ObjectRepository.SetInstance(new WebPageObjectCreation(driver));
 				
-				Driver.SetDriver(getDriverInstance());
+				Driver.SetDriver(driver);
 			}
 			catch(Exception e)
 			{
 				log.info("Site is down, unable to load page and caught and exception : "+e.getMessage());
 				Assert.fail("Site is down, unable to load page and caught and exception : "+e.getMessage());
 			}
-			
-			
 		}
-		
-		public WebDriver getDriverInstance()
-		{
-			return driver;
-		}
-		
-		public void refreshPage()
-		{
-			driver.navigate().refresh();
-		}
-		
 	
 		@AfterSuite
 		public void closeBrowser() throws InterruptedException 
@@ -191,7 +151,6 @@ public class ConfigurationSetup
 			Thread.sleep(5000);
 			driver.quit();
 			log.info("Closing browser");
-			
 		}
 }
 

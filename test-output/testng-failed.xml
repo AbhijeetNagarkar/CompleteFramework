@@ -8,7 +8,8 @@
     <classes>
       <class name="project.testscenarios.TrackingDevicesScript">
         <methods>
-          <include name="navigatingDevicesPage"/>
+          <include name="DeleteDevice"/>
+          <include name="SearchAndFilterDevice"/>
         </methods>
       </class> <!-- project.testscenarios.TrackingDevicesScript -->
     </classes>
