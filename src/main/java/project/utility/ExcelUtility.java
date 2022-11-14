@@ -41,7 +41,16 @@ public class ExcelUtility {
 		for (int i = 0; i <= sheetinput.getLastRowNum(); i++) 
 		{
 			String key = (sheetinput.getRow(i).getCell(0)).getStringCellValue();
-			String val = (sheetinput.getRow(i).getCell(1)).getStringCellValue();
+			String val;
+			try
+			{
+			 val = (sheetinput.getRow(i).getCell(1)).getStringCellValue();
+			}
+			catch (Exception e) {
+				// TODO: handle exception
+				val=String.valueOf((sheetinput.getRow(i).getCell(1)).getRawValue());
+			}
+			
 			map.put(key,val);
 		}
 	

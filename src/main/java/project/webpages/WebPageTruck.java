@@ -25,10 +25,6 @@ public class WebPageTruck {
 	
 		public static Logger log = Logger.getLogger(WebPageTruck.class);
 		
-		long starttime=0;
-		
-		long totaltime=0;
-		
 		HashMap<String,String> truckmap;
 	
 	public WebPageTruck(WebDriver driverinstance)
@@ -105,10 +101,10 @@ public class WebPageTruck {
 	@FindBy(xpath = "//span[text()=\"Action\"]")
 	WebElement action;
 	
-	@FindBy(xpath = "//div[@class=\"px-8 py-2\"]//input")
+	@FindBy(xpath = "//div[@class=\"px-8 py-2 h-90%\"]//input")
 	WebElement activateInput;
 	
-	@FindBy(xpath = "//div[@class=\"px-8 py-2\"]//button")
+	@FindBy(xpath = "//div[@class=\"px-8 py-2 h-90%\"]//button")
 	WebElement activateButton;
 	
 	@FindBy(xpath = "//span[text()=\"Driver\"]")
@@ -122,21 +118,12 @@ public class WebPageTruck {
 	
 	public void clickOnAddTruckDashboard()
 	{
-		starttime=System.currentTimeMillis();
+		
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.className("ant-table-content")));
 		
 		wait.until(ExpectedConditions.elementToBeClickable(addTruckButtonDashboard));
 		
-		totaltime=System.currentTimeMillis();
-		
-		totaltime=System.currentTimeMillis()-starttime;  //calcualting navingation time
-		
-		totaltime=totaltime/1000;   //for seconds conversion 
-		
-		PageLoadTime.GetMap().put("Trucks", String.valueOf(totaltime));
-		
-		log.info("Time taken to Load Vehicle Trucks Page : "+totaltime+" seconds");
 		try
 		{
 		addTruckButtonDashboard.click();
@@ -445,6 +432,7 @@ public class WebPageTruck {
 	}
 public boolean DeleteTruck() throws InterruptedException  {
 		
+		Thread.sleep(5000);
 		
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", deleteTruckButton);
 		
@@ -473,6 +461,7 @@ public boolean DeleteTruck() throws InterruptedException  {
 		}
 		catch(Exception e)
 		{
+			driver.navigate().refresh();
 			Assert.fail("Unable to click on Delete Truck Button On Delete Truck Prompt");
 		}
 		return false;
@@ -480,7 +469,6 @@ public boolean DeleteTruck() throws InterruptedException  {
 	}
 	public void ActivateTruck() throws InterruptedException
 	{
-		starttime=System.currentTimeMillis();
 		
 		action.click();
 		
@@ -495,13 +483,7 @@ public boolean DeleteTruck() throws InterruptedException  {
 			Assert.fail("Unable to search deleted Truck on Deleted Truck Page");
 		}
 			
-		totaltime=System.currentTimeMillis();
 		
-		totaltime=System.currentTimeMillis()-starttime;  //calcualting navingation time
-		
-		totaltime=totaltime/1000;   //for seconds conversion 
-		
-		PageLoadTime.GetMap().put("Deleted Trucks", String.valueOf(totaltime));
 		
 		log.info("Found deleted truck "+truckmap.get("VIN Number"));
 		
@@ -517,6 +499,8 @@ public boolean DeleteTruck() throws InterruptedException  {
 		}
 		try
 		{
+			Thread.sleep(2000);
+			
 			activateInput.sendKeys("ACTIVATE");
 			
 			log.info("Inserted Activate text in text box");
