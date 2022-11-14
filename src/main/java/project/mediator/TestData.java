@@ -15,6 +15,7 @@ public class TestData
 	 
 	 private static ThreadLocal<HashMap<String,String>> configurationdata = new ThreadLocal<HashMap<String,String>>();
 	 
+	 private static ThreadLocal<HashMap<String,String>> companyprofiledata = new ThreadLocal<HashMap<String,String>>();
 	 
 	    public static HashMap<String,String> GetVehicleData() {
 	        return vehicledata.get();
@@ -58,5 +59,14 @@ public class TestData
 		public static HashMap<String, String> GetConfigurationData() {
 			// TODO Auto-generated method stub
 			return configurationdata.get();
+		}
+
+		public static void SetCompanyProfileData(HashMap<String, String> data) {
+			// TODO Auto-generated method stub
+			companyprofiledata.set(data);
+		}
+		public static HashMap<String, String> GetCompanyProfileData() {
+			// TODO Auto-generated method stub
+			return companyprofiledata.get();
 		}
 }

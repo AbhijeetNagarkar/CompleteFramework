@@ -43,11 +43,12 @@
 	    <version>1.2.16</version>
 	</dependency>
 	
-	<dependency>
-		<groupId>com.relevantcodes</groupId>
-		<artifactId>extentreports</artifactId>
-		<version>2.41.2</version>
-	</dependency>
+<dependency>
+    <groupId>com.aventstack</groupId>
+    <artifactId>extentreports</artifactId>
+    <version>3.0.0</version>
+</dependency>
+
 	
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
 		<dependency>
@@ -61,7 +62,7 @@
 			<artifactId>poi-ooxml</artifactId>
 			<version>5.0.0</version>
 		</dependency>
-	<dependency>
+	<dependency> 
 	     <groupId>com.sun.mail</groupId>
 	     <artifactId>javax.mail</artifactId>
 	     <version>1.6.2</version>

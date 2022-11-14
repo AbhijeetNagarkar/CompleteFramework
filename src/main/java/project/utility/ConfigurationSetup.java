@@ -34,10 +34,6 @@ public class ConfigurationSetup
 		
 		public static Logger log;
 		
-		long starttime=0;
-		
-		long totaltime=0;
-		
 		public WebPageObjectCreation repo;
 		
 		@BeforeSuite
@@ -72,6 +68,7 @@ public class ConfigurationSetup
 			TestData.SetDeviceData(xls.fetchdata("Device"));
 			TestData.SetLoginData(xls.fetchdata("Login"));
 			TestData.SetConfigurationData(xls.fetchdata("Configuration"));
+			TestData.SetCompanyProfileData(xls.fetchdata("Company_Profile"));
 			
 			log.info("Test Data Loaded for Test Script");
 		}
@@ -88,8 +85,8 @@ public class ConfigurationSetup
 								 		 
 				case "Chrome"  : WebDriverManager.chromedriver().setup();
 								 ChromeOptions chrome_options = new ChromeOptions();
-								 chrome_options.addArguments("--no-sandbox");
-								 chrome_options.addArguments("--headless");
+							//	 chrome_options.addArguments("--no-sandbox");
+							//	 chrome_options.addArguments("--headless");
 								 driver = new ChromeDriver(chrome_options);
 								
 								 break;
@@ -111,7 +108,6 @@ public class ConfigurationSetup
 	
 		public void navigateToUrl(String url)
 		{
-			starttime=System.currentTimeMillis();
 			try
 			{
 				log.info(" Navigating to "+url);
@@ -123,16 +119,6 @@ public class ConfigurationSetup
 				.ignoring(Exception.class);
 				
 				fwait.until(ExpectedConditions.visibilityOfElementLocated(By.id("userName")));
-				
-				totaltime=System.currentTimeMillis()-starttime;
-				
-				totaltime=totaltime/1000;
-				
-				PageLoadTime.SetMap(new HashMap<String,String>());
-				
-				PageLoadTime.GetMap().put("Login", String.valueOf(totaltime));
-				
-				log.info("Time taken to Load Login Page : "+totaltime+" seconds");
 				
 				ObjectRepository.SetInstance(new WebPageObjectCreation(driver));
 				

@@ -23,10 +23,6 @@ public class WebPageTrailer {
 
 	public static Logger log = Logger.getLogger(WebPageTrailer.class);
 	
-	long starttime=0;
-	
-	long totaltime=0;
-	
 	HashMap<String,String> trailermap,truckmap;
 	
 	public WebPageTrailer(WebDriver driverinstance)
@@ -111,20 +107,10 @@ public class WebPageTrailer {
 	
 	public void clickOnAddTrailerDashboard()
 	{
-		starttime=System.currentTimeMillis();
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.className("rc-table-tbody")));
 		
 		wait.until(ExpectedConditions.elementToBeClickable(addTrailerButtonDashboard));
 		
-		totaltime=System.currentTimeMillis();
-		
-		totaltime=System.currentTimeMillis()-starttime; 
-		
-		totaltime=totaltime/1000;   //for seconds conversion 
-		
-		PageLoadTime.GetMap().put("Trailer", String.valueOf(totaltime));
-		
-		log.info("Time taken to Load Vehicle Trailer Page : "+totaltime+" seconds");
 		try
 		{
 			addTrailerButtonDashboard.click();
@@ -476,7 +462,6 @@ public class WebPageTrailer {
 	{
 		spanaction.click();
 		
-		starttime=System.currentTimeMillis();
 		try
 		{
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//tr//td//div[text()='"+trailermap.get("Trailer Identifier")+"']")));
@@ -487,14 +472,7 @@ public class WebPageTrailer {
 		{
 			Assert.fail("Unable to find deleted trailer on Deleted Trailer Page");
 		}
-		totaltime=System.currentTimeMillis();
-		
-		totaltime=System.currentTimeMillis()-starttime;  //calcualting navingation time
-		
-		totaltime=totaltime/1000;   //for seconds conversion 
-		
-		PageLoadTime.GetMap().put("Deleted Trailers", String.valueOf(totaltime));
-		
+			
 		log.info("Found deleted trailer "+trailermap.get("Trailer Identifier"));
 		
 		Thread.sleep(3000);
