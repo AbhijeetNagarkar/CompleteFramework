@@ -31,10 +31,6 @@ public class WebPageLogin {
 	
 	int flag =0; // 1-valid input 2-blank 3-invalid
 	
-	long starttime=0;
-	
-	long totaltime=0;
-	
 	HashMap<String,String> logindata;
 		
 	public WebPageLogin(WebDriver driverinstance)
@@ -73,8 +69,9 @@ public class WebPageLogin {
 			Assert.fail("Unable to clear User Name and Password field");
 		}
 	}
-	public void enterUserName()
+	public void enterUserName() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		try
 		{
 			flag=1;
@@ -140,7 +137,6 @@ public class WebPageLogin {
 		{
 		wait.until(ExpectedConditions.elementToBeClickable(submit));
 		submit.click();
-		starttime=System.currentTimeMillis();
 		log.info("Clicked on Sign In");
 		}
 		catch(Exception e)
@@ -176,14 +172,6 @@ public class WebPageLogin {
 			{
 				log.info(e.getMessage());
 			}
-				
-				totaltime=System.currentTimeMillis()-starttime;  //calcualting navingation time
-				
-				totaltime=totaltime/1000;   //for seconds conversion 
-				
-				PageLoadTime.GetMap().put("Dashboard", String.valueOf(totaltime));
-				
-				log.info("Time taken to Load Dashboard Page : "+totaltime+" seconds");
 				
 				log.info("valid username/password validated successfully");
 			
