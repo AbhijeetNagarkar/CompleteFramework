@@ -22,13 +22,13 @@ public class LoginScript extends ConfigurationSetup {
 	
 	public static Logger log = Logger.getLogger(LoginScript.class);
 
-	@Test(priority = 0)
+	@Test(priority = 0,groups = {"Configuration"})
 	public void ConfigurationSetup() throws InterruptedException, IOException
 	{
 		repo = ObjectRepository.GetInstance();
 	}
-	
-	@Test(priority = 1)
+	/*
+	@Test(priority = 1, groups = {"Login"})
 	public void blankUserNameandPassword() throws InterruptedException
 	{
 		repo.loginPageObject().enterUserName("");
@@ -43,7 +43,7 @@ public class LoginScript extends ConfigurationSetup {
 		
 	}
 	
-	@Test(priority = 2,alwaysRun = true)
+	@Test(priority = 2,groups = {"Login"})
 	public void inValidUserNameandPassword() throws InterruptedException
 	{
 		repo.loginPageObject().enterUserName("Abhijeet@gmail.com");
@@ -57,8 +57,8 @@ public class LoginScript extends ConfigurationSetup {
 		Driver.Refresh();
 		
 	}
-	
-	@Test(priority = 3,alwaysRun = true)
+	*/
+	@Test(priority = 3,groups = {"Login"})
 	public void validUserNameandPassword() throws InterruptedException
 	{
 	

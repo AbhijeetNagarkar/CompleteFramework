@@ -17,7 +17,7 @@ public class TrackingDevicesScript {
 	
 	public static Logger log = Logger.getLogger(TruckScript.class);
 	
-	@Test(priority = 25)
+	@Test(priority = 38,groups = {"Tracking Devices"})
 	public void NavigatingDevicesPage() throws InterruptedException 
 	{
 		repo=ObjectRepository.GetInstance();
@@ -29,7 +29,7 @@ public class TrackingDevicesScript {
 		Thread.sleep(7000);
 		
 	}
-	@Test(priority = 26, dependsOnMethods = "NavigatingDevicesPage")
+	@Test(priority = 39, dependsOnMethods = "NavigatingDevicesPage",groups = {"Tracking Devices"})
 	public void AddNewDevice() throws InterruptedException 
 	{
 		repo.trackingDevicesPageObject().clickOnAddDevices();
@@ -44,7 +44,7 @@ public class TrackingDevicesScript {
 		
 		
 	}
-	@Test(priority = 27)
+	@Test(priority = 40, dependsOnMethods = "NavigatingDevicesPage",groups = {"Tracking Devices"})
 	public void SearchAndFilterDevice() throws InterruptedException 
 	{
 		
@@ -59,13 +59,13 @@ public class TrackingDevicesScript {
 		
 	}
 	
-	@Test(priority = 28)
+	@Test(priority = 41,groups = {"Tracking Devices"}, dependsOnMethods = "NavigatingDevicesPage")
 	public void EditDevice() throws InterruptedException 
 	{
 		Assert.assertTrue(repo.trackingDevicesPageObject().EditDevice(),"Incorrect data showing after Edit");
 		
 	}
-	@Test(priority = 29)
+	@Test(priority = 42,groups = {"Tracking Devices"}, dependsOnMethods = "NavigatingDevicesPage")
 	public void DeleteDevice() throws InterruptedException 
 	{
 		Assert.assertTrue(repo.trackingDevicesPageObject().deleteDevice(), "Delete device functionality not working ");

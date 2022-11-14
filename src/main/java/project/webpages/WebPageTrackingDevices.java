@@ -23,11 +23,7 @@ public class WebPageTrackingDevices {
 	WebDriverWait wait;
 
 	public static Logger log = Logger.getLogger(WebPageTrackingDevices.class);
-	
-	long starttime=0;
-	
-	long totaltime=0;
-	
+		
 	HashMap<String, String> devicemap,truckmap;
 	
 	public WebPageTrackingDevices(WebDriver driverinstance)
@@ -98,7 +94,9 @@ public class WebPageTrackingDevices {
 		}
 		catch(Exception e)
 		{
+			driver.navigate().refresh();
 			Assert.fail("Unable to click on Add New Device Button of Asset Tracking Page");
+			
 		}
 	}
 	
@@ -112,6 +110,7 @@ public class WebPageTrackingDevices {
 		}
 		catch(Exception e)
 		{
+			driver.navigate().refresh();
 			Assert.fail("Unable to Enter Device Name in New Device Creation Prompt");
 		}
 		
@@ -131,6 +130,7 @@ public class WebPageTrackingDevices {
 		}
 		catch(Exception e)
 		{
+			driver.navigate().refresh();
 			Assert.fail("Unable to Enter Device Id in New Device Creation Prompt");
 		}
 	}
@@ -156,6 +156,7 @@ public class WebPageTrackingDevices {
 		}
 		catch(Exception e)
 		{
+			driver.navigate().refresh();
 			Assert.fail("Unable to Select Device Type while Creating new Device");
 		}
 	}
@@ -171,6 +172,7 @@ public class WebPageTrackingDevices {
 		}
 		catch(Exception e)
 		{
+			driver.navigate().refresh();
 			Assert.fail("Unable to click on Confirm Button of New Device Creation Prompt");
 		}
 		try
@@ -193,6 +195,7 @@ public class WebPageTrackingDevices {
 		}
 		catch(Exception e)
 		{
+			driver.navigate().refresh();
 			Assert.fail("Unable to click on Cancel New Device Creation Prompt");
 		}
 	}
@@ -222,23 +225,27 @@ public class WebPageTrackingDevices {
 		catch(Exception e)
 		{
 			log.info("Created device "+devicemap.get("deviceId")+" not found on dashboard");
+			driver.navigate().refresh();
 			return false;
 		}
 	}
 	
 	public Boolean deleteDevice()
 	{
+		
 		try
 		{
 			Thread.sleep(5000);
 			driver.findElements(By.xpath("//tr//td[@class=\"rc-table-cell\"]//div[text()='"+devicemap.get("deviceId")+"']//following::button")).get(0).click();
 			log.info("Clicked on Delete device");
+			Thread.sleep(2000);
 			deleteYesButton.click();
 			log.info("Clicked on Confirming delete device");
 			return true;
 		}
 		catch(Exception e)
 		{
+			driver.navigate().refresh();
 			log.info("Created device not found on dashboard to delete it");
 			return false;
 		}
@@ -258,6 +265,7 @@ public class WebPageTrackingDevices {
 		}
 		catch(Exception e)
 		{
+			driver.navigate().refresh();
 			Assert.fail("Unable to Search Device on Asset Tracking Page");
 		}
 	}
@@ -280,6 +288,7 @@ public class WebPageTrackingDevices {
 		}
 		catch(Exception e)
 		{
+			driver.navigate().refresh();
 			Assert.fail("Unable to click on Filter and select option of Asset Tracking Page");
 		}
 	}
@@ -287,7 +296,8 @@ public class WebPageTrackingDevices {
 	public Boolean verifyFilteration()
 	{
 		List<WebElement> ele = driver.findElements(By.xpath("//tr[@class=\"rc-table-row rc-table-row-level-0 text-base text-gray-400 bg-white border-b border-gray-100 h-12 w-full hover:bg-blue-tablerow focus:hover:bg-blue-tablerow rounded-md`\"]"));
-		
+		String count=String.valueOf((ele.size()-1));
+		devicemap.put("Device Count",count);
 		for(WebElement row : ele)
 		{
 			String str = row.findElements(By.tagName("div")).get(1).getText();
@@ -304,6 +314,29 @@ public class WebPageTrackingDevices {
 		}
 		log.info("Filteration verified");
 		return true;
+	}
+	
+	public void getDashCamCount()
+	{
+		try
+		{
+		Thread.sleep(2000);
+			
+		filterDropDown.click();
+		
+		log.info("Clicked on filter drop down");
+		
+		Thread.sleep(2000);
+		
+		filterDashcamoption.click();
+		
+		List<WebElement> ele = driver.findElements(By.xpath("//tr[@class=\"rc-table-row rc-table-row-level-0 text-base text-gray-400 bg-white border-b border-gray-100 h-12 w-full hover:bg-blue-tablerow focus:hover:bg-blue-tablerow rounded-md`\"]"));
+		String count=String.valueOf((ele.size()));
+		devicemap.put("Device Count",count);
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 	
 	public boolean verifyDeviceonDeletedDevices()
@@ -335,6 +368,7 @@ public class WebPageTrackingDevices {
 		}
 		catch(Exception e)
 		{
+			driver.navigate().refresh();
 			Assert.fail("Unable to click on Edit button of Tracking Device Dashboard");
 		}
 		try
@@ -352,6 +386,7 @@ public class WebPageTrackingDevices {
 		}
 		catch(Exception e)
 		{
+			driver.navigate().refresh();
 			Assert.fail("Unable to Select Truck from Asset drop down tab on Edit Tracking Device prompt");
 		}
 		
@@ -367,6 +402,7 @@ public class WebPageTrackingDevices {
 		}
 		catch(Exception e)
 		{
+			driver.navigate().refresh();
 			Assert.fail("Unable to click on Update button of Edit Tracking Device Prompt");
 		}
 		String str = driver.findElements(By.xpath("//td[@class=\"rc-table-cell\"]//div")).get(2).getText();
