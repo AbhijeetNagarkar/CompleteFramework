@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Test_Suite" class="navigator-link">
-              <span class="suite-name border-passed">Test Suite</span>
+              <span class="suite-name border-failed">Test Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,7 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">10 methods,   10 passed</span>
+                    <span class="method-stats">11 methods, 1 failed,   10 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Test_Suite" class="hide-methods failed suite-Test_Suite"> (hide)</a> <!-- hide-methods failed suite-Test_Suite -->
+                      <a href="#" panel-name="suite-Test_Suite" class="show-methods failed suite-Test_Suite"> (show)</a> <!-- show-methods failed suite-Test_Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Test_Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.DeletedDriverScript" class="method navigator-link" hash-for-method="DeletedDriverLogBookFunctionality">DeletedDriverLogBookFunctionality</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Test_Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,17 +118,12 @@
                     <div class="method-list-content passed suite-Test_Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.AssetsScript" class="method navigator-link" hash-for-method="AssetsAsPerSearch">AssetsAsPerSearch</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.DashCameraScript" class="method navigator-link" hash-for-method="DashCameraCount">DashCameraCount</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.LoginScript" class="method navigator-link" hash-for-method="ConfigurationSetup">ConfigurationSetup</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.DeletedDriverScript" class="method navigator-link" hash-for-method="DeletedDriverLogBookFunctionality">DeletedDriverLogBookFunctionality</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.DashCameraScript" class="method navigator-link" hash-for-method="DashCameraData">DashCameraData</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -124,12 +133,12 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.AssetsScript" class="method navigator-link" hash-for-method="ListViewOfAssets">ListViewOfAssets</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.ELDDevicesScript" class="method navigator-link" hash-for-method="ELDCountandRecord">ELDCountandRecord</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.AssetsScript" class="method navigator-link" hash-for-method="NavigatingAssetPage">NavigatingAssetPage</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.DashCameraScript" class="method navigator-link" hash-for-method="NavigatingDashCamerasPage">NavigatingDashCamerasPage</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -139,7 +148,12 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.AssetsScript" class="method navigator-link" hash-for-method="SearchAssetsOnAssets">SearchAssetsOnAssets</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.ELDDevicesScript" class="method navigator-link" hash-for-method="NavigatingELDDevicesPage">NavigatingELDDevicesPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.DashCameraScript" class="method navigator-link" hash-for-method="SearchDashCamera">SearchDashCamera</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -164,9 +178,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Test_Suite" class="panel Test_Suite">
-          <div class="suite-Test_Suite-class-passed">
+          <div class="suite-Test_Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">project.testscenarios.DeletedDriverScript</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -175,8 +189,94 @@
                   <a name="DeletedDriverLogBookFunctionality">
                   </a> <!-- DeletedDriverLogBookFunctionality -->
                   <span class="method-name">DeletedDriverLogBookFunctionality</span>
+                  <div class="stack-trace">java.lang.AssertionError: unable to view logbook on Deleted Drivers Page expected [true] but found [false]
+	at project.testscenarios.DeletedDriverScript.DeletedDriverLogBookFunctionality(DeletedDriverScript.java:45)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test_Suite-class-failed -->
+          <div class="suite-Test_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">project.testscenarios.DashCameraScript</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="DashCameraCount">
+                  </a> <!-- DashCameraCount -->
+                  <span class="method-name">DashCameraCount</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="DashCameraData">
+                  </a> <!-- DashCameraData -->
+                  <span class="method-name">DashCameraData</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="NavigatingDashCamerasPage">
+                  </a> <!-- NavigatingDashCamerasPage -->
+                  <span class="method-name">NavigatingDashCamerasPage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="SearchDashCamera">
+                  </a> <!-- SearchDashCamera -->
+                  <span class="method-name">SearchDashCamera</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test_Suite-class-passed -->
+          <div class="suite-Test_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">project.testscenarios.ELDDevicesScript</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="ELDCountandRecord">
+                  </a> <!-- ELDCountandRecord -->
+                  <span class="method-name">ELDCountandRecord</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="NavigatingELDDevicesPage">
+                  </a> <!-- NavigatingELDDevicesPage -->
+                  <span class="method-name">NavigatingELDDevicesPage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test_Suite-class-passed -->
+          <div class="suite-Test_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">project.testscenarios.LoginScript</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="validUserNameandPassword">
+                  </a> <!-- validUserNameandPassword -->
+                  <span class="method-name">validUserNameandPassword</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test_Suite-class-passed -->
+          <div class="suite-Test_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">project.testscenarios.DeletedDriverScript</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
                   <a name="DeletedDriversDetails">
@@ -200,64 +300,6 @@
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Test_Suite-class-passed -->
-          <div class="suite-Test_Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">project.testscenarios.AssetsScript</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="AssetsAsPerSearch">
-                  </a> <!-- AssetsAsPerSearch -->
-                  <span class="method-name">AssetsAsPerSearch</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="ListViewOfAssets">
-                  </a> <!-- ListViewOfAssets -->
-                  <span class="method-name">ListViewOfAssets</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="NavigatingAssetPage">
-                  </a> <!-- NavigatingAssetPage -->
-                  <span class="method-name">NavigatingAssetPage</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="SearchAssetsOnAssets">
-                  </a> <!-- SearchAssetsOnAssets -->
-                  <span class="method-name">SearchAssetsOnAssets</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Test_Suite-class-passed -->
-          <div class="suite-Test_Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">project.testscenarios.LoginScript</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="ConfigurationSetup">
-                  </a> <!-- ConfigurationSetup -->
-                  <span class="method-name">ConfigurationSetup</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="validUserNameandPassword">
-                  </a> <!-- validUserNameandPassword -->
-                  <span class="method-name">validUserNameandPassword</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Test_Suite-class-passed -->
         </div> <!-- panel Test_Suite -->
         <div panel-name="test-xml-Test_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -274,7 +316,8 @@
   &lt;test thread-count=&quot;1&quot; name=&quot;TruckX Test Automation&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;project.testscenarios.LoginScript&quot;/&gt;
-      &lt;class name=&quot;project.testscenarios.AssetsScript&quot;/&gt;
+      &lt;class name=&quot;project.testscenarios.DashCameraScript&quot;/&gt;
+      &lt;class name=&quot;project.testscenarios.ELDDevicesScript&quot;/&gt;
       &lt;class name=&quot;project.testscenarios.DeletedDriverScript&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- TruckX Test Automation --&gt;
@@ -289,7 +332,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">TruckX Test Automation (3 classes)</span>
+                <span class="test-name">TruckX Test Automation (4 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -300,30 +343,22 @@
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="test-group">
-              <span class="test-group-name">Assets</span>
+              <span class="test-group-name">Dash Cameras</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">AssetsAsPerSearch</span>
+                <span class="method-in-group-name">DashCameraCount</span>
                 <br/>
               </div> <!-- method-in-group -->
               <div class="method-in-group">
-                <span class="method-in-group-name">ListViewOfAssets</span>
+                <span class="method-in-group-name">DashCameraData</span>
                 <br/>
               </div> <!-- method-in-group -->
               <div class="method-in-group">
-                <span class="method-in-group-name">NavigatingAssetPage</span>
+                <span class="method-in-group-name">NavigatingDashCamerasPage</span>
                 <br/>
               </div> <!-- method-in-group -->
               <div class="method-in-group">
-                <span class="method-in-group-name">SearchAssetsOnAssets</span>
-                <br/>
-              </div> <!-- method-in-group -->
-            </div> <!-- test-group -->
-            <div class="test-group">
-              <span class="test-group-name">Configuration</span>
-              <br/>
-              <div class="method-in-group">
-                <span class="method-in-group-name">ConfigurationSetup</span>
+                <span class="method-in-group-name">SearchDashCamera</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -344,6 +379,18 @@
               </div> <!-- method-in-group -->
               <div class="method-in-group">
                 <span class="method-in-group-name">SearchDriverFunctionality</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">ELD Devices</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">ELDCountandRecord</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">NavigatingELDDevicesPage</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -371,52 +418,56 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(10);
+data.addRows(11);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'ListViewOfAssets')
-data.setCell(0, 2, 'project.testscenarios.AssetsScript')
-data.setCell(0, 3, 38677);
+data.setCell(0, 1, 'NavigatingDashCamerasPage')
+data.setCell(0, 2, 'project.testscenarios.DashCameraScript')
+data.setCell(0, 3, 63628);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'AssetsAsPerSearch')
-data.setCell(1, 2, 'project.testscenarios.AssetsScript')
-data.setCell(1, 3, 33958);
+data.setCell(1, 1, 'DeletedDriverLogBookFunctionality')
+data.setCell(1, 2, 'project.testscenarios.DeletedDriverScript')
+data.setCell(1, 3, 26444);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'DeletedDriverLogBookFunctionality')
-data.setCell(2, 2, 'project.testscenarios.DeletedDriverScript')
-data.setCell(2, 3, 15800);
+data.setCell(2, 1, 'NavigatingELDDevicesPage')
+data.setCell(2, 2, 'project.testscenarios.ELDDevicesScript')
+data.setCell(2, 3, 24091);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'validUserNameandPassword')
-data.setCell(3, 2, 'project.testscenarios.LoginScript')
-data.setCell(3, 3, 13681);
+data.setCell(3, 1, 'DashCameraData')
+data.setCell(3, 2, 'project.testscenarios.DashCameraScript')
+data.setCell(3, 3, 15300);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'DeletedDriversDetails')
-data.setCell(4, 2, 'project.testscenarios.DeletedDriverScript')
-data.setCell(4, 3, 10063);
+data.setCell(4, 1, 'validUserNameandPassword')
+data.setCell(4, 2, 'project.testscenarios.LoginScript')
+data.setCell(4, 3, 14432);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'SearchDriverFunctionality')
+data.setCell(5, 1, 'DeletedDriversDetails')
 data.setCell(5, 2, 'project.testscenarios.DeletedDriverScript')
-data.setCell(5, 3, 8231);
+data.setCell(5, 3, 10072);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'SearchAssetsOnAssets')
-data.setCell(6, 2, 'project.testscenarios.AssetsScript')
-data.setCell(6, 3, 8169);
+data.setCell(6, 1, 'SearchDriverFunctionality')
+data.setCell(6, 2, 'project.testscenarios.DeletedDriverScript')
+data.setCell(6, 3, 9293);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'NavigatingAssetPage')
-data.setCell(7, 2, 'project.testscenarios.AssetsScript')
-data.setCell(7, 3, 2238);
+data.setCell(7, 1, 'ELDCountandRecord')
+data.setCell(7, 2, 'project.testscenarios.ELDDevicesScript')
+data.setCell(7, 3, 7348);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'NavigatingDriversPage')
-data.setCell(8, 2, 'project.testscenarios.DeletedDriverScript')
-data.setCell(8, 3, 2208);
+data.setCell(8, 1, 'SearchDashCamera')
+data.setCell(8, 2, 'project.testscenarios.DashCameraScript')
+data.setCell(8, 3, 6496);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'ConfigurationSetup')
-data.setCell(9, 2, 'project.testscenarios.LoginScript')
-data.setCell(9, 3, 34);
+data.setCell(9, 1, 'DashCameraCount')
+data.setCell(9, 2, 'project.testscenarios.DashCameraScript')
+data.setCell(9, 3, 6217);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'NavigatingDriversPage')
+data.setCell(10, 2, 'project.testscenarios.DeletedDriverScript')
+data.setCell(10, 3, 2473);
 window.suiteTableData['Test_Suite']= { tableData: data, tableDiv: 'times-div-Test_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <span class="suite-total-time">Total running time: 3 minutes</span>
               <div id="times-div-Test_Suite">
               </div> <!-- times-div-Test_Suite -->
             </div> <!-- times-div -->
@@ -444,61 +495,74 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">project.testscenarios.LoginScript</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">preRequisite(org.testng.TestRunner@72543547)</span>
+                <span class="method-name">preRequisite(org.testng.TestRunner@4b425577)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
-              <div class="test-method">
+              <div class="configuration-class before">
                 <span class="method-name">ConfigurationSetup</span>
-                <span class="method-start">27728 ms</span>
-              </div> <!-- test-method -->
+                <span class="method-start">28813 ms</span>
+              </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">validUserNameandPassword</span>
-                <span class="method-start">27768 ms</span>
+                <span class="method-start">28826 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">project.testscenarios.AssetsScript</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">project.testscenarios.DashCameraScript</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">NavigatingAssetPage</span>
-                <span class="method-start">41453 ms</span>
+                <span class="method-name">NavigatingDashCamerasPage</span>
+                <span class="method-start">43265 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">ListViewOfAssets</span>
-                <span class="method-start">43696 ms</span>
+                <span class="method-name">DashCameraCount</span>
+                <span class="method-start">106900 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">SearchAssetsOnAssets</span>
-                <span class="method-start">82377 ms</span>
+                <span class="method-name">SearchDashCamera</span>
+                <span class="method-start">113119 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">AssetsAsPerSearch</span>
-                <span class="method-start">90550 ms</span>
+                <span class="method-name">DashCameraData</span>
+                <span class="method-start">119617 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">project.testscenarios.ELDDevicesScript</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">NavigatingELDDevicesPage</span>
+                <span class="method-start">134919 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">ELDCountandRecord</span>
+                <span class="method-start">159014 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">project.testscenarios.DeletedDriverScript</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">NavigatingDriversPage</span>
-                <span class="method-start">124510 ms</span>
+                <span class="method-start">166365 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">SearchDriverFunctionality</span>
-                <span class="method-start">126722 ms</span>
+                <span class="method-start">168841 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">DeletedDriversDetails</span>
-                <span class="method-start">134957 ms</span>
+                <span class="method-start">178138 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">DeletedDriverLogBookFunctionality</span>
-                <span class="method-start">145024 ms</span>
+                <span class="method-start">188213 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">project.testscenarios.LoginScript</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">160847 ms</span>
+                <span class="method-start">215870 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -20,6 +20,8 @@ import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import project.mediator.Driver;
 import project.mediator.ObjectRepository;
@@ -49,6 +51,8 @@ public class ConfigurationSetup
 			
 			context.setAttribute("WebDriver", driver);
 		}
+				
+		
 				
 		private void configureLogger() 
 		{
@@ -85,8 +89,8 @@ public class ConfigurationSetup
 								 		 
 				case "Chrome"  : WebDriverManager.chromedriver().setup();
 								 ChromeOptions chrome_options = new ChromeOptions();
-							//	 chrome_options.addArguments("--no-sandbox");
-							//	 chrome_options.addArguments("--headless");
+								 chrome_options.addArguments("--no-sandbox");
+								 chrome_options.addArguments("--headless");
 								 driver = new ChromeDriver(chrome_options);
 								
 								 break;

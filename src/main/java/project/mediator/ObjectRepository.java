@@ -5,7 +5,7 @@ import project.utility.WebPageObjectCreation;
 public class ObjectRepository 
 {
 
-	private static ThreadLocal<WebPageObjectCreation> repoinstance = new ThreadLocal<WebPageObjectCreation>();
+	public static ThreadLocal<WebPageObjectCreation> repoinstance = new ThreadLocal<WebPageObjectCreation>();
 
     public static WebPageObjectCreation GetInstance() 
     {

@@ -1,8 +1,10 @@
 package project.testscenarios;
 
+import java.io.IOException;
 import java.util.HashMap;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import project.RandomVinAPI.RandomVin;
 import project.mediator.ObjectRepository;
@@ -21,11 +23,15 @@ public class TrailerScript {
 	
 	public static Logger log = Logger.getLogger(TruckScript.class);
 	
+	@BeforeClass
+	public void Fetct_Repository_Object() throws InterruptedException, IOException
+	{
+		repo = ObjectRepository.GetInstance();
+	}
+	
 	@Test(priority = 9, groups = {"Trailers"})
 	public void NavigatingTrailerPage() throws InterruptedException
 	{
-		repo=ObjectRepository.GetInstance();
-		
 		repo.dashboardPageObject().clickOnVehicle();
 		
 		repo.dashboardPageObject().clickOnTrailers();

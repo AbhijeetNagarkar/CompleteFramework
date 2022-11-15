@@ -1,7 +1,10 @@
 package project.testscenarios;
 
+import java.io.IOException;
+
 import org.apache.log4j.Logger;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import project.mediator.ObjectRepository;
@@ -13,11 +16,15 @@ public class AssetsScript {
 	
 	public static Logger log = Logger.getLogger(AssetsScript.class);
 	
+	@BeforeClass
+	public void Fetct_Repository_Object() throws InterruptedException, IOException
+	{
+		repo = ObjectRepository.GetInstance();
+	}
+	
 	@Test(priority = 25,groups = {"Assets"})
 	public void NavigatingAssetPage() throws InterruptedException 
 	{
-		repo=ObjectRepository.GetInstance();
-		
 		repo.dashboardPageObject().clickOnLocation();
 		
 		repo.dashboardPageObject().clickOnAssets();

@@ -47,10 +47,13 @@ public class WebPageDashCamera {
 	@FindBy(xpath = "//div[@class=\"w-1/3 xl:w-1/4 h-full\"]//input")
 	WebElement searchBox;
 	
-	
+	@FindBy(xpath = "//div[@class=\"ml-10 mt-2\"]//span[text()=\"Dash Cameras\"]")
+	WebElement changefocus;
 	
 	public Boolean verifyDashCameraCount() throws InterruptedException
 	{
+		Thread.sleep(3000);
+		changefocus.click();
 		Thread.sleep(3000);
 		String count=countDevices.getText();
 		if(countDevices.getText().contains(devicemap.get("Device Count")))
@@ -65,6 +68,8 @@ public class WebPageDashCamera {
 	}
 	public Boolean Search() throws InterruptedException
 	{
+		Thread.sleep(3000);
+		changefocus.click();
 		Thread.sleep(3000);
 		searchBox.clear();
 		searchBox.sendKeys("Device");

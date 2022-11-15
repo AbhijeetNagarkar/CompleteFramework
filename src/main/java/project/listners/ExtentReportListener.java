@@ -53,6 +53,7 @@ public class ExtentReportListener implements ITestListener, ISuiteListener {
 	
 		logger = report.createTest(result.getMethod().getMethodName()).assignCategory(category[0]);
 		logger.info("Executing test: " + result.getMethod().getMethodName());
+		
 	
 		}
 
@@ -88,6 +89,7 @@ public class ExtentReportListener implements ITestListener, ISuiteListener {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		Driver.Refresh();
 		
 	}
 
