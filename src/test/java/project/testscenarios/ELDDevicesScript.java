@@ -1,9 +1,11 @@
 package project.testscenarios;
 
+import java.io.IOException;
 import java.util.HashMap;
 
 import org.apache.log4j.Logger;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import project.mediator.ObjectRepository;
@@ -18,11 +20,15 @@ public class ELDDevicesScript {
 	
 	public static Logger log = Logger.getLogger(DashCameraScript.class);
 	
+	@BeforeClass
+	public void Fetct_Repository_Object() throws InterruptedException, IOException
+	{
+		repo = ObjectRepository.GetInstance();
+	}
+	
 	@Test(priority = 32,groups = {"ELD Devices"})
 	public void NavigatingELDDevicesPage() throws InterruptedException 
 	{
-		repo=ObjectRepository.GetInstance();
-		
 		repo.dashboardPageObject().clickOnDevices();
 				
 		repo.dashboardPageObject().clickOnELDDevices();
@@ -33,7 +39,6 @@ public class ELDDevicesScript {
 	@Test(priority = 33, dependsOnMethods = "NavigatingELDDevicesPage",groups = {"ELD Devices"})
 	public void ELDCountandRecord() throws InterruptedException 
 	{
-		
 		Assert.assertTrue(repo.eldDevicesPageObject().verifyELDDevicesCount(),"Incorrect count and records showing on ELD Devices Page");
 		
 	}

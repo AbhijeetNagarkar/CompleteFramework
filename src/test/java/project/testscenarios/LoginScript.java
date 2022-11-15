@@ -2,13 +2,18 @@ package project.testscenarios;
 
 import java.io.IOException;
 import java.util.HashMap;
+
+import javax.security.auth.Refreshable;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import project.mediator.Driver;
 import project.mediator.ObjectRepository;
 import project.utility.*;
+import project.mediator.Driver.*;
 
 public class LoginScript extends ConfigurationSetup {
 		
@@ -21,7 +26,13 @@ public class LoginScript extends ConfigurationSetup {
 	HashMap<String,String> map=new HashMap<String,String>();
 	
 	public static Logger log = Logger.getLogger(LoginScript.class);
-
+	
+	@BeforeClass
+	public void Fetct_Repository_Object() throws InterruptedException, IOException
+	{
+		repo = ObjectRepository.GetInstance();
+	}
+/*
 	@Test(priority = 0,groups = {"Configuration"})
 	public void ConfigurationSetup() throws InterruptedException, IOException
 	{

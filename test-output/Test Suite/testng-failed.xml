@@ -6,12 +6,12 @@
   </listeners>
   <test thread-count="5" name="TruckX Test Automation(failed)">
     <classes>
-      <class name="project.testscenarios.AssetsScript">
+      <class name="project.testscenarios.DeletedDriverScript">
         <methods>
-          <include name="NavigatingAssetPage"/>
-          <include name="ListViewOfAssets"/>
+          <include name="NavigatingDriversPage"/>
+          <include name="DeletedDriverLogBookFunctionality"/>
         </methods>
-      </class> <!-- project.testscenarios.AssetsScript -->
+      </class> <!-- project.testscenarios.DeletedDriverScript -->
     </classes>
   </test> <!-- TruckX Test Automation(failed) -->
 </suite> <!-- Failed suite [Test Suite] -->
