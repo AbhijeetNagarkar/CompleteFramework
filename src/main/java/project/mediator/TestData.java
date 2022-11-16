@@ -13,7 +13,12 @@ public class TestData
 	 
 	 private static ThreadLocal<HashMap<String,String>> logindata = new ThreadLocal<HashMap<String,String>>();
 	 
-	 private static ThreadLocal<HashMap<String,String>> configurationdata = new ThreadLocal<HashMap<String,String>>();
+	 private static ThreadLocal<HashMap<String,String>> configurationdata = new ThreadLocal<HashMap<String,String>>();	 
+	 
+	 private static ThreadLocal<HashMap<String,String>> forgotpassworddata = new ThreadLocal<HashMap<String,String>>();
+	 
+	 private static ThreadLocal<HashMap<String, String>> adminregisterdata = new ThreadLocal<HashMap<String, String>>(); //Rupali
+	
 	 
 	 
 	    public static HashMap<String,String> GetVehicleData() {
@@ -58,5 +63,18 @@ public class TestData
 		public static HashMap<String, String> GetConfigurationData() {
 			// TODO Auto-generated method stub
 			return configurationdata.get();
+		}
+		public static HashMap<String,String> GetForgotPasswordData() {
+	        return forgotpassworddata.get();
+	    }
+	    public static void SetForgotPasswordData(HashMap<String,String> data) {
+	    	forgotpassworddata.set(data);
+	    }
+		
+		public static HashMap<String, String> GetAdminRegistrationData(){
+			return adminregisterdata.get();			
+		}
+		public static void SetAdminRegistrationData(HashMap<String, String> data) {
+			adminregisterdata.set(data);
 		}
 }

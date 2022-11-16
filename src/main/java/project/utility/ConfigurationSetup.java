@@ -72,6 +72,9 @@ public class ConfigurationSetup
 			TestData.SetDeviceData(xls.fetchdata("Device"));
 			TestData.SetLoginData(xls.fetchdata("Login"));
 			TestData.SetConfigurationData(xls.fetchdata("Configuration"));
+			TestData.SetForgotPasswordData(xls.fetchdata("ForgotPassword"));
+			TestData.SetAdminRegistrationData(xls.fetchdata("AdminRegistration"));
+			
 			
 			log.info("Test Data Loaded for Test Script");
 		}
@@ -88,8 +91,8 @@ public class ConfigurationSetup
 								 		 
 				case "Chrome"  : WebDriverManager.chromedriver().setup();
 								 ChromeOptions chrome_options = new ChromeOptions();
-								 chrome_options.addArguments("--no-sandbox");
-								 chrome_options.addArguments("--headless");
+								// chrome_options.addArguments("--no-sandbox");
+								// chrome_options.addArguments("--headless");
 								 driver = new ChromeDriver(chrome_options);
 								
 								 break;

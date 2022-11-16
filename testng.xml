@@ -8,9 +8,12 @@
  <test thread-count="1" name="TruckX Test Automation" parallel="false" preserve-order="true" >
      <classes>
           <class name="project.testscenarios.LoginScript"/>  
-       	  <class name="project.testscenarios.TruckScript"/>  
+       	<!--  <class name="project.testscenarios.TruckScript"/>  
           <class name="project.testscenarios.TrailerScript"/> 
-          <class name="project.testscenarios.TrackingDevicesScript"/>  
+          <class name="project.testscenarios.TrackingDevicesScript"/>  -->
+          <class name="project.testscenarios.LogoutScript"/> 
+          <class name="project.testscenarios.ForgotPasswordScript"/>
+         <!-- <class name="project.testscenarios.AdminRegistrationScript"/> -->
       </classes>
   </test> 
   <!-- Test -->

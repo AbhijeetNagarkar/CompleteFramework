@@ -3,8 +3,11 @@ package project.utility;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 
+import project.webpages.WebPageAdminRegistration;
 import project.webpages.WebPageDashboard;
+import project.webpages.WebPageForgotPassword;
 import project.webpages.WebPageLogin;
+import project.webpages.WebPageLogout;
 import project.webpages.WebPageTrackingDevices;
 import project.webpages.WebPageTrailer;
 import project.webpages.WebPageTruck;
@@ -31,6 +34,12 @@ public class WebPageObjectCreation {
 	WebPageTrailer trailerPage;
 	
 	WebPageTrackingDevices trackingPage;
+	
+	WebPageLogout logoutPage;
+	
+	WebPageForgotPassword forgotpasswordPage;
+	
+	WebPageAdminRegistration adminregistrationPage;
 	
 	public WebPageLogin loginPageObject()
 	{
@@ -77,6 +86,33 @@ public class WebPageObjectCreation {
 			trackingPage = new WebPageTrackingDevices(driver);
 		}
 		return trackingPage;
+	}
+	public WebPageLogout logoutPageObject()
+	{
+		if(logoutPage==null)
+		{
+			log.info("Logout page object created");
+			logoutPage = new WebPageLogout(driver);
+		}
+		return logoutPage;
+	}
+	public WebPageForgotPassword forgotPasswordObject()
+	{
+		if(forgotpasswordPage==null)
+		{
+			log.info("Forgot password page object created");
+			forgotpasswordPage = new WebPageForgotPassword(driver);
+		}
+		return forgotpasswordPage;
+	}
+	public WebPageAdminRegistration adminRegistrationObject()
+	{
+		if(adminregistrationPage==null)
+		{
+			log.info("Admin Registration page object created");
+			adminregistrationPage = new WebPageAdminRegistration(driver);
+		}
+		return adminregistrationPage;
 	}
 	
 	

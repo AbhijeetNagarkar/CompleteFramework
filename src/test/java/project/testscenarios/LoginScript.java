@@ -28,37 +28,37 @@ public class LoginScript extends ConfigurationSetup {
 		repo = ObjectRepository.GetInstance();
 	}
 	
-	@Test(priority = 1)
-	public void blankUserNameandPassword() throws InterruptedException
-	{
-		repo.loginPageObject().enterUserName("");
-		
-		repo.loginPageObject().enterUserPassword("");
-		
-		repo.loginPageObject().signIn();
-		
-		Assert.assertTrue(repo.loginPageObject().validate());
-		
-		Driver.Refresh();
-		
-	}
+//	@Test(priority = 1)
+//	public void blankUserNameandPassword() throws InterruptedException
+//	{
+//		repo.loginPageObject().enterUserName("");
+//		
+//		repo.loginPageObject().enterUserPassword("");
+//		
+//		repo.loginPageObject().signIn();
+//		
+//		Assert.assertTrue(repo.loginPageObject().validate());
+//		
+//		Driver.Refresh();
+//		
+//	}
 	
-	@Test(priority = 2,alwaysRun = true)
-	public void inValidUserNameandPassword() throws InterruptedException
-	{
-		repo.loginPageObject().enterUserName("Abhijeet@gmail.com");
-		
-		repo.loginPageObject().enterUserPassword("Abhijeet123");
-		
-		repo.loginPageObject().signIn();
-		
-		Assert.assertTrue(repo.loginPageObject().validate());
-				
-		Driver.Refresh();
-		
-	}
+//	@Test(priority = 2,alwaysRun = true)
+//	public void inValidUserNameandPassword() throws InterruptedException
+//	{
+//		repo.loginPageObject().enterUserName("Abhijeet@gmail.com");
+//		
+//		repo.loginPageObject().enterUserPassword("Abhijeet123");
+//		
+//		repo.loginPageObject().signIn();
+//		
+//		Assert.assertTrue(repo.loginPageObject().validate());
+//				
+//		Driver.Refresh();
+//		
+//	}
 	
-	@Test(priority = 3,alwaysRun = true)
+	@Test(priority = 1,alwaysRun = true)
 	public void validUserNameandPassword() throws InterruptedException
 	{
 	
