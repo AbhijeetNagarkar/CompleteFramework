@@ -1,8 +1,6 @@
 package project.webpages;
 
-import java.util.HashMap;
 import java.util.List;
-
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,8 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import project.mediator.TestData;
 
 public class WebPageTrackingLinks {
 	
@@ -62,7 +58,6 @@ public class WebPageTrackingLinks {
 	{
 		List<WebElement> rows = driver.findElements(By.xpath("//tr[@class=\"rc-table-row rc-table-row-level-0 text-base text-gray-400 bg-white border-b border-gray-100 h-12 w-full rounded-md hover:bg-blue-tablerow\"]//td[3]//div"));
 	
-		int rowsize = rows.size();
 		log.info("Captured result into list");
 		
 		for(WebElement ele : rows)

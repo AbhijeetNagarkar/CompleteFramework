@@ -3,17 +3,13 @@ package project.testscenarios;
 import java.io.IOException;
 import java.util.HashMap;
 
-import javax.security.auth.Refreshable;
-
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import project.mediator.Driver;
 import project.mediator.ObjectRepository;
 import project.utility.*;
-import project.mediator.Driver.*;
 
 public class LoginScript extends ConfigurationSetup {
 		
@@ -33,13 +29,7 @@ public class LoginScript extends ConfigurationSetup {
 		repo = ObjectRepository.GetInstance();
 	}
 /*
-	@Test(priority = 0,groups = {"Configuration"})
-	public void ConfigurationSetup() throws InterruptedException, IOException
-	{
-		repo = ObjectRepository.GetInstance();
-	}
-	/*
-	@Test(priority = 1, groups = {"Login"})
+	@Test(priority = 0, groups = {"Login"})
 	public void blankUserNameandPassword() throws InterruptedException
 	{
 		repo.loginPageObject().enterUserName("");
@@ -54,7 +44,7 @@ public class LoginScript extends ConfigurationSetup {
 		
 	}
 	
-	@Test(priority = 2,groups = {"Login"})
+	@Test(priority = 1,groups = {"Login"})
 	public void inValidUserNameandPassword() throws InterruptedException
 	{
 		repo.loginPageObject().enterUserName("Abhijeet@gmail.com");
@@ -69,7 +59,7 @@ public class LoginScript extends ConfigurationSetup {
 		
 	}
 	*/
-	@Test(priority = 3,groups = {"Login"})
+	@Test(priority = 2,groups = {"Login"})
 	public void validUserNameandPassword() throws InterruptedException
 	{
 	

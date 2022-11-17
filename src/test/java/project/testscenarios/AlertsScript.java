@@ -20,4 +20,22 @@ WebPageObjectCreation repo;
 	{
 		repo = ObjectRepository.GetInstance();
 	}
+	
+	@Test(priority = 50,groups = {"Alerts"})
+	public void NavigatingAlertsPage() throws InterruptedException 
+	{
+				
+		repo.dashboardPageObject().clickOnAlerts();
+		
+		repo.dashboardPageObject().clickOnAlertsSubMenu();;
+		
+	}
+	@Test(priority = 51,groups = {"Alerts"},dependsOnMethods = "NavigatingAlertsPage" )
+	public void NumberOfAlertsandVerification() throws InterruptedException 
+	{
+		repo.AlertPageObject().verifyAlertRecords();
+		
+		repo.AlertPageObject().VerifyDownloadAlerts();
+	}
+
 }

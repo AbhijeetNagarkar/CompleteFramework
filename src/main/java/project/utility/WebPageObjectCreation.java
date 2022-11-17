@@ -3,21 +3,7 @@ package project.utility;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 
-import project.webpages.WebPageAPIKeyTransfer;
-import project.webpages.WebPageAlerts;
-import project.webpages.WebPageAssets;
-import project.webpages.WebPageCompanyProfile;
-import project.webpages.WebPageDashCamera;
-import project.webpages.WebPageDashboard;
-import project.webpages.WebPageDeletedDrivers;
-import project.webpages.WebPageDrivers;
-import project.webpages.WebPageELDDevices;
-import project.webpages.WebPageFeature;
-import project.webpages.WebPageLogin;
-import project.webpages.WebPageTrackingDevices;
-import project.webpages.WebPageTrackingLinks;
-import project.webpages.WebPageTrailer;
-import project.webpages.WebPageTruck;
+import project.webpages.*;
 
 public class WebPageObjectCreation {
 
@@ -61,6 +47,102 @@ public class WebPageObjectCreation {
 	WebPageFeature featurepage;
 	
 	WebPageAlerts alertspage;
+	
+	WebPageLogout logoutPage;
+	
+	WebPageForgotPassword forgotpasswordPage;
+	
+	WebPageAdminRegistration adminregistrationPage;
+	
+	WebPageBillingDetails billingdetailsPage;
+	
+	WebPageIFTATrips iftatripsPage;
+	
+	WebPageIFTAReports iftareportsPage;
+	
+	WebPageLogbook logbookPage;
+	
+	WebPageUnAssignedDrive unassigneddrivePage;
+	
+	WebPageMessages messagePage;
+	
+	WebPageReports reportsPage;
+	
+	
+	public WebPageReports ReportsPageObject()
+	{
+		if(reportsPage==null)
+		{
+			log.info("Reports page object created");
+			reportsPage = new WebPageReports(driver);
+		}
+		return reportsPage;
+	}
+	
+	
+	public WebPageUnAssignedDrive UnAssignedDrivePageObject()
+	{
+		if(unassigneddrivePage==null)
+		{
+			log.info("UnAssigned Drive page object created");
+			unassigneddrivePage = new WebPageUnAssignedDrive(driver);
+		}
+		return unassigneddrivePage;
+	}
+	
+	public WebPageMessages MessagesPageObject()
+	{
+		if(messagePage==null)
+		{
+			log.info("Messages page object created");
+			messagePage = new WebPageMessages(driver);
+		}
+		return messagePage;
+	}
+	
+	public WebPageIFTAReports IFTAReportsPageObject()
+	{
+		if(iftareportsPage==null)
+		{
+			log.info("IFTA Reports page object created");
+			iftareportsPage = new WebPageIFTAReports(driver);
+		}
+		return iftareportsPage;
+	}
+	
+	public WebPageLogbook LogbookPageObject()
+	{
+		if(logbookPage==null)
+		{
+			log.info("Logbook page object created");
+			logbookPage = new WebPageLogbook(driver);
+		}
+		return logbookPage;
+	}
+	
+	
+	
+	
+	public WebPageBillingDetails BillingDetailsPageObject()
+	{
+		if(billingdetailsPage==null)
+		{
+			log.info("Billing Details page object created");
+			billingdetailsPage = new WebPageBillingDetails(driver);
+		}
+		return billingdetailsPage;
+	}
+	
+	public WebPageIFTATrips IFTATripsPageObject()
+	{
+		if(iftatripsPage==null)
+		{
+			log.info("IFTA Trips page object created");
+			iftatripsPage = new WebPageIFTATrips(driver);
+		}
+		return iftatripsPage;
+	}
+	
 	
 	public WebPageAlerts AlertPageObject()
 	{
@@ -204,6 +286,32 @@ public class WebPageObjectCreation {
 		}
 		return eldDevicesPage;
 	}
+	public WebPageLogout logoutPageObject()
+	{
+		if(logoutPage==null)
+		{
+			log.info("Logout page object created");
+			logoutPage = new WebPageLogout(driver);
+		}
+		return logoutPage;
+	}
+	public WebPageForgotPassword forgotPasswordObject()
+	{
+		if(forgotpasswordPage==null)
+		{
+			log.info("Forgot password page object created");
+			forgotpasswordPage = new WebPageForgotPassword(driver);
+		}
+		return forgotpasswordPage;
+	}
+	public WebPageAdminRegistration adminRegistrationObject()
+	{
+		if(adminregistrationPage==null)
+		{
+			log.info("Admin Registration page object created");
+			adminregistrationPage = new WebPageAdminRegistration(driver);
+		}
+		return adminregistrationPage;
 	
-	
+	}
 }

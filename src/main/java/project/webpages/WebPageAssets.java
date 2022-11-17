@@ -69,8 +69,6 @@ public class WebPageAssets {
 	{
 		List<WebElement> rows = driver.findElements(By.xpath("//div[@class=\"px-2 trx-asset-list truck\"]//a//h3"));
 	
-		int rowsize = rows.size();
-		
 		log.info("Captured result into list");
 		
 		for(WebElement ele : rows)

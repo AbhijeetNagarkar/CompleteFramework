@@ -9,8 +9,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import project.mediator.Driver;
-
 
 public class WebPageDashboard {
 	
@@ -30,7 +28,12 @@ public class WebPageDashboard {
 			
 	}
 
-	//main men
+	//Geofences , Inspection, New Tabs click yet to be mentioned along its sub menu
+
+	//main menu
+	
+	@FindBy(xpath = "//div[@class=\"flex flex-col\"]//span[text()=\"Logbook\"]")
+	WebElement logbook;
 	
 	@FindBy(xpath = "//div[@class=\"flex flex-col\"]//span[text()=\"Vehicles\"]")
 	WebElement vehicles;
@@ -38,14 +41,23 @@ public class WebPageDashboard {
 	@FindBy(xpath = "//div[@class=\"flex flex-col\"]//span[text()=\"Location\"]")
 	WebElement location;
 	
+	@FindBy(xpath = "//div[@class=\"flex flex-col\"]//span[text()=\"Messages\"]")
+	WebElement messages;
+	
 	@FindBy(xpath = "//div[@class=\"flex flex-col\"]//span[text()=\"Devices\"]")
 	WebElement devices;
 	
 	@FindBy(xpath = "//div[@class=\"flex flex-col\"]//span[text()=\"Drivers\"]")
 	WebElement drivers;
 	
+	@FindBy(xpath = "//div[@class=\"flex flex-col\"]//span[text()=\"IFTA\"]")
+	WebElement ifta;
+	
 	@FindBy(xpath = "//div[@class=\"flex flex-col\"]//span[text()=\"Profile\"]")
 	WebElement profile;
+	
+	@FindBy(xpath = "//div[@class=\"flex flex-col\"]//span[text()=\"Reports\"]")
+	WebElement reports;
 	
 	@FindBy(xpath = "//div[@class=\"flex flex-col\"]//span[text()=\"API Key\"]")
 	WebElement apikey;
@@ -56,9 +68,14 @@ public class WebPageDashboard {
 	@FindBy(xpath = "//div[@class=\"flex flex-col\"]//span[text()=\"Alerts\"]")
 	WebElement alerts;
 	
-	@FindBy(xpath = "//div[@class=\"flex flex-col\"]//span[text()=\"IFTA\"]")
-	WebElement ifta;
 	
+	//Vehilces submenu
+	
+	@FindBy(xpath = "//div[@class=\"custom-drop-submenu\"]//*[text()=\"Logbook\"]")
+	WebElement logbooksubmenu;
+		
+	@FindBy(xpath = "//div[@class=\"custom-drop-submenu\"]//div[text()=\"Unassigned Drive\"]")
+	WebElement unassigneddrive;
 	
 	//Vehilces submenu
 	
@@ -84,6 +101,11 @@ public class WebPageDashboard {
 	WebElement trackinglinks;
 	
 	
+	//Messages submenus
+	
+	@FindBy(xpath = "//div[@class=\"custom-drop-submenu\"]//div[text()=\"Messages\"]")
+	WebElement messagessubmenu;
+	
 	//Devices submenus
 	
 	@FindBy(xpath = "//div[@class=\"custom-drop-submenu\"]//div[text()=\"Tracking Devices\"]")
@@ -107,6 +129,14 @@ public class WebPageDashboard {
 	@FindBy(xpath = "//div[@class=\"custom-drop-submenu\"]//*[text()=\"Deleted\"]")
 	WebElement deleteddrivers;
 	
+	//IFTA submenu
+	
+	@FindBy(xpath = "//div[@class=\"custom-drop-submenu\"]//*[text()=\"Trips\"]")
+	WebElement iftatrips;
+		
+	@FindBy(xpath = "//div[@class=\"custom-drop-submenu\"]//*[text()=\"Reports\"]")
+	WebElement iftareports;
+	
 	
 	//Profile submenu
 	
@@ -116,32 +146,44 @@ public class WebPageDashboard {
 	@FindBy(xpath = "//div[@class=\"custom-drop-submenu\"]//*[text()=\"Billing Details\"]")
 	WebElement billingdetails;
 	
+	//Reports submenu
+	
+	@FindBy(xpath = "//div[@class=\"custom-drop-submenu\"]//*[text()=\"Reports\"]")
+	WebElement reportsubmenu;
 	
 	//API Key submenu
 	
 	@FindBy(xpath = "//div[@class=\"custom-drop-submenu\"]//*[text()=\"API Key Transfer\"]")
 	WebElement apikeytransfer;
 	
+
+	//Feature submenu
+	
+	@FindBy(xpath = "//div[@class=\"custom-drop-submenu\"]//*[text()=\"New Updates\"]")
+	WebElement newupdates;
 	
 	//Alerts submenu
 	
 	@FindBy(xpath = "//div[@class=\"custom-drop-submenu\"]//*[text()=\"Alerts\"]")
 	WebElement alertsubmenu;
 	
-	//Feature submenu
+	//Geofences , Inspection, New Tabs click yet to be mentioned along its sub menu
 	
-	@FindBy(xpath = "//div[@class=\"custom-drop-submenu\"]//*[text()=\"New Updates\"]")
-	WebElement newupdates;
-	
-	
-	//IFTA submenu
-	
-	@FindBy(xpath = "//div[@class=\"custom-drop-submenu\"]//*[text()=\"Trips\"]")
-	WebElement iftatrips;
-	
-	@FindBy(xpath = "//div[@class=\"custom-drop-submenu\"]//*[text()=\"Reports\"]")
-	WebElement iftareports;
-	
+	public void clickOnLogbook()
+	{
+		try
+		{
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class=\"flex flex-col\"]//span[text()=\"Logbook\"]")));
+		
+		logbook.click();
+		}
+		catch (Exception e) {
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class=\"flex flex-col\"]//span[text()=\"Logbook\"]")));
+			
+			logbook.click();
+		}
+		log.info("Clicked on Logbook Menu");
+	}
 	
 	public void clickOnVehicle()
 	{
@@ -173,6 +215,22 @@ public class WebPageDashboard {
 			location.click();
 		}
 		log.info("Clicked on Location Menu");
+	}
+	
+	public void clickOnMessages()
+	{
+		try
+		{
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class=\"flex flex-col\"]//span[text()=\"Messages\"]")));
+		
+		messages.click();
+		}
+		catch (Exception e) {
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class=\"flex flex-col\"]//span[text()=\"Messages\"]")));
+			
+			messages.click();
+		}
+		log.info("Clicked on Messages Menu");
 	}
 	
 	public void clickOnDevices() throws InterruptedException
@@ -243,6 +301,24 @@ public class WebPageDashboard {
 		log.info("Clicked on Profile Menu");
 	}
 	
+	
+	public void clickOnReports()
+	{
+		try
+		{
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class=\"flex flex-col\"]//span[text()=\"Reports\"]")));
+		
+		reports.click();
+		}
+		catch (Exception e) {
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class=\"flex flex-col\"]//span[text()=\"Reports\"]")));
+			
+			reports.click();
+		}
+		log.info("Clicked on Reports Menu");
+	}
+	
+	
 	public void clickOnAPIKey()
 	{
 		try
@@ -289,6 +365,42 @@ public class WebPageDashboard {
 			alerts.click();
 		}
 		log.info("Clicked on Alerts Menu");
+	}
+	
+	public void clickOnLogbookSubMenu() throws InterruptedException
+	{
+		try {
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class=\"custom-drop-submenu\"]//*[text()=\"Logbook\"]")));
+		Thread.sleep(1000);
+		logbooksubmenu.click();
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			logbook.click();
+			Thread.sleep(1000);
+			logbooksubmenu.click();
+		}
+		log.info("Clicked on Logbook from Sub Menu");
+		
+		Thread.sleep(2000);
+	}
+	
+	public void clickOnUnassignedDrive() throws InterruptedException
+	{
+		try {
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class=\"custom-drop-submenu\"]//*[text()=\"Unassigned Drive\"]")));
+		Thread.sleep(1000);
+		unassigneddrive.click();
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			logbook.click();
+			Thread.sleep(1000);
+			unassigneddrive.click();
+		}
+		log.info("Clicked on UnAssigned Drive from Sub Menu");
+		
+		Thread.sleep(2000);
 	}
 	
 	
@@ -360,6 +472,24 @@ public class WebPageDashboard {
 			deletedtrailers.click();
 		}
 		log.info("Clicked on Deleted Trailers from Sub Menu");
+		
+		Thread.sleep(2000);
+	}
+	
+	public void clickOnMessagesSubMenu() throws InterruptedException
+	{
+		try {
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class=\"custom-drop-submenu\"]//div[text()=\"Messages\"]")));
+		
+		messagessubmenu.click();
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			messages.click();
+			Thread.sleep(1000);
+			messagessubmenu.click();
+		}
+		log.info("Clicked on Messages from Sub Menu");
 		
 		Thread.sleep(2000);
 	}
@@ -590,6 +720,26 @@ public class WebPageDashboard {
 		
 		Thread.sleep(2000);
 	}
+	
+	
+	public void clickOnReportsSubMenu() throws InterruptedException
+	{
+		try {
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class=\"custom-drop-submenu\"]//*[text()=\"Reports\"]")));
+		
+		reportsubmenu.click();
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			reports.click();
+			Thread.sleep(1000);
+			reportsubmenu.click();
+		}
+		log.info("Clicked on Reports from Sub Menu");
+		
+		Thread.sleep(2000);
+	}
+	
 	
 	public void clickOnAPIKeyTransfer() throws InterruptedException
 	{

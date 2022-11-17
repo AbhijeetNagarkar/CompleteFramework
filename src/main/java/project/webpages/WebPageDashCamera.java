@@ -55,7 +55,6 @@ public class WebPageDashCamera {
 		Thread.sleep(3000);
 		changefocus.click();
 		Thread.sleep(3000);
-		String count=countDevices.getText();
 		if(countDevices.getText().contains(devicemap.get("Device Count")))
 		{
 			log.info("Showing correct Dash Camera Count");

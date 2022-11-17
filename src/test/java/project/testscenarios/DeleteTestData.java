@@ -16,7 +16,7 @@ public class DeleteTestData {
 	
 	HashMap<String,String> devicemap;
 	
-	public static Logger log = Logger.getLogger(DashCameraScript.class);
+	public static Logger log = Logger.getLogger(DeleteTestData.class);
 	
 	@BeforeClass
 	public void Fetct_Repository_Object() throws InterruptedException, IOException
@@ -24,27 +24,42 @@ public class DeleteTestData {
 		repo = ObjectRepository.GetInstance();
 	}
 	
-	@Test(priority = 52,groups = {"Clean UP"})
+	@Test(priority =1, groups = "Clean up")
 	public void DeletingCreatedTestdata() throws InterruptedException 
 	{
-		repo.dashboardPageObject().clickOnVehicle();
-		
-		repo.dashboardPageObject().clickOnTrucks();
-				
-		repo.truckPageObject().searchTruckonDashboard();
-
-		repo.truckPageObject().DeleteTruck();
+		try
+		{
+			repo.dashboardPageObject().clickOnVehicle();
+			
+			repo.dashboardPageObject().clickOnTrucks();
+					
+			repo.truckPageObject().searchTruckonDashboard();
+	
+			repo.truckPageObject().DeleteTruck();
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			log.info("Unable to deleted Test Data of Truck");
+		}
 
 		Thread.sleep(5000);
 
-		repo.dashboardPageObject().clickOnVehicle();
-				
-		repo.dashboardPageObject().clickOnTrailers();
-				
-		repo.trailerPageObject().changeFocus();
-				
-		repo.trailerPageObject().SearchTrailer();
+		try
+		{
+			repo.dashboardPageObject().clickOnVehicle();
+					
+			repo.dashboardPageObject().clickOnTrailers();
+					
+			repo.trailerPageObject().changeFocus();
+					
+			repo.trailerPageObject().SearchTrailer();
+	
+			repo.trailerPageObject().DeleteTrailer();
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			log.info("Unable to deleted Test Data of Trailer");
 
-		repo.trailerPageObject().DeleteTrailer();
+		}
 	}
 }

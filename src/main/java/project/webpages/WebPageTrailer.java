@@ -11,8 +11,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
-import project.mediator.PageLoadTime;
 import project.mediator.TestData;
 
 public class WebPageTrailer {
@@ -507,6 +505,8 @@ public class WebPageTrailer {
 		{
 			Assert.fail("Unable to click on Activate button on Activate Trailer Prompt");
 		}
+		driver.navigate().refresh();
+
 	}
 	public void changeFocus()
 	{
