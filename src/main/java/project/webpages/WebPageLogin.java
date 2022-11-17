@@ -11,8 +11,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
-import project.mediator.PageLoadTime;
 import project.mediator.TestData;
 import java.util.HashMap;
 import java.util.List;

@@ -1,6 +1,5 @@
 package project.listners;
 
-
 import java.io.File;
 import java.io.IOException;
 import java.util.Calendar;
@@ -12,15 +11,11 @@ import org.testng.ISuite;
 import org.testng.ISuiteListener;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-
 import project.utility.EmailSendUtils;
-import project.utility.ExcelUtility;
 import project.mediator.*;
-
 import static project.constants.FilePathDeclaration.*;
 
 public class ExtentReportListener implements ITestListener, ISuiteListener {

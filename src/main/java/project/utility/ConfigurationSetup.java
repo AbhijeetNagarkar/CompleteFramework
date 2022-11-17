@@ -2,7 +2,6 @@ package project.utility;
 
 import java.io.IOException;
 import java.time.Duration;
-import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
@@ -20,12 +19,9 @@ import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import project.mediator.Driver;
 import project.mediator.ObjectRepository;
-import project.mediator.PageLoadTime;
 import project.mediator.TestData;
 
 import static project.constants.FilePathDeclaration.*;
@@ -73,6 +69,8 @@ public class ConfigurationSetup
 			TestData.SetLoginData(xls.fetchdata("Login"));
 			TestData.SetConfigurationData(xls.fetchdata("Configuration"));
 			TestData.SetCompanyProfileData(xls.fetchdata("Company_Profile"));
+			TestData.SetForgotPasswordData(xls.fetchdata("ForgotPassword"));
+			TestData.SetAdminRegistrationData(xls.fetchdata("AdminRegistration"));
 			
 			log.info("Test Data Loaded for Test Script");
 		}

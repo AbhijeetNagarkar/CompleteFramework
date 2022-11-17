@@ -13,8 +13,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
-import project.mediator.PageLoadTime;
 import project.mediator.TestData;
 
 public class WebPageTruck {
@@ -433,13 +431,13 @@ public class WebPageTruck {
 public boolean DeleteTruck() throws InterruptedException  {
 		
 		Thread.sleep(5000);
-		
+		try
+		{
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", deleteTruckButton);
 		
 		(new Actions(driver)).moveToElement(deleteTruckButton);
 		
-		try
-		{
+		
 		deleteTruckButton.click();
 			
 		log.info("Clicking on Delete Truck button on Dashboard");
@@ -517,5 +515,6 @@ public boolean DeleteTruck() throws InterruptedException  {
 		{
 			Assert.fail("Unable to click on Activate Button on Activate Deleted Truck Prompt");
 		}
+		driver.navigate().refresh();
 	}
 }

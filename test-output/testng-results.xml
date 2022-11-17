@@ -1,113 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="11" passed="10" failed="1" skipped="0">
+<testng-results ignored="0" total="3" passed="1" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-11-15T14:13:40 IST" name="Test Suite" finished-at="2022-11-15T14:16:47 IST" duration-ms="187069">
+  <suite started-at="2022-11-17T11:05:34 IST" name="Test Suite" finished-at="2022-11-17T11:05:51 IST" duration-ms="17645">
     <groups>
-      <group name="Drivers">
-        <method signature="DeletedDriverScript.NavigatingDriversPage()[pri:43, instance:project.testscenarios.DeletedDriverScript@19e4653c]" name="NavigatingDriversPage" class="project.testscenarios.DeletedDriverScript"/>
-        <method signature="DeletedDriverScript.DeletedDriverLogBookFunctionality()[pri:46, instance:project.testscenarios.DeletedDriverScript@19e4653c]" name="DeletedDriverLogBookFunctionality" class="project.testscenarios.DeletedDriverScript"/>
-        <method signature="DeletedDriverScript.DeletedDriversDetails()[pri:45, instance:project.testscenarios.DeletedDriverScript@19e4653c]" name="DeletedDriversDetails" class="project.testscenarios.DeletedDriverScript"/>
-        <method signature="DeletedDriverScript.SearchDriverFunctionality()[pri:44, instance:project.testscenarios.DeletedDriverScript@19e4653c]" name="SearchDriverFunctionality" class="project.testscenarios.DeletedDriverScript"/>
-      </group> <!-- Drivers -->
       <group name="Login">
-        <method signature="LoginScript.validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@117159c0]" name="validUserNameandPassword" class="project.testscenarios.LoginScript"/>
+        <method signature="LoginScript.validUserNameandPassword()[pri:2, instance:project.testscenarios.LoginScript@17f62e33]" name="validUserNameandPassword" class="project.testscenarios.LoginScript"/>
       </group> <!-- Login -->
-      <group name="ELD Devices">
-        <method signature="ELDDevicesScript.NavigatingELDDevicesPage()[pri:32, instance:project.testscenarios.ELDDevicesScript@74e28667]" name="NavigatingELDDevicesPage" class="project.testscenarios.ELDDevicesScript"/>
-        <method signature="ELDDevicesScript.ELDCountandRecord()[pri:33, instance:project.testscenarios.ELDDevicesScript@74e28667]" name="ELDCountandRecord" class="project.testscenarios.ELDDevicesScript"/>
-      </group> <!-- ELD Devices -->
-      <group name="Dash Cameras">
-        <method signature="DashCameraScript.NavigatingDashCamerasPage()[pri:34, instance:project.testscenarios.DashCameraScript@7161d8d1]" name="NavigatingDashCamerasPage" class="project.testscenarios.DashCameraScript"/>
-        <method signature="DashCameraScript.DashCameraCount()[pri:35, instance:project.testscenarios.DashCameraScript@7161d8d1]" name="DashCameraCount" class="project.testscenarios.DashCameraScript"/>
-        <method signature="DashCameraScript.DashCameraData()[pri:37, instance:project.testscenarios.DashCameraScript@7161d8d1]" name="DashCameraData" class="project.testscenarios.DashCameraScript"/>
-        <method signature="DashCameraScript.SearchDashCamera()[pri:36, instance:project.testscenarios.DashCameraScript@7161d8d1]" name="SearchDashCamera" class="project.testscenarios.DashCameraScript"/>
-      </group> <!-- Dash Cameras -->
     </groups>
-    <test started-at="2022-11-15T14:13:40 IST" name="TruckX Test Automation" finished-at="2022-11-15T14:16:47 IST" duration-ms="187069">
-      <class name="project.testscenarios.LoginScript">
-        <test-method is-config="true" signature="preRequisite(org.testng.ITestContext)[pri:0, instance:project.testscenarios.LoginScript@117159c0]" started-at="2022-11-15T14:13:11 IST" name="preRequisite" finished-at="2022-11-15T14:13:40 IST" duration-ms="28778" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@4b425577]]>
-              </value>
-            </param>
-          </params>
+    <test started-at="2022-11-17T11:05:34 IST" name="TruckX Test Automation" finished-at="2022-11-17T11:05:51 IST" duration-ms="17645">
+      <class name="project.testscenarios.LogoutScript">
+        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.LogoutScript@543295b0]" started-at="2022-11-17T11:05:48 IST" name="Fetct_Repository_Object" finished-at="2022-11-17T11:05:48 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- preRequisite -->
-        <test-method is-config="true" signature="ConfigurationSetup()[pri:0, instance:project.testscenarios.LoginScript@117159c0]" started-at="2022-11-15T14:13:40 IST" name="ConfigurationSetup" finished-at="2022-11-15T14:13:40 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ConfigurationSetup -->
-        <test-method signature="validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@117159c0]" started-at="2022-11-15T14:13:40 IST" name="validUserNameandPassword" finished-at="2022-11-15T14:13:54 IST" duration-ms="14432" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validUserNameandPassword -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:project.testscenarios.LoginScript@117159c0]" started-at="2022-11-15T14:16:47 IST" name="closeBrowser" finished-at="2022-11-15T14:16:52 IST" duration-ms="5204" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- project.testscenarios.LoginScript -->
-      <class name="project.testscenarios.DashCameraScript">
-        <test-method signature="NavigatingDashCamerasPage()[pri:34, instance:project.testscenarios.DashCameraScript@7161d8d1]" started-at="2022-11-15T14:13:54 IST" name="NavigatingDashCamerasPage" finished-at="2022-11-15T14:14:58 IST" duration-ms="63628" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- NavigatingDashCamerasPage -->
-        <test-method signature="DashCameraCount()[pri:35, instance:project.testscenarios.DashCameraScript@7161d8d1]" started-at="2022-11-15T14:14:58 IST" name="DashCameraCount" finished-at="2022-11-15T14:15:04 IST" depends-on-methods="project.testscenarios.DashCameraScript.NavigatingDashCamerasPage" duration-ms="6217" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- DashCameraCount -->
-        <test-method signature="SearchDashCamera()[pri:36, instance:project.testscenarios.DashCameraScript@7161d8d1]" started-at="2022-11-15T14:15:04 IST" name="SearchDashCamera" finished-at="2022-11-15T14:15:11 IST" depends-on-methods="project.testscenarios.DashCameraScript.NavigatingDashCamerasPage" duration-ms="6496" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SearchDashCamera -->
-        <test-method signature="DashCameraData()[pri:37, instance:project.testscenarios.DashCameraScript@7161d8d1]" started-at="2022-11-15T14:15:11 IST" name="DashCameraData" finished-at="2022-11-15T14:15:26 IST" depends-on-methods="project.testscenarios.DashCameraScript.NavigatingDashCamerasPage" duration-ms="15300" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- DashCameraData -->
-      </class> <!-- project.testscenarios.DashCameraScript -->
-      <class name="project.testscenarios.ELDDevicesScript">
-        <test-method signature="NavigatingELDDevicesPage()[pri:32, instance:project.testscenarios.ELDDevicesScript@74e28667]" started-at="2022-11-15T14:15:26 IST" name="NavigatingELDDevicesPage" finished-at="2022-11-15T14:15:50 IST" duration-ms="24091" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- NavigatingELDDevicesPage -->
-        <test-method signature="ELDCountandRecord()[pri:33, instance:project.testscenarios.ELDDevicesScript@74e28667]" started-at="2022-11-15T14:15:50 IST" name="ELDCountandRecord" finished-at="2022-11-15T14:15:57 IST" depends-on-methods="project.testscenarios.ELDDevicesScript.NavigatingELDDevicesPage" duration-ms="7348" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ELDCountandRecord -->
-      </class> <!-- project.testscenarios.ELDDevicesScript -->
-      <class name="project.testscenarios.DeletedDriverScript">
-        <test-method signature="NavigatingDriversPage()[pri:43, instance:project.testscenarios.DeletedDriverScript@19e4653c]" started-at="2022-11-15T14:15:57 IST" name="NavigatingDriversPage" finished-at="2022-11-15T14:16:00 IST" duration-ms="2473" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- NavigatingDriversPage -->
-        <test-method signature="SearchDriverFunctionality()[pri:44, instance:project.testscenarios.DeletedDriverScript@19e4653c]" started-at="2022-11-15T14:16:00 IST" name="SearchDriverFunctionality" finished-at="2022-11-15T14:16:09 IST" depends-on-methods="project.testscenarios.DeletedDriverScript.NavigatingDriversPage" duration-ms="9293" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SearchDriverFunctionality -->
-        <test-method signature="DeletedDriversDetails()[pri:45, instance:project.testscenarios.DeletedDriverScript@19e4653c]" started-at="2022-11-15T14:16:09 IST" name="DeletedDriversDetails" finished-at="2022-11-15T14:16:19 IST" depends-on-methods="project.testscenarios.DeletedDriverScript.NavigatingDriversPage" duration-ms="10072" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- DeletedDriversDetails -->
-        <test-method signature="DeletedDriverLogBookFunctionality()[pri:46, instance:project.testscenarios.DeletedDriverScript@19e4653c]" started-at="2022-11-15T14:16:19 IST" name="DeletedDriverLogBookFunctionality" finished-at="2022-11-15T14:16:46 IST" depends-on-methods="project.testscenarios.DeletedDriverScript.NavigatingDriversPage" duration-ms="26444" status="FAIL">
-          <exception class="java.lang.AssertionError">
+        </test-method> <!-- Fetct_Repository_Object -->
+        <test-method signature="LogoutClickflow()[pri:3, instance:project.testscenarios.LogoutScript@543295b0]" started-at="2022-11-17T11:05:48 IST" name="LogoutClickflow" finished-at="2022-11-17T11:05:48 IST" duration-ms="1" status="FAIL">
+          <exception class="java.lang.ArrayIndexOutOfBoundsException">
             <message>
-              <![CDATA[unable to view logbook on Deleted Drivers Page expected [true] but found [false]]]>
+              <![CDATA[Index 0 out of bounds for length 0]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: unable to view logbook on Deleted Drivers Page expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertTrue(Assert.java:45)
-at project.testscenarios.DeletedDriverScript.DeletedDriverLogBookFunctionality(DeletedDriverScript.java:45)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+              <![CDATA[java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
+at project.listners.ExtentReportListener.onTestStart(ExtentReportListener.java:54)
+at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:103)
+at org.testng.internal.TestInvoker.runTestResultListener(TestInvoker.java:219)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:569)
 at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
 at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
 at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
@@ -132,11 +49,81 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- java.lang.ArrayIndexOutOfBoundsException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- DeletedDriverLogBookFunctionality -->
-      </class> <!-- project.testscenarios.DeletedDriverScript -->
+        </test-method> <!-- LogoutClickflow -->
+      </class> <!-- project.testscenarios.LogoutScript -->
+      <class name="project.testscenarios.LoginScript">
+        <test-method is-config="true" signature="preRequisite(org.testng.ITestContext)[pri:0, instance:project.testscenarios.LoginScript@17f62e33]" started-at="2022-11-17T11:05:02 IST" name="preRequisite" finished-at="2022-11-17T11:05:34 IST" duration-ms="31688" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@d3e3085]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- preRequisite -->
+        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.LoginScript@17f62e33]" started-at="2022-11-17T11:05:34 IST" name="Fetct_Repository_Object" finished-at="2022-11-17T11:05:34 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Fetct_Repository_Object -->
+        <test-method signature="validUserNameandPassword()[pri:2, instance:project.testscenarios.LoginScript@17f62e33]" started-at="2022-11-17T11:05:34 IST" name="validUserNameandPassword" finished-at="2022-11-17T11:05:48 IST" duration-ms="14606" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validUserNameandPassword -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:project.testscenarios.LoginScript@17f62e33]" started-at="2022-11-17T11:05:51 IST" name="closeBrowser" finished-at="2022-11-17T11:05:57 IST" duration-ms="5221" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- project.testscenarios.LoginScript -->
+      <class name="project.testscenarios.ForgotPasswordScript">
+        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.ForgotPasswordScript@54422e18]" started-at="2022-11-17T11:05:50 IST" name="Fetct_Repository_Object" finished-at="2022-11-17T11:05:50 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Fetct_Repository_Object -->
+        <test-method signature="ForgotPasswordclick()[pri:1, instance:project.testscenarios.ForgotPasswordScript@54422e18]" started-at="2022-11-17T11:05:50 IST" name="ForgotPasswordclick" finished-at="2022-11-17T11:05:50 IST" duration-ms="1" status="FAIL">
+          <exception class="java.lang.ArrayIndexOutOfBoundsException">
+            <message>
+              <![CDATA[Index 0 out of bounds for length 0]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
+at project.listners.ExtentReportListener.onTestStart(ExtentReportListener.java:54)
+at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:103)
+at org.testng.internal.TestInvoker.runTestResultListener(TestInvoker.java:219)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:569)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.ArrayIndexOutOfBoundsException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ForgotPasswordclick -->
+      </class> <!-- project.testscenarios.ForgotPasswordScript -->
     </test> <!-- TruckX Test Automation -->
   </suite> <!-- Test Suite -->
 </testng-results>
