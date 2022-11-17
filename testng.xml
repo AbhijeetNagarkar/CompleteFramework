@@ -5,17 +5,26 @@
 		<listener class-name="project.listners.ExtentReportListener" />
 	</listeners>
 	
- <test thread-count="1" name="TruckX Test Automation" parallel="false" preserve-order="true" >
+ <test thread-count="1"  name="TruckX Test Automation" preserve-order="true" >
      <classes>
-          <class name="project.testscenarios.LoginScript"/>  
-       	<!--  <class name="project.testscenarios.TruckScript"/>  
-          <class name="project.testscenarios.TrailerScript"/> 
-          <class name="project.testscenarios.TrackingDevicesScript"/>  -->
-          <class name="project.testscenarios.LogoutScript"/> 
+	   <class name="project.testscenarios.LoginScript"/>  
+  
+	  	<class name="project.testscenarios.TruckScript"/>  
+		<class name="project.testscenarios.TrailerScript"/>  
+		<class name = "project.testscenarios.AssetsScript"/>
+		<class name = "project.testscenarios.TrackingLinksScript"/> 
+		<class name="project.testscenarios.TrackingDevicesScript"/>  
+		<class name="project.testscenarios.DashCameraScript"/> 
+		<class name = "project.testscenarios.ELDDevicesScript"/>
+		<class name = "project.testscenarios.DeletedDriverScript"/> 
+		<class name = "project.testscenarios.AlertsScript"/>
+	     <class name = "project.testscenarios.DeleteTestData"/>  	
+	     <class name="project.testscenarios.LogoutScript"/> 
           <class name="project.testscenarios.ForgotPasswordScript"/>
          <!-- <class name="project.testscenarios.AdminRegistrationScript"/> -->
-      </classes>
+
+     </classes>
   </test> 
-  <!-- Test -->
+
 </suite>
  

@@ -1,22 +1,17 @@
 package project.testscenarios;
 
 import java.io.IOException;
-import java.util.HashMap;
-
 import org.apache.log4j.Logger;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import project.mediator.Driver;
 import project.mediator.ObjectRepository;
 import project.utility.WebPageObjectCreation;
 
 public class LogoutScript {
-    WebPageObjectCreation repo;
-	
-	WebDriver driver;	
+ 
+	WebPageObjectCreation repo;
 	
 	public static Logger log = Logger.getLogger(LogoutScript.class);
 
@@ -26,7 +21,7 @@ public class LogoutScript {
         repo = ObjectRepository.GetInstance();
     }	
 	
-	@Test(priority = 2)
+	@Test(priority = 3,groups = {"Login"})
 	public void LogoutClickflow() throws InterruptedException
 	{		
 		

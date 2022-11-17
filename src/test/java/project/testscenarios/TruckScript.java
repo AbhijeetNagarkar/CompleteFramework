@@ -1,24 +1,32 @@
 package project.testscenarios;
 
+import java.io.IOException;
+
+import org.apache.log4j.Logger;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import project.RandomVinAPI.RandomVin;
 import project.mediator.ObjectRepository;
 import project.mediator.TestData;
-import project.utility.ConfigurationSetup;
 import project.utility.WebPageObjectCreation;
 
-public class TruckScript extends ConfigurationSetup{
+public class TruckScript {
 	
 	WebPageObjectCreation repo;
 	
 	String vin;
 	
-	@Test(priority = 4)
+	public static Logger log = Logger.getLogger(TruckScript.class);
+	
+	@BeforeClass
+	public void Fetct_Repository_Object() throws InterruptedException, IOException
+	{
+		repo = ObjectRepository.GetInstance();
+	}
+	@Test(priority = 4, groups = {"Trucks"})
 	public void NavigatingTrucksPage() throws InterruptedException 
 	{
-		
-		repo=ObjectRepository.GetInstance();
 		
 		repo.dashboardPageObject().clickOnVehicle();
 				
@@ -26,7 +34,7 @@ public class TruckScript extends ConfigurationSetup{
 		
 		Thread.sleep(7000);
 	}
-	@Test(priority = 5, dependsOnMethods = "NavigatingTrucksPage" )
+	@Test(priority = 5, dependsOnMethods = "NavigatingTrucksPage", groups = {"Trucks"} )
 	public void CreatingNewTruck()
 	{
 		repo.truckPageObject().clickOnAddTruckDashboard();
@@ -108,14 +116,14 @@ public class TruckScript extends ConfigurationSetup{
 		}
 }
 	
-	@Test(priority = 6, dependsOnMethods = "CreatingNewTruck")
+	@Test(priority = 6, dependsOnMethods = "CreatingNewTruck",groups = {"Trucks"})
 	public void SearchTruckOnDashboard() throws InterruptedException 
 	{
 		repo=ObjectRepository.GetInstance();
 		repo.truckPageObject().searchTruckonDashboard();
 	}
 	
-	@Test(priority = 7, dependsOnMethods = "SearchTruckOnDashboard")
+	@Test(priority = 7, dependsOnMethods = "SearchTruckOnDashboard",groups = {"Trucks"})
 	public void VerifyTruckOnDashboard() throws InterruptedException 
 	{
 		boolean flag=repo.truckPageObject().verifyTruckonDashboard();
@@ -127,7 +135,7 @@ public class TruckScript extends ConfigurationSetup{
 		else Assert.fail("Incorrect data showing on Dashboard for Newly Added Truck");
 	}
 	
-	@Test(priority = 8, dependsOnMethods = "VerifyTruckOnDashboard")
+	@Test(priority = 8, dependsOnMethods = "VerifyTruckOnDashboard",groups = {"Trucks"})
 	public void VerifyTruckOnVehicleDetails() throws InterruptedException
 	{
 		boolean flag=repo.truckPageObject().verifyTruckDetails();

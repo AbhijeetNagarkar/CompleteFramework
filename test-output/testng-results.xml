@@ -1,38 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="1" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-11-16T16:17:26 IST" name="Test Suite" finished-at="2022-11-16T16:18:14 IST" duration-ms="47941">
+  <suite started-at="2022-11-17T11:05:34 IST" name="Test Suite" finished-at="2022-11-17T11:05:51 IST" duration-ms="17645">
     <groups>
+      <group name="Login">
+        <method signature="LoginScript.validUserNameandPassword()[pri:2, instance:project.testscenarios.LoginScript@17f62e33]" name="validUserNameandPassword" class="project.testscenarios.LoginScript"/>
+      </group> <!-- Login -->
     </groups>
-    <test started-at="2022-11-16T16:17:26 IST" name="TruckX Test Automation" finished-at="2022-11-16T16:18:14 IST" duration-ms="47941">
+    <test started-at="2022-11-17T11:05:34 IST" name="TruckX Test Automation" finished-at="2022-11-17T11:05:51 IST" duration-ms="17645">
+      <class name="project.testscenarios.LogoutScript">
+        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.LogoutScript@543295b0]" started-at="2022-11-17T11:05:48 IST" name="Fetct_Repository_Object" finished-at="2022-11-17T11:05:48 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Fetct_Repository_Object -->
+        <test-method signature="LogoutClickflow()[pri:3, instance:project.testscenarios.LogoutScript@543295b0]" started-at="2022-11-17T11:05:48 IST" name="LogoutClickflow" finished-at="2022-11-17T11:05:48 IST" duration-ms="1" status="FAIL">
+          <exception class="java.lang.ArrayIndexOutOfBoundsException">
+            <message>
+              <![CDATA[Index 0 out of bounds for length 0]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
+at project.listners.ExtentReportListener.onTestStart(ExtentReportListener.java:54)
+at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:103)
+at org.testng.internal.TestInvoker.runTestResultListener(TestInvoker.java:219)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:569)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.ArrayIndexOutOfBoundsException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LogoutClickflow -->
+      </class> <!-- project.testscenarios.LogoutScript -->
       <class name="project.testscenarios.LoginScript">
-        <test-method is-config="true" signature="preRequisite(org.testng.ITestContext)[pri:0, instance:project.testscenarios.LoginScript@2b71e916]" started-at="2022-11-16T16:17:02 IST" name="preRequisite" finished-at="2022-11-16T16:17:26 IST" duration-ms="24277" status="PASS">
+        <test-method is-config="true" signature="preRequisite(org.testng.ITestContext)[pri:0, instance:project.testscenarios.LoginScript@17f62e33]" started-at="2022-11-17T11:05:02 IST" name="preRequisite" finished-at="2022-11-17T11:05:34 IST" duration-ms="31688" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@4bf80c29]]>
+                <![CDATA[org.testng.TestRunner@d3e3085]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- preRequisite -->
-        <test-method signature="ConfigurationSetup()[pri:0, instance:project.testscenarios.LoginScript@2b71e916]" started-at="2022-11-16T16:17:27 IST" name="ConfigurationSetup" finished-at="2022-11-16T16:17:27 IST" duration-ms="12" status="PASS">
+        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.LoginScript@17f62e33]" started-at="2022-11-17T11:05:34 IST" name="Fetct_Repository_Object" finished-at="2022-11-17T11:05:34 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ConfigurationSetup -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:project.testscenarios.LoginScript@2b71e916]" started-at="2022-11-16T16:18:14 IST" name="closeBrowser" finished-at="2022-11-16T16:18:20 IST" duration-ms="5234" status="PASS">
+        </test-method> <!-- Fetct_Repository_Object -->
+        <test-method signature="validUserNameandPassword()[pri:2, instance:project.testscenarios.LoginScript@17f62e33]" started-at="2022-11-17T11:05:34 IST" name="validUserNameandPassword" finished-at="2022-11-17T11:05:48 IST" duration-ms="14606" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validUserNameandPassword -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:project.testscenarios.LoginScript@17f62e33]" started-at="2022-11-17T11:05:51 IST" name="closeBrowser" finished-at="2022-11-17T11:05:57 IST" duration-ms="5221" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- project.testscenarios.LoginScript -->
-      <class name="project.testscenarios.AdminRegistrationScript">
-        <test-method signature="RegisterHereClick()[pri:1, instance:project.testscenarios.AdminRegistrationScript@5b7a5baa]" started-at="2022-11-16T16:17:27 IST" name="RegisterHereClick" finished-at="2022-11-16T16:18:14 IST" duration-ms="47863" status="PASS">
+      <class name="project.testscenarios.ForgotPasswordScript">
+        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.ForgotPasswordScript@54422e18]" started-at="2022-11-17T11:05:50 IST" name="Fetct_Repository_Object" finished-at="2022-11-17T11:05:50 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- RegisterHereClick -->
-      </class> <!-- project.testscenarios.AdminRegistrationScript -->
+        </test-method> <!-- Fetct_Repository_Object -->
+        <test-method signature="ForgotPasswordclick()[pri:1, instance:project.testscenarios.ForgotPasswordScript@54422e18]" started-at="2022-11-17T11:05:50 IST" name="ForgotPasswordclick" finished-at="2022-11-17T11:05:50 IST" duration-ms="1" status="FAIL">
+          <exception class="java.lang.ArrayIndexOutOfBoundsException">
+            <message>
+              <![CDATA[Index 0 out of bounds for length 0]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
+at project.listners.ExtentReportListener.onTestStart(ExtentReportListener.java:54)
+at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:103)
+at org.testng.internal.TestInvoker.runTestResultListener(TestInvoker.java:219)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:569)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.ArrayIndexOutOfBoundsException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ForgotPasswordclick -->
+      </class> <!-- project.testscenarios.ForgotPasswordScript -->
     </test> <!-- TruckX Test Automation -->
   </suite> <!-- Test Suite -->
 </testng-results>

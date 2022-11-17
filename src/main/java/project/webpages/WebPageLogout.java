@@ -1,20 +1,13 @@
 package project.webpages;
 
-import java.beans.IntrospectionException;
-import java.util.concurrent.TimeUnit;
-
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
-import project.mediator.PageLoadTime;
 
 public class WebPageLogout {
     
@@ -22,13 +15,8 @@ public class WebPageLogout {
 	
 	WebDriverWait wait;
 	
-	FluentWait<WebDriver> fwait;
+	public static Logger log = Logger.getLogger(WebPageLogout.class);
 	
-	public static Logger log = Logger.getLogger(WebPageLogin.class);
-	
-	long starttime=0;
-	
-	long totaltime=0;
 	
 	public WebPageLogout(WebDriver driverinstance)
 	{
@@ -46,7 +34,7 @@ public class WebPageLogout {
 	
 	public void ProfileMenuItemClick() throws InterruptedException
 	{
-		Thread.sleep(5000);
+		Thread.sleep(10000);
 		try
 		{
 		wait.until(ExpectedConditions.visibilityOf(ProfileMenuItem));
@@ -59,8 +47,10 @@ public class WebPageLogout {
 		}
 	}
 	
-	public void LogoutClick()
+	public void LogoutClick() throws InterruptedException
 	{
+		Thread.sleep(2000);
+
 		try
 		{
 		wait.until(ExpectedConditions.elementToBeClickable(Logout));

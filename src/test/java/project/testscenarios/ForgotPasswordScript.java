@@ -3,11 +3,9 @@ package project.testscenarios;
 import java.io.IOException;
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import project.mediator.Driver;
 import project.mediator.ObjectRepository;
 import project.utility.WebPageObjectCreation;
@@ -16,8 +14,6 @@ public class ForgotPasswordScript {
 	
     WebPageObjectCreation repo;
  	
-	WebDriver driver;	
-	
 	public static Logger log = Logger.getLogger(ForgotPasswordScript.class);
 
 	@BeforeClass
@@ -26,13 +22,12 @@ public class ForgotPasswordScript {
         repo = ObjectRepository.GetInstance();
     }	
 	
-	@Test(priority = 1)
+	@Test(priority = 1,groups = {"Login"})
 	public void ForgotPasswordclick() throws InterruptedException
 	{		
-		
 		repo.forgotPasswordObject().ForgotPasswordClick();
 							
-		Assert.assertTrue(repo.forgotPasswordObject().ValidateForgotPassword());
+		Assert.assertTrue(repo.forgotPasswordObject().ValidateForgotPassword(),"Unable to Navigate Forget Password Page");
 		
 		repo.forgotPasswordObject().enterAdminEmail();
 		

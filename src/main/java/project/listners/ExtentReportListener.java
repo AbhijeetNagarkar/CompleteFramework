@@ -1,6 +1,5 @@
 package project.listners;
 
-
 import java.io.File;
 import java.io.IOException;
 import java.util.Calendar;
@@ -12,22 +11,19 @@ import org.testng.ISuite;
 import org.testng.ISuiteListener;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
-
-import com.relevantcodes.extentreports.LogStatus;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import project.utility.EmailSendUtils;
-import project.utility.ExcelUtility;
 import project.mediator.*;
-
 import static project.constants.FilePathDeclaration.*;
 
 public class ExtentReportListener implements ITestListener, ISuiteListener {
 
 	
-	private static ExtentTest logger;
-	private static ExtentReports report;
+	public static ExtentTest logger;
+	public static com.aventstack.extentreports.ExtentReports report;
+	public static ExtentHtmlReporter htmlreport;
 	private static int count_totalTCs;
 	private static int count_passedTCs;
 	private static int count_skippedTCs;
@@ -36,20 +32,24 @@ public class ExtentReportListener implements ITestListener, ISuiteListener {
 	@Override
 	public  void onStart(ISuite suite) 
 	{
+		htmlreport = new ExtentHtmlReporter(ExtendReportPath);
 		//Create an html report for the suite that is executed
-		report = new ExtentReports(ExtendReportPath);
-		//logger = report.startTest(suite.getName());
+		report = new com.aventstack.extentreports.ExtentReports();
+		report.attachReporter(htmlreport);
 		
+	
 	}
 	
 	@Override
 	public void onTestStart(ITestResult result) 
 	{
 		count_totalTCs = count_totalTCs + 1;
-		logger = report.startTest(result.getMethod().getMethodName());
-		logger.log(LogStatus.INFO, "Executing test: " + result.getMethod().getMethodName());
-		logger.log(LogStatus.INFO, "Inprocess");
+		String category[]=result.getMethod().getGroups();
+	
+		logger = report.createTest(result.getMethod().getMethodName()).assignCategory(category[0]);
+		logger.info("Executing test: " + result.getMethod().getMethodName());
 		
+	
 		}
 
 	@Override
@@ -57,7 +57,7 @@ public class ExtentReportListener implements ITestListener, ISuiteListener {
 	{
 		count_passedTCs = count_passedTCs + 1;
 		
-		logger.log(LogStatus.PASS, "Finished executing test");
+		logger.pass("Finished executing test");
 		
 	}
 
@@ -76,14 +76,23 @@ public class ExtentReportListener implements ITestListener, ISuiteListener {
 		} catch(IOException e) {
 			System.out.println("Failed to take screenshot");
 		}
-		logger.log(LogStatus.FAIL,result.getThrowable().getMessage());
+		logger.fail(result.getThrowable().getMessage());
+		String str=System.getProperty("user.dir")+File.separator+"Screenshots"+File.separator+ fileName;
+		try {
+			logger.addScreenCaptureFromPath(str);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Driver.Refresh();
+		
 	}
 
 	@Override
 	public void onTestSkipped(ITestResult result) 
 	{
 		count_skippedTCs = count_skippedTCs + 1;
-		logger.log(LogStatus.SKIP, "Test skipped");
+		logger.log(Status.SKIP, "Test skipped");
 	}
 	
 	@Override
@@ -91,22 +100,8 @@ public class ExtentReportListener implements ITestListener, ISuiteListener {
 	{
 		report.flush();
 		
-		logger.log(LogStatus.INFO,"End suite testing " + suite.getName());
+		logger.info("End suite testing " + suite.getName());
 		
-		System.out.println(PageLoadTime.GetMap().toString());
-		
-		ExcelUtility ex = new ExcelUtility();
-		
-		try {
-			
-			ex.addloadingtimedata(PageLoadTime.GetMap());
-			
-			
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	      
 	    EmailSendUtils.sendEmail(count_totalTCs, count_passedTCs, count_failedTCs, count_skippedTCs);
 	}
 

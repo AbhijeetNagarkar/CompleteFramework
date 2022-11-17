@@ -2,7 +2,6 @@ package project.utility;
 
 import java.io.IOException;
 import java.time.Duration;
-import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
@@ -23,7 +22,6 @@ import org.testng.annotations.BeforeSuite;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import project.mediator.Driver;
 import project.mediator.ObjectRepository;
-import project.mediator.PageLoadTime;
 import project.mediator.TestData;
 
 import static project.constants.FilePathDeclaration.*;
@@ -33,10 +31,6 @@ public class ConfigurationSetup
 		private WebDriver driver;
 		
 		public static Logger log;
-		
-		long starttime=0;
-		
-		long totaltime=0;
 		
 		public WebPageObjectCreation repo;
 		
@@ -53,6 +47,8 @@ public class ConfigurationSetup
 			
 			context.setAttribute("WebDriver", driver);
 		}
+				
+		
 				
 		private void configureLogger() 
 		{
@@ -72,9 +68,9 @@ public class ConfigurationSetup
 			TestData.SetDeviceData(xls.fetchdata("Device"));
 			TestData.SetLoginData(xls.fetchdata("Login"));
 			TestData.SetConfigurationData(xls.fetchdata("Configuration"));
+			TestData.SetCompanyProfileData(xls.fetchdata("Company_Profile"));
 			TestData.SetForgotPasswordData(xls.fetchdata("ForgotPassword"));
 			TestData.SetAdminRegistrationData(xls.fetchdata("AdminRegistration"));
-			
 			
 			log.info("Test Data Loaded for Test Script");
 		}
@@ -91,8 +87,8 @@ public class ConfigurationSetup
 								 		 
 				case "Chrome"  : WebDriverManager.chromedriver().setup();
 								 ChromeOptions chrome_options = new ChromeOptions();
-								// chrome_options.addArguments("--no-sandbox");
-								// chrome_options.addArguments("--headless");
+								 chrome_options.addArguments("--no-sandbox");
+								 chrome_options.addArguments("--headless");
 								 driver = new ChromeDriver(chrome_options);
 								
 								 break;
@@ -114,7 +110,6 @@ public class ConfigurationSetup
 	
 		public void navigateToUrl(String url)
 		{
-			starttime=System.currentTimeMillis();
 			try
 			{
 				log.info(" Navigating to "+url);
@@ -126,16 +121,6 @@ public class ConfigurationSetup
 				.ignoring(Exception.class);
 				
 				fwait.until(ExpectedConditions.visibilityOfElementLocated(By.id("userName")));
-				
-				totaltime=System.currentTimeMillis()-starttime;
-				
-				totaltime=totaltime/1000;
-				
-				PageLoadTime.SetMap(new HashMap<String,String>());
-				
-				PageLoadTime.GetMap().put("Login", String.valueOf(totaltime));
-				
-				log.info("Time taken to Load Login Page : "+totaltime+" seconds");
 				
 				ObjectRepository.SetInstance(new WebPageObjectCreation(driver));
 				

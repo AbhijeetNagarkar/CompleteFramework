@@ -6,11 +6,18 @@
   </listeners>
   <test thread-count="5" name="TruckX Test Automation(failed)">
     <classes>
-      <class name="project.testscenarios.AdminRegistrationScript">
+      <class name="project.testscenarios.LogoutScript">
         <methods>
-          <include name="RegisterHereClick"/>
+          <include name="Fetct_Repository_Object"/>
+          <include name="LogoutClickflow"/>
         </methods>
-      </class> <!-- project.testscenarios.AdminRegistrationScript -->
+      </class> <!-- project.testscenarios.LogoutScript -->
+      <class name="project.testscenarios.ForgotPasswordScript">
+        <methods>
+          <include name="Fetct_Repository_Object"/>
+          <include name="ForgotPasswordclick"/>
+        </methods>
+      </class> <!-- project.testscenarios.ForgotPasswordScript -->
     </classes>
   </test> <!-- TruckX Test Automation(failed) -->
 </suite> <!-- Failed suite [Test Suite] -->

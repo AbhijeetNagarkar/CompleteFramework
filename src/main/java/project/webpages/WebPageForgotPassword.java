@@ -8,13 +8,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.PageFactoryFinder;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
-import project.mediator.PageLoadTime;
 import project.mediator.TestData;
 
 public class WebPageForgotPassword {
@@ -22,8 +18,6 @@ public class WebPageForgotPassword {
     WebDriver driver;
 	
 	WebDriverWait wait;
-	
-	FluentWait<WebDriver> fwait;
 	
 	HashMap<String, String> forgotpasswordmap;
 	
@@ -44,13 +38,13 @@ public class WebPageForgotPassword {
 	
 	@FindBy(id="email")
 	WebElement email;
-	
-	
+		
 	@FindBy(xpath="//button[@type=\"submit\"]")	
 	WebElement ResetPasswordbutton;	
 	
-	public void ForgotPasswordClick()
+	public void ForgotPasswordClick() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		try
 		{
 		wait.until(ExpectedConditions.visibilityOf(ForgotPasswordLink));

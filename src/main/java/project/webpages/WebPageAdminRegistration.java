@@ -1,14 +1,8 @@
 package project.webpages;
 
-import java.awt.RenderingHints.Key;
 import java.util.HashMap;
 import java.util.List;
-
-import javax.xml.xpath.XPath;
-
-import org.apache.commons.io.filefilter.TrueFileFilter;
 import org.apache.log4j.Logger;
-import org.apache.poi.xssf.usermodel.XSSFSheetConditionalFormatting;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -17,7 +11,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 

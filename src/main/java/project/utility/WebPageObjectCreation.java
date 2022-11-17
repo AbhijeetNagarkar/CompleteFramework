@@ -3,14 +3,7 @@ package project.utility;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 
-import project.webpages.WebPageAdminRegistration;
-import project.webpages.WebPageDashboard;
-import project.webpages.WebPageForgotPassword;
-import project.webpages.WebPageLogin;
-import project.webpages.WebPageLogout;
-import project.webpages.WebPageTrackingDevices;
-import project.webpages.WebPageTrailer;
-import project.webpages.WebPageTruck;
+import project.webpages.*;
 
 public class WebPageObjectCreation {
 
@@ -35,12 +28,200 @@ public class WebPageObjectCreation {
 	
 	WebPageTrackingDevices trackingPage;
 	
+	WebPageDashCamera dashCameraPage;
+	
+	WebPageELDDevices eldDevicesPage;
+	
+	WebPageTrackingLinks trackingLinksPage;
+	
+	WebPageAssets assetsPage;
+	
+	WebPageCompanyProfile companyprofilepage;
+	
+	WebPageDeletedDrivers deleteddrivers;
+	
+	WebPageDrivers drivers;
+	
+	WebPageAPIKeyTransfer apikeypage;
+	
+	WebPageFeature featurepage;
+	
+	WebPageAlerts alertspage;
+	
 	WebPageLogout logoutPage;
 	
 	WebPageForgotPassword forgotpasswordPage;
 	
 	WebPageAdminRegistration adminregistrationPage;
 	
+	WebPageBillingDetails billingdetailsPage;
+	
+	WebPageIFTATrips iftatripsPage;
+	
+	WebPageIFTAReports iftareportsPage;
+	
+	WebPageLogbook logbookPage;
+	
+	WebPageUnAssignedDrive unassigneddrivePage;
+	
+	WebPageMessages messagePage;
+	
+	WebPageReports reportsPage;
+	
+	
+	public WebPageReports ReportsPageObject()
+	{
+		if(reportsPage==null)
+		{
+			log.info("Reports page object created");
+			reportsPage = new WebPageReports(driver);
+		}
+		return reportsPage;
+	}
+	
+	
+	public WebPageUnAssignedDrive UnAssignedDrivePageObject()
+	{
+		if(unassigneddrivePage==null)
+		{
+			log.info("UnAssigned Drive page object created");
+			unassigneddrivePage = new WebPageUnAssignedDrive(driver);
+		}
+		return unassigneddrivePage;
+	}
+	
+	public WebPageMessages MessagesPageObject()
+	{
+		if(messagePage==null)
+		{
+			log.info("Messages page object created");
+			messagePage = new WebPageMessages(driver);
+		}
+		return messagePage;
+	}
+	
+	public WebPageIFTAReports IFTAReportsPageObject()
+	{
+		if(iftareportsPage==null)
+		{
+			log.info("IFTA Reports page object created");
+			iftareportsPage = new WebPageIFTAReports(driver);
+		}
+		return iftareportsPage;
+	}
+	
+	public WebPageLogbook LogbookPageObject()
+	{
+		if(logbookPage==null)
+		{
+			log.info("Logbook page object created");
+			logbookPage = new WebPageLogbook(driver);
+		}
+		return logbookPage;
+	}
+	
+	
+	
+	
+	public WebPageBillingDetails BillingDetailsPageObject()
+	{
+		if(billingdetailsPage==null)
+		{
+			log.info("Billing Details page object created");
+			billingdetailsPage = new WebPageBillingDetails(driver);
+		}
+		return billingdetailsPage;
+	}
+	
+	public WebPageIFTATrips IFTATripsPageObject()
+	{
+		if(iftatripsPage==null)
+		{
+			log.info("IFTA Trips page object created");
+			iftatripsPage = new WebPageIFTATrips(driver);
+		}
+		return iftatripsPage;
+	}
+	
+	
+	public WebPageAlerts AlertPageObject()
+	{
+		if(alertspage==null)
+		{
+			log.info("Alerts page object created");
+			alertspage = new WebPageAlerts(driver);
+		}
+		return alertspage;
+	}
+	
+	public WebPageFeature FeaturePageObject()
+	{
+		if(featurepage==null)
+		{
+			log.info("Feature page object created");
+			featurepage = new WebPageFeature(driver);
+		}
+		return featurepage;
+	}
+	
+	public WebPageAPIKeyTransfer APIKeyTransferPageObject()
+	{
+		if(apikeypage==null)
+		{
+			log.info("API Key Transfer page object created");
+			apikeypage = new WebPageAPIKeyTransfer(driver);
+		}
+		return apikeypage;
+	}
+	
+	public WebPageDeletedDrivers deletedDriversPageObject()
+	{
+		if(deleteddrivers==null)
+		{
+			log.info("Deleted Drivers page object created");
+			deleteddrivers = new WebPageDeletedDrivers(driver);
+		}
+		return deleteddrivers;
+	}
+	
+	public WebPageDrivers DriversPageObject()
+	{
+		if(drivers==null)
+		{
+			log.info("Drivers page object created");
+			drivers = new WebPageDrivers(driver);
+		}
+		return drivers;
+	}
+	
+	public WebPageCompanyProfile companyProfilePageObject()
+	{
+		if(companyprofilepage==null)
+		{
+			log.info("Company Profile page object created");
+			companyprofilepage = new WebPageCompanyProfile(driver);
+		}
+		return companyprofilepage;
+	}
+
+	public WebPageTrackingLinks trackinglinksPageObject()
+	{
+		if(trackingLinksPage==null)
+		{
+			log.info("Tracking Links page object created");
+			trackingLinksPage = new WebPageTrackingLinks(driver);
+		}
+		return trackingLinksPage;
+	}
+	public WebPageAssets assetsPageObject()
+	{
+		if(assetsPage==null)
+		{
+			log.info("Assets page object created");
+			assetsPage = new WebPageAssets(driver);
+		}
+		return assetsPage;
+	}
 	public WebPageLogin loginPageObject()
 	{
 		if(loginPage==null)
@@ -87,6 +268,24 @@ public class WebPageObjectCreation {
 		}
 		return trackingPage;
 	}
+	public WebPageDashCamera dashCameraPageObject()
+	{
+		if(dashCameraPage==null)
+		{
+			log.info("Dash Camera page object created");
+			dashCameraPage = new WebPageDashCamera(driver);
+		}
+		return dashCameraPage;
+	}
+	public WebPageELDDevices eldDevicesPageObject()
+	{
+		if(eldDevicesPage==null)
+		{
+			log.info("ELD Devices page object created");
+			eldDevicesPage = new WebPageELDDevices(driver);
+		}
+		return eldDevicesPage;
+	}
 	public WebPageLogout logoutPageObject()
 	{
 		if(logoutPage==null)
@@ -113,7 +312,6 @@ public class WebPageObjectCreation {
 			adminregistrationPage = new WebPageAdminRegistration(driver);
 		}
 		return adminregistrationPage;
+	
 	}
-	
-	
 }
