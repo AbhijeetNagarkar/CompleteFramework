@@ -10,13 +10,15 @@ import project.utility.WebPageObjectCreation;
 
 public class TrackingLinksScript {
 	
+	
+	
 	WebPageObjectCreation repo;
 		
 	public static Logger log = Logger.getLogger(DashCameraScript.class);
 	
 	@BeforeClass
 	public void Fetct_Repository_Object() throws InterruptedException, IOException
-	{
+	{ 
 		repo = ObjectRepository.GetInstance();
 	}
 	

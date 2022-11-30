@@ -36,45 +36,62 @@ public class WebPageAlerts {
 	
 	public Boolean verifyAlertRecords()
 	{
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//table[@class=\"activity-table \"]//tr[@class=\"text-center\"]")));
-		int count1 = driver.findElements(By.xpath("//table[@class=\"activity-table \"]//tr[@class=\"text-center\"]")).size();
-		
-		int count2 = driver.findElements(By.xpath("//table[@class=\"activity-table false\"]//tr[@class=\"text-center\"]")).size();
-
-		if(count.get(0).getText().contains(String.valueOf(count1))
-				&& count.get(1).getText().contains(String.valueOf(count2)))
+		try
 		{
-			log.info("Number of Alerts count matches with records");
-			return true;
+			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//table[@class=\"activity-table \"]//tr[@class=\"text-center\"]")));
+			int count1 = driver.findElements(By.xpath("//table[@class=\"activity-table \"]//tr[@class=\"text-center\"]")).size();
+			
+			int count2 = driver.findElements(By.xpath("//table[@class=\"activity-table false\"]//tr[@class=\"text-center\"]")).size();
+	
+			if(count.get(0).getText().contains(String.valueOf(count1))
+					&& count.get(1).getText().contains(String.valueOf(count2)))
+			{
+				log.info("Number of Alerts count matches with records");
+				return true;
+			}
+			else
+			{
+				log.info("Number of Alerts count not matches with records");
+	
+				return false;
+			}
 		}
-		else
-		{
-			log.info("Number of Alerts count not matches with records");
-
+		catch (Exception e) {
+			// TODO: handle exception
+			log.info("Caught exception while verify Alerts Records");
+			
 			return false;
 		}
 	}
 	public Boolean VerifyDownloadAlerts() throws InterruptedException
 	{
-		Thread.sleep(2000);
-		
-		driver.findElements(By.xpath("//span[@class=\"order-last\"]//span[text()=\"Download\"]")).get(0).click();
-		
-		Thread.sleep(1000);
-		
-		driver.findElement(By.xpath("//div[text()=\"PDF\"]")).click();
-		
-		Thread.sleep(1000);
-		
-		int size=driver.findElements(By.xpath("//span[@class=\"order-last\"]//span[text()=\"Download\"]")).size();
-		if(size<2)
+		try
 		{
-			log.info("Downloading Alerts file");
-			return true;
+			Thread.sleep(2000);
+			
+			driver.findElements(By.xpath("//span[@class=\"order-last\"]//span[text()=\"Download\"]")).get(0).click();
+			
+			Thread.sleep(1000);
+			
+			driver.findElement(By.xpath("//div[text()=\"PDF\"]")).click();
+			
+			Thread.sleep(1000);
+			
+			int size=driver.findElements(By.xpath("//span[@class=\"order-last\"]//span[text()=\"Download\"]")).size();
+			if(size<2)
+			{
+				log.info("Downloading Alerts file");
+				return true;
+			}
+			else
+			{
+				log.info("Unable to downlaod Alerts File");
+				return false;
+			}
 		}
-		else
-		{
-			log.info("Unable to downlaod Alerts File");
+		catch (Exception e) {
+			// TODO: handle exception
+			log.info("Caught Exception while downlaod Alerts File");
 			return false;
 		}
 			

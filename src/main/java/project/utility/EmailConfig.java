@@ -8,7 +8,7 @@ public class EmailConfig {
     public static final String FROM = "testsuitereport@gmail.com";
     public static final String PASSWORD = "nyvxgvgupwwpnmru";
 
-    public static final String[] TO = {"rupali@truckx.com"}; //"abhijeet.nagarkar@gmail.com"}; //abhijeet@truckx.com
-    public static final String SUBJECT = "Test Suite Report";
+    public static final String[] TO = {"abhijeet@truckx.com","rupali@truckx.com"}; //"abhijeet.nagarkar@gmail.com"}; //abhijeet@truckx.com
+    public static final String SUBJECT = "TruckX Automation Report";
 
 }

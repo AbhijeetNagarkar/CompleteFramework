@@ -11,7 +11,7 @@ import project.utility.WebPageObjectCreation;
 
 public class AlertsScript {
 
-WebPageObjectCreation repo;
+	WebPageObjectCreation repo;
 	
 	public static Logger log = Logger.getLogger(AlertsScript.class);
 	

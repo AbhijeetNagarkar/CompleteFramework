@@ -6,18 +6,27 @@
   </listeners>
   <test thread-count="5" name="TruckX Test Automation(failed)">
     <classes>
-      <class name="project.testscenarios.LogoutScript">
+      <class name="project.testscenarios.TrackingDevicesScript">
+        <methods>
+          <include name="DeleteDevice"/>
+          <include name="NavigatingDevicesPage"/>
+          <include name="Fetct_Repository_Object"/>
+        </methods>
+      </class> <!-- project.testscenarios.TrackingDevicesScript -->
+      <class name="project.testscenarios.DashCameraScript">
         <methods>
           <include name="Fetct_Repository_Object"/>
-          <include name="LogoutClickflow"/>
+          <include name="DashCameraData"/>
+          <include name="NavigatingDashCamerasPage"/>
         </methods>
-      </class> <!-- project.testscenarios.LogoutScript -->
-      <class name="project.testscenarios.ForgotPasswordScript">
+      </class> <!-- project.testscenarios.DashCameraScript -->
+      <class name="project.testscenarios.DeletedDriverScript">
         <methods>
+          <include name="NavigatingDriversPage"/>
           <include name="Fetct_Repository_Object"/>
-          <include name="ForgotPasswordclick"/>
+          <include name="DeletedDriverLogBookFunctionality"/>
         </methods>
-      </class> <!-- project.testscenarios.ForgotPasswordScript -->
+      </class> <!-- project.testscenarios.DeletedDriverScript -->
     </classes>
   </test> <!-- TruckX Test Automation(failed) -->
 </suite> <!-- Failed suite [Test Suite] -->
