@@ -16,6 +16,11 @@ public class CompanyProfileScript {
 	public void Fetct_Repository_Object() throws InterruptedException, IOException
 	{
 		repo = ObjectRepository.GetInstance();
+		String str = "abcd";
+		
+		int i =str.indexOf("b");
 	}
+	
+	String str = "abcd";
 
 }

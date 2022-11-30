@@ -68,6 +68,51 @@ public class WebPageObjectCreation {
 	
 	WebPageReports reportsPage;
 	
+	WebPageDriverSafety driverSafetyPage;
+	
+	WebPageDutyStatusSummary dutyStatusSummaryPage;
+	
+	WebPageTripHistory tripHistoryPage;
+	
+	WebPageUtilization utilizationPage;
+		
+	public WebPageTripHistory TripHistoryPageObject()
+	{
+		if(tripHistoryPage==null)
+		{
+			log.info("Trip History page object created");
+			tripHistoryPage = new WebPageTripHistory(driver);
+		}
+		return tripHistoryPage;
+	}
+	public WebPageUtilization UtilizationPageObject()
+	{
+		if(utilizationPage==null)
+		{
+			log.info("Driver Safety page object created");
+			utilizationPage = new WebPageUtilization(driver);
+		}
+		return utilizationPage;
+	}
+	public WebPageDriverSafety DriverSafetyPageObject()
+	{
+		if(driverSafetyPage==null)
+		{
+			log.info("Driver Safety page object created");
+			driverSafetyPage = new WebPageDriverSafety(driver);
+		}
+		return driverSafetyPage;
+	}
+	
+	public WebPageDutyStatusSummary DutyStatusSummaryPageObject()
+	{
+		if(dutyStatusSummaryPage==null)
+		{
+			log.info("Duty Status Summary page object created");
+			dutyStatusSummaryPage = new WebPageDutyStatusSummary(driver);
+		}
+		return dutyStatusSummaryPage;
+	}
 	
 	public WebPageReports ReportsPageObject()
 	{

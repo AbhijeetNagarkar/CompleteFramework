@@ -32,7 +32,7 @@ public class WebPageTrackingDevices {
 			
 		PageFactory.initElements(driver,this);
 			
-		wait=new WebDriverWait(driver,10);
+		wait=new WebDriverWait(driver,20);
 		
 		devicemap=TestData.GetDeviceData();
 		
@@ -63,7 +63,7 @@ public class WebPageTrackingDevices {
 	@FindBy(xpath = "//button[text()=\"Yes\"]")
 	WebElement deleteYesButton;
 	
-	@FindBy(xpath = "//div[@class=\" css-hjiaga-menu\"]//div//div//span[text()=\"Cloud Dashcam\"]")
+	@FindBy(xpath = "//div[@class=\" css-113f9vn\"]//div//div//span[text()=\"Cloud Dashcam\"]")
 	WebElement filterDashcamoption;
 	
 	@FindBy(xpath = "//div[@class=\"single-select-dropdown css-2b097c-container\"]")
@@ -236,6 +236,7 @@ public class WebPageTrackingDevices {
 		try
 		{
 			Thread.sleep(5000);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//tr//td[@class=\"rc-table-cell\"]//div[text()='"+devicemap.get("deviceId")+"']//following::button")));
 			driver.findElements(By.xpath("//tr//td[@class=\"rc-table-cell\"]//div[text()='"+devicemap.get("deviceId")+"']//following::button")).get(0).click();
 			log.info("Clicked on Delete device");
 			Thread.sleep(2000);
@@ -274,6 +275,7 @@ public class WebPageTrackingDevices {
 	{
 		try
 		{
+		wait.until(ExpectedConditions.visibilityOf(filterDropDown));
 		filterDropDown.click();
 		
 		log.info("Clicked on filter drop down");
@@ -360,6 +362,7 @@ public class WebPageTrackingDevices {
 	{
 		try
 		{
+		wait.until(ExpectedConditions.visibilityOf(editbutton));
 		editbutton.click();
 		
 		log.info("Clicked on Edit button ");
@@ -368,26 +371,35 @@ public class WebPageTrackingDevices {
 		}
 		catch(Exception e)
 		{
-			driver.navigate().refresh();
+			
 			Assert.fail("Unable to click on Edit button of Tracking Device Dashboard");
+			driver.navigate().refresh();
 		}
 		try
 		{
 		selectAssetdropdown.click();
 		
-		log.info("Clicked on Select Assest Drop down");
+		log.info("Clicked on Select Assets Drop down");
 		
 		Thread.sleep(2000);
-		
-		driver.findElements(By.xpath("//div[@class=\" css-hjiaga-menu\"]//div//div//span")).get(0).click();
-		
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Unable to click on Asset drop down tab on Edit Tracking Device prompt");
+			driver.navigate().refresh();
+
+		}
+		try
+		{
+		driver.findElements(By.xpath("//div[@class=\" css-113f9vn\"]//div//div//span")).get(0).click();
 		Thread.sleep(5000);
 		
 		}
 		catch(Exception e)
 		{
+			Assert.fail("No Trucks available to Assign Tracking Devices");
 			driver.navigate().refresh();
-			Assert.fail("Unable to Select Truck from Asset drop down tab on Edit Tracking Device prompt");
+
 		}
 		
 		String str2 = driver.findElements(By.xpath("//div[@class=\" css-1hwfws3\"]//div//span")).get(3).getText();
@@ -402,8 +414,9 @@ public class WebPageTrackingDevices {
 		}
 		catch(Exception e)
 		{
-			driver.navigate().refresh();
+			
 			Assert.fail("Unable to click on Update button of Edit Tracking Device Prompt");
+			driver.navigate().refresh();
 		}
 		String str = driver.findElements(By.xpath("//td[@class=\"rc-table-cell\"]//div")).get(2).getText();
 		
