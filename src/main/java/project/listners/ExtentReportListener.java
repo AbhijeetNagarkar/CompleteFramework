@@ -46,6 +46,12 @@ public class ExtentReportListener implements ITestListener, ISuiteListener {
 		count_totalTCs = count_totalTCs + 1;
 		String category[]=result.getMethod().getGroups();
 	
+		if(category.length==0)
+		{
+			logger = report.createTest(result.getMethod().getMethodName()).assignCategory("Others");
+
+		}
+		else
 		logger = report.createTest(result.getMethod().getMethodName()).assignCategory(category[0]);
 		logger.info("Executing test: " + result.getMethod().getMethodName());
 		

@@ -30,5 +30,19 @@ public class WebPageFeature {
 	@FindBy(xpath = "//input")
 	WebElement search;
 	
+	public Boolean verifyNewUpdates()
+	{
+		if(msg.getText().equalsIgnoreCase("TruckX Continously Improves to Give You the Best Experience!"))
+		{
+			log.info("Landed on New Updates and showing message");
+			return true;
+		}
+		else
+		{
+			log.info("Unable to land New Updates and not showing Continously Improves msg");
+			return false;
+		}
+		
+	}
 	
 }

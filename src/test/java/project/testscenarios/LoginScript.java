@@ -57,9 +57,9 @@ public class LoginScript extends ConfigurationSetup {
 				
 		Driver.Refresh();
 		
-	}
+	}groups = {"Login"}
 	*/
-	@Test(priority = 2,groups = {"Login"})
+	@Test(priority = 2)
 	public void validUserNameandPassword() throws InterruptedException
 	{
 	

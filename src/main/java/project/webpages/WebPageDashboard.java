@@ -798,7 +798,7 @@ public class WebPageDashboard {
 	public void refresh() throws InterruptedException
 	{
 		driver.navigate().refresh();
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 	}
 	
 	
