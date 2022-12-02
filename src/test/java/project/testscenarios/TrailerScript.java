@@ -66,11 +66,6 @@ public class TrailerScript {
 		
 		repo.trailerPageObject().ClickOnNo();
 		
-	}
-	
-	@Test(priority = 11,dependsOnMethods = "CreatingNewTrailer",groups = {"Trailers"})
-	public void VerifyNewlyAddedTrailer() throws InterruptedException
-	{	
 		repo.trailerPageObject().SearchTrailer();
 		
 		flag=repo.trailerPageObject().VerifyUnAssignedTrailerOnDashboard();
@@ -79,8 +74,9 @@ public class TrailerScript {
 			log.info("Trailer validated on Dashboard successfully");
 		else 
 			Assert.fail("Incorrect details showing on Trailer Dashboard");
-	}
 		
+	}
+			
 	@Test(priority = 12,dependsOnMethods = "CreatingNewTrailer",groups = {"Trailers"})
 	public void AssignTrailerToTruck() throws InterruptedException
 	{
@@ -95,11 +91,7 @@ public class TrailerScript {
 		repo.trailerPageObject().SelectTruckFromDropDown();
 		
 		repo.trailerPageObject().ClickOnUpdate();
-	}
-	
-	@Test(priority = 13, dependsOnMethods = "AssignTrailerToTruck",groups = {"Trailers"})
-	public void VerifyAssignedTrailerToTruck() throws InterruptedException
-	{
+		
 		flag=repo.trailerPageObject().VerifyAssignedTrailerOnDashboard();
 		
 		if(flag)
@@ -108,7 +100,8 @@ public class TrailerScript {
 			Assert.fail("Incorrect details showing on Trailer Dashboard");
 	}
 	
-	@Test(priority = 14, dependsOnMethods = "AssignTrailerToTruck",groups = {"Trailers"} )
+		
+	@Test(priority = 14, dependsOnMethods = {"AssignTrailerToTruck"},groups = {"Trailers"} )
 	public void UnAssignTrailerFromTruck() throws InterruptedException
 	{	
 		repo.dashboardPageObject().refresh();
@@ -118,10 +111,7 @@ public class TrailerScript {
 		repo.trailerPageObject().ClickOnUnAssign();
 		
 		repo.trailerPageObject().ClickOnYes();
-	}
-	@Test(priority = 15, dependsOnMethods = "UnAssignTrailerFromTruck",groups = {"Trailers"})
-	public void VerifyUnAssignedTrailerToTruck() throws InterruptedException
-	{
+		
 		flag=repo.trailerPageObject().VerifyUnAssignedTrailerOnDashboard();
 		
 		if(flag)
@@ -146,6 +136,7 @@ public class TrailerScript {
 			log.info("Trailer validated after Edit on Dashboard successfully");
 		else 
 			Assert.fail("Incorrect details showing on Trailer Dashboard");
+	
 	}
 	@Test(priority = 17, dependsOnMethods = "CreatingNewTrailer",groups = {"Trailers"})
 	public void DeleteTrailer() throws InterruptedException
