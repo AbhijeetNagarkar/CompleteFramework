@@ -79,6 +79,7 @@ public class ExtentReportListener implements ITestListener, ISuiteListener {
 		try {
 			FileUtils.copyFile(srcFile, destFile);
 			System.out.println("Screenshot taken, saved in screenshots folder");
+			System.out.println(result.getThrowable().getMessage());
 		} catch(IOException e) {
 			System.out.println("Failed to take screenshot");
 		}

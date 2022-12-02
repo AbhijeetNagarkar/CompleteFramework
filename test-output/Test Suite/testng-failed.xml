@@ -6,27 +6,13 @@
   </listeners>
   <test thread-count="5" name="TruckX Test Automation(failed)">
     <classes>
-      <class name="project.testscenarios.TrackingDevicesScript">
-        <methods>
-          <include name="DeleteDevice"/>
-          <include name="NavigatingDevicesPage"/>
-          <include name="Fetct_Repository_Object"/>
-        </methods>
-      </class> <!-- project.testscenarios.TrackingDevicesScript -->
-      <class name="project.testscenarios.DashCameraScript">
+      <class name="project.testscenarios.CompanyProfileScript">
         <methods>
           <include name="Fetct_Repository_Object"/>
-          <include name="DashCameraData"/>
-          <include name="NavigatingDashCamerasPage"/>
+          <include name="NavigatingCompanyProfilePage"/>
+          <include name="EditCompanyProfileFunctionality"/>
         </methods>
-      </class> <!-- project.testscenarios.DashCameraScript -->
-      <class name="project.testscenarios.DeletedDriverScript">
-        <methods>
-          <include name="NavigatingDriversPage"/>
-          <include name="Fetct_Repository_Object"/>
-          <include name="DeletedDriverLogBookFunctionality"/>
-        </methods>
-      </class> <!-- project.testscenarios.DeletedDriverScript -->
+      </class> <!-- project.testscenarios.CompanyProfileScript -->
     </classes>
   </test> <!-- TruckX Test Automation(failed) -->
 </suite> <!-- Failed suite [Test Suite] -->

@@ -391,7 +391,7 @@ public class WebPageTrackingDevices {
 		}
 		try
 		{
-		driver.findElements(By.xpath("//div[@class=\" css-113f9vn\"]//div//div//span")).get(0).click();
+		driver.findElements(By.xpath("//div[@class=\" css-1u0owcj-option\"]//span[@class=\"text-blue-secondary\"]")).get(0).click();
 		Thread.sleep(5000);
 		
 		}
