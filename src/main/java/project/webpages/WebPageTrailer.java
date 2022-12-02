@@ -163,6 +163,8 @@ public class WebPageTrailer {
 		{
 		Thread.sleep(5000);
 		
+		wait.until(ExpectedConditions.elementToBeClickable(updateButton));
+		
 		updateButton.click();
 		
 		log.info("Clicked on Update Trailer Button");
@@ -307,6 +309,8 @@ public class WebPageTrailer {
 	{
 		try
 		{
+		
+		Thread.sleep(2000);
 		wait.until(ExpectedConditions.elementToBeClickable(unassignButton));
 		
 		unassignButton.click();
@@ -351,6 +355,10 @@ public class WebPageTrailer {
 	{	
 		Thread.sleep(5000);
 		
+		try
+		{
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()=\"Attached Truck\"]")));
+		
 		driver.findElement(By.xpath("//span[text()=\"Attached Truck\"]")).click();
 	
 		if(vin.equalsIgnoreCase(dashtable.get(0).getText()))
@@ -365,6 +373,11 @@ public class WebPageTrailer {
 				}
 		}
 		return false;
+		}
+		catch(Exception e)
+		{
+			return false;
+		}
 	}
 	
 	public void DeleteTrailer() throws InterruptedException
@@ -448,11 +461,15 @@ public class WebPageTrailer {
 		
 		Thread.sleep(3000);
 		
+		wait.until(ExpectedConditions.elementToBeClickable(action));
 		action.click();
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()=\"Attached Truck\"]")));
+
 		}
 		catch(Exception e)
 		{
-			Assert.fail("Unable to click on Update trailer button on Edit prompt");
+			Assert.fail("Update trailer functionality not working");
 			driver.navigate().refresh();
 		}
 	}

@@ -54,7 +54,7 @@ WebDriver driver;
 			
 			search.sendKeys("test");
 			
-			log.info("Entered trailer in search box");
+			log.info("Entered Driver name in search box");
 			
 			Thread.sleep(3000);
 			
