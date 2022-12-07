@@ -22,7 +22,7 @@ public class TripHistoryReportScript {
 		repo = ObjectRepository.GetInstance();
 	}
 	
-	@Test(priority = 50,groups = {"Trip History Reports"})
+	@Test(priority = 1,groups = {"Trip History Reports"})
 	public void NavigatingTripHistoryPage() throws InterruptedException 
 	{
 				
@@ -33,18 +33,18 @@ public class TripHistoryReportScript {
 		repo.ReportsPageObject().ClickOnTripHistory();
 		
 	}
-	@Test(priority = 51,groups = {"Trip History Reports"},dependsOnMethods = "NavigatingTripHistoryPage" )
+	@Test(priority = 2,groups = {"Trip History Reports"},dependsOnMethods = "NavigatingTripHistoryPage" )
 	public void SearchandVerification() throws InterruptedException 
 	{
 		Assert.assertTrue(repo.TripHistoryPageObject().SearchandVerifyRecords(),"Search functionality not working as expected");
 	}
-	@Test(priority = 52,groups = {"Trip History Reports"},dependsOnMethods = "NavigatingTripHistoryPage" )
+	@Test(priority = 3,groups = {"Trip History Reports"},dependsOnMethods = "NavigatingTripHistoryPage" )
 	public void FilterandVerification() throws InterruptedException 
 	{
 		Assert.assertTrue(repo.TripHistoryPageObject().filterandverification(),"Records not showing as per filter criteria");
 	}
 	
-	@Test(priority = 52,groups = {"Trip History Reports"},dependsOnMethods = "NavigatingTripHistoryPage" )
+	@Test(priority = 4,groups = {"Trip History Reports"},dependsOnMethods = "NavigatingTripHistoryPage" )
 	public void DownloadFunctionality() throws InterruptedException 
 	{
 		Assert.assertTrue(repo.TripHistoryPageObject().VerifyDownload(),"Download functionality Not working");

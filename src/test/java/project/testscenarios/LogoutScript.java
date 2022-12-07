@@ -21,8 +21,8 @@ public class LogoutScript {
         repo = ObjectRepository.GetInstance();
     }	
 	
-	@Test(priority = 3,groups = {"Login"})
-	public void LogoutClickflow() throws InterruptedException
+	@Test(priority = 1,groups = {"Login"})
+	public void Logout() throws InterruptedException
 	{		
 		
 		repo.logoutPageObject().ProfileMenuItemClick();

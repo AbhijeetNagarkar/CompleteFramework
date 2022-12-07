@@ -54,99 +54,108 @@ public class WebPageAPIKeyTransfer {
 	
 	public Boolean verifyCount() throws InterruptedException
 	{
-		
-		String str = count.get(0).getText();
-		
-		String str2 = count.get(1).getText();
-		
-		Thread.sleep(2000);
-		
-		driver.findElements(By.xpath("//li")).get(0).click();
-		
-		List<WebElement> rows = driver.findElements(By.xpath("//tr[@class=\"rc-table-row rc-table-row-level-0 text-base text-gray-400 bg-white border-b border-gray-100 h-12 w-full hover:bg-blue-tablerow focus:hover:bg-blue-tablerow rounded-md`\"]"));
-	
-		int rowsize = rows.size();
-		
-		wait.until(ExpectedConditions.elementToBeClickable(inactivecount));
-		
-		driver.findElements(By.xpath("//li")).get(1).click();
-			
-		Thread.sleep(2000);
-		
-		List<WebElement> rows1 = driver.findElements(By.xpath("//tr[@class=\"rc-table-row rc-table-row-level-0 text-base text-gray-400 bg-white border-b border-gray-100 h-12 w-full hover:bg-blue-tablerow focus:hover:bg-blue-tablerow rounded-md`\"]"));
-
-		int rowsize1 = rows1.size();
-		
-		log.info("Captured result into list");
-	
-		if(rowsize == Integer.valueOf(str) && rowsize1 == Integer.valueOf(str2))
+		try
 		{
-			log.info("correct Active/Expired Count showing on API Key Transfer Page");
-			return true;
-		}
-		else
-		{	
-			log.info("Incorrect Active/Expired Count showing on API Key Transfer Page");
-				return false;
-		}
 		
+			String str = count.get(0).getText();
+			
+			String str2 = count.get(1).getText();
+			
+			Thread.sleep(2000);
+			
+			driver.findElements(By.xpath("//li")).get(0).click();
+			
+			List<WebElement> rows = driver.findElements(By.xpath("//tr[@class=\"rc-table-row rc-table-row-level-0 text-base text-gray-400 bg-white border-b border-gray-100 h-12 w-full hover:bg-blue-tablerow focus:hover:bg-blue-tablerow rounded-md`\"]"));
+		
+			int rowsize = rows.size();
+			
+			wait.until(ExpectedConditions.elementToBeClickable(inactivecount));
+			
+			driver.findElements(By.xpath("//li")).get(1).click();
+				
+			Thread.sleep(2000);
+			
+			List<WebElement> rows1 = driver.findElements(By.xpath("//tr[@class=\"rc-table-row rc-table-row-level-0 text-base text-gray-400 bg-white border-b border-gray-100 h-12 w-full hover:bg-blue-tablerow focus:hover:bg-blue-tablerow rounded-md`\"]"));
+	
+			int rowsize1 = rows1.size();
+			
+			log.info("Captured result into list");
+		
+			if(rowsize == Integer.valueOf(str) && rowsize1 == Integer.valueOf(str2))
+			{
+				log.info("correct Active/Expired Count showing on API Key Transfer Page");
+				return true;
+			}
+			else
+			{	
+				log.info("Incorrect Active/Expired Count showing on API Key Transfer Page");
+					return false;
+			}
+		}
+		catch (Exception e) {
+			log.info("Caught Exception While Verify API Count and Data");
+			return false;
+		}
 		
 	}
 
 
 	public boolean shareAPIKey() throws InterruptedException {
 		// TODO Auto-generated method stub
-		Thread.sleep(3000);
 		
-		shareAPI.click();
-		
-		Thread.sleep(3000);
+		try
+		{
+			Thread.sleep(3000);
 			
-		List<WebElement> ele = driver.findElements(By.xpath("//div[@class=\" css-1jpdhzf-control\"]"));
+			shareAPI.click();
+			
+			Thread.sleep(3000);
+				
+			List<WebElement> ele = driver.findElements(By.xpath("//div[@class=\" css-1jpdhzf-control\"]"));
+			
+			//div[@class=" css-1u0owcj-option"]
+			Thread.sleep(1000);
+			
+			ele.get(0).click();
+			
+			Thread.sleep(1000);
 		
-		//div[@class=" css-1u0owcj-option"]
-		Thread.sleep(1000);
-		
-		ele.get(0).click();
-		
-		Thread.sleep(1000);
+			List<WebElement> ele1 = driver.findElements(By.xpath("//span[@class=\"text-blue-secondary\"]"));
 	
-		List<WebElement> ele1 = driver.findElements(By.xpath("//span[@class=\"text-blue-secondary\"]"));
-
-		ele.get(0).click();
+			ele.get(0).click();
+			
+			
+			Thread.sleep(1000);
+			
+			ele.get(1).click();
+			
+			Thread.sleep(1000);
 		
-		
-		Thread.sleep(1000);
-		
-		ele.get(1).click();
-		
-		Thread.sleep(1000);
+			List<WebElement> ele2 = driver.findElements(By.xpath("//span[@class=\"text-blue-secondary\"]"));
+			
+			ele.get(1).click();
+			
 	
-		List<WebElement> ele2 = driver.findElements(By.xpath("//span[@class=\"text-blue-secondary\"]"));
-		
-		ele.get(1).click();
-		
-
-		Thread.sleep(1000);
-		
-		ele.get(2).click();
-		
-		Thread.sleep(1000);
-		
-		List<WebElement> ele3 = driver.findElements(By.xpath("//span[@class=\"text-blue-secondary\"]"));
-		
-		ele.get(2).click();
-		
-
-		Thread.sleep(1000);
-		
-		ele.get(3).click();
-		
-		Thread.sleep(1000);
-		
-		List<WebElement> ele4 = driver.findElements(By.xpath("//span[@class=\"text-blue-secondary\"]"));
-		
-		ele.get(3).click();
+			Thread.sleep(1000);
+			
+			ele.get(2).click();
+			
+			Thread.sleep(1000);
+			
+			List<WebElement> ele3 = driver.findElements(By.xpath("//span[@class=\"text-blue-secondary\"]"));
+			
+			ele.get(2).click();
+			
+	
+			Thread.sleep(1000);
+			
+			ele.get(3).click();
+			
+			Thread.sleep(1000);
+			
+			List<WebElement> ele4 = driver.findElements(By.xpath("//span[@class=\"text-blue-secondary\"]"));
+			
+			ele.get(3).click();
 		
 		
 		if(ele1.isEmpty() || ele2.isEmpty() || ele3.isEmpty() || ele4.isEmpty())
@@ -175,6 +184,14 @@ public class WebPageAPIKeyTransfer {
 				Driver.Refresh();
 			}
 			
+		}
+		}
+		catch (Exception e) {
+			log.info("Caught Exception while sharing API Key");
+			return false;
+		}
+		finally {
+			Driver.Refresh();
 		}
 	
 	}

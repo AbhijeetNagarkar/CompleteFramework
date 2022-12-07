@@ -22,7 +22,7 @@ public class IFTAReportScript {
 		repo = ObjectRepository.GetInstance();
 	}
 	
-	@Test(priority = 50,groups = {"IFTA"})
+	@Test(priority = 1,groups = {"IFTA"})
 	public void NavigatingIFTAReportPage() throws InterruptedException 
 	{
 				
@@ -31,13 +31,25 @@ public class IFTAReportScript {
 		repo.dashboardPageObject().clickOnIFTAReports();
 		
 	}
-	@Test(priority = 51,groups = {"IFTA"},dependsOnMethods = "NavigatingIFTAReportPage" )
+	@Test(priority = 2,groups = {"IFTA"},dependsOnMethods = "NavigatingIFTAReportPage" )
 	public void SearchOnIFTAReport() throws InterruptedException 
 	{
 		Assert.assertTrue(repo.IFTAReportsPageObject().SearchandVerifyRecords(),"Search functionality not working");
 		
 		Assert.assertTrue(repo.IFTAReportsPageObject().ActiveandDeletedTrucks(),"Active and Deleted Trucks not showing - caught error");;
 		
+		Assert.assertTrue(repo.IFTAReportsPageObject().VerifyDownloadReport(), "IFTA Report download functionality not working");
+	}
+	
+	@Test(priority = 3,groups = {"IFTA"},dependsOnMethods = "NavigatingIFTAReportPage" )
+	public void ActiveandDeletedTrucksData() throws InterruptedException 
+	{
+		Assert.assertTrue(repo.IFTAReportsPageObject().ActiveandDeletedTrucks(),"Active and Deleted Trucks not showing - caught error");;
+	}
+	
+	@Test(priority = 4,groups = {"IFTA"},dependsOnMethods = "NavigatingIFTAReportPage" )
+	public void DownloadReport() throws InterruptedException 
+	{
 		Assert.assertTrue(repo.IFTAReportsPageObject().VerifyDownloadReport(), "IFTA Report download functionality not working");
 	}
 

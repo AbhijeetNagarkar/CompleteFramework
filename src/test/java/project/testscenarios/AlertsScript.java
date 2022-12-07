@@ -21,7 +21,7 @@ public class AlertsScript {
 		repo = ObjectRepository.GetInstance();
 	}
 	
-	@Test(priority = 50,groups = {"Alerts"})
+	@Test(priority = 1,groups = {"Alerts"})
 	public void NavigatingAlertsPage() throws InterruptedException 
 	{
 				
@@ -30,12 +30,17 @@ public class AlertsScript {
 		repo.dashboardPageObject().clickOnAlertsSubMenu();;
 		
 	}
-	@Test(priority = 51,groups = {"Alerts"},dependsOnMethods = "NavigatingAlertsPage" )
-	public void NumberOfAlertsandVerification() throws InterruptedException 
+	@Test(priority = 2,groups = {"Alerts"},dependsOnMethods = "NavigatingAlertsPage" )
+	public void AlertCountsandVerification() throws InterruptedException 
 	{
 		repo.AlertPageObject().verifyAlertRecords();
 		
+	}
+	@Test(priority = 3,groups = {"Alerts"},dependsOnMethods = "NavigatingAlertsPage" )
+	public void DownloadAlerts() throws InterruptedException 
+	{
 		repo.AlertPageObject().VerifyDownloadAlerts();
 	}
+
 
 }

@@ -6,12 +6,13 @@
   </listeners>
   <test thread-count="5" name="TruckX Test Automation(failed)">
     <classes>
-      <class name="project.testscenarios.DriversScript">
+      <class name="project.testscenarios.CompanyProfileScript">
         <methods>
-          <include name="CreateDriverFunctionality"/>
           <include name="Fetct_Repository_Object"/>
+          <include name="NavigatingCompanyProfilePage"/>
+          <include name="EditCompanyProfileFunctionality"/>
         </methods>
-      </class> <!-- project.testscenarios.DriversScript -->
+      </class> <!-- project.testscenarios.CompanyProfileScript -->
     </classes>
   </test> <!-- TruckX Test Automation(failed) -->
 </suite> <!-- Failed suite [Test Suite] -->

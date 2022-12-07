@@ -22,7 +22,7 @@ public class UtilizationReportScript {
 		repo = ObjectRepository.GetInstance();
 	}
 	
-	@Test(priority = 50,groups = {"Utilization Report"})
+	@Test(priority = 1,groups = {"Utilization Report"})
 	public void NavigatingUtilizationReportPage() throws InterruptedException 
 	{
 				
@@ -33,18 +33,18 @@ public class UtilizationReportScript {
 		repo.ReportsPageObject().ClickOnUtilization();
 		
 	}
-	@Test(priority = 51,groups = {"Utilization Report"},dependsOnMethods = "NavigatingUtilizationReportPage" )
+	@Test(priority = 2,groups = {"Utilization Report"},dependsOnMethods = "NavigatingUtilizationReportPage" )
 	public void SearchandVerification() throws InterruptedException 
 	{
 		Assert.assertTrue(repo.UtilizationPageObject().SearchandVerifyRecords(),"Search functionality not working as expected");
 	}
-	@Test(priority = 52,groups = {"Utilization Report"},dependsOnMethods = "NavigatingUtilizationReportPage" )
+	@Test(priority = 3,groups = {"Utilization Report"},dependsOnMethods = "NavigatingUtilizationReportPage" )
 	public void FilterandVerification() throws InterruptedException 
 	{
 		Assert.assertTrue(repo.UtilizationPageObject().filterandverification(),"Records not showing as per filter criteria");
 	}
 	
-	@Test(priority = 52,groups = {"Utilization Report"},dependsOnMethods = "NavigatingUtilizationReportPage" )
+	@Test(priority = 4,groups = {"Utilization Report"},dependsOnMethods = "NavigatingUtilizationReportPage" )
 	public void DownloadFunctionality() throws InterruptedException 
 	{
 		Assert.assertTrue(repo.UtilizationPageObject().VerifyDownload(),"Download functionality Not working");

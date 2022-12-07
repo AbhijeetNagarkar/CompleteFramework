@@ -22,7 +22,7 @@ public class AssetsScript {
 		repo = ObjectRepository.GetInstance();
 	}
 	
-	@Test(priority = 25,groups = {"Assets"})
+	@Test(priority = 1,groups = {"Assets"})
 	public void NavigatingAssetPage() throws InterruptedException 
 	{
 		repo.dashboardPageObject().clickOnLocation();
@@ -31,23 +31,19 @@ public class AssetsScript {
 		
 	}
 
-	@Test(priority = 26,groups = {"Assets"}, dependsOnMethods = "NavigatingAssetPage")
+	@Test(priority = 2,groups = {"Assets"}, dependsOnMethods = "NavigatingAssetPage")
 	public void ListViewOfAssets() throws InterruptedException 
 	{
 		Assert.assertTrue(repo.assetsPageObject().verifyCollapse(),"List view expand/collapse function not working");
 		
 	}
-	@Test(priority = 27,groups = {"Assets"},dependsOnMethods = "NavigatingAssetPage")
-	public void SearchAssetsOnAssets() throws InterruptedException 
+	@Test(priority = 3,groups = {"Assets"},dependsOnMethods = "NavigatingAssetPage")
+	public void SearchAssets() throws InterruptedException 
 	{
 		Assert.assertTrue(repo.assetsPageObject().search(),"Unable to search on Assets Page");
-		
-	}
-	@Test(priority = 28,groups = {"Assets"},dependsOnMethods = "SearchAssetsOnAssets")
-	public void AssetsAsPerSearch() throws InterruptedException 
-	{
 		Assert.assertTrue(repo.assetsPageObject().verifyResult(),"Result not as per search criteria on Assets Page");
-		
+
 	}
+	
 	
 }

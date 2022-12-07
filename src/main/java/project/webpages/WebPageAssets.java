@@ -89,28 +89,35 @@ public class WebPageAssets {
 	}
 	public Boolean verifyCollapse() throws InterruptedException
 	{
-		Thread.sleep(3000);
-		changefocus.click();
-		Thread.sleep(1000);
-		listmenu.get(0).click();
-		Thread.sleep(1000);
-		listmenu.get(1).click();
-		Thread.sleep(2000);
-		
-		List<WebElement> truckrows = driver.findElements(By.xpath("//div[@class=\"px-2 trx-asset-list truck\"]//a"));
-
-		List<WebElement> trailerrows = driver.findElements(By.xpath("//div[@class=\"px-2 trx-asset-list trailer\"]//a"));
-
-		if(truckrows.isEmpty() && trailerrows.isEmpty())
+		try
 		{
 			Thread.sleep(3000);
+			changefocus.click();
+			Thread.sleep(1000);
 			listmenu.get(0).click();
 			Thread.sleep(1000);
 			listmenu.get(1).click();
 			Thread.sleep(2000);
-			return true;
+			
+			List<WebElement> truckrows = driver.findElements(By.xpath("//div[@class=\"px-2 trx-asset-list truck\"]//a"));
+	
+			List<WebElement> trailerrows = driver.findElements(By.xpath("//div[@class=\"px-2 trx-asset-list trailer\"]//a"));
+	
+			if(truckrows.isEmpty() && trailerrows.isEmpty())
+			{
+				Thread.sleep(3000);
+				listmenu.get(0).click();
+				Thread.sleep(1000);
+				listmenu.get(1).click();
+				Thread.sleep(2000);
+				return true;
+			}
+			else return false;
 		}
-		else return false;
+		catch (Exception e) {
+				log.info("Caught Exception while Assets collapse functionality");
+				return false;
+		}
 	}
 	
 	

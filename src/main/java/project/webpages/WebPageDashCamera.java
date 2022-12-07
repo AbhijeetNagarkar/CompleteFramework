@@ -12,6 +12,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import project.mediator.TestData;
 
@@ -53,21 +54,31 @@ public class WebPageDashCamera {
 	
 	public Boolean verifyDashCameraCount() throws InterruptedException
 	{
-		Thread.sleep(3000);
-		changefocus.click();
-		Thread.sleep(3000);
-		if(countDevices.getText().contains(devicemap.get("Device Count")))
+		try
 		{
-			log.info("Showing correct Dash Camera Count");
-			return true;
+			Thread.sleep(3000);
+			changefocus.click();
+			Thread.sleep(3000);
+			if(countDevices.getText().contains(devicemap.get("Device Count")))
+			{
+				log.info("Showing correct Dash Camera Count");
+				return true;
+			}
+			
+			log.info("Incorrect Dash Camera Count");
+			countDevices.click();
+			return false;
 		}
-		
-		log.info("Incorrect Dash Camera Count");
-		countDevices.click();
-		return false;
+		catch(Exception e)
+		{
+			log.info("Caught Exception while verifying Dash camera count");
+			return false;
+		}
 	}
 	public Boolean Search() throws InterruptedException
 	{
+		try
+		{
 		Thread.sleep(3000);
 		changefocus.click();
 		Thread.sleep(3000);
@@ -90,6 +101,12 @@ public class WebPageDashCamera {
 		}
 		log.info("Search functionality working correctly");
 		return true;
+		}
+		catch(Exception e)
+		{
+			log.info("Caught Exception while search Dash camera");
+			return false;
+		}
 	}
 	public Boolean VerifyDashCamData() throws InterruptedException
 	{
@@ -113,21 +130,29 @@ public class WebPageDashCamera {
 		}
 		catch(NoSuchElementException e)
 		{
+			log.info("Caught Exception as No Such Element while Verify Dash Camera Data");
 			return false;
 		}
 		return false;
 	}
 	public void ClickonDashcam() throws InterruptedException
 	{
-		Thread.sleep(5000);
-		
-		wait.until(ExpectedConditions.elementToBeClickable(countDevices));
-		countDevices.click();
-		
-		List<WebElement> li=driver.findElements(By.xpath("//div[@class=\"w-1/3 xl:w-1/4 h-full\"]//td[@class=\"rc-table-cell\"]//div[@class=\"font-semibold\"]"));
-		
-		li.get(2).click();
-		
+		try
+		{
+			Thread.sleep(5000);
+			
+			wait.until(ExpectedConditions.elementToBeClickable(countDevices));
+			countDevices.click();
+			
+			List<WebElement> li=driver.findElements(By.xpath("//div[@class=\"w-1/3 xl:w-1/4 h-full\"]//td[@class=\"rc-table-cell\"]//div[@class=\"font-semibold\"]"));
+			
+			li.get(2).click();
+		}
+		catch(Exception e)
+		{
+			log.info("Caught Exception");
+			Assert.fail("Unable to click on Dash Camera");
+		}
 	}
 	
 }
