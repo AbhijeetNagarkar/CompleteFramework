@@ -29,7 +29,7 @@ public class TrailerScript {
 		repo = ObjectRepository.GetInstance();
 	}
 	
-	@Test(priority = 9, groups = {"Trailers"})
+	@Test(priority =1, groups = {"Trailers"})
 	public void NavigatingTrailerPage() throws InterruptedException
 	{
 		repo.dashboardPageObject().clickOnVehicle();
@@ -40,8 +40,8 @@ public class TrailerScript {
 	}
 	
 	
-	@Test(priority = 10, dependsOnMethods = "NavigatingTrailerPage",groups = {"Trailers"} )
-	public void CreatingNewTrailer() throws InterruptedException
+	@Test(priority = 2, dependsOnMethods = "NavigatingTrailerPage",groups = {"Trailers"} )
+	public void NewTrailer() throws InterruptedException
 	{
 		
 		repo=ObjectRepository.GetInstance();
@@ -77,8 +77,8 @@ public class TrailerScript {
 		
 	}
 			
-	@Test(priority = 12,dependsOnMethods = "CreatingNewTrailer",groups = {"Trailers"})
-	public void AssignTrailerToTruck() throws InterruptedException
+	@Test(priority = 3,dependsOnMethods = "NewTrailer",groups = {"Trailers"})
+	public void AssignTrailer() throws InterruptedException
 	{
 		repo.dashboardPageObject().refresh();
 		
@@ -101,8 +101,8 @@ public class TrailerScript {
 	}
 	
 		
-	@Test(priority = 14, dependsOnMethods = {"AssignTrailerToTruck"},groups = {"Trailers"} )
-	public void UnAssignTrailerFromTruck() throws InterruptedException
+	@Test(priority = 4, dependsOnMethods = {"AssignTrailer"},groups = {"Trailers"} )
+	public void UnAssignTrailer() throws InterruptedException
 	{	
 		repo.dashboardPageObject().refresh();
 		
@@ -120,7 +120,7 @@ public class TrailerScript {
 			Assert.fail("Incorrect details showing on Trailer Dashboard");
 	}
 	
-	@Test(priority = 16, dependsOnMethods = "CreatingNewTrailer",groups = {"Trailers"} )
+	@Test(priority = 5, dependsOnMethods = "NewTrailer",groups = {"Trailers"} )
 	public void EditTrailer() throws InterruptedException
 	{
 	
@@ -138,7 +138,7 @@ public class TrailerScript {
 			Assert.fail("Incorrect details showing on Trailer Dashboard");
 	
 	}
-	@Test(priority = 17, dependsOnMethods = "CreatingNewTrailer",groups = {"Trailers"})
+	@Test(priority = 6, dependsOnMethods = "NewTrailer",groups = {"Trailers"})
 	public void DeleteTrailer() throws InterruptedException
 	{
 		repo.dashboardPageObject().refresh();
@@ -158,7 +158,7 @@ public class TrailerScript {
 	
 			
 	}
-	@Test(priority = 18, dependsOnMethods = "DeleteTrailer",groups = {"Trailers"})
+	@Test(priority = 7, dependsOnMethods = "DeleteTrailer",groups = {"Trailers"})
 	public void NavigatingDeletedTrailerPage() throws InterruptedException
 	{
 		repo.dashboardPageObject().refresh();
@@ -169,17 +169,13 @@ public class TrailerScript {
 		
 		Thread.sleep(5000);
 	}
-	@Test(priority = 19, dependsOnMethods ="NavigatingDeletedTrailerPage",groups = {"Trailers"} )
+	@Test(priority = 8, dependsOnMethods ="NavigatingDeletedTrailerPage",groups = {"Trailers"} )
 	public void ActivateTrailer() throws InterruptedException
 	{
 		repo.trailerPageObject().ActivateTrailer();
 		
 		Thread.sleep(3000);
-	}
-	
-	@Test(priority = 20, dependsOnMethods = "ActivateTrailer",groups = {"Trailers"})
-	public void VerifyActivateTrailer() throws InterruptedException
-	{
+		
 		repo.dashboardPageObject().clickOnVehicle();
 		
 		repo.dashboardPageObject().clickOnTrailers();
@@ -194,11 +190,10 @@ public class TrailerScript {
 			log.info("Trailer validated after Activating on Dashboard successfully");
 		else 
 			Assert.fail("Incorrect details showing on Trailer Dashboard");
-		
-	//	repo.trailerPageObject().DeleteTrailer();
 	}
 	
-	@Test(priority = 21,groups = {"Trucks"})
+		
+	@Test(priority = 9,groups = {"Trucks"})
 	public void DeleteTruck() throws InterruptedException
 	{
 		repo=ObjectRepository.GetInstance();
@@ -224,7 +219,7 @@ public class TrailerScript {
 		else 
 			log.info("Verified Deleted Truck on Dashboard");
 	}
-	@Test(priority = 22,groups = {"Trucks"})
+	@Test(priority = 10,groups = {"Trucks"})
 	public void NavigatingDeletedTruckPage() throws InterruptedException
 	{
 		repo.dashboardPageObject().refresh();
@@ -235,16 +230,13 @@ public class TrailerScript {
 		
 		Thread.sleep(5000);
 	}
-	@Test(priority = 23, dependsOnMethods = "NavigatingDeletedTruckPage",groups = {"Trucks"})
+	@Test(priority = 11, dependsOnMethods = "NavigatingDeletedTruckPage",groups = {"Trucks"})
 	public void ActivateTruck() throws InterruptedException
 	{
 		repo.truckPageObject().ActivateTruck();
 			
 		Thread.sleep(3000);
-	}
-	@Test(priority = 24, dependsOnMethods = "ActivateTruck",groups = {"Trucks"} )
-	public void VerifyActivateTruck() throws InterruptedException
-	{
+		
 		repo.dashboardPageObject().clickOnVehicle();
 		
 		repo.dashboardPageObject().clickOnTrucks();
@@ -258,10 +250,9 @@ public class TrailerScript {
 		else 
 			Assert.fail("Incorrect details showing after Activating on Truck Dashboard");
 		
-	//	repo.truckPageObject().DeleteTruck();
-		
 		Thread.sleep(3000);
 	}
+	
 
 }
 

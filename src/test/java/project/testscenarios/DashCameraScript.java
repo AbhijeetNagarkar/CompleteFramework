@@ -25,7 +25,7 @@ public class DashCameraScript {
 		repo = ObjectRepository.GetInstance();
 	}
 	
-	@Test(priority = 34,groups = {"Dash Cameras"})
+	@Test(priority = 1,groups = {"Dash Cameras"})
 	public void NavigatingDashCamerasPage() throws InterruptedException 
 	{
 		repo.dashboardPageObject().clickOnDevices();
@@ -42,18 +42,18 @@ public class DashCameraScript {
 		Thread.sleep(7000);
 		
 	}
-	@Test(priority = 35, dependsOnMethods = "NavigatingDashCamerasPage",groups = {"Dash Cameras"})
+	@Test(priority = 2, dependsOnMethods = "NavigatingDashCamerasPage",groups = {"Dash Cameras"})
 	public void DashCameraCount() throws InterruptedException 
 	{
 		Assert.assertTrue(repo.dashCameraPageObject().verifyDashCameraCount(),"Incorrect Dash Camera count showing on Dash Camera Page");
 		
 	}
-	@Test(priority = 36, dependsOnMethods = "NavigatingDashCamerasPage",groups = {"Dash Cameras"})
+	@Test(priority = 3, dependsOnMethods = "NavigatingDashCamerasPage",groups = {"Dash Cameras"})
 	public void SearchDashCamera() throws InterruptedException 
 	{
 		Assert.assertTrue(repo.dashCameraPageObject().Search(),"Search Result not as per Search Criteria");		
 	}
-	@Test(priority = 37, dependsOnMethods = "NavigatingDashCamerasPage",groups = {"Dash Cameras"})
+	@Test(priority = 4, dependsOnMethods = "NavigatingDashCamerasPage",groups = {"Dash Cameras"})
 	public void DashCameraData() throws InterruptedException 
 	{
 		repo.dashCameraPageObject().ClickonDashcam();

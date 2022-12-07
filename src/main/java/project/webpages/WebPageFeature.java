@@ -30,8 +30,11 @@ public class WebPageFeature {
 	@FindBy(xpath = "//input")
 	WebElement search;
 	
-	public Boolean verifyNewUpdates()
+	public Boolean verifyNewUpdates() throws InterruptedException
 	{
+		try
+		{
+		Thread.sleep(3000);
 		if(msg.getText().equalsIgnoreCase("TruckX Continously Improves to Give You the Best Experience!"))
 		{
 			log.info("Landed on New Updates and showing message");
@@ -40,6 +43,11 @@ public class WebPageFeature {
 		else
 		{
 			log.info("Unable to land New Updates and not showing Continously Improves msg");
+			return false;
+		}
+		}
+		catch (Exception e) {
+			log.info("Caught Exception While verifying New Updates");
 			return false;
 		}
 		

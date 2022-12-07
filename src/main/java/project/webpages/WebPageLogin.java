@@ -165,15 +165,15 @@ public class WebPageLogin {
 					fwait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class=\"driver-details\"]")));
 				}
 				else return false;
-			}
-			catch(Exception e)
-			{
-				log.info(e.getMessage());
-			}
+		}
+		catch(Exception e)
+		{
+				log.info("Caught Exception");
+		}
 				
-				log.info("valid username/password validated successfully");
+		log.info("valid username/password validated successfully");
 			
-				return true;
+		return true;
 		
 			
 		}

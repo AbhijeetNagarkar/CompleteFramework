@@ -20,7 +20,7 @@ public class APIKeyTransferScript {
 	{
 		repo = ObjectRepository.GetInstance();
 	}
-	@Test(priority = 50,groups = {"API Key Transfer"})
+	@Test(priority = 1,groups = {"API Key Transfer"})
 	public void NavigatingAssetPage() throws InterruptedException 
 	{
 		repo=ObjectRepository.GetInstance();
@@ -31,14 +31,14 @@ public class APIKeyTransferScript {
 		
 	}
 
-	@Test(priority = 51,groups = {"API Key Transfer"},dependsOnMethods = "NavigatingAssetPage")
-	public void APITransferActiveandExpiredCountPage() throws InterruptedException 
+	@Test(priority = 2,groups = {"API Key Transfer"},dependsOnMethods = "NavigatingAssetPage")
+	public void ActiveandExpiredCountPage() throws InterruptedException 
 	{
 		Assert.assertTrue(repo.APIKeyTransferPageObject().verifyCount(),"Active/Expired count not matching with records");
 		
 	}
-	@Test(priority = 52,groups = {"API Key Transfer"},dependsOnMethods = "NavigatingAssetPage")
-	public void ShareAPIKeyTransferFunctionality() throws InterruptedException 
+	@Test(priority = 3,groups = {"API Key Transfer"},dependsOnMethods = "NavigatingAssetPage")
+	public void ShareAPIKeyFunctionality() throws InterruptedException 
 	{
 		Assert.assertTrue(repo.APIKeyTransferPageObject().shareAPIKey(),"Share Link with API Partner functionality not working");
 		

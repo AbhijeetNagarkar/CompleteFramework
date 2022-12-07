@@ -1,55 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
+<testng-results ignored="0" total="6" passed="5" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-02T10:19:24 IST" name="Test Suite" finished-at="2022-12-02T10:23:49 IST" duration-ms="265223">
+  <suite started-at="2022-12-07T16:28:19 IST" name="Test Suite" finished-at="2022-12-07T16:30:02 IST" duration-ms="103426">
     <groups>
       <group name="Company Profile">
-        <method signature="CompanyProfileScript.NavigatingCompanyProfilePage()[pri:47, instance:project.testscenarios.CompanyProfileScript@117159c0]" name="NavigatingCompanyProfilePage" class="project.testscenarios.CompanyProfileScript"/>
-        <method signature="CompanyProfileScript.CompanyProfileDetails()[pri:48, instance:project.testscenarios.CompanyProfileScript@117159c0]" name="CompanyProfileDetails" class="project.testscenarios.CompanyProfileScript"/>
-        <method signature="CompanyProfileScript.EditCompanyProfileFunctionality()[pri:49, instance:project.testscenarios.CompanyProfileScript@117159c0]" name="EditCompanyProfileFunctionality" class="project.testscenarios.CompanyProfileScript"/>
+        <method signature="CompanyProfileScript.NavigatingCompanyProfilePage()[pri:47, instance:project.testscenarios.CompanyProfileScript@3b0fe47a]" name="NavigatingCompanyProfilePage" class="project.testscenarios.CompanyProfileScript"/>
+        <method signature="CompanyProfileScript.CompanyProfileDetails()[pri:48, instance:project.testscenarios.CompanyProfileScript@3b0fe47a]" name="CompanyProfileDetails" class="project.testscenarios.CompanyProfileScript"/>
+        <method signature="CompanyProfileScript.EditCompanyProfileFunctionality()[pri:49, instance:project.testscenarios.CompanyProfileScript@3b0fe47a]" name="EditCompanyProfileFunctionality" class="project.testscenarios.CompanyProfileScript"/>
       </group> <!-- Company Profile -->
+      <group name="Features">
+        <method signature="FeatureScript.NavigatingFeaturePage()[pri:1, instance:project.testscenarios.FeatureScript@202b0582]" name="NavigatingFeaturePage" class="project.testscenarios.FeatureScript"/>
+        <method signature="FeatureScript.FeaturePageVerification()[pri:2, instance:project.testscenarios.FeatureScript@202b0582]" name="FeaturePageVerification" class="project.testscenarios.FeatureScript"/>
+      </group> <!-- Features -->
+      <group name="Login">
+        <method signature="LoginScript.validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@2af004b]" name="validUserNameandPassword" class="project.testscenarios.LoginScript"/>
+      </group> <!-- Login -->
     </groups>
-    <test started-at="2022-12-02T10:19:24 IST" name="TruckX Test Automation" finished-at="2022-12-02T10:23:49 IST" duration-ms="265223">
+    <test started-at="2022-12-07T16:28:19 IST" name="TruckX Test Automation" finished-at="2022-12-07T16:30:02 IST" duration-ms="103426">
       <class name="project.testscenarios.LoginScript">
-        <test-method is-config="true" signature="preRequisite(org.testng.ITestContext)[pri:0, instance:project.testscenarios.LoginScript@17f62e33]" started-at="2022-12-02T10:18:48 IST" name="preRequisite" finished-at="2022-12-02T10:19:24 IST" duration-ms="36278" status="PASS">
+        <test-method is-config="true" signature="preRequisite(org.testng.ITestContext)[pri:0, instance:project.testscenarios.LoginScript@2af004b]" started-at="2022-12-07T16:27:39 IST" name="preRequisite" finished-at="2022-12-07T16:28:19 IST" duration-ms="39583" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@241b971f]]>
+                <![CDATA[org.testng.TestRunner@30922f8d]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- preRequisite -->
-        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.LoginScript@17f62e33]" started-at="2022-12-02T10:19:24 IST" name="Fetct_Repository_Object" finished-at="2022-12-02T10:19:24 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.LoginScript@2af004b]" started-at="2022-12-07T16:28:19 IST" name="Fetct_Repository_Object" finished-at="2022-12-07T16:28:19 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Fetct_Repository_Object -->
-        <test-method signature="validUserNameandPassword()[pri:2, instance:project.testscenarios.LoginScript@17f62e33]" started-at="2022-12-02T10:19:24 IST" name="validUserNameandPassword" finished-at="2022-12-02T10:19:40 IST" duration-ms="16153" status="PASS">
+        <test-method signature="validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@2af004b]" started-at="2022-12-07T16:28:19 IST" name="validUserNameandPassword" finished-at="2022-12-07T16:28:35 IST" duration-ms="16322" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validUserNameandPassword -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:project.testscenarios.LoginScript@17f62e33]" started-at="2022-12-02T10:23:49 IST" name="closeBrowser" finished-at="2022-12-02T10:23:54 IST" duration-ms="5232" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:project.testscenarios.LoginScript@2af004b]" started-at="2022-12-07T16:30:02 IST" name="closeBrowser" finished-at="2022-12-07T16:30:07 IST" duration-ms="5230" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- project.testscenarios.LoginScript -->
-      <class name="project.testscenarios.CompanyProfileScript">
-        <test-method signature="NavigatingCompanyProfilePage()[pri:47, instance:project.testscenarios.CompanyProfileScript@117159c0]" started-at="2022-12-02T10:19:40 IST" name="NavigatingCompanyProfilePage" finished-at="2022-12-02T10:19:42 IST" duration-ms="2237" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- NavigatingCompanyProfilePage -->
-        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.CompanyProfileScript@117159c0]" started-at="2022-12-02T10:19:40 IST" name="Fetct_Repository_Object" finished-at="2022-12-02T10:19:40 IST" duration-ms="0" status="PASS">
+      <class name="project.testscenarios.FeatureScript">
+        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.FeatureScript@202b0582]" started-at="2022-12-07T16:28:55 IST" name="Fetct_Repository_Object" finished-at="2022-12-07T16:28:55 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Fetct_Repository_Object -->
-        <test-method signature="CompanyProfileDetails()[pri:48, instance:project.testscenarios.CompanyProfileScript@117159c0]" started-at="2022-12-02T10:19:42 IST" name="CompanyProfileDetails" finished-at="2022-12-02T10:20:01 IST" depends-on-methods="project.testscenarios.CompanyProfileScript.NavigatingCompanyProfilePage" duration-ms="18807" status="PASS">
+        <test-method signature="NavigatingFeaturePage()[pri:1, instance:project.testscenarios.FeatureScript@202b0582]" started-at="2022-12-07T16:28:55 IST" name="NavigatingFeaturePage" finished-at="2022-12-07T16:29:55 IST" duration-ms="59985" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NavigatingFeaturePage -->
+        <test-method signature="FeaturePageVerification()[pri:2, instance:project.testscenarios.FeatureScript@202b0582]" started-at="2022-12-07T16:29:55 IST" name="FeaturePageVerification" finished-at="2022-12-07T16:30:02 IST" depends-on-methods="project.testscenarios.FeatureScript.NavigatingFeaturePage" duration-ms="7549" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FeaturePageVerification -->
+      </class> <!-- project.testscenarios.FeatureScript -->
+      <class name="project.testscenarios.CompanyProfileScript">
+        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.CompanyProfileScript@3b0fe47a]" started-at="2022-12-07T16:28:35 IST" name="Fetct_Repository_Object" finished-at="2022-12-07T16:28:35 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Fetct_Repository_Object -->
+        <test-method signature="NavigatingCompanyProfilePage()[pri:47, instance:project.testscenarios.CompanyProfileScript@3b0fe47a]" started-at="2022-12-07T16:28:35 IST" name="NavigatingCompanyProfilePage" finished-at="2022-12-07T16:28:37 IST" duration-ms="2246" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NavigatingCompanyProfilePage -->
+        <test-method signature="CompanyProfileDetails()[pri:48, instance:project.testscenarios.CompanyProfileScript@3b0fe47a]" started-at="2022-12-07T16:28:37 IST" name="CompanyProfileDetails" finished-at="2022-12-07T16:28:37 IST" depends-on-methods="project.testscenarios.CompanyProfileScript.NavigatingCompanyProfilePage" duration-ms="76" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CompanyProfileDetails -->
-        <test-method signature="EditCompanyProfileFunctionality()[pri:49, instance:project.testscenarios.CompanyProfileScript@117159c0]" started-at="2022-12-02T10:20:01 IST" name="EditCompanyProfileFunctionality" finished-at="2022-12-02T10:23:47 IST" depends-on-methods="project.testscenarios.CompanyProfileScript.NavigatingCompanyProfilePage" duration-ms="225935" status="FAIL">
+        <test-method signature="EditCompanyProfileFunctionality()[pri:49, instance:project.testscenarios.CompanyProfileScript@3b0fe47a]" started-at="2022-12-07T16:28:37 IST" name="EditCompanyProfileFunctionality" finished-at="2022-12-07T16:28:53 IST" depends-on-methods="project.testscenarios.CompanyProfileScript.NavigatingCompanyProfilePage" duration-ms="15302" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Edit functionality not working on Company Profile Page expected [true] but found [false]]]>

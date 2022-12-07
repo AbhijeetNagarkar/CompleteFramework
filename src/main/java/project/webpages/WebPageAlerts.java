@@ -71,9 +71,14 @@ public class WebPageAlerts {
 			
 			driver.findElements(By.xpath("//span[@class=\"order-last\"]//span[text()=\"Download\"]")).get(0).click();
 			
+			log.info("Clicked on Download Button");
+
 			Thread.sleep(1000);
 			
 			driver.findElement(By.xpath("//div[text()=\"PDF\"]")).click();
+			
+			log.info("Clicked on PDF Button");
+
 			
 			Thread.sleep(1000);
 			

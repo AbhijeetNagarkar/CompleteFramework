@@ -71,7 +71,8 @@ public class ConfigurationSetup
 			TestData.SetCompanyProfileData(xls.fetchdata("Company_Profile"));
 			TestData.SetForgotPasswordData(xls.fetchdata("ForgotPassword"));
 			TestData.SetAdminRegistrationData(xls.fetchdata("AdminRegistration"));
-			
+			TestData.SetDriversData(xls.fetchdata("Drivers"));
+
 			log.info("Test Data Loaded for Test Script");
 		}
 
