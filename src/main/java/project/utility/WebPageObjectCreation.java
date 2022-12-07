@@ -75,6 +75,19 @@ public class WebPageObjectCreation {
 	WebPageTripHistory tripHistoryPage;
 	
 	WebPageUtilization utilizationPage;
+	
+	WebPageTemperatureHumidity temperaturehumidityPage;
+	
+	public WebPageTemperatureHumidity TemperatureHumidityPageObject()
+	{
+		if(temperaturehumidityPage==null)
+		{
+			log.info("Temperature and Humidity page object created");
+			temperaturehumidityPage = new WebPageTemperatureHumidity(driver);
+		}
+		return temperaturehumidityPage;
+	}
+	
 		
 	public WebPageTripHistory TripHistoryPageObject()
 	{
@@ -89,7 +102,7 @@ public class WebPageObjectCreation {
 	{
 		if(utilizationPage==null)
 		{
-			log.info("Driver Safety page object created");
+			log.info("Utilization page object created");
 			utilizationPage = new WebPageUtilization(driver);
 		}
 		return utilizationPage;

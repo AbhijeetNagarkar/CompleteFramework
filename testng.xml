@@ -7,8 +7,21 @@
 	
  <test thread-count="1"  name="TruckX Test Automation" preserve-order="true" >
      <classes>
-	   <class name="project.testscenarios.LoginScript"/>  
-  
+	   
+	    <class name="project.testscenarios.LoginScript"/>  
+	    
+	    
+	       	   	<class name="project.testscenarios.DriversScript"/>  
+
+<!--
+	   	    <class name="project.testscenarios.TemperatureHumidityScript"/>  
+
+	    <class name="project.testscenarios.UtilizationReportScript"/>  
+
+        <class name="project.testscenarios.TripHistoryReportScript"/>  
+
+   	   	<class name="project.testscenarios.DriversScript"/>  
+ 
  	   	<class name="project.testscenarios.TruckScript"/>  
 		<class name="project.testscenarios.TrailerScript"/>  
 		
@@ -36,7 +49,7 @@
 	    <class name="project.testscenarios.LogoutScript"/> 
         <class name="project.testscenarios.ForgotPasswordScript"/>
         
-   <!--  <class name="project.testscenarios.AdminRegistrationScript"/> -->
+     <class name="project.testscenarios.AdminRegistrationScript"/> -->
 
      </classes>
   </test> 

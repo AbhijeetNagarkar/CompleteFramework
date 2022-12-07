@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import project.mediator.TestData;
@@ -120,6 +121,7 @@ public class WebPageDashCamera {
 	{
 		Thread.sleep(5000);
 		
+		wait.until(ExpectedConditions.elementToBeClickable(countDevices));
 		countDevices.click();
 		
 		List<WebElement> li=driver.findElements(By.xpath("//div[@class=\"w-1/3 xl:w-1/4 h-full\"]//td[@class=\"rc-table-cell\"]//div[@class=\"font-semibold\"]"));

@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WebPageDriverSafety {
 
-WebDriver driver;
+	WebDriver driver;
 	
 	WebDriverWait wait;
 
@@ -75,13 +75,17 @@ WebDriver driver;
 	{
 		try
 		{
+			search.clear();
+
 			Thread.sleep(3000);
 			filter.click();
-			
+			log.info("Clicked on Filter");
+
 			Thread.sleep(2000);
 					
 			filteroption.get(1).click();
-			
+			log.info("Clicked on last 7 days report");
+
 			List<WebElement> ele = driver.findElements(By.xpath("//tbody[@class=\"rc-table-tbody\"]//tr//td//a//div"));
 				
 			if(ele.size()>0)
@@ -90,6 +94,7 @@ WebDriver driver;
 				log.info("Records not available for last 7 days");
 					
 			driver.findElement(By.xpath("//button//span[text()=\"Reset All\"]")).click();
+			
 			return true;
 		}
 		catch (Exception e) {

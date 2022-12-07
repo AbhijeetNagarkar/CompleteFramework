@@ -21,6 +21,15 @@ public class TestData
 		 
 	 private static ThreadLocal<HashMap<String,String>> companyprofiledata = new ThreadLocal<HashMap<String,String>>();
 	 
+	 private static ThreadLocal<HashMap<String,String>> driversdata = new ThreadLocal<HashMap<String,String>>();
+
+	 	public static HashMap<String,String> GetDriversData() {
+	        return driversdata.get();
+	    }
+
+	    public static void SetDriversData(HashMap<String,String> data) {
+	    	driversdata.set(data);
+	    }
 	    public static HashMap<String,String> GetVehicleData() {
 	        return vehicledata.get();
 	    }
