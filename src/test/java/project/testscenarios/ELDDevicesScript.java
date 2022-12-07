@@ -26,7 +26,7 @@ public class ELDDevicesScript {
 		repo = ObjectRepository.GetInstance();
 	}
 	
-	@Test(priority = 32,groups = {"ELD Devices"})
+	@Test(priority = 1,groups = {"ELD Devices"})
 	public void NavigatingELDDevicesPage() throws InterruptedException 
 	{
 		repo.dashboardPageObject().clickOnDevices();
@@ -36,7 +36,7 @@ public class ELDDevicesScript {
 		Thread.sleep(7000);
 		
 	}
-	@Test(priority = 33, dependsOnMethods = "NavigatingELDDevicesPage",groups = {"ELD Devices"})
+	@Test(priority = 2, dependsOnMethods = "NavigatingELDDevicesPage",groups = {"ELD Devices"})
 	public void ELDCountandRecord() throws InterruptedException 
 	{
 		Assert.assertTrue(repo.eldDevicesPageObject().verifyELDDevicesCount(),"Incorrect count and records showing on ELD Devices Page");

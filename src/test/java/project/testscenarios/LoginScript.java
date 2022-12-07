@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import project.mediator.Driver;
 import project.mediator.ObjectRepository;
 import project.utility.*;
 
@@ -29,7 +31,7 @@ public class LoginScript extends ConfigurationSetup {
 		repo = ObjectRepository.GetInstance();
 	}
 /*
-	@Test(priority = 0, groups = {"Login"})
+	@Test(priority = 1, groups = {"Login"})
 	public void blankUserNameandPassword() throws InterruptedException
 	{
 		repo.loginPageObject().enterUserName("");
@@ -44,7 +46,7 @@ public class LoginScript extends ConfigurationSetup {
 		
 	}
 	
-	@Test(priority = 1,groups = {"Login"})
+	@Test(priority = 2,groups = {"Login"})
 	public void inValidUserNameandPassword() throws InterruptedException
 	{
 		repo.loginPageObject().enterUserName("Abhijeet@gmail.com");
@@ -57,9 +59,9 @@ public class LoginScript extends ConfigurationSetup {
 				
 		Driver.Refresh();
 		
-	}groups = {"Login"}
+	}
 	*/
-	@Test(priority = 2)
+	@Test(priority = 3,groups = {"Login"})
 	public void validUserNameandPassword() throws InterruptedException
 	{
 	

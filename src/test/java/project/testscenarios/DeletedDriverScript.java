@@ -23,7 +23,7 @@ public class DeletedDriverScript {
 		repo = ObjectRepository.GetInstance();
 	}
 	
-	@Test(priority = 43,groups = {"Drivers"})
+	@Test(priority = 1,groups = {"Drivers"})
 	public void NavigatingDriversPage() throws InterruptedException 
 	{
 		repo.dashboardPageObject().clickOnDrivers();;
@@ -31,17 +31,17 @@ public class DeletedDriverScript {
 		repo.dashboardPageObject().clickOnDeletedDrivers();
 	}
 	
-	@Test(priority = 44,groups = {"Drivers"},dependsOnMethods = "NavigatingDriversPage")
-	public void SearchDriverFunctionality() throws InterruptedException 
+	@Test(priority = 2,groups = {"Drivers"},dependsOnMethods = "NavigatingDriversPage")
+	public void SearchDriver() throws InterruptedException 
 	{
 		Assert.assertTrue(repo.deletedDriversPageObject().search(),"Unable to search on Deleted Drivers Page");
 	}
-	@Test(priority = 45,groups = {"Drivers"},dependsOnMethods = "NavigatingDriversPage")
+	@Test(priority = 3,groups = {"Drivers"},dependsOnMethods = "NavigatingDriversPage")
 	public void DeletedDriversDetails() throws InterruptedException 
 	{
 		Assert.assertTrue(repo.deletedDriversPageObject().verifyResult(),"Search result not as per search criteria");
 	}
-	@Test(priority = 46,groups = {"Drivers"},dependsOnMethods = "NavigatingDriversPage")
+	@Test(priority = 4,groups = {"Drivers"},dependsOnMethods = "NavigatingDriversPage")
 	public void DeletedDriverLogBookFunctionality() throws InterruptedException 
 	{
 		Assert.assertTrue(repo.deletedDriversPageObject().verifyLogbook(),"unable to view logbook on Deleted Drivers Page");

@@ -22,7 +22,7 @@ public class TrackingLinksScript {
 		repo = ObjectRepository.GetInstance();
 	}
 	
-	@Test(priority = 29,groups = {"Tracking Links"})
+	@Test(priority = 1,groups = {"Tracking Links"})
 	public void NavigatingTrackingLinksPage() throws InterruptedException 
 	{
 		repo.dashboardPageObject().clickOnLocation();
@@ -30,13 +30,13 @@ public class TrackingLinksScript {
 		repo.dashboardPageObject().clickOnTrackingLinks();
 	}
 	
-	@Test(priority = 30,groups = {"Tracking Links"},dependsOnMethods = "NavigatingTrackingLinksPage")
+	@Test(priority = 2,groups = {"Tracking Links"},dependsOnMethods = "NavigatingTrackingLinksPage")
 	public void SearchTrackingLinks() throws InterruptedException 
 	{
 		Assert.assertTrue(repo.trackinglinksPageObject().search(), "Unable to search on Tracking Links Page");
 	}
 	
-	@Test(priority = 31,groups = {"Tracking Links"},dependsOnMethods = "SearchTrackingLinks")
+	@Test(priority = 3,groups = {"Tracking Links"},dependsOnMethods = "SearchTrackingLinks")
 	public void RecordsOnTrackingLinks() throws InterruptedException 
 	{
 		Assert.assertTrue(repo.trackinglinksPageObject().verifyResult(), "Results not as per search Criteria");

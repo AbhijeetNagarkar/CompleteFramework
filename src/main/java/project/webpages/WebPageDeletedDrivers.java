@@ -61,7 +61,8 @@ WebDriver driver;
 			return true;
 		}
 		catch (Exception e) {
-			// TODO: handle exception
+
+			log.info("Caught Exception while Search Deleted Drivers");
 			return false;
 		}
 	}
@@ -89,17 +90,23 @@ WebDriver driver;
 	}
 	public Boolean verifyLogbook() throws InterruptedException
 	{
-		Thread.sleep(2000);
-		
-		changefocus.click();
-		
-		Thread.sleep(4000);
-		
-		driver.findElements(By.xpath("//td[@class=\"rc-table-cell\"]//*[text()=\"View Logbook\"]")).get(0).click();
-		
-	//	viewlogbook.get(0).click();
-		Thread.sleep(5000);
-		
+		try
+		{
+			Thread.sleep(2000);
+			
+			changefocus.click();
+			
+			Thread.sleep(4000);
+			
+			driver.findElements(By.xpath("//td[@class=\"rc-table-cell\"]//*[text()=\"View Logbook\"]")).get(0).click();
+			
+		//	viewlogbook.get(0).click();
+			Thread.sleep(5000);
+		}
+		catch (Exception e) {
+			log.info("Caught Exception while VerifyLogBok of Deleted Drivers");
+			return false;
+		}
 		if(driver.getCurrentUrl().equalsIgnoreCase("https://web.truckx.com/#/app/log-book/timelog-details"))
 		{
 			log.info("Able to navigate view Logbook of Deleted Drivers Page");

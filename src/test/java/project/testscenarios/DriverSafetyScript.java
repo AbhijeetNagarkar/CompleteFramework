@@ -22,7 +22,7 @@ public class DriverSafetyScript {
 		repo = ObjectRepository.GetInstance();
 	}
 	
-	@Test(priority = 50,groups = {"Reports"})
+	@Test(priority = 1,groups = {"Driver Safety Reports"})
 	public void NavigatingDriverSafetyPage() throws InterruptedException 
 	{
 				
@@ -33,12 +33,12 @@ public class DriverSafetyScript {
 		repo.ReportsPageObject().ClickOnDriverSafety();
 		
 	}
-	@Test(priority = 51,groups = {"Reports"},dependsOnMethods = "NavigatingDriverSafetyPage" )
+	@Test(priority = 2,groups = {"Driver Safety Reports"},dependsOnMethods = "NavigatingDriverSafetyPage" )
 	public void SearchandVerification() throws InterruptedException 
 	{
 		Assert.assertTrue(repo.DriverSafetyPageObject().SearchandVerifyRecords(),"Search functionality not working as expected");
 	}
-	@Test(priority = 52,groups = {"Reports"},dependsOnMethods = "NavigatingDriverSafetyPage" )
+	@Test(priority = 3,groups = {"Driver Safety Reports"},dependsOnMethods = "NavigatingDriverSafetyPage" )
 	public void FilterandVerification() throws InterruptedException 
 	{
 		Assert.assertTrue(repo.DriverSafetyPageObject().filterandverification(),"Records not showing as per filter criteria");

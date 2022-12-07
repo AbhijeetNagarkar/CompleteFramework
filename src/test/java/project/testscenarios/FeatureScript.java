@@ -21,7 +21,7 @@ WebPageObjectCreation repo;
 	{
 		repo = ObjectRepository.GetInstance();
 	}
-	@Test(priority = 50,groups = {"Features"})
+	@Test(priority = 1,groups = {"Features"})
 	public void NavigatingFeaturePage() throws InterruptedException 
 	{
 		repo.dashboardPageObject().clickOnFeature();
@@ -29,7 +29,7 @@ WebPageObjectCreation repo;
 		repo.dashboardPageObject().clickOnNewUpdates();
 		
 	}
-	@Test(priority = 50,groups = {"Features"},dependsOnMethods = "NavigatingFeaturePage")
+	@Test(priority = 2,groups = {"Features"},dependsOnMethods = "NavigatingFeaturePage")
 	public void FeaturePageVerification() throws InterruptedException 
 	{
 		Assert.assertTrue(repo.FeaturePageObject().verifyNewUpdates(),"Feature page verification failed");

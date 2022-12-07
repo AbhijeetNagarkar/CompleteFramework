@@ -23,7 +23,7 @@ public class ForgotPasswordScript {
     }	
 	
 	@Test(priority = 1,groups = {"Login"})
-	public void ForgotPasswordclick() throws InterruptedException
+	public void ForgotPassword() throws InterruptedException
 	{		
 		repo.forgotPasswordObject().ForgotPasswordClick();
 							

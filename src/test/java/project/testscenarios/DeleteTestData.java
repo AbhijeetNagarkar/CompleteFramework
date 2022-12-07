@@ -25,7 +25,7 @@ public class DeleteTestData {
 	}
 	
 	@Test(priority =1, groups = "Clean up")
-	public void DeletingCreatedTestdata() throws InterruptedException 
+	public void DeletingTestdata() throws InterruptedException 
 	{
 		try
 		{

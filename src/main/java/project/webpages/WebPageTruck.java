@@ -397,33 +397,38 @@ public class WebPageTruck {
 	public boolean verifyTruckDetails() throws InterruptedException {
 				
 	//	Thread.sleep(5000);
-		
-		table.click();
-		log.info("Clicked on result to get New Truck details");
-		Thread.sleep(5000);
-		
-		String vno = (elements.get(1)).getText();
-		String chsno=(elements.get(3)).getText();
-		String regno=(elements.get(4)).getText();
-		String Iname=(elements.get(6)).getText();
-		String Inumber=(elements.get(7)).getText();
-		String Cname=(elements.get(9)).getText();
-		String Cnumber=(elements.get(10)).getText();
-		
-		if(vno.equalsIgnoreCase(truckmap.get("Truck Identifier")) && chsno.equalsIgnoreCase(truckmap.get("VIN Number")) &&
-			regno.equalsIgnoreCase(truckmap.get("Registration No")) && Iname.equalsIgnoreCase(truckmap.get("Insurance Name")) &&
-			Inumber.equalsIgnoreCase(truckmap.get("Insurance Number")) && Cname.equalsIgnoreCase(truckmap.get("Cargo Insurance Name")) &&
-			Cnumber.equalsIgnoreCase(truckmap.get("Cargo Insurance Number")))
+		try
 		{
-			log.info("New Truck Validated Successfully on Vehicle Details");
-			return true;
+			table.click();
+			log.info("Clicked on result to get New Truck details");
+			Thread.sleep(5000);
+			
+			String vno = (elements.get(1)).getText();
+			String chsno=(elements.get(3)).getText();
+			String regno=(elements.get(4)).getText();
+			String Iname=(elements.get(6)).getText();
+			String Inumber=(elements.get(7)).getText();
+			String Cname=(elements.get(9)).getText();
+			String Cnumber=(elements.get(10)).getText();
+			
+			if(vno.equalsIgnoreCase(truckmap.get("Truck Identifier")) && chsno.equalsIgnoreCase(truckmap.get("VIN Number")) &&
+				regno.equalsIgnoreCase(truckmap.get("Registration No")) && Iname.equalsIgnoreCase(truckmap.get("Insurance Name")) &&
+				Inumber.equalsIgnoreCase(truckmap.get("Insurance Number")) && Cname.equalsIgnoreCase(truckmap.get("Cargo Insurance Name")) &&
+				Cnumber.equalsIgnoreCase(truckmap.get("Cargo Insurance Number")))
+			{
+				log.info("New Truck Validated Successfully on Vehicle Details");
+				return true;
+			}
+			else 
+			{
+				log.info("New Truck details incorrect on Vehicle Details");
+				return false;
+			}
 		}
-		else 
-		{
-			log.info("New Truck details incorrect on Vehicle Details");
+		catch (Exception e) {
+			log.info("Caught Exception while Verify Truck Details");
 			return false;
 		}
-		
 		
 		
 		

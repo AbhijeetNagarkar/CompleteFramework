@@ -24,7 +24,7 @@ public class TruckScript {
 	{
 		repo = ObjectRepository.GetInstance();
 	}
-	@Test(priority = 4, groups = {"Trucks"})
+	@Test(priority = 1, groups = {"Trucks"})
 	public void NavigatingTrucksPage() throws InterruptedException 
 	{
 		
@@ -34,8 +34,8 @@ public class TruckScript {
 		
 		Thread.sleep(7000);
 	}
-	@Test(priority = 5, dependsOnMethods = "NavigatingTrucksPage", groups = {"Trucks"} )
-	public void CreatingNewTruck()
+	@Test(priority = 2, dependsOnMethods = "NavigatingTrucksPage", groups = {"Trucks"} )
+	public void NewTruck()
 	{
 		repo.truckPageObject().clickOnAddTruckDashboard();
 		
@@ -112,42 +112,34 @@ public class TruckScript {
 		catch (InterruptedException e) {
 			
 			log.info(e.getMessage());
-			Assert.fail(e.getMessage());
+			Assert.fail("Create Truck functionality not working");
 		}
 }
 	
-	@Test(priority = 6, dependsOnMethods = "CreatingNewTruck",groups = {"Trucks"})
-	public void SearchTruckOnDashboard() throws InterruptedException 
+	@Test(priority = 3, dependsOnMethods = "NewTruck",groups = {"Trucks"})
+	public void Search() throws InterruptedException 
 	{
 		repo=ObjectRepository.GetInstance();
 		repo.truckPageObject().searchTruckonDashboard();
-	}
-	
-	@Test(priority = 7, dependsOnMethods = "SearchTruckOnDashboard",groups = {"Trucks"})
-	public void VerifyTruckOnDashboard() throws InterruptedException 
-	{
 		boolean flag=repo.truckPageObject().verifyTruckonDashboard();
 		if(flag)
 		{
-			
-			//System.out.println("Validated successfully on dashboard");
+			log.info("Verified Truck on Dashboard");
 		}
-		else Assert.fail("Incorrect data showing on Dashboard for Newly Added Truck");
+		else Assert.fail("Data not matching as per search Text");
 	}
 	
-	@Test(priority = 8, dependsOnMethods = "VerifyTruckOnDashboard",groups = {"Trucks"})
-	public void VerifyTruckOnVehicleDetails() throws InterruptedException
+	
+	@Test(priority = 4, dependsOnMethods = "Search",groups = {"Trucks"})
+	public void VehicleDetailsFunctionality() throws InterruptedException
 	{
 		boolean flag=repo.truckPageObject().verifyTruckDetails();
 		
 		if(flag)
 		{
-			//System.out.println("Validated successfully on Vehicle Details Page");
+			log.info("Validated successfully on Vehicle Details Page");
 		}
 		else Assert.fail("Incorrect data showing on Vehicle Details for Newly Added Truck");
-		
-		
-		
 	}
 	
 }

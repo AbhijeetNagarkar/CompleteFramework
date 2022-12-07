@@ -49,20 +49,27 @@ WebDriver driver;
 	
 	public Boolean VerifyDashboard()
 	{
-		List<WebElement> ele = driver.findElements(By.xpath("//div[@class=\"pl-4 w-5/6\"]//span"));
-		
-		String s1= ele.get(1).getText().trim();
-		String s2= ele.get(2).getText().trim();
-		String s3 = ele.get(3).getText().trim();
-		if(s1.equalsIgnoreCase(data.get("Name")) && s2.equalsIgnoreCase(data.get("DOT")) 
-			&& s3.equalsIgnoreCase(data.get("Email")))
+		try
 		{
-			log.info("Company Details verified on Company Profile Page");
-			return true;
+			List<WebElement> ele = driver.findElements(By.xpath("//div[@class=\"pl-4 w-5/6\"]//span"));
+			
+			String s1= ele.get(1).getText().trim();
+			String s2= ele.get(2).getText().trim();
+			String s3 = ele.get(3).getText().trim();
+			if(s1.equalsIgnoreCase(data.get("Name")) && s2.equalsIgnoreCase(data.get("DOT")) 
+				&& s3.equalsIgnoreCase(data.get("Email")))
+			{
+				log.info("Company Details verified on Company Profile Page");
+				return true;
+			}
+			else
+			{
+				log.info("Incorrect Company Details showing in Company Profile Page");
+				return false;
+			}
 		}
-		else
-		{
-			log.info("Incorrect Company Details showing in Company Profile Page");
+		catch (Exception e) {
+			log.info("Caught Exception While Verifying Company Profile information");
 			return false;
 		}
 			
@@ -90,25 +97,25 @@ WebDriver driver;
 					
 					if(i==2 && msg.getText().equalsIgnoreCase("Carrier timezone updated successfully"))
 					{
-						driver.findElement(By.xpath("//*[@class=\"h-5 w-5 cursor-pointer text-blue-secondary hover:text-gray-500\"]")).click();
+		//				driver.findElement(By.xpath("//*[@class=\"h-5 w-5 cursor-pointer text-blue-secondary hover:text-gray-500\"]")).click();
 	
 						continue;
 					}
 					else if(i==3 && msg.getText().equalsIgnoreCase("Shipping address updated successfully"))
 					{
-						driver.findElement(By.xpath("//*[@class=\"h-5 w-5 cursor-pointer text-blue-secondary hover:text-gray-500\"]")).click();
+		//				driver.findElement(By.xpath("//*[@class=\"h-5 w-5 cursor-pointer text-blue-secondary hover:text-gray-500\"]")).click();
 	
 						continue;
 					}	
 					else if(msg.getText().equalsIgnoreCase("Carrier address updated successfully"))
 					{
-						driver.findElement(By.xpath("//*[@class=\"h-5 w-5 cursor-pointer text-blue-secondary hover:text-gray-500\"]")).click();
+		//				driver.findElement(By.xpath("//*[@class=\"h-5 w-5 cursor-pointer text-blue-secondary hover:text-gray-500\"]")).click();
 	
 						continue;
 					}
 					else
 					{
-						driver.findElement(By.xpath("//*[@class=\"h-5 w-5 cursor-pointer text-blue-secondary hover:text-gray-500\"]")).click();
+		//				driver.findElement(By.xpath("//*[@class=\"h-5 w-5 cursor-pointer text-blue-secondary hover:text-gray-500\"]")).click();
 	
 						log.info("Edit functionality not working on Company Profile Page");
 						return false;

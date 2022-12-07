@@ -39,25 +39,32 @@ public class WebPageELDDevices {
 	WebElement changefocus;
 	
 	public boolean verifyELDDevicesCount() throws InterruptedException {
-		// TODO Auto-generated method stub
+
+		try
+		{
 		changefocus.click();
-		Thread.sleep(5000);
-		driver.findElement(By.xpath("//input")).click();
-		Thread.sleep(2000);
+			Thread.sleep(5000);
+			driver.findElement(By.xpath("//input")).click();
+			Thread.sleep(2000);
+			
+			int size = driver.findElements(By.xpath("//div[@class=\"rc-table-container\"]//tr")).size();
 		
-		int size = driver.findElements(By.xpath("//div[@class=\"rc-table-container\"]//tr")).size();
-	
-		String str = driver.findElements(By.xpath("//span[text()=\"Active\"]//following::span")).get(0).getText().trim();
-		size=size-2;
-		if(str.equalsIgnoreCase(String.valueOf(size)))
-		{
-			log.info("ELD Devices count matched on ELD Devices Page");
-			return true;
+			String str = driver.findElements(By.xpath("//span[text()=\"Active\"]//following::span")).get(0).getText().trim();
+			size=size-2;
+			if(str.equalsIgnoreCase(String.valueOf(size)))
+			{
+				log.info("ELD Devices count matched on ELD Devices Page");
+				return true;
+			}
+			else
+			{
+				log.info("Incorrect Devices count showing on ELD Devices Page");
+				return false;
+			}
 		}
-		else
-		{
-			log.info("Incorrect Devices count showing on ELD Devices Page");
-			return false;
+		catch (Exception e) {
+				log.info("Caught Exception while verifying ELD Device count");
+				return false;
 		}
 	}
 

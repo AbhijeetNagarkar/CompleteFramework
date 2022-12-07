@@ -47,11 +47,17 @@ public class WebPageIFTAReports {
 	
 	public boolean SearchandVerifyRecords() throws InterruptedException {
 		// TODO Auto-generated method stub
-		Thread.sleep(3000);
-		search.clear();
-		search.sendKeys("demo");
-		Thread.sleep(2000);
-		
+		try
+		{
+			Thread.sleep(3000);
+			search.clear();
+			search.sendKeys("demo");
+			Thread.sleep(2000);
+		}
+		catch (Exception e) {
+			log.info("Caught Exception while search functionality of IFTA Report page");
+			return false;
+		}
 		List<WebElement> ele = driver.findElements(By.xpath("//tbody//tr[@class=\"rc-table-row rc-table-row-level-0 text-base text-gray-400 bg-white border-b border-gray-100 h-12 w-full hover:bg-blue-tablerow focus:hover:bg-blue-tablerow rounded-md`\"]//div[@class=\"font-bold pl-2 text-xs lg:text-sm xl:text-base\"]"));
 		
 		
