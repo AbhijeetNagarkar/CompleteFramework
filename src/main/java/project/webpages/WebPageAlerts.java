@@ -38,6 +38,7 @@ public class WebPageAlerts {
 	{
 		try
 		{
+			Thread.sleep(3000);
 			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//table[@class=\"activity-table \"]//tr[@class=\"text-center\"]")));
 			int count1 = driver.findElements(By.xpath("//table[@class=\"activity-table \"]//tr[@class=\"text-center\"]")).size();
 			

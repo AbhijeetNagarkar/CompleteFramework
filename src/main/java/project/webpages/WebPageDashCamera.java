@@ -139,13 +139,14 @@ public class WebPageDashCamera {
 	{
 		try
 		{
-			Thread.sleep(5000);
+			Thread.sleep(2000);
 			
 			wait.until(ExpectedConditions.elementToBeClickable(countDevices));
+			Thread.sleep(5000);
 			countDevices.click();
-			
+			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@class=\"w-1/3 xl:w-1/4 h-full\"]//td[@class=\"rc-table-cell\"]//div[@class=\"font-semibold\"]")));
 			List<WebElement> li=driver.findElements(By.xpath("//div[@class=\"w-1/3 xl:w-1/4 h-full\"]//td[@class=\"rc-table-cell\"]//div[@class=\"font-semibold\"]"));
-			
+			Thread.sleep(2000);
 			li.get(2).click();
 		}
 		catch(Exception e)

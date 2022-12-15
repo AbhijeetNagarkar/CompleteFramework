@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WebPageTrackingLinks {
@@ -36,7 +37,8 @@ public class WebPageTrackingLinks {
 	{
 		try
 		{
-			driver.findElement(By.xpath("//div[text()=\"Shared Link\"]")).click();
+			wait.until(ExpectedConditions.visibilityOf(search));
+			search.click();
 			Thread.sleep(2000);
 			
 			search.clear();
@@ -56,15 +58,15 @@ public class WebPageTrackingLinks {
 	}
 	public Boolean verifyResult()
 	{
-		List<WebElement> rows = driver.findElements(By.xpath("//tr[@class=\"rc-table-row rc-table-row-level-0 text-base text-gray-400 bg-white border-b border-gray-100 h-12 w-full rounded-md hover:bg-blue-tablerow\"]//td[3]//div"));
+		List<WebElement> rows = driver.findElements(By.xpath("//tr[@class=\"rc-table-row rc-table-row-level-0 text-base text-gray-400 bg-white border-b border-gray-100 h-12 w-full rounded-md hover:bg-blue-tablerow\"]//td[2]//div"));
 	
 		log.info("Captured result into list");
 		
 		for(WebElement ele : rows)
 		{
-			String text = ele.getText();
+			String text = ele.getText().toLowerCase();
 			
-			if(text.equalsIgnoreCase("trailer"))
+			if(text.contains("trailer"))
 			{
 				continue;
 			}

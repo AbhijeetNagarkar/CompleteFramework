@@ -637,6 +637,7 @@ public class WebPageDashboard {
 		}
 		catch (Exception e) {
 			// TODO: handle exception
+			Thread.sleep(1000);
 			drivers.click();
 			Thread.sleep(1000);
 			deleteddrivers.click();
