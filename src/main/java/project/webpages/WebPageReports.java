@@ -8,7 +8,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class WebPageReports {
 
@@ -81,11 +83,29 @@ public class WebPageReports {
 	
 	private void Goto(String string) throws InterruptedException {
 		// TODO Auto-generated method stub
-		
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//a//span[text()='"+string+"']")).click();
-		log.info("Clicked on "+string+" report");
-		Thread.sleep(5000);
+		try
+		{
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a//span[text()='"+string+"']")));
+			driver.findElement(By.xpath("//a//span[text()='"+string+"']")).click();
+			log.info("Clicked on "+string+" report");
+			Thread.sleep(5000);
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			try
+			{
+				wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a//span[text()='"+string+"']")));
+
+				driver.findElement(By.xpath("//a//span[text()='"+string+"']")).click();
+				log.info("Clicked on "+string+" report");
+				Thread.sleep(5000);
+			}
+			catch (Exception e1) {
+				log.info("Caught Exception - Unable to navigate "+string+" report page");
+				Assert.fail("Caught Exception - Unable to navigate "+string+" report page");
+				
+			}
+		}
 	}
 	
 	public Boolean search() throws InterruptedException

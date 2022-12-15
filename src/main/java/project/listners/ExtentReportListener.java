@@ -53,6 +53,7 @@ public class ExtentReportListener implements ITestListener, ISuiteListener {
 		}
 		else
 		logger = report.createTest(result.getMethod().getMethodName()).assignCategory(category[0]);
+		
 		logger.info("Executing test: " + result.getMethod().getMethodName());
 		
 	

@@ -9,17 +9,20 @@
      <classes>
 	   	
 	   	<class name="project.testscenarios.LoginScript"/>  
-
+	   	
 	   	<class name="project.testscenarios.TruckScript"/>  
 		<class name="project.testscenarios.TrailerScript"/>  
 		
 		<class name = "project.testscenarios.AssetsScript"/> 
 		<class name = "project.testscenarios.TrackingLinksScript"/> 
 		
+		<class name="project.testscenarios.MessageScript"/>
+	
 		<class name="project.testscenarios.TrackingDevicesScript"/>  
 		<class name="project.testscenarios.DashCameraScript"/> 
 		<class name = "project.testscenarios.ELDDevicesScript"/>
 		
+		<class name="project.testscenarios.DriversScript"/> 
 		<class name = "project.testscenarios.DeletedDriverScript"/> 
 		
 		<class name = "project.testscenarios.IFTAReportScript"/>  
@@ -28,10 +31,10 @@
 		
 		<class name = "project.testscenarios.DriverSafetyScript"/>
 		<class name = "project.testscenarios.DutyStatusSummaryScript"/>
+		<class name="project.testscenarios.TemperatureHumidityScript"/>
 		<class name="project.testscenarios.UtilizationReportScript"/>  
         <class name="project.testscenarios.TripHistoryReportScript"/>
 
-		
 		<class name = "project.testscenarios.APIKeyTransferScript"/>  
 		
 		<class name = "project.testscenarios.FeatureScript"/> 
