@@ -2,8 +2,7 @@ package project.RandomVinAPI;
 
 import static io.restassured.RestAssured.given;
 
-import io.restassured.config.Config;
-import io.restassured.config.RestAssuredConfig;
+
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 

@@ -1,121 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="5" failed="1" skipped="0">
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-07T16:28:19 IST" name="Test Suite" finished-at="2022-12-07T16:30:02 IST" duration-ms="103426">
+  <suite started-at="2022-12-15T10:56:58 IST" name="Test Suite" finished-at="2022-12-15T11:00:01 IST" duration-ms="182285">
     <groups>
-      <group name="Company Profile">
-        <method signature="CompanyProfileScript.NavigatingCompanyProfilePage()[pri:47, instance:project.testscenarios.CompanyProfileScript@3b0fe47a]" name="NavigatingCompanyProfilePage" class="project.testscenarios.CompanyProfileScript"/>
-        <method signature="CompanyProfileScript.CompanyProfileDetails()[pri:48, instance:project.testscenarios.CompanyProfileScript@3b0fe47a]" name="CompanyProfileDetails" class="project.testscenarios.CompanyProfileScript"/>
-        <method signature="CompanyProfileScript.EditCompanyProfileFunctionality()[pri:49, instance:project.testscenarios.CompanyProfileScript@3b0fe47a]" name="EditCompanyProfileFunctionality" class="project.testscenarios.CompanyProfileScript"/>
-      </group> <!-- Company Profile -->
-      <group name="Features">
-        <method signature="FeatureScript.NavigatingFeaturePage()[pri:1, instance:project.testscenarios.FeatureScript@202b0582]" name="NavigatingFeaturePage" class="project.testscenarios.FeatureScript"/>
-        <method signature="FeatureScript.FeaturePageVerification()[pri:2, instance:project.testscenarios.FeatureScript@202b0582]" name="FeaturePageVerification" class="project.testscenarios.FeatureScript"/>
-      </group> <!-- Features -->
+      <group name="Drivers">
+        <method signature="DriversScript.CreateDriverFunctionality()[pri:4, instance:project.testscenarios.DriversScript@3b0fe47a]" name="CreateDriverFunctionality" class="project.testscenarios.DriversScript"/>
+        <method signature="DriversScript.DeleteDriverFunctionality()[pri:6, instance:project.testscenarios.DriversScript@3b0fe47a]" name="DeleteDriverFunctionality" class="project.testscenarios.DriversScript"/>
+        <method signature="DriversScript.EditDriverFunctionality()[pri:5, instance:project.testscenarios.DriversScript@3b0fe47a]" name="EditDriverFunctionality" class="project.testscenarios.DriversScript"/>
+        <method signature="DriversScript.NavigatingDriverPage()[pri:1, instance:project.testscenarios.DriversScript@3b0fe47a]" name="NavigatingDriverPage" class="project.testscenarios.DriversScript"/>
+        <method signature="DriversScript.VerifyRecords()[pri:2, instance:project.testscenarios.DriversScript@3b0fe47a]" name="VerifyRecords" class="project.testscenarios.DriversScript"/>
+        <method signature="DriversScript.SearchFunctionality()[pri:3, instance:project.testscenarios.DriversScript@3b0fe47a]" name="SearchFunctionality" class="project.testscenarios.DriversScript"/>
+      </group> <!-- Drivers -->
       <group name="Login">
         <method signature="LoginScript.validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@2af004b]" name="validUserNameandPassword" class="project.testscenarios.LoginScript"/>
       </group> <!-- Login -->
     </groups>
-    <test started-at="2022-12-07T16:28:19 IST" name="TruckX Test Automation" finished-at="2022-12-07T16:30:02 IST" duration-ms="103426">
+    <test started-at="2022-12-15T10:56:58 IST" name="TruckX Test Automation" finished-at="2022-12-15T11:00:01 IST" duration-ms="182285">
       <class name="project.testscenarios.LoginScript">
-        <test-method is-config="true" signature="preRequisite(org.testng.ITestContext)[pri:0, instance:project.testscenarios.LoginScript@2af004b]" started-at="2022-12-07T16:27:39 IST" name="preRequisite" finished-at="2022-12-07T16:28:19 IST" duration-ms="39583" status="PASS">
+        <test-method is-config="true" signature="preRequisite(org.testng.ITestContext)[pri:0, instance:project.testscenarios.LoginScript@2af004b]" started-at="2022-12-15T10:56:25 IST" name="preRequisite" finished-at="2022-12-15T10:56:58 IST" duration-ms="33004" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@30922f8d]]>
+                <![CDATA[org.testng.TestRunner@781dbe44]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- preRequisite -->
-        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.LoginScript@2af004b]" started-at="2022-12-07T16:28:19 IST" name="Fetct_Repository_Object" finished-at="2022-12-07T16:28:19 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.LoginScript@2af004b]" started-at="2022-12-15T10:56:58 IST" name="Fetct_Repository_Object" finished-at="2022-12-15T10:56:58 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Fetct_Repository_Object -->
-        <test-method signature="validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@2af004b]" started-at="2022-12-07T16:28:19 IST" name="validUserNameandPassword" finished-at="2022-12-07T16:28:35 IST" duration-ms="16322" status="PASS">
+        <test-method signature="validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@2af004b]" started-at="2022-12-15T10:56:58 IST" name="validUserNameandPassword" finished-at="2022-12-15T10:57:15 IST" duration-ms="16677" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validUserNameandPassword -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:project.testscenarios.LoginScript@2af004b]" started-at="2022-12-07T16:30:02 IST" name="closeBrowser" finished-at="2022-12-07T16:30:07 IST" duration-ms="5230" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:project.testscenarios.LoginScript@2af004b]" started-at="2022-12-15T11:00:01 IST" name="closeBrowser" finished-at="2022-12-15T11:00:06 IST" duration-ms="5213" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- project.testscenarios.LoginScript -->
-      <class name="project.testscenarios.FeatureScript">
-        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.FeatureScript@202b0582]" started-at="2022-12-07T16:28:55 IST" name="Fetct_Repository_Object" finished-at="2022-12-07T16:28:55 IST" duration-ms="1" status="PASS">
+      <class name="project.testscenarios.DriversScript">
+        <test-method signature="NavigatingDriverPage()[pri:1, instance:project.testscenarios.DriversScript@3b0fe47a]" started-at="2022-12-15T10:57:15 IST" name="NavigatingDriverPage" finished-at="2022-12-15T10:57:17 IST" duration-ms="2345" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NavigatingDriverPage -->
+        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.DriversScript@3b0fe47a]" started-at="2022-12-15T10:57:15 IST" name="Fetct_Repository_Object" finished-at="2022-12-15T10:57:15 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Fetct_Repository_Object -->
-        <test-method signature="NavigatingFeaturePage()[pri:1, instance:project.testscenarios.FeatureScript@202b0582]" started-at="2022-12-07T16:28:55 IST" name="NavigatingFeaturePage" finished-at="2022-12-07T16:29:55 IST" duration-ms="59985" status="PASS">
+        <test-method signature="VerifyRecords()[pri:2, instance:project.testscenarios.DriversScript@3b0fe47a]" started-at="2022-12-15T10:57:17 IST" name="VerifyRecords" finished-at="2022-12-15T10:57:26 IST" duration-ms="8949" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- NavigatingFeaturePage -->
-        <test-method signature="FeaturePageVerification()[pri:2, instance:project.testscenarios.FeatureScript@202b0582]" started-at="2022-12-07T16:29:55 IST" name="FeaturePageVerification" finished-at="2022-12-07T16:30:02 IST" depends-on-methods="project.testscenarios.FeatureScript.NavigatingFeaturePage" duration-ms="7549" status="PASS">
+        </test-method> <!-- VerifyRecords -->
+        <test-method signature="SearchFunctionality()[pri:3, instance:project.testscenarios.DriversScript@3b0fe47a]" started-at="2022-12-15T10:57:26 IST" name="SearchFunctionality" finished-at="2022-12-15T10:57:31 IST" duration-ms="4452" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- FeaturePageVerification -->
-      </class> <!-- project.testscenarios.FeatureScript -->
-      <class name="project.testscenarios.CompanyProfileScript">
-        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.CompanyProfileScript@3b0fe47a]" started-at="2022-12-07T16:28:35 IST" name="Fetct_Repository_Object" finished-at="2022-12-07T16:28:35 IST" duration-ms="0" status="PASS">
+        </test-method> <!-- SearchFunctionality -->
+        <test-method signature="CreateDriverFunctionality()[pri:4, instance:project.testscenarios.DriversScript@3b0fe47a]" started-at="2022-12-15T10:57:31 IST" name="CreateDriverFunctionality" finished-at="2022-12-15T10:58:47 IST" duration-ms="76480" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Fetct_Repository_Object -->
-        <test-method signature="NavigatingCompanyProfilePage()[pri:47, instance:project.testscenarios.CompanyProfileScript@3b0fe47a]" started-at="2022-12-07T16:28:35 IST" name="NavigatingCompanyProfilePage" finished-at="2022-12-07T16:28:37 IST" duration-ms="2246" status="PASS">
+        </test-method> <!-- CreateDriverFunctionality -->
+        <test-method signature="EditDriverFunctionality()[pri:5, instance:project.testscenarios.DriversScript@3b0fe47a]" started-at="2022-12-15T10:58:47 IST" name="EditDriverFunctionality" finished-at="2022-12-15T10:59:30 IST" depends-on-methods="project.testscenarios.DriversScript.CreateDriverFunctionality" duration-ms="42540" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- NavigatingCompanyProfilePage -->
-        <test-method signature="CompanyProfileDetails()[pri:48, instance:project.testscenarios.CompanyProfileScript@3b0fe47a]" started-at="2022-12-07T16:28:37 IST" name="CompanyProfileDetails" finished-at="2022-12-07T16:28:37 IST" depends-on-methods="project.testscenarios.CompanyProfileScript.NavigatingCompanyProfilePage" duration-ms="76" status="PASS">
+        </test-method> <!-- EditDriverFunctionality -->
+        <test-method signature="DeleteDriverFunctionality()[pri:6, instance:project.testscenarios.DriversScript@3b0fe47a]" started-at="2022-12-15T10:59:30 IST" name="DeleteDriverFunctionality" finished-at="2022-12-15T11:00:01 IST" depends-on-methods="project.testscenarios.DriversScript.CreateDriverFunctionality" duration-ms="30792" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CompanyProfileDetails -->
-        <test-method signature="EditCompanyProfileFunctionality()[pri:49, instance:project.testscenarios.CompanyProfileScript@3b0fe47a]" started-at="2022-12-07T16:28:37 IST" name="EditCompanyProfileFunctionality" finished-at="2022-12-07T16:28:53 IST" depends-on-methods="project.testscenarios.CompanyProfileScript.NavigatingCompanyProfilePage" duration-ms="15302" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Edit functionality not working on Company Profile Page expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Edit functionality not working on Company Profile Page expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertTrue(Assert.java:45)
-at project.testscenarios.CompanyProfileScript.EditCompanyProfileFunctionality(CompanyProfileScript.java:45)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EditCompanyProfileFunctionality -->
-      </class> <!-- project.testscenarios.CompanyProfileScript -->
+        </test-method> <!-- DeleteDriverFunctionality -->
+      </class> <!-- project.testscenarios.DriversScript -->
     </test> <!-- TruckX Test Automation -->
   </suite> <!-- Test Suite -->
 </testng-results>
