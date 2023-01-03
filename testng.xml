@@ -10,7 +10,7 @@
 	   	
 	   	<class name="project.testscenarios.LoginScript"/>  
 	   	
-	   	<class name="project.testscenarios.TruckScript"/>  
+    	<class name="project.testscenarios.TruckScript"/>  
 		<class name="project.testscenarios.TrailerScript"/>  
 		
 		<class name = "project.testscenarios.AssetsScript"/> 
@@ -33,9 +33,11 @@
 		<class name = "project.testscenarios.DutyStatusSummaryScript"/>
 		<class name="project.testscenarios.TemperatureHumidityScript"/>
 		<class name="project.testscenarios.UtilizationReportScript"/>  
-        <class name="project.testscenarios.TripHistoryReportScript"/>
+        <class name="project.testscenarios.TripHistoryReportScript"/> 
+        <class name="project.testscenarios.FuelEfficiencyReportScript"/>
+        <class name="project.testscenarios.ELDLogbookEditsScript"/>
 
-		<class name = "project.testscenarios.APIKeyTransferScript"/>  
+	 	<class name = "project.testscenarios.APIKeyTransferScript"/>  
 		
 		<class name = "project.testscenarios.FeatureScript"/> 
 		
@@ -44,7 +46,7 @@
         <class name = "project.testscenarios.DeleteTestData"/>  	
         
 	    <class name="project.testscenarios.LogoutScript"/> 
-        <class name="project.testscenarios.ForgotPasswordScript"/>
+        <class name="project.testscenarios.ForgotPasswordScript"/> 
         
  <!--    <class name="project.testscenarios.AdminRegistrationScript"/> -->
 

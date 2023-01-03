@@ -78,6 +78,11 @@ public class WebPageObjectCreation {
 	
 	WebPageTemperatureHumidity temperaturehumidityPage;
 	
+	WebPageFuelEfficiency fuelefficiencyPage;
+	
+	WebPageELDLogbookEdits eldlogbookeditsPage;
+	
+	
 	public WebPageTemperatureHumidity TemperatureHumidityPageObject()
 	{
 		if(temperaturehumidityPage==null)
@@ -86,6 +91,26 @@ public class WebPageObjectCreation {
 			temperaturehumidityPage = new WebPageTemperatureHumidity(driver);
 		}
 		return temperaturehumidityPage;
+	}
+	
+	public WebPageFuelEfficiency FuelEfficiencyPageObject()
+	{
+		if(fuelefficiencyPage==null)
+		{
+			log.info("Fuel Efficiency page object created");
+			fuelefficiencyPage = new WebPageFuelEfficiency(driver);
+		}
+		return fuelefficiencyPage;
+	}
+	
+	public WebPageELDLogbookEdits ELDLogbookEditsPageObject()
+	{
+		if(eldlogbookeditsPage==null)
+		{
+			log.info("ELD Logbook Edits page object created");
+			eldlogbookeditsPage = new WebPageELDLogbookEdits(driver);
+		}
+		return eldlogbookeditsPage;
 	}
 	
 		

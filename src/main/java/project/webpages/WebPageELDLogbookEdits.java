@@ -10,14 +10,15 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class WebPageFuelEfficiency {
+public class WebPageELDLogbookEdits {
+	
 WebDriver driver;
 	
 	WebDriverWait wait;
 
-	public static Logger log = Logger.getLogger(WebPageFuelEfficiency.class);
+	public static Logger log = Logger.getLogger(WebPageELDLogbookEdits.class);
 	
-	public WebPageFuelEfficiency(WebDriver driverinstance)
+	public WebPageELDLogbookEdits(WebDriver driverinstance)
 	{
 		driver=driverinstance;
 			
@@ -36,14 +37,10 @@ WebDriver driver;
 	@FindBy(xpath = "//div[@class=\"flex items-center\"]//span[text()=\"Reset All\"]")
 	WebElement resetfilter;
 	
-	@FindBy(xpath = "//div[@class=\"ml-10 mt-2\"]//span[text()=\"Driver Safety Report\"]")
-	WebElement changefocus;
-	
-
 	@FindBy(xpath = "//input")
 	WebElement search;
 	
-	@FindBy(xpath="//h1[text()=\"No Data\"]")
+	@FindBy(xpath = "//h1[text()=\"No Data\"]")
 	WebElement NoData;
 	
 	public boolean SearchandVerifyRecords() throws InterruptedException {
@@ -53,7 +50,16 @@ WebDriver driver;
 		search.sendKeys("demo");
 		Thread.sleep(2000);
 		
-		List<WebElement> ele = driver.findElements(By.xpath("//tbody[@class=\"rc-table-tbody\"]//tr//td//div"));
+		if(driver.findElement(By.xpath("//h1[text()=\"No Data\"]")).isDisplayed())
+		{
+			log.info("NO Data available");
+			return false;
+		}
+		
+		else
+		{
+			
+		List<WebElement> ele = driver.findElements(By.xpath("//tbody[@class=\"rc-table-tbody\"]//tr//td//a//div"));
 		
 		for(WebElement element : ele)
 		{
@@ -68,17 +74,20 @@ WebDriver driver;
 			}
 				
 		}
+		
+	
 		log.info("Search records matched as per search text");
 		search.clear();
-		return true;		
+		return true;
+		}
 	}
 	
 	public Boolean filterandverification() throws InterruptedException
 	{
 		try
 		{
-			search.clear();			
-				
+			search.clear();
+
 			Thread.sleep(3000);
 			filter.click();
 			log.info("Clicked on Filter");
@@ -88,7 +97,7 @@ WebDriver driver;
 			filteroption.get(1).click();
 			log.info("Clicked on last 7 days report");
 
-			List<WebElement> ele = driver.findElements(By.xpath("//tbody[@class=\"rc-table-tbody\"]//tr"));
+			List<WebElement> ele = driver.findElements(By.xpath("//tbody[@class=\"rc-table-tbody\"]//tr//td//a//div"));
 				
 			if(ele.size()>0)
 				log.info("Records available for last 7 days");
@@ -98,7 +107,6 @@ WebDriver driver;
 			driver.findElement(By.xpath("//button//span[text()=\"Reset All\"]")).click();
 			
 			return true;
-		
 		}
 		catch (Exception e) {
 			log.info("Filter and verification functionality not working");
@@ -106,4 +114,5 @@ WebDriver driver;
 		}
 		
 	}
+
 }

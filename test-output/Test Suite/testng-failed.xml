@@ -6,12 +6,20 @@
   </listeners>
   <test thread-count="5" name="TruckX Test Automation(failed)">
     <classes>
-      <class name="project.testscenarios.DriversScript">
+      <class name="project.testscenarios.ELDLogbookEditsScript">
         <methods>
-          <include name="CreateDriverFunctionality"/>
+          <include name="NavigatingELDLogbookEditReportsPage"/>
           <include name="Fetct_Repository_Object"/>
+          <include name="SearchandVerification"/>
         </methods>
-      </class> <!-- project.testscenarios.DriversScript -->
+      </class> <!-- project.testscenarios.ELDLogbookEditsScript -->
+      <class name="project.testscenarios.FuelEfficiencyReportScript">
+        <methods>
+          <include name="Fetct_Repository_Object"/>
+          <include name="NavigatingFuelEfficiencyPage"/>
+          <include name="SearchandVerification"/>
+        </methods>
+      </class> <!-- project.testscenarios.FuelEfficiencyReportScript -->
     </classes>
   </test> <!-- TruckX Test Automation(failed) -->
 </suite> <!-- Failed suite [Test Suite] -->

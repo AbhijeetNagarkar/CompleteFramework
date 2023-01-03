@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Test_Suite" class="navigator-link">
-              <span class="suite-name border-passed">Test Suite</span>
+              <span class="suite-name border-failed">Test Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Test_Suite" class="navigator-link ">
-                    <span>C:\Space\Projects\fms-automation\testng.xml</span>
+                    <span>D:\FMS Automation\fms-automation\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -61,7 +61,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="group-Test_Suite" class="navigator-link ">
-                    <span>2 groups</span>
+                    <span>3 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,26 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">7 methods,   7 passed</span>
+                    <span class="method-stats">7 methods, 2 failed,   5 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Test_Suite" class="hide-methods failed suite-Test_Suite"> (hide)</a> <!-- hide-methods failed suite-Test_Suite -->
+                      <a href="#" panel-name="suite-Test_Suite" class="show-methods failed suite-Test_Suite"> (show)</a> <!-- show-methods failed suite-Test_Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Test_Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.FuelEfficiencyReportScript" class="method navigator-link" hash-for-method="SearchandVerification">SearchandVerification</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.ELDLogbookEditsScript" class="method navigator-link" hash-for-method="SearchandVerification">SearchandVerification</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Test_Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,32 +123,22 @@
                     <div class="method-list-content passed suite-Test_Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.DriversScript" class="method navigator-link" hash-for-method="CreateDriverFunctionality">CreateDriverFunctionality</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.ELDLogbookEditsScript" class="method navigator-link" hash-for-method="FilterandVerification">FilterandVerification</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.DriversScript" class="method navigator-link" hash-for-method="DeleteDriverFunctionality">DeleteDriverFunctionality</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.FuelEfficiencyReportScript" class="method navigator-link" hash-for-method="FilterandVerification">FilterandVerification</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.DriversScript" class="method navigator-link" hash-for-method="EditDriverFunctionality">EditDriverFunctionality</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.ELDLogbookEditsScript" class="method navigator-link" hash-for-method="NavigatingELDLogbookEditReportsPage">NavigatingELDLogbookEditReportsPage</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.DriversScript" class="method navigator-link" hash-for-method="NavigatingDriverPage">NavigatingDriverPage</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.DriversScript" class="method navigator-link" hash-for-method="SearchFunctionality">SearchFunctionality</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.DriversScript" class="method navigator-link" hash-for-method="VerifyRecords">VerifyRecords</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.FuelEfficiencyReportScript" class="method navigator-link" hash-for-method="NavigatingFuelEfficiencyPage">NavigatingFuelEfficiencyPage</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -149,52 +158,86 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Test_Suite" class="panel Test_Suite">
-          <div class="suite-Test_Suite-class-passed">
+          <div class="suite-Test_Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">project.testscenarios.DriversScript</span>
+              <img src="failed.png"/>
+              <span class="class-name">project.testscenarios.ELDLogbookEditsScript</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="CreateDriverFunctionality">
-                  </a> <!-- CreateDriverFunctionality -->
-                  <span class="method-name">CreateDriverFunctionality</span>
+                  <a name="SearchandVerification">
+                  </a> <!-- SearchandVerification -->
+                  <span class="method-name">SearchandVerification</span>
+                  <div class="stack-trace">java.lang.AssertionError: Search functionality not working as expected expected [true] but found [false]
+	at project.testscenarios.ELDLogbookEditsScript.SearchandVerification(ELDLogbookEditsScript.java:39)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test_Suite-class-failed -->
+          <div class="suite-Test_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">project.testscenarios.FuelEfficiencyReportScript</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="SearchandVerification">
+                  </a> <!-- SearchandVerification -->
+                  <span class="method-name">SearchandVerification</span>
+                  <div class="stack-trace">java.lang.AssertionError: Search functionality not working as expected expected [true] but found [false]
+	at project.testscenarios.FuelEfficiencyReportScript.SearchandVerification(FuelEfficiencyReportScript.java:39)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test_Suite-class-failed -->
+          <div class="suite-Test_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">project.testscenarios.ELDLogbookEditsScript</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="FilterandVerification">
+                  </a> <!-- FilterandVerification -->
+                  <span class="method-name">FilterandVerification</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="DeleteDriverFunctionality">
-                  </a> <!-- DeleteDriverFunctionality -->
-                  <span class="method-name">DeleteDriverFunctionality</span>
+                  <a name="NavigatingELDLogbookEditReportsPage">
+                  </a> <!-- NavigatingELDLogbookEditReportsPage -->
+                  <span class="method-name">NavigatingELDLogbookEditReportsPage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test_Suite-class-passed -->
+          <div class="suite-Test_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">project.testscenarios.FuelEfficiencyReportScript</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="FilterandVerification">
+                  </a> <!-- FilterandVerification -->
+                  <span class="method-name">FilterandVerification</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="EditDriverFunctionality">
-                  </a> <!-- EditDriverFunctionality -->
-                  <span class="method-name">EditDriverFunctionality</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="NavigatingDriverPage">
-                  </a> <!-- NavigatingDriverPage -->
-                  <span class="method-name">NavigatingDriverPage</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="SearchFunctionality">
-                  </a> <!-- SearchFunctionality -->
-                  <span class="method-name">SearchFunctionality</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="VerifyRecords">
-                  </a> <!-- VerifyRecords -->
-                  <span class="method-name">VerifyRecords</span>
+                  <a name="NavigatingFuelEfficiencyPage">
+                  </a> <!-- NavigatingFuelEfficiencyPage -->
+                  <span class="method-name">NavigatingFuelEfficiencyPage</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -217,7 +260,7 @@
         </div> <!-- panel Test_Suite -->
         <div panel-name="test-xml-Test_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Space\Projects\fms-automation\testng.xml</span>
+            <span class="header-content">D:\FMS Automation\fms-automation\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -230,7 +273,8 @@
   &lt;test thread-count=&quot;1&quot; name=&quot;TruckX Test Automation&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;project.testscenarios.LoginScript&quot;/&gt;
-      &lt;class name=&quot;project.testscenarios.DriversScript&quot;/&gt;
+      &lt;class name=&quot;project.testscenarios.FuelEfficiencyReportScript&quot;/&gt;
+      &lt;class name=&quot;project.testscenarios.ELDLogbookEditsScript&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- TruckX Test Automation --&gt;
 &lt;/suite&gt; &lt;!-- Test Suite --&gt;
@@ -244,7 +288,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">TruckX Test Automation (2 classes)</span>
+                <span class="test-name">TruckX Test Automation (3 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -255,30 +299,34 @@
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="test-group">
-              <span class="test-group-name">Drivers</span>
+              <span class="test-group-name">ELD Logbook Edit Reports</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">CreateDriverFunctionality</span>
+                <span class="method-in-group-name">FilterandVerification</span>
                 <br/>
               </div> <!-- method-in-group -->
               <div class="method-in-group">
-                <span class="method-in-group-name">DeleteDriverFunctionality</span>
+                <span class="method-in-group-name">NavigatingELDLogbookEditReportsPage</span>
                 <br/>
               </div> <!-- method-in-group -->
               <div class="method-in-group">
-                <span class="method-in-group-name">EditDriverFunctionality</span>
+                <span class="method-in-group-name">SearchandVerification</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">Fuel Efficiency Reports</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">FilterandVerification</span>
                 <br/>
               </div> <!-- method-in-group -->
               <div class="method-in-group">
-                <span class="method-in-group-name">NavigatingDriverPage</span>
+                <span class="method-in-group-name">NavigatingFuelEfficiencyPage</span>
                 <br/>
               </div> <!-- method-in-group -->
               <div class="method-in-group">
-                <span class="method-in-group-name">SearchFunctionality</span>
-                <br/>
-              </div> <!-- method-in-group -->
-              <div class="method-in-group">
-                <span class="method-in-group-name">VerifyRecords</span>
+                <span class="method-in-group-name">SearchandVerification</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -308,38 +356,38 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(7);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'CreateDriverFunctionality')
-data.setCell(0, 2, 'project.testscenarios.DriversScript')
-data.setCell(0, 3, 76480);
+data.setCell(0, 1, 'FilterandVerification')
+data.setCell(0, 2, 'project.testscenarios.ELDLogbookEditsScript')
+data.setCell(0, 3, 27321);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'EditDriverFunctionality')
-data.setCell(1, 2, 'project.testscenarios.DriversScript')
-data.setCell(1, 3, 42540);
+data.setCell(1, 1, 'validUserNameandPassword')
+data.setCell(1, 2, 'project.testscenarios.LoginScript')
+data.setCell(1, 3, 17553);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'DeleteDriverFunctionality')
-data.setCell(2, 2, 'project.testscenarios.DriversScript')
-data.setCell(2, 3, 30792);
+data.setCell(2, 1, 'SearchandVerification')
+data.setCell(2, 2, 'project.testscenarios.FuelEfficiencyReportScript')
+data.setCell(2, 3, 14775);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'validUserNameandPassword')
-data.setCell(3, 2, 'project.testscenarios.LoginScript')
-data.setCell(3, 3, 16677);
+data.setCell(3, 1, 'FilterandVerification')
+data.setCell(3, 2, 'project.testscenarios.FuelEfficiencyReportScript')
+data.setCell(3, 3, 12114);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'VerifyRecords')
-data.setCell(4, 2, 'project.testscenarios.DriversScript')
-data.setCell(4, 3, 8949);
+data.setCell(4, 1, 'SearchandVerification')
+data.setCell(4, 2, 'project.testscenarios.ELDLogbookEditsScript')
+data.setCell(4, 3, 8595);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'SearchFunctionality')
-data.setCell(5, 2, 'project.testscenarios.DriversScript')
-data.setCell(5, 3, 4452);
+data.setCell(5, 1, 'NavigatingFuelEfficiencyPage')
+data.setCell(5, 2, 'project.testscenarios.FuelEfficiencyReportScript')
+data.setCell(5, 3, 7305);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'NavigatingDriverPage')
-data.setCell(6, 2, 'project.testscenarios.DriversScript')
-data.setCell(6, 3, 2345);
+data.setCell(6, 1, 'NavigatingELDLogbookEditReportsPage')
+data.setCell(6, 2, 'project.testscenarios.ELDLogbookEditsScript')
+data.setCell(6, 3, 7230);
 window.suiteTableData['Test_Suite']= { tableData: data, tableDiv: 'times-div-Test_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 minutes</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Test_Suite">
               </div> <!-- times-div-Test_Suite -->
             </div> <!-- times-div -->
@@ -367,54 +415,65 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">project.testscenarios.LoginScript</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">preRequisite(org.testng.TestRunner@781dbe44)</span>
+                <span class="method-name">preRequisite(org.testng.TestRunner@16b3c905)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-class before">
                 <span class="method-name">Fetct_Repository_Object</span>
-                <span class="method-start">33024 ms</span>
+                <span class="method-start">65585 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">validUserNameandPassword</span>
-                <span class="method-start">33033 ms</span>
+                <span class="method-start">65599 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">project.testscenarios.DriversScript</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">project.testscenarios.FuelEfficiencyReportScript</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">Fetct_Repository_Object</span>
+                <span class="method-start">83156 ms</span>
+              </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">NavigatingDriverPage</span>
-                <span class="method-start">49717 ms</span>
+                <span class="method-name">NavigatingFuelEfficiencyPage</span>
+                <span class="method-start">83157 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">SearchandVerification</span>
+                <span class="method-start">90465 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">FilterandVerification</span>
+                <span class="method-start">107272 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">project.testscenarios.ELDLogbookEditsScript</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">NavigatingELDLogbookEditReportsPage</span>
+                <span class="method-start">119387 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class before">
                 <span class="method-name">Fetct_Repository_Object</span>
-                <span class="method-start">49717 ms</span>
+                <span class="method-start">119387 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">VerifyRecords</span>
-                <span class="method-start">52066 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">SearchandVerification</span>
+                <span class="method-start">126620 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">SearchFunctionality</span>
-                <span class="method-start">61018 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">CreateDriverFunctionality</span>
-                <span class="method-start">65471 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">EditDriverFunctionality</span>
-                <span class="method-start">141954 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">DeleteDriverFunctionality</span>
-                <span class="method-start">184496 ms</span>
+                <span class="method-name">FilterandVerification</span>
+                <span class="method-start">136291 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">project.testscenarios.LoginScript</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">215309 ms</span>
+                <span class="method-start">163627 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

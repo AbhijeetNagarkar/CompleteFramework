@@ -1,77 +1,167 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+<testng-results ignored="0" total="7" passed="5" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-15T10:56:58 IST" name="Test Suite" finished-at="2022-12-15T11:00:01 IST" duration-ms="182285">
+  <suite started-at="2023-01-03T17:11:05 IST" name="Test Suite" finished-at="2023-01-03T17:12:43 IST" duration-ms="98053">
     <groups>
-      <group name="Drivers">
-        <method signature="DriversScript.CreateDriverFunctionality()[pri:4, instance:project.testscenarios.DriversScript@3b0fe47a]" name="CreateDriverFunctionality" class="project.testscenarios.DriversScript"/>
-        <method signature="DriversScript.DeleteDriverFunctionality()[pri:6, instance:project.testscenarios.DriversScript@3b0fe47a]" name="DeleteDriverFunctionality" class="project.testscenarios.DriversScript"/>
-        <method signature="DriversScript.EditDriverFunctionality()[pri:5, instance:project.testscenarios.DriversScript@3b0fe47a]" name="EditDriverFunctionality" class="project.testscenarios.DriversScript"/>
-        <method signature="DriversScript.NavigatingDriverPage()[pri:1, instance:project.testscenarios.DriversScript@3b0fe47a]" name="NavigatingDriverPage" class="project.testscenarios.DriversScript"/>
-        <method signature="DriversScript.VerifyRecords()[pri:2, instance:project.testscenarios.DriversScript@3b0fe47a]" name="VerifyRecords" class="project.testscenarios.DriversScript"/>
-        <method signature="DriversScript.SearchFunctionality()[pri:3, instance:project.testscenarios.DriversScript@3b0fe47a]" name="SearchFunctionality" class="project.testscenarios.DriversScript"/>
-      </group> <!-- Drivers -->
+      <group name="Fuel Efficiency Reports">
+        <method signature="FuelEfficiencyReportScript.NavigatingFuelEfficiencyPage()[pri:1, instance:project.testscenarios.FuelEfficiencyReportScript@408d971b]" name="NavigatingFuelEfficiencyPage" class="project.testscenarios.FuelEfficiencyReportScript"/>
+        <method signature="FuelEfficiencyReportScript.FilterandVerification()[pri:3, instance:project.testscenarios.FuelEfficiencyReportScript@408d971b]" name="FilterandVerification" class="project.testscenarios.FuelEfficiencyReportScript"/>
+        <method signature="FuelEfficiencyReportScript.SearchandVerification()[pri:2, instance:project.testscenarios.FuelEfficiencyReportScript@408d971b]" name="SearchandVerification" class="project.testscenarios.FuelEfficiencyReportScript"/>
+      </group> <!-- Fuel Efficiency Reports -->
+      <group name="ELD Logbook Edit Reports">
+        <method signature="ELDLogbookEditsScript.NavigatingELDLogbookEditReportsPage()[pri:1, instance:project.testscenarios.ELDLogbookEditsScript@6c6cb480]" name="NavigatingELDLogbookEditReportsPage" class="project.testscenarios.ELDLogbookEditsScript"/>
+        <method signature="ELDLogbookEditsScript.FilterandVerification()[pri:3, instance:project.testscenarios.ELDLogbookEditsScript@6c6cb480]" name="FilterandVerification" class="project.testscenarios.ELDLogbookEditsScript"/>
+        <method signature="ELDLogbookEditsScript.SearchandVerification()[pri:2, instance:project.testscenarios.ELDLogbookEditsScript@6c6cb480]" name="SearchandVerification" class="project.testscenarios.ELDLogbookEditsScript"/>
+      </group> <!-- ELD Logbook Edit Reports -->
       <group name="Login">
-        <method signature="LoginScript.validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@2af004b]" name="validUserNameandPassword" class="project.testscenarios.LoginScript"/>
+        <method signature="LoginScript.validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@3754a4bf]" name="validUserNameandPassword" class="project.testscenarios.LoginScript"/>
       </group> <!-- Login -->
     </groups>
-    <test started-at="2022-12-15T10:56:58 IST" name="TruckX Test Automation" finished-at="2022-12-15T11:00:01 IST" duration-ms="182285">
+    <test started-at="2023-01-03T17:11:05 IST" name="TruckX Test Automation" finished-at="2023-01-03T17:12:43 IST" duration-ms="98053">
+      <class name="project.testscenarios.ELDLogbookEditsScript">
+        <test-method signature="NavigatingELDLogbookEditReportsPage()[pri:1, instance:project.testscenarios.ELDLogbookEditsScript@6c6cb480]" started-at="2023-01-03T17:11:59 IST" name="NavigatingELDLogbookEditReportsPage" finished-at="2023-01-03T17:12:06 IST" duration-ms="7230" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NavigatingELDLogbookEditReportsPage -->
+        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.ELDLogbookEditsScript@6c6cb480]" started-at="2023-01-03T17:11:59 IST" name="Fetct_Repository_Object" finished-at="2023-01-03T17:11:59 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Fetct_Repository_Object -->
+        <test-method signature="SearchandVerification()[pri:2, instance:project.testscenarios.ELDLogbookEditsScript@6c6cb480]" started-at="2023-01-03T17:12:06 IST" name="SearchandVerification" finished-at="2023-01-03T17:12:15 IST" depends-on-methods="project.testscenarios.ELDLogbookEditsScript.NavigatingELDLogbookEditReportsPage" duration-ms="8595" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Search functionality not working as expected expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Search functionality not working as expected expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertTrue(Assert.java:45)
+at project.testscenarios.ELDLogbookEditsScript.SearchandVerification(ELDLogbookEditsScript.java:39)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SearchandVerification -->
+        <test-method signature="FilterandVerification()[pri:3, instance:project.testscenarios.ELDLogbookEditsScript@6c6cb480]" started-at="2023-01-03T17:12:16 IST" name="FilterandVerification" finished-at="2023-01-03T17:12:43 IST" depends-on-methods="project.testscenarios.ELDLogbookEditsScript.NavigatingELDLogbookEditReportsPage" duration-ms="27321" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FilterandVerification -->
+      </class> <!-- project.testscenarios.ELDLogbookEditsScript -->
       <class name="project.testscenarios.LoginScript">
-        <test-method is-config="true" signature="preRequisite(org.testng.ITestContext)[pri:0, instance:project.testscenarios.LoginScript@2af004b]" started-at="2022-12-15T10:56:25 IST" name="preRequisite" finished-at="2022-12-15T10:56:58 IST" duration-ms="33004" status="PASS">
+        <test-method is-config="true" signature="preRequisite(org.testng.ITestContext)[pri:0, instance:project.testscenarios.LoginScript@3754a4bf]" started-at="2023-01-03T17:10:00 IST" name="preRequisite" finished-at="2023-01-03T17:11:05 IST" duration-ms="65560" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@781dbe44]]>
+                <![CDATA[org.testng.TestRunner@16b3c905]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- preRequisite -->
-        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.LoginScript@2af004b]" started-at="2022-12-15T10:56:58 IST" name="Fetct_Repository_Object" finished-at="2022-12-15T10:56:58 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.LoginScript@3754a4bf]" started-at="2023-01-03T17:11:05 IST" name="Fetct_Repository_Object" finished-at="2023-01-03T17:11:05 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Fetct_Repository_Object -->
-        <test-method signature="validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@2af004b]" started-at="2022-12-15T10:56:58 IST" name="validUserNameandPassword" finished-at="2022-12-15T10:57:15 IST" duration-ms="16677" status="PASS">
+        <test-method signature="validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@3754a4bf]" started-at="2023-01-03T17:11:05 IST" name="validUserNameandPassword" finished-at="2023-01-03T17:11:23 IST" duration-ms="17553" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validUserNameandPassword -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:project.testscenarios.LoginScript@2af004b]" started-at="2022-12-15T11:00:01 IST" name="closeBrowser" finished-at="2022-12-15T11:00:06 IST" duration-ms="5213" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:project.testscenarios.LoginScript@3754a4bf]" started-at="2023-01-03T17:12:43 IST" name="closeBrowser" finished-at="2023-01-03T17:12:49 IST" duration-ms="5125" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- project.testscenarios.LoginScript -->
-      <class name="project.testscenarios.DriversScript">
-        <test-method signature="NavigatingDriverPage()[pri:1, instance:project.testscenarios.DriversScript@3b0fe47a]" started-at="2022-12-15T10:57:15 IST" name="NavigatingDriverPage" finished-at="2022-12-15T10:57:17 IST" duration-ms="2345" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- NavigatingDriverPage -->
-        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.DriversScript@3b0fe47a]" started-at="2022-12-15T10:57:15 IST" name="Fetct_Repository_Object" finished-at="2022-12-15T10:57:15 IST" duration-ms="0" status="PASS">
+      <class name="project.testscenarios.FuelEfficiencyReportScript">
+        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.FuelEfficiencyReportScript@408d971b]" started-at="2023-01-03T17:11:23 IST" name="Fetct_Repository_Object" finished-at="2023-01-03T17:11:23 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Fetct_Repository_Object -->
-        <test-method signature="VerifyRecords()[pri:2, instance:project.testscenarios.DriversScript@3b0fe47a]" started-at="2022-12-15T10:57:17 IST" name="VerifyRecords" finished-at="2022-12-15T10:57:26 IST" duration-ms="8949" status="PASS">
+        <test-method signature="NavigatingFuelEfficiencyPage()[pri:1, instance:project.testscenarios.FuelEfficiencyReportScript@408d971b]" started-at="2023-01-03T17:11:23 IST" name="NavigatingFuelEfficiencyPage" finished-at="2023-01-03T17:11:30 IST" duration-ms="7305" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyRecords -->
-        <test-method signature="SearchFunctionality()[pri:3, instance:project.testscenarios.DriversScript@3b0fe47a]" started-at="2022-12-15T10:57:26 IST" name="SearchFunctionality" finished-at="2022-12-15T10:57:31 IST" duration-ms="4452" status="PASS">
+        </test-method> <!-- NavigatingFuelEfficiencyPage -->
+        <test-method signature="SearchandVerification()[pri:2, instance:project.testscenarios.FuelEfficiencyReportScript@408d971b]" started-at="2023-01-03T17:11:30 IST" name="SearchandVerification" finished-at="2023-01-03T17:11:45 IST" depends-on-methods="project.testscenarios.FuelEfficiencyReportScript.NavigatingFuelEfficiencyPage" duration-ms="14775" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Search functionality not working as expected expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Search functionality not working as expected expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertTrue(Assert.java:45)
+at project.testscenarios.FuelEfficiencyReportScript.SearchandVerification(FuelEfficiencyReportScript.java:39)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SearchFunctionality -->
-        <test-method signature="CreateDriverFunctionality()[pri:4, instance:project.testscenarios.DriversScript@3b0fe47a]" started-at="2022-12-15T10:57:31 IST" name="CreateDriverFunctionality" finished-at="2022-12-15T10:58:47 IST" duration-ms="76480" status="PASS">
+        </test-method> <!-- SearchandVerification -->
+        <test-method signature="FilterandVerification()[pri:3, instance:project.testscenarios.FuelEfficiencyReportScript@408d971b]" started-at="2023-01-03T17:11:47 IST" name="FilterandVerification" finished-at="2023-01-03T17:11:59 IST" depends-on-methods="project.testscenarios.FuelEfficiencyReportScript.NavigatingFuelEfficiencyPage" duration-ms="12114" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CreateDriverFunctionality -->
-        <test-method signature="EditDriverFunctionality()[pri:5, instance:project.testscenarios.DriversScript@3b0fe47a]" started-at="2022-12-15T10:58:47 IST" name="EditDriverFunctionality" finished-at="2022-12-15T10:59:30 IST" depends-on-methods="project.testscenarios.DriversScript.CreateDriverFunctionality" duration-ms="42540" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EditDriverFunctionality -->
-        <test-method signature="DeleteDriverFunctionality()[pri:6, instance:project.testscenarios.DriversScript@3b0fe47a]" started-at="2022-12-15T10:59:30 IST" name="DeleteDriverFunctionality" finished-at="2022-12-15T11:00:01 IST" depends-on-methods="project.testscenarios.DriversScript.CreateDriverFunctionality" duration-ms="30792" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- DeleteDriverFunctionality -->
-      </class> <!-- project.testscenarios.DriversScript -->
+        </test-method> <!-- FilterandVerification -->
+      </class> <!-- project.testscenarios.FuelEfficiencyReportScript -->
     </test> <!-- TruckX Test Automation -->
   </suite> <!-- Test Suite -->
 </testng-results>
