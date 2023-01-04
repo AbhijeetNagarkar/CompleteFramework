@@ -139,15 +139,17 @@ public class WebPageDashCamera {
 	{
 		try
 		{
-			Thread.sleep(2000);
+			Thread.sleep(6000);
 			
 			wait.until(ExpectedConditions.elementToBeClickable(countDevices));
-			Thread.sleep(5000);
+			Thread.sleep(3000);
 			countDevices.click();
+			log.info("Clicked on Count Devices");
 			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@class=\"w-1/3 xl:w-1/4 h-full\"]//td[@class=\"rc-table-cell\"]//div[@class=\"font-semibold\"]")));
 			List<WebElement> li=driver.findElements(By.xpath("//div[@class=\"w-1/3 xl:w-1/4 h-full\"]//td[@class=\"rc-table-cell\"]//div[@class=\"font-semibold\"]"));
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 			li.get(2).click();
+			log.info("Clicked on 3rd Dash Camera to check records");
 		}
 		catch(Exception e)
 		{
