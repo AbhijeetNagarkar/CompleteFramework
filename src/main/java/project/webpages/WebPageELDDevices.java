@@ -35,14 +35,14 @@ public class WebPageELDDevices {
 	@FindBy(xpath = "//tbody[@class=\"ant-table-tbody\"]//tr")
 	List<WebElement> records;
 	
-	@FindBy(xpath = "//div[@class=\"ml-10 mt-2\"]//span[text()=\"ELD Devices\"]")
+	@FindBy(xpath = "//div[@class=\"ml-10 mt-2\"]//span")
 	WebElement changefocus;
 	
 	public boolean verifyELDDevicesCount() throws InterruptedException {
 
 		try
 		{
-		changefocus.click();
+			changefocus.click();
 			Thread.sleep(5000);
 			driver.findElement(By.xpath("//input")).click();
 			Thread.sleep(2000);

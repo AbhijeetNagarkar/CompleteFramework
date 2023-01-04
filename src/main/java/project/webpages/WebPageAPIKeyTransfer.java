@@ -10,6 +10,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import project.mediator.Driver;
 
@@ -30,7 +31,7 @@ public class WebPageAPIKeyTransfer {
 		wait=new WebDriverWait(driver,10);
 	}
 	
-	@FindBy(xpath = "//span[@class=\"text-blue-primary bg-blue-100 font-semibold py-1 px-2 rounded text-sm\"]")
+	@FindBy(xpath = "//span[@class=\"text-blue-500 bg-blue-100 font-semibold py-1 px-2 rounded text-sm\"]")
 	List<WebElement> count;	
 	
 	@FindBy(xpath = "//tr[@class=\"ant-table-row ant-table-row-level-0\"]")
@@ -56,6 +57,7 @@ public class WebPageAPIKeyTransfer {
 	{
 		try
 		{
+			driver.findElement(By.xpath("//div[@class=\"ml-10 mt-2\"]//span")).click();
 		
 			String str = count.get(0).getText();
 			
@@ -105,6 +107,9 @@ public class WebPageAPIKeyTransfer {
 		
 		try
 		{
+			
+			driver.findElement(By.xpath("//div[@class=\"ml-10 mt-2\"]//span")).click();
+
 			Thread.sleep(3000);
 			
 			shareAPI.click();
@@ -161,6 +166,7 @@ public class WebPageAPIKeyTransfer {
 		if(ele1.isEmpty() || ele2.isEmpty() || ele3.isEmpty() || ele4.isEmpty())
 		{
 			log.info("drop down options not available in Share Link With API Partner Prompt");
+			Assert.fail("drop down options not available in Share Link With API Partner Prompt");
 			return false;
 		}
 		else
@@ -180,9 +186,7 @@ public class WebPageAPIKeyTransfer {
 				log.info("Unable to click on Send API Key button on Share Link With API Partner Prompt");
 				return false;
 			}
-			finally {
-				Driver.Refresh();
-			}
+			
 			
 		}
 		}
@@ -190,9 +194,7 @@ public class WebPageAPIKeyTransfer {
 			log.info("Caught Exception while sharing API Key");
 			return false;
 		}
-		finally {
-			Driver.Refresh();
-		}
+		
 	
 	}
 

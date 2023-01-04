@@ -45,7 +45,7 @@ public class WebPageMessages {
 	@FindBy(xpath="//div[text()=\"Send\"]")
 	WebElement sendbutton;
 	
-	@FindBy(xpath = "//div[@class=\"ml-10 mt-2\"]//span[text()=\"Message\"]")
+	@FindBy(xpath = "//div[@class=\"ml-10 mt-2\"]//span")
 	WebElement changefocus;
 	
 	

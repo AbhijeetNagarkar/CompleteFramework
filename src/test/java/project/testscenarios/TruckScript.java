@@ -6,7 +6,7 @@ import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import project.RandomVinAPI.RandomVin;
+import project.RandomVinAPI.RandomAPI;
 import project.mediator.ObjectRepository;
 import project.mediator.TestData;
 import project.utility.WebPageObjectCreation;
@@ -32,19 +32,18 @@ public class TruckScript {
 				
 		repo.dashboardPageObject().clickOnTrucks();
 		
-		Thread.sleep(7000);
 	}
 	@Test(priority = 2, dependsOnMethods = "NavigatingTrucksPage", groups = {"Trucks"} )
-	public void NewTruck()
+	public void NewTruck() throws InterruptedException
 	{
 		repo.truckPageObject().clickOnAddTruckDashboard();
 		
 		log.info("Calling API to generate Random VIN");
 		
-		vin=RandomVin.getVin();
+		vin=RandomAPI.getVin();
 		
 		if(vin.equalsIgnoreCase(""))
-			vin=RandomVin.getVin();
+			vin=RandomAPI.getVin();
 		
 		log.info("API Response for Random VIN : "+vin);
 	
@@ -58,7 +57,7 @@ public class TruckScript {
 			
 			if(val.equals("Incorrect"))
 			{
-				vin=RandomVin.getVin();
+				vin=RandomAPI.getVin();
 				TestData.GetVehicleData().put("VIN Number", vin);
 				val = repo.truckPageObject().EntervinNo();
 				if(val.equals("Incorrect"))
@@ -85,7 +84,7 @@ public class TruckScript {
 			
 			if(retval.equals("duplicate"))
 			{
-				vin=RandomVin.getVin();
+				vin=RandomAPI.getVin();
 				TestData.GetVehicleData().put("VIN Number", vin);
 				
 				repo.truckPageObject().clickOnBackButton();

@@ -113,6 +113,8 @@ public class ConfigurationSetup
 		{
 			try
 			{
+			//	url="https://web.truckx.com/#/login";
+				url="https://35.238.126.102/#/login";
 				log.info(" Navigating to "+url);
 				driver.get(url);
 	
