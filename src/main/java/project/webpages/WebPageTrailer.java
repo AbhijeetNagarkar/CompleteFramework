@@ -166,7 +166,7 @@ public class WebPageTrailer {
 	{
 		try 
 		{
-	//	Thread.sleep(5000);
+		Thread.sleep(2000);
 		
 		wait.until(ExpectedConditions.elementToBeClickable(updateButton));
 		
@@ -174,7 +174,7 @@ public class WebPageTrailer {
 		
 		log.info("Clicked on Update Trailer Button");
 		
-	//	Thread.sleep(5000);
+		Thread.sleep(2000);
 		} 
 		catch (Exception e) {
 			Assert.fail("Unable to click on Update Button of Edit Trailer");
@@ -211,7 +211,7 @@ public class WebPageTrailer {
 		{
 			wait.until(ExpectedConditions.visibilityOf(truckDropdown));
 			
-		//	Thread.sleep(3000);
+			Thread.sleep(2000);
 			
 			truckDropdown.click();
 			
@@ -430,7 +430,7 @@ public class WebPageTrailer {
 			Assert.fail("Unable to click on Delete Button of Delete Prompt");
 			driver.navigate().refresh();
 		}
-	//	Thread.sleep(5000);
+		Thread.sleep(2000);
 	}
 	
 	public boolean VerifyDeletedTrailer()

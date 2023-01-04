@@ -129,6 +129,7 @@ public class WebPageIFTAReports {
 			
 			try
 			{
+				Thread.sleep(500);
 				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class=\"ant-message-notice\"]//span")));
 				if(driver.findElement(By.xpath("//div[@class=\"ant-message-notice\"]//span")).getText().equalsIgnoreCase("IFTA Report Download Started."))
 				{	log.info("IFTA Report downloaded");
