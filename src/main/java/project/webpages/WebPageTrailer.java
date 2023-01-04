@@ -264,7 +264,7 @@ public class WebPageTrailer {
 	{
 		try
 		{
-	//	Thread.sleep(5000);
+		Thread.sleep(4000);
 		wait.until(ExpectedConditions.elementToBeClickable(yesButton));
 
 		yesButton.click();
@@ -411,13 +411,13 @@ public class WebPageTrailer {
 		{
 			Assert.fail("Unable to click on Delete Trailer button on Trailer Page");
 		}
-		//Thread.sleep(3000);
+		Thread.sleep(2500);
 		try
 		{
 		wait.until(ExpectedConditions.visibilityOf(deleteInput));
 		deleteInput.sendKeys("DELETE");
 		
-	//	Thread.sleep(3000);
+		Thread.sleep(2500);
 		
 		wait.until(ExpectedConditions.elementToBeClickable(deleteButton));
 		
@@ -430,7 +430,7 @@ public class WebPageTrailer {
 			Assert.fail("Unable to click on Delete Button of Delete Prompt");
 			driver.navigate().refresh();
 		}
-		Thread.sleep(2000);
+		Thread.sleep(2500);
 	}
 	
 	public boolean VerifyDeletedTrailer()
