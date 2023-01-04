@@ -459,7 +459,7 @@ public class WebPageTruck {
 	}
 public boolean DeleteTruck() throws InterruptedException  {
 		
-		//Thread.sleep(5000);
+		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(deleteTruckButton));
 		try
 		{
@@ -479,9 +479,12 @@ public boolean DeleteTruck() throws InterruptedException  {
 		
 		try
 		{
+		Thread.sleep(2000);
 		deleteTruckInput.sendKeys("DELETE");
 		
 		wait.until(ExpectedConditions.elementToBeClickable(deleteTruckConfirm));
+		
+		Thread.sleep(2000);
 		
 		deleteTruckConfirm.click();
 		
@@ -511,11 +514,8 @@ public boolean DeleteTruck() throws InterruptedException  {
 		{
 			Assert.fail("Unable to search deleted Truck on Deleted Truck Page");
 		}
-			
-		
-		
 		log.info("Found deleted truck "+truckmap.get("VIN Number"));
-		
+		Thread.sleep(2000);
 		try
 		{
 			activateDeletedTruck.click();
@@ -528,6 +528,7 @@ public boolean DeleteTruck() throws InterruptedException  {
 		}
 		try
 		{
+			Thread.sleep(1000);
 			wait.until(ExpectedConditions.visibilityOf(activateInput));
 
 			activateInput.sendKeys("ACTIVATE");
