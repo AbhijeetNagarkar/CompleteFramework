@@ -90,6 +90,8 @@ public class ConfigurationSetup
 								 ChromeOptions chrome_options = new ChromeOptions();
 								 chrome_options.addArguments("--no-sandbox");
 								 chrome_options.addArguments("--headless");
+								 chrome_options.addArguments("--ignore-ssl-errors=yes");
+								 chrome_options.addArguments("--ignore-certificate-errors");
 								 driver = new ChromeDriver(chrome_options);
 								
 								 break;
