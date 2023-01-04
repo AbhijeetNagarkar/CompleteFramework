@@ -36,7 +36,7 @@ List<WebElement> filteroption;
 @FindBy(xpath = "//div[@class=\"flex items-center\"]//span[text()=\"Reset All\"]")
 WebElement resetfilter;
 
-@FindBy(xpath = "//div[@class=\"ml-10 mt-2\"]//span[text()=\"Temperature & Humidity Report\"]")
+@FindBy(xpath = "//div[@class=\"ml-10 mt-2\"]//span")
 WebElement changefocus;
 
 
@@ -46,6 +46,8 @@ WebElement search;
 public boolean SearchandVerifyRecords() throws InterruptedException {
 	// TODO Auto-generated method stub
 	Thread.sleep(3000);
+	changefocus.click();
+	Thread.sleep(1000);
 	search.clear();
 	search.sendKeys("trx");
 	Thread.sleep(2000);
@@ -72,6 +74,8 @@ public Boolean filterandverification() throws InterruptedException
 {
 	try
 	{
+		Thread.sleep(3000);
+		changefocus.click();
 		search.clear();
 
 		Thread.sleep(3000);
@@ -107,6 +111,8 @@ public Boolean VerifyDownload() throws InterruptedException
 {
 	try
 	{
+		Thread.sleep(2000);
+		changefocus.click();
 		Thread.sleep(2000);
 		
 		driver.findElement(By.xpath("//button//span[text()=\"Download\"]")).click();

@@ -36,7 +36,7 @@ WebDriver driver;
 	@FindBy(xpath = "//td[@class=\"rc-table-cell\"]//*[text()=\"View Logbook\"]")
 	List<WebElement> viewlogbook;
 	
-	@FindBy(xpath = "//div[@class=\"ml-10 mt-2\"]//span[text()=\"Deleted Drivers\"]")
+	@FindBy(xpath = "//div[@class=\"ml-10 mt-2\"]//span")
 	WebElement changefocus;
 	
 	
@@ -66,8 +66,12 @@ WebDriver driver;
 			return false;
 		}
 	}
-	public Boolean verifyResult()
+	public Boolean verifyResult() throws InterruptedException
 	{
+		Thread.sleep(2000);
+		
+		changefocus.click();
+		
 		List<WebElement> rows = driver.findElements(By.xpath("//tr[@class=\"ant-table-row ant-table-row-level-0\"]//td[@class=\"ant-table-column-has-actions ant-table-column-has-sorters ant-table-row-cell-break-word\"]"));
 	
 		log.info("Captured result into list");

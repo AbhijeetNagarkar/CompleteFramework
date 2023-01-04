@@ -7,7 +7,9 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import project.RandomVinAPI.RandomAPI;
 import project.mediator.ObjectRepository;
+import project.mediator.TestData;
 import project.utility.WebPageObjectCreation;
 
 public class DriversScript {
@@ -20,8 +22,25 @@ WebPageObjectCreation repo;
 	public void Fetct_Repository_Object() throws InterruptedException, IOException
 	{
 		repo = ObjectRepository.GetInstance();
+		
+		GenerateMobileNumberforTest();
+		
+	}
+	private void GenerateMobileNumberforTest() {
+
+		String mobilenumber=RandomAPI.getMobileNumber();
+		
+		if(mobilenumber.equalsIgnoreCase(""))
+			mobilenumber=RandomAPI.getMobileNumber();
+		
+		log.info("API Response for Random VIN : "+mobilenumber);
+		
+		TestData.GetDriversData().put("Cell",mobilenumber);
+		TestData.GetDriversData().put("License","A"+mobilenumber);
+		
 	}
 	
+
 	@Test(priority = 1,groups = {"Drivers"})
 	public void NavigatingDriverPage() throws InterruptedException 
 	{

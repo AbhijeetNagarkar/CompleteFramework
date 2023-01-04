@@ -37,7 +37,7 @@ public class WebPageDriverSafety {
 	@FindBy(xpath = "//div[@class=\"flex items-center\"]//span[text()=\"Reset All\"]")
 	WebElement resetfilter;
 	
-	@FindBy(xpath = "//div[@class=\"ml-10 mt-2\"]//span[text()=\"Driver Safety Report\"]")
+	@FindBy(xpath = "//div[@class=\"ml-10 mt-2\"]//span")
 	WebElement changefocus;
 	
 
@@ -47,6 +47,7 @@ public class WebPageDriverSafety {
 	public boolean SearchandVerifyRecords() throws InterruptedException {
 		// TODO Auto-generated method stub
 		Thread.sleep(3000);
+		changefocus.click();
 		search.clear();
 		search.sendKeys("demo");
 		Thread.sleep(2000);
@@ -75,6 +76,8 @@ public class WebPageDriverSafety {
 	{
 		try
 		{
+			changefocus.click();
+
 			search.clear();
 
 			Thread.sleep(3000);

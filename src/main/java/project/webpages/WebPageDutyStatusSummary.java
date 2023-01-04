@@ -36,7 +36,7 @@ public class WebPageDutyStatusSummary {
 	@FindBy(xpath = "//div[@class=\"flex items-center\"]//span[text()=\"Reset All\"]")
 	WebElement resetfilter;
 	
-	@FindBy(xpath = "//div[@class=\"ml-10 mt-2\"]//span[text()=\"Driver Safety Report\"]")
+	@FindBy(xpath = "//div[@class=\"ml-10 mt-2\"]//span")
 	WebElement changefocus;
 	
 
@@ -46,6 +46,8 @@ public class WebPageDutyStatusSummary {
 	public boolean SearchandVerifyRecords() throws InterruptedException {
 		// TODO Auto-generated method stub
 		Thread.sleep(3000);
+		changefocus.click();
+
 		search.clear();
 		search.sendKeys("demo");
 		Thread.sleep(2000);
@@ -74,6 +76,8 @@ public class WebPageDutyStatusSummary {
 	{
 		try
 		{
+			changefocus.click();
+
 			Thread.sleep(3000);
 			search.clear();
 			filter.click();

@@ -51,6 +51,10 @@ WebDriver driver;
 	{
 		try
 		{
+			driver.findElement(By.xpath("//div[@class=\"ml-10 mt-2\"]//span")).click();
+			
+			Thread.sleep(2000);
+			
 			List<WebElement> ele = driver.findElements(By.xpath("//div[@class=\"pl-4 w-5/6\"]//span"));
 			
 			String s1= ele.get(1).getText().trim();
@@ -82,8 +86,6 @@ WebDriver driver;
 		{
 			for(int i=0;i<=3;i++)
 			{
-				
-				
 				
 					Thread.sleep(2000);
 					

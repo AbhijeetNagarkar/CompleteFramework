@@ -8,13 +8,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WebPageAssets {
 
 	WebDriver driver;
 	
-	WebDriverWait wait;
+	WebDriverWait wait,wait3;
 
 	public static Logger log = Logger.getLogger(WebPageAssets.class);
 		
@@ -25,6 +26,7 @@ public class WebPageAssets {
 		PageFactory.initElements(driver,this);
 			
 		wait=new WebDriverWait(driver,10);
+		wait3=new WebDriverWait(driver,3);
 	}
 	
 	@FindBy(xpath = "//input")
@@ -47,8 +49,9 @@ public class WebPageAssets {
 	{
 		try
 		{
-			
-			Thread.sleep(5000);
+			wait3.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class=\"ml-10 mt-2\"]//span")));
+
+			driver.findElement(By.xpath("//div[@class=\"ml-10 mt-2\"]//span")).click();
 			
 			search.clear();
 			
@@ -67,6 +70,7 @@ public class WebPageAssets {
 	}
 	public Boolean verifyResult()
 	{
+
 		List<WebElement> rows = driver.findElements(By.xpath("//div[@class=\"px-2 trx-asset-list truck\"]//a//h3"));
 	
 		log.info("Captured result into list");
@@ -91,13 +95,13 @@ public class WebPageAssets {
 	{
 		try
 		{
-			Thread.sleep(3000);
-			changefocus.click();
-			Thread.sleep(1000);
+			wait3.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class=\"ml-10 mt-2\"]//span")));
+			driver.findElement(By.xpath("//div[@class=\"ml-10 mt-2\"]//span")).click();
+			//Thread.sleep(3000);
 			listmenu.get(0).click();
 			Thread.sleep(1000);
 			listmenu.get(1).click();
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 			
 			List<WebElement> truckrows = driver.findElements(By.xpath("//div[@class=\"px-2 trx-asset-list truck\"]//a"));
 	
@@ -105,11 +109,11 @@ public class WebPageAssets {
 	
 			if(truckrows.isEmpty() && trailerrows.isEmpty())
 			{
-				Thread.sleep(3000);
+			//	Thread.sleep(2000);
 				listmenu.get(0).click();
 				Thread.sleep(1000);
 				listmenu.get(1).click();
-				Thread.sleep(2000);
+				Thread.sleep(1000);
 				return true;
 			}
 			else return false;

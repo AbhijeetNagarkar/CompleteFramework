@@ -49,7 +49,7 @@ public class WebPageDashCamera {
 	@FindBy(xpath = "//div[@class=\"w-1/3 xl:w-1/4 h-full\"]//input")
 	WebElement searchBox;
 	
-	@FindBy(xpath = "//div[@class=\"ml-10 mt-2\"]//span[text()=\"Dash Cameras\"]")
+	@FindBy(xpath = "//div[@class=\"ml-10 mt-2\"]//span")
 	WebElement changefocus;
 	
 	public Boolean verifyDashCameraCount() throws InterruptedException
