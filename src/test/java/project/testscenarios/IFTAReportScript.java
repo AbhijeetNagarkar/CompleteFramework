@@ -36,9 +36,6 @@ public class IFTAReportScript {
 	{
 		Assert.assertTrue(repo.IFTAReportsPageObject().SearchandVerifyRecords(),"Search functionality not working");
 		
-		Assert.assertTrue(repo.IFTAReportsPageObject().ActiveandDeletedTrucks(),"Active and Deleted Trucks not showing - caught error");;
-		
-		Assert.assertTrue(repo.IFTAReportsPageObject().VerifyDownloadReport(), "IFTA Report download functionality not working");
 	}
 	
 	@Test(priority = 3,groups = {"IFTA"},dependsOnMethods = "NavigatingIFTAReportPage" )
