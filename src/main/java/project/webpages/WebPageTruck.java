@@ -484,9 +484,11 @@ public boolean DeleteTruck() throws InterruptedException  {
 		
 		wait.until(ExpectedConditions.elementToBeClickable(deleteTruckConfirm));
 		
-		Thread.sleep(2000);
+		Thread.sleep(2500);
 		
 		deleteTruckConfirm.click();
+		
+		Thread.sleep(2500);
 		
 		log.info("Inserted Delete Command and clicked on confirm Delete");
 		}
