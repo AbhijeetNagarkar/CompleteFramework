@@ -95,7 +95,7 @@ public class WebPageForgotPassword {
 	 
 			try
 			{			
-				if(driver.getCurrentUrl().equals("https://web.truckx.com/#/forgot-password/admin"))
+				if(driver.getCurrentUrl().equals("https://35.238.126.102/#/forgot-password/admin"))
 				{
 				log.info("Validated forgot password URL after click");
 					

@@ -306,6 +306,8 @@ public class WebPageDashboard {
 	{
 		try
 		{
+		refresh();
+		
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class=\"flex flex-col\"]//span[text()=\"Reports\"]")));
 		
 		reports.click();
@@ -799,7 +801,7 @@ public class WebPageDashboard {
 	public void refresh() throws InterruptedException
 	{
 		driver.navigate().refresh();
-		//Thread.sleep(3000);
+		Thread.sleep(3000);
 	}
 	
 	
