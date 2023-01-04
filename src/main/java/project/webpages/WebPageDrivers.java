@@ -40,7 +40,7 @@ public class WebPageDrivers {
 	@FindBy(xpath = "//input")
 	WebElement search;
 	
-	@FindBy(xpath = "//span[@class=\"text-blue-primary bg-blue-100 font-semibold py-1 px-2 rounded text-sm\"]")
+	@FindBy(xpath = "//span[@class=\"text-blue-500 bg-blue-100 font-semibold py-1 px-2 rounded text-sm\"]")
 	List<WebElement> totalcount;
 	
 	@FindBy(xpath = "//div[@class=\" css-1hwfws3\"]")
@@ -58,6 +58,8 @@ public class WebPageDrivers {
 	@FindBy(xpath = "//button[text()=\"+ Add Driver\"]")
 	WebElement adddriverbutton;
 	
+	@FindBy(xpath = "//div[@class=\"ml-10 mt-2\"]//span")
+	WebElement changefocus;
 	
 	
 	//div[@class="pl-3"]//*[name()="svg"]               delete button list of drivers
@@ -70,6 +72,10 @@ public class WebPageDrivers {
 	
 	public Boolean searchDriver() throws InterruptedException
 	{
+		Thread.sleep(2000);
+		
+		changefocus.click();
+		
 		wait.until(ExpectedConditions.elementToBeClickable(search));
 		
 		search.sendKeys("Tapan");
@@ -220,6 +226,8 @@ public class WebPageDrivers {
 		{
 			wait.until(ExpectedConditions.elementToBeClickable(search));
 			
+			changefocus.click();
+			
 			search.clear();
 			
 			search.sendKeys(driversdata.get("First Name"));
@@ -290,8 +298,9 @@ public class WebPageDrivers {
 		{
 			Thread.sleep(2000);
 			
-			wait.until(ExpectedConditions.elementToBeClickable(adddriverbutton));
 			
+			wait.until(ExpectedConditions.elementToBeClickable(adddriverbutton));
+			changefocus.click();
 			
 			adddriverbutton.click();
 			
@@ -303,7 +312,7 @@ public class WebPageDrivers {
 			
 			driver.findElement(By.xpath("//input[@label=\"Last Name\"]")).sendKeys(driversdata.get("Last Name"));
 		
-			driver.findElement(By.xpath("//input[@type=\"tel\"]")).sendKeys("790-000-0000");
+			driver.findElement(By.xpath("//input[@type=\"tel\"]")).sendKeys(driversdata.get("Cell"));
 			
 			driver.findElement(By.xpath("//input[@label=\"Email\"]")).sendKeys(driversdata.get("Email"));
 	
@@ -330,9 +339,41 @@ public class WebPageDrivers {
 			
 			try
 			{
-				driver.findElement(By.xpath("//span[text()=\"Driver license already exists\"]"));
+				driver.findElement(By.xpath("//span[text()=\"Driver already exists\" or text()=\"Driver license already exists\"]"));
 				log.info("Driver already exists");
+				
+				backbutton.click();
+				
+				Thread.sleep(1000);
+				
+				backbutton.click();
+				
+				driver.findElement(By.xpath("//input[@type=\"tel\"]")).sendKeys(driversdata.get("Cell"));
+				
+				driver.findElement(By.xpath("//input[@label=\"License\"]")).sendKeys(driversdata.get("License"));
+				
+				nextbutton.click();
+				
+				log.info("Clicked on Next Button");
+				
+				Thread.sleep(1000);
+				
+				nextbutton.click();
+				
+				Thread.sleep(1000);
+				
+				savebutton.click();
+				log.info("Clicked on Save Button");
+				
+				driver.findElement(By.xpath("//span[text()=\"Driver already exists\" or text()=\"Driver license already exists\"]"));
+				log.info("Driver already exists twice and closing the popup");
+				
+				driver.findElement(By.xpath("//*[name()=\"svg\" and @class=\"h-5 w-5 cursor-pointer text-blue-secondary hover:text-gray-500\"]")).click();
+				
 				Driver.Refresh();
+				
+				Assert.fail("Create New Driver functionality not working, caught exception");
+
 				Thread.sleep(5000);
 			}
 			catch(org.openqa.selenium.NoSuchElementException e)
@@ -399,13 +440,13 @@ public class WebPageDrivers {
 	public Boolean verifyRecords() throws InterruptedException
 	{
 		Thread.sleep(2000);
-		
+		changefocus.click();
 		wait.until(ExpectedConditions.elementToBeClickable(totalcount.get(0)));
 
 		String active = totalcount.get(0).getText();
 		String inactive = totalcount.get(1).getText();
 		
-		log.info("Captured active and inactive drivers count");
+		log.info("Captured active :"+active+" and inactive :"+inactive+" drivers count");
 		int flag=0;
 		
 		totalcount.get(0).click();

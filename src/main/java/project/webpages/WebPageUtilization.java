@@ -37,7 +37,7 @@ WebDriver driver;
 	@FindBy(xpath = "//div[@class=\"flex items-center\"]//span[text()=\"Reset All\"]")
 	WebElement resetfilter;
 	
-	@FindBy(xpath = "//div[@class=\"ml-10 mt-2\"]//span[text()=\"Utilization Report\"]")
+	@FindBy(xpath = "//div[@class=\"ml-10 mt-2\"]//span")
 	WebElement changefocus;
 	
 
@@ -47,6 +47,8 @@ WebDriver driver;
 	public boolean SearchandVerifyRecords() throws InterruptedException {
 		// TODO Auto-generated method stub
 		Thread.sleep(3000);
+		changefocus.click();
+		Thread.sleep(1000);
 		search.clear();
 		search.sendKeys("acura");
 		Thread.sleep(2000);
@@ -74,6 +76,9 @@ WebDriver driver;
 	{
 		try
 		{
+			Thread.sleep(1000);
+			changefocus.click();
+			Thread.sleep(1000);
 			search.clear();
 
 			Thread.sleep(3000);

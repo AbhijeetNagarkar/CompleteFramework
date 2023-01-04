@@ -37,7 +37,7 @@ public class WebPageTripHistory {
 	@FindBy(xpath = "//div[@class=\"flex items-center\"]//span[text()=\"Reset All\"]")
 	WebElement resetfilter;
 	
-	@FindBy(xpath = "//div[@class=\"ml-10 mt-2\"]//span[text()=\"Trip History\"]")
+	@FindBy(xpath = "//div[@class=\"ml-10 mt-2\"]//span")
 	WebElement changefocus;
 	
 
@@ -47,6 +47,8 @@ public class WebPageTripHistory {
 	public boolean SearchandVerifyRecords() throws InterruptedException {
 		// TODO Auto-generated method stub
 		Thread.sleep(3000);
+		changefocus.click();
+		Thread.sleep(1000);
 		search.clear();
 		search.sendKeys("krishna");
 		Thread.sleep(2000);
@@ -74,6 +76,9 @@ public class WebPageTripHistory {
 	{
 		try
 		{
+			Thread.sleep(1000);
+			changefocus.click();
+			Thread.sleep(1000);
 			search.clear();
 
 			Thread.sleep(3000);
@@ -109,7 +114,9 @@ public class WebPageTripHistory {
 	{
 		try
 		{
-			Thread.sleep(2000);
+			Thread.sleep(1000);
+			changefocus.click();
+			Thread.sleep(1000);
 			
 			driver.findElement(By.xpath("//button//span[text()=\"Download\"]")).click();
 			

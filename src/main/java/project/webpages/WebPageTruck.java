@@ -19,7 +19,7 @@ public class WebPageTruck {
 	
 		WebDriver driver;
 		
-		WebDriverWait wait;
+		WebDriverWait wait,wait5;
 	
 		public static Logger log = Logger.getLogger(WebPageTruck.class);
 		
@@ -31,72 +31,74 @@ public class WebPageTruck {
 			
 		PageFactory.initElements(driver,this);
 			
-		wait=new WebDriverWait(driver,10);
+		wait=new WebDriverWait(driver,15);
+		
+		wait5=new WebDriverWait(driver,5);
 		
 		truckmap=TestData.GetVehicleData();
 	}
 
-	@FindBy(xpath = "//button[@label=\"+ Add Truck\"]")
+	@FindBy(xpath = "//button[@type=\"submit\"]")
 	WebElement addTruckButtonDashboard;
 	
-	@FindBy(id = "truckIdentifier")
+	@FindBy(xpath = "//input[@label=\"Truck Number\"]")
 	WebElement truckIdentifier;
 	
-	@FindBy(id = "vinNo")
+	@FindBy(xpath = "//input[@label=\"VIN Number\"]")
 	WebElement vinNo;
 	
-	@FindBy(xpath = "//button[@label=\"Next\"]")
+	@FindBy(xpath = "//button[text()=\"Next\"]")
 	WebElement nextButton;
 	
-	@FindBy(xpath = "//button[@label=\"Add Truck\"]")
+	@FindBy(xpath = "//button[text()=\"Add Truck\"]")
 	WebElement addTruck;
 	
-	@FindBy(id = "regNo")
+	@FindBy(name = "regNo")
 	WebElement regNo;
 	
 	@FindBy(className = "ant-calendar-input ")
 	WebElement expiry;
 	
-	@FindBy(id = "liabilityInsuranceName")
+	@FindBy(name = "liabilityInsuranceName")
 	WebElement liabilityInsuranceName;
 	
-	@FindBy(id = "liabilityInsuranceNo")
+	@FindBy(name = "liabilityInsuranceNo")
 	WebElement liabilityInsuranceNo;
 	
-	@FindBy(id = "cargoInsuranceName")
+	@FindBy(name = "cargoInsuranceName")
 	WebElement cargoInsuranceName;
 	
-	@FindBy(id = "cargoInsuranceNo")
+	@FindBy(name = "cargoInsuranceNo")
 	WebElement cargoInsuranceNo;
 	
-	@FindBy(xpath = "//button[@label=\"Back\"]")
+	@FindBy(xpath = "//button[text()=\"Back\"]")
 	WebElement backButton;
 	
-	@FindBy(xpath = "//img[@class=\"closeModalIcon\"]")
+	@FindBy(xpath = "//*[name()=\"svg\" and @class=\"w-6 h-6 font-semibold absolute top-2 -right-2 cursor-pointer\"]")
 	WebElement closepopup;
 	
-	@FindBy(xpath = "//input[@class=\"ant-input\"]")
+	@FindBy(xpath = "//input[@placeholder=\"Search Vehicle\"]")
 	WebElement searchTruck;
 	
-	@FindBy(xpath="//tbody[@class=\"ant-table-tbody\"]//tr//td")
+	@FindBy(xpath="//tbody[@class=\"rc-table-tbody\"]//tr[@class=\"rc-table-row rc-table-row-level-0 text-base text-gray-400 bg-white border-b border-gray-100 h-12 w-full hover:bg-blue-tablerow focus:hover:bg-blue-tablerow rounded-md`\"]//td")
 	List<WebElement> tabledata;
 	
 	@FindBy(xpath="//div[@class=\"ant-table-body\"]")
 	WebElement table;
 	
-	@FindBy(xpath="//p//span")
+	@FindBy(xpath="//b//following::div[@class=\"text-blue-secondary font-black pl-1\"]")
 	List<WebElement> elements;
 	
-	@FindBy(xpath = "//*[name()=\"svg\" and @data-icon=\"delete\"]")
+	@FindBy(xpath = "//*[name()=\"svg\" and @class=\"w-5 h-5 cursor-pointer text-gray-400 hover:text-blue-primary\"]")
 	WebElement deleteTruckButton;
 	
-	@FindBy(xpath = "//div[@id=\"delete_confirm\"]//input")
+	@FindBy(xpath = "//div[@class=\" pt-2\"]//input")
 	WebElement deleteTruckInput;
 	
-	@FindBy(xpath = "//div[@class=\"action-buttons\"]//button[@label=\"Delete\"]")
+	@FindBy(xpath = "//button[@type=\"submit\" and text()=\"Delete\"]")
 	WebElement deleteTruckConfirm;
 	
-	@FindBy(xpath = "//span[text()=\"Action\"]")
+	@FindBy(xpath = "//div[@class=\"ml-10 mt-2\"]//span")
 	WebElement action;
 	
 	@FindBy(xpath = "//div[@class=\"px-8 py-2 h-90%\"]//input")
@@ -114,11 +116,13 @@ public class WebPageTruck {
 	@FindBy(xpath = "//button[text()=\"Activate\"]")
 	WebElement activateDeletedTruck;
 	
-	public void clickOnAddTruckDashboard()
+	public void clickOnAddTruckDashboard() throws InterruptedException
 	{
+		wait.until(ExpectedConditions.elementToBeClickable(action));
 		
+		driver.findElement(By.xpath("//div[@class=\"ml-10 mt-2\"]//span")).click();
 		
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.className("ant-table-content")));
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.className("rc-table-container")));
 		
 		wait.until(ExpectedConditions.elementToBeClickable(addTruckButtonDashboard));
 		
@@ -158,8 +162,6 @@ public class WebPageTruck {
 		
 		vinNo.sendKeys(truckmap.get("VIN Number"));
 		
-		Thread.sleep(3000);
-		
 		log.info("Entered VIN Number : "+truckmap.get("VIN Number"));
 		}
 		catch(Exception e)
@@ -168,6 +170,7 @@ public class WebPageTruck {
 		}
 		try
 		{
+			Thread.sleep(1000);
 			String msg=driver.findElement(By.xpath("//div[@class=\"ant-form-explain\"]")).getText();
 			if(msg.equalsIgnoreCase("Please enter complete and valid vin number"))
 			{
@@ -292,7 +295,7 @@ public class WebPageTruck {
 	{
 		try
 		{
-		wait.until(ExpectedConditions.elementToBeClickable(closepopup));
+		wait5.until(ExpectedConditions.elementToBeClickable(closepopup));
 		
 		closepopup.click();
 		
@@ -317,13 +320,14 @@ public class WebPageTruck {
 		}
 		catch(Exception e)
 		{
-			Assert.fail("Unable to Click on Add Truck Button on Truck Dashboard");
+			Assert.fail("Unable to Click on Add Truck Button on Truck Add Page");
 		}
 		
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		
 		try
 		{
+			Thread.sleep(2000);
 			String msg=driver.findElement(By.xpath("//span[@class=\"ant-alert-description\"]")).getText();
 			if(msg.equalsIgnoreCase("Asset number or vin number already exists"))
 			{
@@ -343,8 +347,12 @@ public class WebPageTruck {
 	{
 		try
 		{
-		Thread.sleep(5000);
+		wait.until(ExpectedConditions.elementToBeClickable(action));
+		action.click();
+		wait.until(ExpectedConditions.elementToBeClickable(searchTruck));
 		searchTruck.clear();
+		//Thread.sleep(5000);
+
 		searchTruck.sendKeys(truckmap.get("VIN Number"));
 		log.info("Searching for Truck with VIN : "+truckmap.get("VIN Number"));
 		Thread.sleep(2000);
@@ -357,27 +365,40 @@ public class WebPageTruck {
 	
 	public boolean verifyTruckonDashboard() throws InterruptedException {
 		
-		Thread.sleep(5000);
-		String vno = tabledata.get(1).getText();
-		String chsno=tabledata.get(3).getText();
-		//3TMJU62N86M017395  
-		if(vno.equalsIgnoreCase(truckmap.get("Truck Identifier")) && chsno.equalsIgnoreCase(truckmap.get("VIN Number")))
+		try
 		{
-			log.info("New/Activated Truck validated successfully on Dashboard");
-			return true;
+			
+			wait.until(ExpectedConditions.visibilityOf(tabledata.get(1)));
+			wait.until(ExpectedConditions.visibilityOf(tabledata.get(2)));
+			String vno = tabledata.get(1).getText();
+			String chsno=tabledata.get(3).getText();
+			//3TMJU62N86M017395  
+			if(vno.equalsIgnoreCase(truckmap.get("Truck Identifier")) && chsno.equalsIgnoreCase(truckmap.get("VIN Number")))
+			{
+				log.info("New/Activated Truck validated successfully on Dashboard");
+				return true;
+			}
+			else 
+			{
+				log.info("New/Activated Truck details incorrect on Dashboard");
+				return false;
+			}
 		}
-		else 
+		catch(Exception e)
 		{
-			log.info("New/Activated Truck details incorrect on Dashboard");
+			log.info("Caught Exception while Verify truck on Dashboard");
+			Assert.fail("Caught Exception while Verify truck on Dashboard");
 			return false;
 		}
+		
 			
 	}
 	public boolean verifyDeletedTruckonDashboard() throws InterruptedException {
 		
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		try
 		{
+		//	wait5.until(ExpectedConditions.visibilityOfAllElements(tabledata));
 			String vno = tabledata.get(1).getText();
 			String chsno=tabledata.get(3).getText();
 			if(vno.equalsIgnoreCase(truckmap.get("Truck Identifier")) && chsno.equalsIgnoreCase(truckmap.get("VIN Number")))
@@ -399,19 +420,22 @@ public class WebPageTruck {
 	//	Thread.sleep(5000);
 		try
 		{
-			table.click();
+			wait.until(ExpectedConditions.visibilityOfAllElements(tabledata));
+			wait.until(ExpectedConditions.elementToBeClickable(tabledata.get(1)));
+			tabledata.get(1).click();
 			log.info("Clicked on result to get New Truck details");
-			Thread.sleep(5000);
+			Thread.sleep(3000);
+			wait.until(ExpectedConditions.visibilityOfAllElements(elements));
+			String vno = (elements.get(0)).getText();
+			vno=vno.replace(".","");
+			String chsno=(elements.get(2)).getText();
+			String regno=(elements.get(6)).getText();
+			String Iname=(elements.get(8)).getText();
+			String Inumber=(elements.get(9)).getText();
+			String Cname=(elements.get(11)).getText();
+			String Cnumber=(elements.get(12)).getText();
 			
-			String vno = (elements.get(1)).getText();
-			String chsno=(elements.get(3)).getText();
-			String regno=(elements.get(4)).getText();
-			String Iname=(elements.get(6)).getText();
-			String Inumber=(elements.get(7)).getText();
-			String Cname=(elements.get(9)).getText();
-			String Cnumber=(elements.get(10)).getText();
-			
-			if(vno.equalsIgnoreCase(truckmap.get("Truck Identifier")) && chsno.equalsIgnoreCase(truckmap.get("VIN Number")) &&
+			if((truckmap.get("Truck Identifier")).contains(vno) && chsno.equalsIgnoreCase(truckmap.get("VIN Number")) &&
 				regno.equalsIgnoreCase(truckmap.get("Registration No")) && Iname.equalsIgnoreCase(truckmap.get("Insurance Name")) &&
 				Inumber.equalsIgnoreCase(truckmap.get("Insurance Number")) && Cname.equalsIgnoreCase(truckmap.get("Cargo Insurance Name")) &&
 				Cnumber.equalsIgnoreCase(truckmap.get("Cargo Insurance Number")))
@@ -435,7 +459,8 @@ public class WebPageTruck {
 	}
 public boolean DeleteTruck() throws InterruptedException  {
 		
-		Thread.sleep(5000);
+		//Thread.sleep(5000);
+		wait.until(ExpectedConditions.visibilityOf(deleteTruckButton));
 		try
 		{
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", deleteTruckButton);
@@ -472,7 +497,8 @@ public boolean DeleteTruck() throws InterruptedException  {
 	}
 	public void ActivateTruck() throws InterruptedException
 	{
-		
+		wait.until(ExpectedConditions.visibilityOf(action));
+
 		action.click();
 		
 		try
@@ -502,13 +528,13 @@ public boolean DeleteTruck() throws InterruptedException  {
 		}
 		try
 		{
-			Thread.sleep(2000);
-			
+			wait.until(ExpectedConditions.visibilityOf(activateInput));
+
 			activateInput.sendKeys("ACTIVATE");
 			
 			log.info("Inserted Activate text in text box");
 			
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 			
 			wait.until(ExpectedConditions.elementToBeClickable(activateButton));
 			

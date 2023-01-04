@@ -38,11 +38,13 @@ public class WebPageAlerts {
 	{
 		try
 		{
-			Thread.sleep(3000);
-			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//table[@class=\"activity-table \"]//tr[@class=\"text-center\"]")));
-			int count1 = driver.findElements(By.xpath("//table[@class=\"activity-table \"]//tr[@class=\"text-center\"]")).size();
+			Thread.sleep(10000);
+			driver.findElement(By.xpath("//div[@class=\"ml-10 mt-2\"]//span")).click();
+
+		//	wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//table[@class=\"activity-table \"]//tr[@class=\"text-center\" or @class=\"text-center cursor-pointer\"]")));
+			int count1 = driver.findElements(By.xpath("//table[@class=\"activity-table \"]//tr[@class=\"text-center\" or @class=\"text-center cursor-pointer\"]")).size();
 			
-			int count2 = driver.findElements(By.xpath("//table[@class=\"activity-table false\"]//tr[@class=\"text-center\"]")).size();
+			int count2 = driver.findElements(By.xpath("//table[@class=\"activity-table false\"]//tr[@class=\"text-center\" or @class=\"text-center cursor-pointer\"]")).size();
 	
 			if(count.get(0).getText().contains(String.valueOf(count1))
 					&& count.get(1).getText().contains(String.valueOf(count2)))
@@ -68,6 +70,8 @@ public class WebPageAlerts {
 	{
 		try
 		{
+			driver.findElement(By.xpath("//div[@class=\"ml-10 mt-2\"]//span")).click();
+
 			Thread.sleep(2000);
 			
 			driver.findElements(By.xpath("//span[@class=\"order-last\"]//span[text()=\"Download\"]")).get(0).click();

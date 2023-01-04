@@ -2,76 +2,84 @@
 <testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-15T10:56:58 IST" name="Test Suite" finished-at="2022-12-15T11:00:01 IST" duration-ms="182285">
+  <suite started-at="2023-01-04T15:46:27 IST" name="Test Suite" finished-at="2023-01-04T15:47:35 IST" duration-ms="67877">
     <groups>
-      <group name="Drivers">
-        <method signature="DriversScript.CreateDriverFunctionality()[pri:4, instance:project.testscenarios.DriversScript@3b0fe47a]" name="CreateDriverFunctionality" class="project.testscenarios.DriversScript"/>
-        <method signature="DriversScript.DeleteDriverFunctionality()[pri:6, instance:project.testscenarios.DriversScript@3b0fe47a]" name="DeleteDriverFunctionality" class="project.testscenarios.DriversScript"/>
-        <method signature="DriversScript.EditDriverFunctionality()[pri:5, instance:project.testscenarios.DriversScript@3b0fe47a]" name="EditDriverFunctionality" class="project.testscenarios.DriversScript"/>
-        <method signature="DriversScript.NavigatingDriverPage()[pri:1, instance:project.testscenarios.DriversScript@3b0fe47a]" name="NavigatingDriverPage" class="project.testscenarios.DriversScript"/>
-        <method signature="DriversScript.VerifyRecords()[pri:2, instance:project.testscenarios.DriversScript@3b0fe47a]" name="VerifyRecords" class="project.testscenarios.DriversScript"/>
-        <method signature="DriversScript.SearchFunctionality()[pri:3, instance:project.testscenarios.DriversScript@3b0fe47a]" name="SearchFunctionality" class="project.testscenarios.DriversScript"/>
-      </group> <!-- Drivers -->
+      <group name="Tracking Links">
+        <method signature="TrackingLinksScript.NavigatingTrackingLinksPage()[pri:1, instance:project.testscenarios.TrackingLinksScript@1ca3b418]" name="NavigatingTrackingLinksPage" class="project.testscenarios.TrackingLinksScript"/>
+        <method signature="TrackingLinksScript.SearchTrackingLinks()[pri:2, instance:project.testscenarios.TrackingLinksScript@1ca3b418]" name="SearchTrackingLinks" class="project.testscenarios.TrackingLinksScript"/>
+        <method signature="TrackingLinksScript.RecordsOnTrackingLinks()[pri:3, instance:project.testscenarios.TrackingLinksScript@1ca3b418]" name="RecordsOnTrackingLinks" class="project.testscenarios.TrackingLinksScript"/>
+      </group> <!-- Tracking Links -->
+      <group name="Assets">
+        <method signature="AssetsScript.NavigatingAssetPage()[pri:1, instance:project.testscenarios.AssetsScript@235ecd9f]" name="NavigatingAssetPage" class="project.testscenarios.AssetsScript"/>
+        <method signature="AssetsScript.ListViewOfAssets()[pri:2, instance:project.testscenarios.AssetsScript@235ecd9f]" name="ListViewOfAssets" class="project.testscenarios.AssetsScript"/>
+        <method signature="AssetsScript.SearchAssets()[pri:3, instance:project.testscenarios.AssetsScript@235ecd9f]" name="SearchAssets" class="project.testscenarios.AssetsScript"/>
+      </group> <!-- Assets -->
       <group name="Login">
-        <method signature="LoginScript.validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@2af004b]" name="validUserNameandPassword" class="project.testscenarios.LoginScript"/>
+        <method signature="LoginScript.validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@5d0bf09b]" name="validUserNameandPassword" class="project.testscenarios.LoginScript"/>
       </group> <!-- Login -->
     </groups>
-    <test started-at="2022-12-15T10:56:58 IST" name="TruckX Test Automation" finished-at="2022-12-15T11:00:01 IST" duration-ms="182285">
+    <test started-at="2023-01-04T15:46:27 IST" name="TruckX Test Automation" finished-at="2023-01-04T15:47:35 IST" duration-ms="67877">
       <class name="project.testscenarios.LoginScript">
-        <test-method is-config="true" signature="preRequisite(org.testng.ITestContext)[pri:0, instance:project.testscenarios.LoginScript@2af004b]" started-at="2022-12-15T10:56:25 IST" name="preRequisite" finished-at="2022-12-15T10:56:58 IST" duration-ms="33004" status="PASS">
+        <test-method is-config="true" signature="preRequisite(org.testng.ITestContext)[pri:0, instance:project.testscenarios.LoginScript@5d0bf09b]" started-at="2023-01-04T15:45:13 IST" name="preRequisite" finished-at="2023-01-04T15:46:27 IST" duration-ms="73969" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@781dbe44]]>
+                <![CDATA[org.testng.TestRunner@3830b06c]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- preRequisite -->
-        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.LoginScript@2af004b]" started-at="2022-12-15T10:56:58 IST" name="Fetct_Repository_Object" finished-at="2022-12-15T10:56:58 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.LoginScript@5d0bf09b]" started-at="2023-01-04T15:46:27 IST" name="Fetct_Repository_Object" finished-at="2023-01-04T15:46:27 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Fetct_Repository_Object -->
-        <test-method signature="validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@2af004b]" started-at="2022-12-15T10:56:58 IST" name="validUserNameandPassword" finished-at="2022-12-15T10:57:15 IST" duration-ms="16677" status="PASS">
+        <test-method signature="validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@5d0bf09b]" started-at="2023-01-04T15:46:27 IST" name="validUserNameandPassword" finished-at="2023-01-04T15:46:33 IST" duration-ms="5127" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validUserNameandPassword -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:project.testscenarios.LoginScript@2af004b]" started-at="2022-12-15T11:00:01 IST" name="closeBrowser" finished-at="2022-12-15T11:00:06 IST" duration-ms="5213" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:project.testscenarios.LoginScript@5d0bf09b]" started-at="2023-01-04T15:47:35 IST" name="closeBrowser" finished-at="2023-01-04T15:47:40 IST" duration-ms="5227" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- project.testscenarios.LoginScript -->
-      <class name="project.testscenarios.DriversScript">
-        <test-method signature="NavigatingDriverPage()[pri:1, instance:project.testscenarios.DriversScript@3b0fe47a]" started-at="2022-12-15T10:57:15 IST" name="NavigatingDriverPage" finished-at="2022-12-15T10:57:17 IST" duration-ms="2345" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- NavigatingDriverPage -->
-        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.DriversScript@3b0fe47a]" started-at="2022-12-15T10:57:15 IST" name="Fetct_Repository_Object" finished-at="2022-12-15T10:57:15 IST" duration-ms="0" status="PASS">
+      <class name="project.testscenarios.AssetsScript">
+        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.AssetsScript@235ecd9f]" started-at="2023-01-04T15:46:33 IST" name="Fetct_Repository_Object" finished-at="2023-01-04T15:46:33 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Fetct_Repository_Object -->
-        <test-method signature="VerifyRecords()[pri:2, instance:project.testscenarios.DriversScript@3b0fe47a]" started-at="2022-12-15T10:57:17 IST" name="VerifyRecords" finished-at="2022-12-15T10:57:26 IST" duration-ms="8949" status="PASS">
+        <test-method signature="NavigatingAssetPage()[pri:1, instance:project.testscenarios.AssetsScript@235ecd9f]" started-at="2023-01-04T15:46:33 IST" name="NavigatingAssetPage" finished-at="2023-01-04T15:46:35 IST" duration-ms="2178" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyRecords -->
-        <test-method signature="SearchFunctionality()[pri:3, instance:project.testscenarios.DriversScript@3b0fe47a]" started-at="2022-12-15T10:57:26 IST" name="SearchFunctionality" finished-at="2022-12-15T10:57:31 IST" duration-ms="4452" status="PASS">
+        </test-method> <!-- NavigatingAssetPage -->
+        <test-method signature="ListViewOfAssets()[pri:2, instance:project.testscenarios.AssetsScript@235ecd9f]" started-at="2023-01-04T15:46:35 IST" name="ListViewOfAssets" finished-at="2023-01-04T15:47:12 IST" depends-on-methods="project.testscenarios.AssetsScript.NavigatingAssetPage" duration-ms="37439" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SearchFunctionality -->
-        <test-method signature="CreateDriverFunctionality()[pri:4, instance:project.testscenarios.DriversScript@3b0fe47a]" started-at="2022-12-15T10:57:31 IST" name="CreateDriverFunctionality" finished-at="2022-12-15T10:58:47 IST" duration-ms="76480" status="PASS">
+        </test-method> <!-- ListViewOfAssets -->
+        <test-method signature="SearchAssets()[pri:3, instance:project.testscenarios.AssetsScript@235ecd9f]" started-at="2023-01-04T15:47:12 IST" name="SearchAssets" finished-at="2023-01-04T15:47:30 IST" depends-on-methods="project.testscenarios.AssetsScript.NavigatingAssetPage" duration-ms="18263" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CreateDriverFunctionality -->
-        <test-method signature="EditDriverFunctionality()[pri:5, instance:project.testscenarios.DriversScript@3b0fe47a]" started-at="2022-12-15T10:58:47 IST" name="EditDriverFunctionality" finished-at="2022-12-15T10:59:30 IST" depends-on-methods="project.testscenarios.DriversScript.CreateDriverFunctionality" duration-ms="42540" status="PASS">
+        </test-method> <!-- SearchAssets -->
+      </class> <!-- project.testscenarios.AssetsScript -->
+      <class name="project.testscenarios.TrackingLinksScript">
+        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.TrackingLinksScript@1ca3b418]" started-at="2023-01-04T15:47:30 IST" name="Fetct_Repository_Object" finished-at="2023-01-04T15:47:30 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EditDriverFunctionality -->
-        <test-method signature="DeleteDriverFunctionality()[pri:6, instance:project.testscenarios.DriversScript@3b0fe47a]" started-at="2022-12-15T10:59:30 IST" name="DeleteDriverFunctionality" finished-at="2022-12-15T11:00:01 IST" depends-on-methods="project.testscenarios.DriversScript.CreateDriverFunctionality" duration-ms="30792" status="PASS">
+        </test-method> <!-- Fetct_Repository_Object -->
+        <test-method signature="NavigatingTrackingLinksPage()[pri:1, instance:project.testscenarios.TrackingLinksScript@1ca3b418]" started-at="2023-01-04T15:47:30 IST" name="NavigatingTrackingLinksPage" finished-at="2023-01-04T15:47:33 IST" duration-ms="2250" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- DeleteDriverFunctionality -->
-      </class> <!-- project.testscenarios.DriversScript -->
+        </test-method> <!-- NavigatingTrackingLinksPage -->
+        <test-method signature="SearchTrackingLinks()[pri:2, instance:project.testscenarios.TrackingLinksScript@1ca3b418]" started-at="2023-01-04T15:47:33 IST" name="SearchTrackingLinks" finished-at="2023-01-04T15:47:35 IST" depends-on-methods="project.testscenarios.TrackingLinksScript.NavigatingTrackingLinksPage" duration-ms="2327" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SearchTrackingLinks -->
+        <test-method signature="RecordsOnTrackingLinks()[pri:3, instance:project.testscenarios.TrackingLinksScript@1ca3b418]" started-at="2023-01-04T15:47:35 IST" name="RecordsOnTrackingLinks" finished-at="2023-01-04T15:47:35 IST" depends-on-methods="project.testscenarios.TrackingLinksScript.SearchTrackingLinks" duration-ms="224" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RecordsOnTrackingLinks -->
+      </class> <!-- project.testscenarios.TrackingLinksScript -->
     </test> <!-- TruckX Test Automation -->
   </suite> <!-- Test Suite -->
 </testng-results>

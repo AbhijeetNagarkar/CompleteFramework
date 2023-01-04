@@ -81,12 +81,15 @@ public class WebPageTrackingDevices {
 	@FindBy(xpath = "//button[text()=\"Save\"]")
 	WebElement editSave;
 	
+	@FindBy(xpath = "//div[@class=\"ml-10 mt-2\"]//span")
+	WebElement changefocus;
 	
 	public void clickOnAddDevices()
 	{
 		try
 		{
 		wait.until(ExpectedConditions.visibilityOf(addDevices));
+		changefocus.click();
 		
 		addDevices.click();
 		
@@ -257,6 +260,11 @@ public class WebPageTrackingDevices {
 		try
 		{
 		Thread.sleep(5000);
+		
+		changefocus.click();
+		
+		Thread.sleep(1000);
+
 		
 		search.sendKeys(devicemap.get("deviceId"));
 		

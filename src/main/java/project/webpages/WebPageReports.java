@@ -85,6 +85,7 @@ public class WebPageReports {
 		// TODO Auto-generated method stub
 		try
 		{
+			driver.findElement(By.xpath("//div[@class=\"ml-10 mt-2\"]//span")).click();
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a//span[text()='"+string+"']")));
 			driver.findElement(By.xpath("//a//span[text()='"+string+"']")).click();
 			log.info("Clicked on "+string+" report");
@@ -111,7 +112,9 @@ public class WebPageReports {
 	public Boolean search() throws InterruptedException
 	{
 		Thread.sleep(1000);
-		
+		driver.findElement(By.xpath("//div[@class=\"ml-10 mt-2\"]//span")).click();
+		Thread.sleep(1000);
+
 		search.sendKeys("Driver Safety");
 		
 		Thread.sleep(4000);

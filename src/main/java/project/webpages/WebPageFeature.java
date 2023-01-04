@@ -30,11 +30,16 @@ public class WebPageFeature {
 	@FindBy(xpath = "//input")
 	WebElement search;
 	
+	@FindBy(xpath = "//div[@class=\"ml-10 mt-2\"]//span")
+	WebElement changefocus;
+	
 	public Boolean verifyNewUpdates() throws InterruptedException
 	{
 		try
 		{
 		Thread.sleep(3000);
+		changefocus.click();
+		
 		if(msg.getText().equalsIgnoreCase("TruckX Continously Improves to Give You the Best Experience!"))
 		{
 			log.info("Landed on New Updates and showing message");
