@@ -8,13 +8,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 public class WebPageFuelEfficiency {
 WebDriver driver;
 	
-	WebDriverWait wait;
+	WebDriverWait wait,wait10;
 
 	public static Logger log = Logger.getLogger(WebPageFuelEfficiency.class);
 	
@@ -24,7 +24,8 @@ WebDriver driver;
 			
 		PageFactory.initElements(driver,this);
 			
-		wait=new WebDriverWait(driver,10);
+		wait=new WebDriverWait(driver,60);
+		wait10=new WebDriverWait(driver,20);
 		
 	}
 	
@@ -100,9 +101,9 @@ WebDriver driver;
 			filteroption.get(1).click();
 			log.info("Clicked on last 7 days report");
 
-			Thread.sleep(10000);
-			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//tbody[@class=\"rc-table-tbody\"]//tr//td[@class=\"rc-table-cell\"][0]//div")));
-			List<WebElement> ele = driver.findElements(By.xpath("//tbody[@class=\"rc-table-tbody\"]//tr//td[@class=\"rc-table-cell\"][0]//div"));
+			Thread.sleep(20000);
+		//	wait10.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//tbody[@class=\"rc-table-tbody\"]//tr[@class=\"rc-table-row rc-table-row-level-0 text-base text-gray-400 bg-white border-b border-gray-100 h-12 w-full rounded-md\"]")));
+			List<WebElement> ele = driver.findElements(By.xpath("//tbody[@class=\"rc-table-tbody\"]//tr[@class=\"rc-table-row rc-table-row-level-0 text-base text-gray-400 bg-white border-b border-gray-100 h-12 w-full rounded-md\"]"));
 				
 			if(ele.size()>0)
 				log.info("Records available for last 7 days");
@@ -139,8 +140,9 @@ WebDriver driver;
 			log.info("Clicked on PDF Button");
 			
 			int size1=driver.findElements(By.xpath("//button//span[text()=\"Download\"]")).size();
-			Thread.sleep(1000);
+			
 			int size2=driver.findElements(By.xpath("//span[text()=\"Download started.\"]")).size();
+			Thread.sleep(3000);
 			if(size1<1 || size2==1)
 			{
 				log.info("Downloading file");

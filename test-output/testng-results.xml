@@ -1,326 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="12" passed="7" failed="4" skipped="1">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-01-05T17:46:27 IST" name="Test Suite" finished-at="2023-01-05T17:52:22 IST" duration-ms="355546">
+  <suite started-at="2023-01-05T20:05:06 IST" name="Test Suite" finished-at="2023-01-05T20:06:37 IST" duration-ms="91154">
     <groups>
-      <group name="Trucks">
-        <method signature="TrailerScript.DeleteTruck()[pri:9, instance:project.testscenarios.TrailerScript@1cf6d1be]" name="DeleteTruck" class="project.testscenarios.TrailerScript"/>
-        <method signature="TrailerScript.NavigatingDeletedTruckPage()[pri:10, instance:project.testscenarios.TrailerScript@1cf6d1be]" name="NavigatingDeletedTruckPage" class="project.testscenarios.TrailerScript"/>
-        <method signature="TrailerScript.ActivateTruck()[pri:11, instance:project.testscenarios.TrailerScript@1cf6d1be]" name="ActivateTruck" class="project.testscenarios.TrailerScript"/>
-      </group> <!-- Trucks -->
-      <group name="Trailers">
-        <method signature="TrailerScript.NavigatingTrailerPage()[pri:1, instance:project.testscenarios.TrailerScript@1cf6d1be]" name="NavigatingTrailerPage" class="project.testscenarios.TrailerScript"/>
-        <method signature="TrailerScript.NewTrailer()[pri:2, instance:project.testscenarios.TrailerScript@1cf6d1be]" name="NewTrailer" class="project.testscenarios.TrailerScript"/>
-        <method signature="TrailerScript.AssignTrailer()[pri:3, instance:project.testscenarios.TrailerScript@1cf6d1be]" name="AssignTrailer" class="project.testscenarios.TrailerScript"/>
-        <method signature="TrailerScript.DeleteTrailer()[pri:6, instance:project.testscenarios.TrailerScript@1cf6d1be]" name="DeleteTrailer" class="project.testscenarios.TrailerScript"/>
-        <method signature="TrailerScript.EditTrailer()[pri:5, instance:project.testscenarios.TrailerScript@1cf6d1be]" name="EditTrailer" class="project.testscenarios.TrailerScript"/>
-        <method signature="TrailerScript.NavigatingDeletedTrailerPage()[pri:7, instance:project.testscenarios.TrailerScript@1cf6d1be]" name="NavigatingDeletedTrailerPage" class="project.testscenarios.TrailerScript"/>
-        <method signature="TrailerScript.ActivateTrailer()[pri:8, instance:project.testscenarios.TrailerScript@1cf6d1be]" name="ActivateTrailer" class="project.testscenarios.TrailerScript"/>
-        <method signature="TrailerScript.UnAssignTrailer()[pri:4, instance:project.testscenarios.TrailerScript@1cf6d1be]" name="UnAssignTrailer" class="project.testscenarios.TrailerScript"/>
-      </group> <!-- Trailers -->
+      <group name="Fuel Efficiency Reports">
+        <method signature="FuelEfficiencyReportScript.NavigatingFuelEfficiencyPage()[pri:1, instance:project.testscenarios.FuelEfficiencyReportScript@7ef82753]" name="NavigatingFuelEfficiencyPage" class="project.testscenarios.FuelEfficiencyReportScript"/>
+        <method signature="FuelEfficiencyReportScript.DownloadFunctionality()[pri:3, instance:project.testscenarios.FuelEfficiencyReportScript@7ef82753]" name="DownloadFunctionality" class="project.testscenarios.FuelEfficiencyReportScript"/>
+        <method signature="FuelEfficiencyReportScript.FilterandVerification()[pri:4, instance:project.testscenarios.FuelEfficiencyReportScript@7ef82753]" name="FilterandVerification" class="project.testscenarios.FuelEfficiencyReportScript"/>
+        <method signature="FuelEfficiencyReportScript.SearchandVerification()[pri:2, instance:project.testscenarios.FuelEfficiencyReportScript@7ef82753]" name="SearchandVerification" class="project.testscenarios.FuelEfficiencyReportScript"/>
+      </group> <!-- Fuel Efficiency Reports -->
       <group name="Login">
-        <method signature="LoginScript.validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@117159c0]" name="validUserNameandPassword" class="project.testscenarios.LoginScript"/>
+        <method signature="LoginScript.validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@27406a17]" name="validUserNameandPassword" class="project.testscenarios.LoginScript"/>
       </group> <!-- Login -->
     </groups>
-    <test started-at="2023-01-05T17:46:27 IST" name="TruckX Test Automation" finished-at="2023-01-05T17:52:22 IST" duration-ms="355546">
+    <test started-at="2023-01-05T20:05:06 IST" name="TruckX Test Automation" finished-at="2023-01-05T20:06:37 IST" duration-ms="91154">
       <class name="project.testscenarios.LoginScript">
-        <test-method is-config="true" signature="preRequisite(org.testng.ITestContext)[pri:0, instance:project.testscenarios.LoginScript@117159c0]" started-at="2023-01-05T17:45:52 IST" name="preRequisite" finished-at="2023-01-05T17:46:27 IST" duration-ms="34865" status="PASS">
+        <test-method is-config="true" signature="preRequisite(org.testng.ITestContext)[pri:0, instance:project.testscenarios.LoginScript@27406a17]" started-at="2023-01-05T20:04:31 IST" name="preRequisite" finished-at="2023-01-05T20:05:06 IST" duration-ms="34969" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@3d667b59]]>
+                <![CDATA[org.testng.TestRunner@790d8fdd]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- preRequisite -->
-        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.LoginScript@117159c0]" started-at="2023-01-05T17:46:27 IST" name="Fetct_Repository_Object" finished-at="2023-01-05T17:46:27 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.LoginScript@27406a17]" started-at="2023-01-05T20:05:06 IST" name="Fetct_Repository_Object" finished-at="2023-01-05T20:05:06 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Fetct_Repository_Object -->
-        <test-method signature="validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@117159c0]" started-at="2023-01-05T17:46:27 IST" name="validUserNameandPassword" finished-at="2023-01-05T17:46:33 IST" duration-ms="6096" status="PASS">
+        <test-method signature="validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@27406a17]" started-at="2023-01-05T20:05:06 IST" name="validUserNameandPassword" finished-at="2023-01-05T20:05:11 IST" duration-ms="4835" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validUserNameandPassword -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:project.testscenarios.LoginScript@117159c0]" started-at="2023-01-05T17:52:22 IST" name="closeBrowser" finished-at="2023-01-05T17:52:27 IST" duration-ms="5107" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:project.testscenarios.LoginScript@27406a17]" started-at="2023-01-05T20:06:38 IST" name="closeBrowser" finished-at="2023-01-05T20:06:43 IST" duration-ms="5238" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- project.testscenarios.LoginScript -->
-      <class name="project.testscenarios.TrailerScript">
-        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.TrailerScript@1cf6d1be]" started-at="2023-01-05T17:46:33 IST" name="Fetct_Repository_Object" finished-at="2023-01-05T17:46:33 IST" duration-ms="0" status="PASS">
+      <class name="project.testscenarios.FuelEfficiencyReportScript">
+        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.FuelEfficiencyReportScript@7ef82753]" started-at="2023-01-05T20:05:11 IST" name="Fetct_Repository_Object" finished-at="2023-01-05T20:05:11 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Fetct_Repository_Object -->
-        <test-method signature="NavigatingTrailerPage()[pri:1, instance:project.testscenarios.TrailerScript@1cf6d1be]" started-at="2023-01-05T17:46:33 IST" name="NavigatingTrailerPage" finished-at="2023-01-05T17:46:35 IST" duration-ms="2159" status="PASS">
+        <test-method signature="NavigatingFuelEfficiencyPage()[pri:1, instance:project.testscenarios.FuelEfficiencyReportScript@7ef82753]" started-at="2023-01-05T20:05:11 IST" name="NavigatingFuelEfficiencyPage" finished-at="2023-01-05T20:05:28 IST" duration-ms="16565" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- NavigatingTrailerPage -->
-        <test-method signature="NewTrailer()[pri:2, instance:project.testscenarios.TrailerScript@1cf6d1be]" started-at="2023-01-05T17:46:35 IST" name="NewTrailer" finished-at="2023-01-05T17:46:57 IST" depends-on-methods="project.testscenarios.TrailerScript.NavigatingTrailerPage" duration-ms="22277" status="PASS">
+        </test-method> <!-- NavigatingFuelEfficiencyPage -->
+        <test-method signature="SearchandVerification()[pri:2, instance:project.testscenarios.FuelEfficiencyReportScript@7ef82753]" started-at="2023-01-05T20:05:28 IST" name="SearchandVerification" finished-at="2023-01-05T20:05:50 IST" depends-on-methods="project.testscenarios.FuelEfficiencyReportScript.NavigatingFuelEfficiencyPage" duration-ms="22522" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- NewTrailer -->
-        <test-method signature="AssignTrailer()[pri:3, instance:project.testscenarios.TrailerScript@1cf6d1be]" started-at="2023-01-05T17:46:57 IST" name="AssignTrailer" finished-at="2023-01-05T17:48:35 IST" depends-on-methods="project.testscenarios.TrailerScript.NewTrailer" duration-ms="97738" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Unable to select truck to Assign Trailer]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Unable to select truck to Assign Trailer
-at org.testng.Assert.fail(Assert.java:99)
-at project.webpages.WebPageTrailer.SelectTruckFromDropDown(WebPageTrailer.java:239)
-at project.testscenarios.TrailerScript.AssignTrailer(TrailerScript.java:91)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        </test-method> <!-- SearchandVerification -->
+        <test-method signature="DownloadFunctionality()[pri:3, instance:project.testscenarios.FuelEfficiencyReportScript@7ef82753]" started-at="2023-01-05T20:05:50 IST" name="DownloadFunctionality" finished-at="2023-01-05T20:06:02 IST" depends-on-methods="project.testscenarios.FuelEfficiencyReportScript.NavigatingFuelEfficiencyPage" duration-ms="11521" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AssignTrailer -->
-        <test-method signature="UnAssignTrailer()[pri:4, instance:project.testscenarios.TrailerScript@1cf6d1be]" started-at="2023-01-05T17:48:38 IST" name="UnAssignTrailer" finished-at="2023-01-05T17:48:38 IST" depends-on-methods="project.testscenarios.TrailerScript.AssignTrailer" duration-ms="0" status="SKIP">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method TrailerScript.UnAssignTrailer()[pri:4, instance:project.testscenarios.TrailerScript@1cf6d1be] depends on not successfully finished methods]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method TrailerScript.UnAssignTrailer()[pri:4, instance:project.testscenarios.TrailerScript@1cf6d1be] depends on not successfully finished methods
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
+        </test-method> <!-- DownloadFunctionality -->
+        <test-method signature="FilterandVerification()[pri:4, instance:project.testscenarios.FuelEfficiencyReportScript@7ef82753]" started-at="2023-01-05T20:06:02 IST" name="FilterandVerification" finished-at="2023-01-05T20:06:37 IST" depends-on-methods="project.testscenarios.FuelEfficiencyReportScript.NavigatingFuelEfficiencyPage" duration-ms="35647" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- UnAssignTrailer -->
-        <test-method signature="EditTrailer()[pri:5, instance:project.testscenarios.TrailerScript@1cf6d1be]" started-at="2023-01-05T17:48:38 IST" name="EditTrailer" finished-at="2023-01-05T17:49:00 IST" depends-on-methods="project.testscenarios.TrailerScript.NewTrailer" duration-ms="21735" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EditTrailer -->
-        <test-method signature="DeleteTrailer()[pri:6, instance:project.testscenarios.TrailerScript@1cf6d1be]" started-at="2023-01-05T17:49:00 IST" name="DeleteTrailer" finished-at="2023-01-05T17:49:53 IST" depends-on-methods="project.testscenarios.TrailerScript.NewTrailer" duration-ms="52993" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- DeleteTrailer -->
-        <test-method signature="NavigatingDeletedTrailerPage()[pri:7, instance:project.testscenarios.TrailerScript@1cf6d1be]" started-at="2023-01-05T17:49:53 IST" name="NavigatingDeletedTrailerPage" finished-at="2023-01-05T17:50:05 IST" depends-on-methods="project.testscenarios.TrailerScript.DeleteTrailer" duration-ms="11794" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- NavigatingDeletedTrailerPage -->
-        <test-method signature="ActivateTrailer()[pri:8, instance:project.testscenarios.TrailerScript@1cf6d1be]" started-at="2023-01-05T17:50:05 IST" name="ActivateTrailer" finished-at="2023-01-05T17:51:07 IST" depends-on-methods="project.testscenarios.TrailerScript.NavigatingDeletedTrailerPage" duration-ms="62451" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Unable to click on Activate Trailer button on Delete Trailer Page]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Unable to click on Activate Trailer button on Delete Trailer Page
-at org.testng.Assert.fail(Assert.java:99)
-at project.webpages.WebPageTrailer.ActivateTrailer(WebPageTrailer.java:536)
-at project.testscenarios.TrailerScript.ActivateTrailer(TrailerScript.java:175)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ActivateTrailer -->
-        <test-method signature="DeleteTruck()[pri:9, instance:project.testscenarios.TrailerScript@1cf6d1be]" started-at="2023-01-05T17:51:08 IST" name="DeleteTruck" finished-at="2023-01-05T17:51:51 IST" duration-ms="42516" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //*[name()="svg" and @class="w-5 h-5 cursor-pointer text-gray-400 hover:text-blue-primary"]' (tried for 15 second(s) with 500 milliseconds interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //*[name()="svg" and @class="w-5 h-5 cursor-pointer text-gray-400 hover:text-blue-primary"]' (tried for 15 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-at project.webpages.WebPageTruck.DeleteTruck(WebPageTruck.java:463)
-at project.testscenarios.TrailerScript.DeleteTruck(TrailerScript.java:209)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[name()="svg" and @class="w-5 h-5 cursor-pointer text-gray-400 hover:text-blue-primary"]"}
-  (Session info: headless chrome=108.0.5359.125)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'ANAGARKAR-LAP-0', ip: '192.168.3.55', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\coditas\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:54145}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b45638098cab360bb6ab60461825d189
-*** Element info: {Using=xpath, value=//*[name()="svg" and @class="w-5 h-5 cursor-pointer text-gray-400 hover:text-blue-primary"]}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy14.isDisplayed(Unknown Source)
-at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
-at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-... 30 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- DeleteTruck -->
-        <test-method signature="NavigatingDeletedTruckPage()[pri:10, instance:project.testscenarios.TrailerScript@1cf6d1be]" started-at="2023-01-05T17:51:52 IST" name="NavigatingDeletedTruckPage" finished-at="2023-01-05T17:52:04 IST" duration-ms="11864" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- NavigatingDeletedTruckPage -->
-        <test-method signature="ActivateTruck()[pri:11, instance:project.testscenarios.TrailerScript@1cf6d1be]" started-at="2023-01-05T17:52:04 IST" name="ActivateTruck" finished-at="2023-01-05T17:52:21 IST" depends-on-methods="project.testscenarios.TrailerScript.NavigatingDeletedTruckPage" duration-ms="17337" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Unable to click on Activate button on Delete Truck Page]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Unable to click on Activate button on Delete Truck Page
-at org.testng.Assert.fail(Assert.java:99)
-at project.webpages.WebPageTruck.ActivateTruck(WebPageTruck.java:529)
-at project.testscenarios.TrailerScript.ActivateTruck(TrailerScript.java:236)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ActivateTruck -->
-      </class> <!-- project.testscenarios.TrailerScript -->
+        </test-method> <!-- FilterandVerification -->
+      </class> <!-- project.testscenarios.FuelEfficiencyReportScript -->
     </test> <!-- TruckX Test Automation -->
   </suite> <!-- Test Suite -->
 </testng-results>
