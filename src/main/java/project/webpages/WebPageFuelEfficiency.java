@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WebPageFuelEfficiency {
@@ -48,7 +49,7 @@ WebDriver driver;
 	
 	public boolean SearchandVerifyRecords() throws InterruptedException {
 		// TODO Auto-generated method stub
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		search.clear();
 		search.sendKeys("demo");
 		Thread.sleep(2000);
@@ -99,6 +100,8 @@ WebDriver driver;
 			filteroption.get(1).click();
 			log.info("Clicked on last 7 days report");
 
+			Thread.sleep(10000);
+			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//tbody[@class=\"rc-table-tbody\"]//tr//td[@class=\"rc-table-cell\"][0]//div")));
 			List<WebElement> ele = driver.findElements(By.xpath("//tbody[@class=\"rc-table-tbody\"]//tr//td[@class=\"rc-table-cell\"][0]//div"));
 				
 			if(ele.size()>0)

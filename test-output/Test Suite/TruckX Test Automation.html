@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>TruckX Test Automation</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>10/2/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>7/4/1</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jan 05 15:59:37 IST 2023</td>
+<td>Started on:</td><td>Thu Jan 05 17:46:27 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>233 seconds (233911 ms)</td>
+<tr><td>Total time:</td><td>355 seconds (355546 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,16 +75,16 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='project.testscenarios.FuelEfficiencyReportScript.DownloadFunctionality()'><b>DownloadFunctionality</b><br>Test class: project.testscenarios.FuelEfficiencyReportScript</td>
-<td><div><pre>java.lang.AssertionError: Download functionality Not working expected [true] but found [false]
-	at project.testscenarios.FuelEfficiencyReportScript.DownloadFunctionality(FuelEfficiencyReportScript.java:45)
+<td title='project.testscenarios.TrailerScript.AssignTrailer()'><b>AssignTrailer</b><br>Test class: project.testscenarios.TrailerScript</td>
+<td><div><pre>java.lang.AssertionError: Unable to select truck to Assign Trailer
+	at project.webpages.WebPageTrailer.SelectTruckFromDropDown(WebPageTrailer.java:239)
+	at project.testscenarios.TrailerScript.AssignTrailer(TrailerScript.java:91)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace597623166", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace597623166'><pre>java.lang.AssertionError: Download functionality Not working expected [true] but found [false]
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1817288263", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1817288263'><pre>java.lang.AssertionError: Unable to select truck to Assign Trailer
 	at org.testng.Assert.fail(Assert.java:99)
-	at org.testng.Assert.failNotEquals(Assert.java:1037)
-	at org.testng.Assert.assertTrue(Assert.java:45)
-	at project.testscenarios.FuelEfficiencyReportScript.DownloadFunctionality(FuelEfficiencyReportScript.java:45)
+	at project.webpages.WebPageTrailer.SelectTruckFromDropDown(WebPageTrailer.java:239)
+	at project.testscenarios.TrailerScript.AssignTrailer(TrailerScript.java:91)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -114,19 +114,19 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>23</td>
-<td>project.testscenarios.FuelEfficiencyReportScript@74d1dc36</td></tr>
+<td>97</td>
+<td>project.testscenarios.TrailerScript@1cf6d1be</td></tr>
 <tr>
-<td title='project.testscenarios.APIKeyTransferScript.ShareAPIKeyFunctionality()'><b>ShareAPIKeyFunctionality</b><br>Test class: project.testscenarios.APIKeyTransferScript</td>
-<td><div><pre>java.lang.AssertionError: drop down options not available in Share Link With API Partner Prompt
-	at project.webpages.WebPageAPIKeyTransfer.shareAPIKey(WebPageAPIKeyTransfer.java:134)
-	at project.testscenarios.APIKeyTransferScript.ShareAPIKeyFunctionality(APIKeyTransferScript.java:43)
+<td title='project.testscenarios.TrailerScript.ActivateTrailer()'><b>ActivateTrailer</b><br>Test class: project.testscenarios.TrailerScript</td>
+<td><div><pre>java.lang.AssertionError: Unable to click on Activate Trailer button on Delete Trailer Page
+	at project.webpages.WebPageTrailer.ActivateTrailer(WebPageTrailer.java:536)
+	at project.testscenarios.TrailerScript.ActivateTrailer(TrailerScript.java:175)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace582979874", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace582979874'><pre>java.lang.AssertionError: drop down options not available in Share Link With API Partner Prompt
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1179268144", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1179268144'><pre>java.lang.AssertionError: Unable to click on Activate Trailer button on Delete Trailer Page
 	at org.testng.Assert.fail(Assert.java:99)
-	at project.webpages.WebPageAPIKeyTransfer.shareAPIKey(WebPageAPIKeyTransfer.java:134)
-	at project.testscenarios.APIKeyTransferScript.ShareAPIKeyFunctionality(APIKeyTransferScript.java:43)
+	at project.webpages.WebPageTrailer.ActivateTrailer(WebPageTrailer.java:536)
+	at project.testscenarios.TrailerScript.ActivateTrailer(TrailerScript.java:175)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -156,8 +156,156 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>24</td>
-<td>project.testscenarios.APIKeyTransferScript@663c9e7a</td></tr>
+<td>62</td>
+<td>project.testscenarios.TrailerScript@1cf6d1be</td></tr>
+<tr>
+<td title='project.testscenarios.TrailerScript.ActivateTruck()'><b>ActivateTruck</b><br>Test class: project.testscenarios.TrailerScript</td>
+<td><div><pre>java.lang.AssertionError: Unable to click on Activate button on Delete Truck Page
+	at project.webpages.WebPageTruck.ActivateTruck(WebPageTruck.java:529)
+	at project.testscenarios.TrailerScript.ActivateTruck(TrailerScript.java:236)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1413295859", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1413295859'><pre>java.lang.AssertionError: Unable to click on Activate button on Delete Truck Page
+	at org.testng.Assert.fail(Assert.java:99)
+	at project.webpages.WebPageTruck.ActivateTruck(WebPageTruck.java:529)
+	at project.testscenarios.TrailerScript.ActivateTruck(TrailerScript.java:236)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>17</td>
+<td>project.testscenarios.TrailerScript@1cf6d1be</td></tr>
+<tr>
+<td title='project.testscenarios.TrailerScript.DeleteTruck()'><b>DeleteTruck</b><br>Test class: project.testscenarios.TrailerScript</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //*[name()=&quot;svg&quot; and @class=&quot;w-5 h-5 cursor-pointer text-gray-400 hover:text-blue-primary&quot;]&apos; (tried for 15 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at project.webpages.WebPageTruck.DeleteTruck(WebPageTruck.java:463)
+	at project.testscenarios.TrailerScript.DeleteTruck(TrailerScript.java:209)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[name()=&quot;svg&quot; and @class=&quot;w-5 h-5 cursor-pointer text-gray-400 hover:text-blue-primary&quot;]&quot;}
+  (Session info: headless chrome=108.0.5359.125)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;ANAGARKAR-LAP-0&apos;, ip: &apos;192.168.3.55&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\coditas\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:54145}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: b45638098cab360bb6ab60461825d189
+*** Element info: {Using=xpath, value=//*[name()=&quot;svg&quot; and @class=&quot;w-5 h-5 cursor-pointer text-gray-400 hover:text-blue-primary&quot;]}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy14.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 30 more
+... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace696007235", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace696007235'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //*[name()=&quot;svg&quot; and @class=&quot;w-5 h-5 cursor-pointer text-gray-400 hover:text-blue-primary&quot;]&apos; (tried for 15 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at project.webpages.WebPageTruck.DeleteTruck(WebPageTruck.java:463)
+	at project.testscenarios.TrailerScript.DeleteTruck(TrailerScript.java:209)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[name()=&quot;svg&quot; and @class=&quot;w-5 h-5 cursor-pointer text-gray-400 hover:text-blue-primary&quot;]&quot;}
+  (Session info: headless chrome=108.0.5359.125)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;ANAGARKAR-LAP-0&apos;, ip: &apos;192.168.3.55&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\coditas\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:54145}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: b45638098cab360bb6ab60461825d189
+*** Element info: {Using=xpath, value=//*[name()=&quot;svg&quot; and @class=&quot;w-5 h-5 cursor-pointer text-gray-400 hover:text-blue-primary&quot;]}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy14.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 30 more
+</pre></div></td>
+<td>42</td>
+<td>project.testscenarios.TrailerScript@1cf6d1be</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -167,55 +315,76 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='project.testscenarios.DutyStatusSummaryScript.SearchandVerification()'><b>SearchandVerification</b><br>Test class: project.testscenarios.DutyStatusSummaryScript</td>
+<td title='project.testscenarios.TrailerScript.EditTrailer()'><b>EditTrailer</b><br>Test class: project.testscenarios.TrailerScript</td>
 <td></td>
-<td>20</td>
-<td>project.testscenarios.DutyStatusSummaryScript@1cf6d1be</td></tr>
+<td>21</td>
+<td>project.testscenarios.TrailerScript@1cf6d1be</td></tr>
 <tr>
-<td title='project.testscenarios.DutyStatusSummaryScript.DownloadFunctionality()'><b>DownloadFunctionality</b><br>Test class: project.testscenarios.DutyStatusSummaryScript</td>
+<td title='project.testscenarios.TrailerScript.NewTrailer()'><b>NewTrailer</b><br>Test class: project.testscenarios.TrailerScript</td>
 <td></td>
-<td>9</td>
-<td>project.testscenarios.DutyStatusSummaryScript@1cf6d1be</td></tr>
+<td>22</td>
+<td>project.testscenarios.TrailerScript@1cf6d1be</td></tr>
 <tr>
-<td title='project.testscenarios.DutyStatusSummaryScript.NavigatingDutyStatusSummaryReport()'><b>NavigatingDutyStatusSummaryReport</b><br>Test class: project.testscenarios.DutyStatusSummaryScript</td>
+<td title='project.testscenarios.TrailerScript.DeleteTrailer()'><b>DeleteTrailer</b><br>Test class: project.testscenarios.TrailerScript</td>
 <td></td>
-<td>16</td>
-<td>project.testscenarios.DutyStatusSummaryScript@1cf6d1be</td></tr>
+<td>52</td>
+<td>project.testscenarios.TrailerScript@1cf6d1be</td></tr>
 <tr>
-<td title='project.testscenarios.FuelEfficiencyReportScript.NavigatingFuelEfficiencyPage()'><b>NavigatingFuelEfficiencyPage</b><br>Test class: project.testscenarios.FuelEfficiencyReportScript</td>
-<td></td>
-<td>67</td>
-<td>project.testscenarios.FuelEfficiencyReportScript@74d1dc36</td></tr>
-<tr>
-<td title='project.testscenarios.APIKeyTransferScript.NavigatingAssetPage()'><b>NavigatingAssetPage</b><br>Test class: project.testscenarios.APIKeyTransferScript</td>
+<td title='project.testscenarios.TrailerScript.NavigatingTrailerPage()'><b>NavigatingTrailerPage</b><br>Test class: project.testscenarios.TrailerScript</td>
 <td></td>
 <td>2</td>
-<td>project.testscenarios.APIKeyTransferScript@663c9e7a</td></tr>
+<td>project.testscenarios.TrailerScript@1cf6d1be</td></tr>
+<tr>
+<td title='project.testscenarios.TrailerScript.NavigatingDeletedTruckPage()'><b>NavigatingDeletedTruckPage</b><br>Test class: project.testscenarios.TrailerScript</td>
+<td></td>
+<td>11</td>
+<td>project.testscenarios.TrailerScript@1cf6d1be</td></tr>
 <tr>
 <td title='project.testscenarios.LoginScript.validUserNameandPassword()'><b>validUserNameandPassword</b><br>Test class: project.testscenarios.LoginScript</td>
 <td></td>
-<td>5</td>
-<td>project.testscenarios.LoginScript@54422e18</td></tr>
+<td>6</td>
+<td>project.testscenarios.LoginScript@117159c0</td></tr>
 <tr>
-<td title='project.testscenarios.FuelEfficiencyReportScript.SearchandVerification()'><b>SearchandVerification</b><br>Test class: project.testscenarios.FuelEfficiencyReportScript</td>
+<td title='project.testscenarios.TrailerScript.NavigatingDeletedTrailerPage()'><b>NavigatingDeletedTrailerPage</b><br>Test class: project.testscenarios.TrailerScript</td>
 <td></td>
-<td>20</td>
-<td>project.testscenarios.FuelEfficiencyReportScript@74d1dc36</td></tr>
+<td>11</td>
+<td>project.testscenarios.TrailerScript@1cf6d1be</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
 <tr>
-<td title='project.testscenarios.FuelEfficiencyReportScript.FilterandVerification()'><b>FilterandVerification</b><br>Test class: project.testscenarios.FuelEfficiencyReportScript</td>
-<td></td>
-<td>24</td>
-<td>project.testscenarios.FuelEfficiencyReportScript@74d1dc36</td></tr>
-<tr>
-<td title='project.testscenarios.APIKeyTransferScript.ActiveandExpiredCountPage()'><b>ActiveandExpiredCountPage</b><br>Test class: project.testscenarios.APIKeyTransferScript</td>
-<td></td>
-<td>5</td>
-<td>project.testscenarios.APIKeyTransferScript@663c9e7a</td></tr>
-<tr>
-<td title='project.testscenarios.DutyStatusSummaryScript.FilterandVerification()'><b>FilterandVerification</b><br>Test class: project.testscenarios.DutyStatusSummaryScript</td>
-<td></td>
-<td>5</td>
-<td>project.testscenarios.DutyStatusSummaryScript@1cf6d1be</td></tr>
+<td title='project.testscenarios.TrailerScript.UnAssignTrailer()'><b>UnAssignTrailer</b><br>Test class: project.testscenarios.TrailerScript</td>
+<td><div><pre>java.lang.Throwable: Method TrailerScript.UnAssignTrailer()[pri:4, instance:project.testscenarios.TrailerScript@1cf6d1be] depends on not successfully finished methods
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1198045532", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1198045532'><pre>java.lang.Throwable: Method TrailerScript.UnAssignTrailer()[pri:4, instance:project.testscenarios.TrailerScript@1cf6d1be] depends on not successfully finished methods
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>project.testscenarios.TrailerScript@1cf6d1be</td></tr>
 </table><p>
 </body>
 </html>

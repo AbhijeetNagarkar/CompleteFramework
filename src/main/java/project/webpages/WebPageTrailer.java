@@ -378,7 +378,7 @@ public class WebPageTrailer {
 		
 		wait.until(ExpectedConditions.visibilityOf(dashtable.get(0)));
 					
-		if(vin.equalsIgnoreCase(dashtable.get(0).getText()))
+		if(vin.equalsIgnoreCase(dashtable.get(0).getText()) || (dashtable.get(0).getText()).equalsIgnoreCase(trailermap.get("New Trailer Identifier")))
 		{
 				if(string.equals(""))
 				{
@@ -460,30 +460,30 @@ public class WebPageTrailer {
 		
 		log.info("Clicked on Edit Trailer button ");
 		
-	//	Thread.sleep(3000);
+		Thread.sleep(1000);
 		}
 		catch(Exception e)
 		{
 			Assert.fail("Unable to click on Edit Trailer Button");
 		}
-		
-		trailermap.put("Trailer Identifier",(trailermap.get("Trailer Identifier"))+"123");
-		
+		//trailermap.put("Old Trailer Identifier",(trailermap.get("Trailer Identifier")));
+		trailermap.put("New Trailer Identifier",(trailermap.get("Trailer Identifier"))+"123");
 		try
 		{
-			wait.until(ExpectedConditions.visibilityOf(edittraileridentifier));
+	
+		wait.until(ExpectedConditions.visibilityOf(edittraileridentifier));
 		edittraileridentifier.clear();
 		
-		edittraileridentifier.sendKeys(trailermap.get("Trailer Identifier"));
+		edittraileridentifier.sendKeys(trailermap.get("New Trailer Identifier"));
 		
-	//	Thread.sleep(3000);
+		Thread.sleep(2000);
 		wait.until(ExpectedConditions.elementToBeClickable(updateButton));
 		
 		updateButton.click();
 		
 		log.info("Clicked on Update trailer button");
 		
-	//	Thread.sleep(3000);
+		Thread.sleep(4000);
 		
 		//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()=\"Attached Truck\"]")));
 
@@ -508,12 +508,21 @@ public class WebPageTrailer {
 		}
 		catch(Exception e)
 		{
-			Assert.fail("Unable to find deleted trailer on Deleted Trailer Page");
+			try
+			{
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//tr//td//div[text()='"+trailermap.get("New Trailer Identifier")+"']")));
+			
+			driver.findElement(By.xpath("//tr//td//div[text()='"+trailermap.get("New Trailer Identifier")+"']")).click();
+			}
+			catch(Exception e1)
+			{
+				Assert.fail("Unable to find deleted trailer on Deleted Trailer Page");
+			}
 		}
 			
 		log.info("Found deleted trailer "+trailermap.get("Trailer Identifier"));
 		
-	//	Thread.sleep(3000);
+		Thread.sleep(1000);
 		
 		try
 		{		
@@ -524,9 +533,19 @@ public class WebPageTrailer {
 		}
 		catch(Exception e)
 		{
-			Assert.fail("Unable to click on Activate Trailer button on Delete Trailer Page");
+			try
+			{		
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//tr//td//div[text()='"+trailermap.get("New Trailer Identifier")+"']//following::button")));
+			driver.findElements(By.xpath("//tr//td//div[text()='"+trailermap.get("New Trailer Identifier")+"']//following::button")).get(0).click();
+			
+			log.info("Clicked on Activate Trailer Button");
+			}
+			catch(Exception e1)
+			{
+				Assert.fail("Unable to click on Activate Trailer button on Delete Trailer Page");
+			}
 		}
-	//	Thread.sleep(3000);
+		Thread.sleep(1000);
 		
 		try
 		{
@@ -535,7 +554,7 @@ public class WebPageTrailer {
 		
 		log.info("Inserted Activate text in text box");
 		
-		//Thread.sleep(3000);
+		Thread.sleep(1000);
 		
 		wait.until(ExpectedConditions.elementToBeClickable(activateButton));
 		
@@ -548,7 +567,7 @@ public class WebPageTrailer {
 			Assert.fail("Unable to click on Activate button on Activate Trailer Prompt");
 		}
 		driver.navigate().refresh();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 
 	}
 	public void changeFocus()
