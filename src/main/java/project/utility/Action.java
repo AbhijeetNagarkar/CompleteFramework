@@ -21,4 +21,11 @@ public class Action {
 	{
 		Driver.GetDriver().close();
 	}
+	public static void Escape()
+	{
+		
+		act.keyDown(Keys.ESCAPE);
+		act.keyUp(Keys.ESCAPE);
+		act.perform();
+	}
 }
