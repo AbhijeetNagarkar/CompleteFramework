@@ -14,7 +14,6 @@ import org.testng.Assert;
 import project.mediator.TestData;
 import java.util.HashMap;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 
 public class WebPageLogin {
@@ -142,7 +141,6 @@ public class WebPageLogin {
 		}
 	}
 	
-	@SuppressWarnings("deprecation")
 	public boolean validate() throws InterruptedException
 	{
 		log.info("validating User Name and Password");

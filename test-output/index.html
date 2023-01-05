@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Test_Suite" class="navigator-link">
-              <span class="suite-name border-passed">Test Suite</span>
+              <span class="suite-name border-failed">Test Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -61,7 +61,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="group-Test_Suite" class="navigator-link ">
-                    <span>3 groups</span>
+                    <span>4 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,26 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">7 methods,   7 passed</span>
+                    <span class="method-stats">12 methods, 2 failed,   10 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Test_Suite" class="hide-methods failed suite-Test_Suite"> (hide)</a> <!-- hide-methods failed suite-Test_Suite -->
+                      <a href="#" panel-name="suite-Test_Suite" class="show-methods failed suite-Test_Suite"> (show)</a> <!-- show-methods failed suite-Test_Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Test_Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.FuelEfficiencyReportScript" class="method navigator-link" hash-for-method="DownloadFunctionality">DownloadFunctionality</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.APIKeyTransferScript" class="method navigator-link" hash-for-method="ShareAPIKeyFunctionality">ShareAPIKeyFunctionality</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Test_Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,32 +123,47 @@
                     <div class="method-list-content passed suite-Test_Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.AssetsScript" class="method navigator-link" hash-for-method="ListViewOfAssets">ListViewOfAssets</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.APIKeyTransferScript" class="method navigator-link" hash-for-method="ActiveandExpiredCountPage">ActiveandExpiredCountPage</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.AssetsScript" class="method navigator-link" hash-for-method="NavigatingAssetPage">NavigatingAssetPage</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.DutyStatusSummaryScript" class="method navigator-link" hash-for-method="DownloadFunctionality">DownloadFunctionality</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.TrackingLinksScript" class="method navigator-link" hash-for-method="NavigatingTrackingLinksPage">NavigatingTrackingLinksPage</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.FuelEfficiencyReportScript" class="method navigator-link" hash-for-method="FilterandVerification">FilterandVerification</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.TrackingLinksScript" class="method navigator-link" hash-for-method="RecordsOnTrackingLinks">RecordsOnTrackingLinks</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.DutyStatusSummaryScript" class="method navigator-link" hash-for-method="FilterandVerification">FilterandVerification</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.AssetsScript" class="method navigator-link" hash-for-method="SearchAssets">SearchAssets</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.APIKeyTransferScript" class="method navigator-link" hash-for-method="NavigatingAssetPage">NavigatingAssetPage</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.TrackingLinksScript" class="method navigator-link" hash-for-method="SearchTrackingLinks">SearchTrackingLinks</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.DutyStatusSummaryScript" class="method navigator-link" hash-for-method="NavigatingDutyStatusSummaryReport">NavigatingDutyStatusSummaryReport</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.FuelEfficiencyReportScript" class="method navigator-link" hash-for-method="NavigatingFuelEfficiencyPage">NavigatingFuelEfficiencyPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.DutyStatusSummaryScript" class="method navigator-link" hash-for-method="SearchandVerification">SearchandVerification</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.FuelEfficiencyReportScript" class="method navigator-link" hash-for-method="SearchandVerification">SearchandVerification</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -149,6 +183,47 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Test_Suite" class="panel Test_Suite">
+          <div class="suite-Test_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">project.testscenarios.FuelEfficiencyReportScript</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="DownloadFunctionality">
+                  </a> <!-- DownloadFunctionality -->
+                  <span class="method-name">DownloadFunctionality</span>
+                  <div class="stack-trace">java.lang.AssertionError: Download functionality Not working expected [true] but found [false]
+	at project.testscenarios.FuelEfficiencyReportScript.DownloadFunctionality(FuelEfficiencyReportScript.java:45)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test_Suite-class-failed -->
+          <div class="suite-Test_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">project.testscenarios.APIKeyTransferScript</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="ShareAPIKeyFunctionality">
+                  </a> <!-- ShareAPIKeyFunctionality -->
+                  <span class="method-name">ShareAPIKeyFunctionality</span>
+                  <div class="stack-trace">java.lang.AssertionError: drop down options not available in Share Link With API Partner Prompt
+	at project.webpages.WebPageAPIKeyTransfer.shareAPIKey(WebPageAPIKeyTransfer.java:134)
+	at project.testscenarios.APIKeyTransferScript.ShareAPIKeyFunctionality(APIKeyTransferScript.java:43)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test_Suite-class-failed -->
           <div class="suite-Test_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -167,14 +242,43 @@
           <div class="suite-Test_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">project.testscenarios.AssetsScript</span>
+              <span class="class-name">project.testscenarios.FuelEfficiencyReportScript</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="ListViewOfAssets">
-                  </a> <!-- ListViewOfAssets -->
-                  <span class="method-name">ListViewOfAssets</span>
+                  <a name="FilterandVerification">
+                  </a> <!-- FilterandVerification -->
+                  <span class="method-name">FilterandVerification</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="NavigatingFuelEfficiencyPage">
+                  </a> <!-- NavigatingFuelEfficiencyPage -->
+                  <span class="method-name">NavigatingFuelEfficiencyPage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="SearchandVerification">
+                  </a> <!-- SearchandVerification -->
+                  <span class="method-name">SearchandVerification</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test_Suite-class-passed -->
+          <div class="suite-Test_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">project.testscenarios.APIKeyTransferScript</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="ActiveandExpiredCountPage">
+                  </a> <!-- ActiveandExpiredCountPage -->
+                  <span class="method-name">ActiveandExpiredCountPage</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -184,40 +288,40 @@
                   <span class="method-name">NavigatingAssetPage</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="SearchAssets">
-                  </a> <!-- SearchAssets -->
-                  <span class="method-name">SearchAssets</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Test_Suite-class-passed -->
           <div class="suite-Test_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">project.testscenarios.TrackingLinksScript</span>
+              <span class="class-name">project.testscenarios.DutyStatusSummaryScript</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="NavigatingTrackingLinksPage">
-                  </a> <!-- NavigatingTrackingLinksPage -->
-                  <span class="method-name">NavigatingTrackingLinksPage</span>
+                  <a name="DownloadFunctionality">
+                  </a> <!-- DownloadFunctionality -->
+                  <span class="method-name">DownloadFunctionality</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="RecordsOnTrackingLinks">
-                  </a> <!-- RecordsOnTrackingLinks -->
-                  <span class="method-name">RecordsOnTrackingLinks</span>
+                  <a name="FilterandVerification">
+                  </a> <!-- FilterandVerification -->
+                  <span class="method-name">FilterandVerification</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="SearchTrackingLinks">
-                  </a> <!-- SearchTrackingLinks -->
-                  <span class="method-name">SearchTrackingLinks</span>
+                  <a name="NavigatingDutyStatusSummaryReport">
+                  </a> <!-- NavigatingDutyStatusSummaryReport -->
+                  <span class="method-name">NavigatingDutyStatusSummaryReport</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="SearchandVerification">
+                  </a> <!-- SearchandVerification -->
+                  <span class="method-name">SearchandVerification</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -238,8 +342,9 @@
   &lt;test thread-count=&quot;1&quot; name=&quot;TruckX Test Automation&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;project.testscenarios.LoginScript&quot;/&gt;
-      &lt;class name=&quot;project.testscenarios.AssetsScript&quot;/&gt;
-      &lt;class name=&quot;project.testscenarios.TrackingLinksScript&quot;/&gt;
+      &lt;class name=&quot;project.testscenarios.FuelEfficiencyReportScript&quot;/&gt;
+      &lt;class name=&quot;project.testscenarios.DutyStatusSummaryScript&quot;/&gt;
+      &lt;class name=&quot;project.testscenarios.APIKeyTransferScript&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- TruckX Test Automation --&gt;
 &lt;/suite&gt; &lt;!-- Test Suite --&gt;
@@ -253,7 +358,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">TruckX Test Automation (3 classes)</span>
+                <span class="test-name">TruckX Test Automation (4 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -264,10 +369,10 @@
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="test-group">
-              <span class="test-group-name">Assets</span>
+              <span class="test-group-name">API Key Transfer</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">ListViewOfAssets</span>
+                <span class="method-in-group-name">ActiveandExpiredCountPage</span>
                 <br/>
               </div> <!-- method-in-group -->
               <div class="method-in-group">
@@ -275,7 +380,47 @@
                 <br/>
               </div> <!-- method-in-group -->
               <div class="method-in-group">
-                <span class="method-in-group-name">SearchAssets</span>
+                <span class="method-in-group-name">ShareAPIKeyFunctionality</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">Duty Status Summary Report</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">DownloadFunctionality</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">FilterandVerification</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">NavigatingDutyStatusSummaryReport</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">SearchandVerification</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">Fuel Efficiency Reports</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">DownloadFunctionality</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">FilterandVerification</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">NavigatingFuelEfficiencyPage</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">SearchandVerification</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -284,22 +429,6 @@
               <br/>
               <div class="method-in-group">
                 <span class="method-in-group-name">validUserNameandPassword</span>
-                <br/>
-              </div> <!-- method-in-group -->
-            </div> <!-- test-group -->
-            <div class="test-group">
-              <span class="test-group-name">Tracking Links</span>
-              <br/>
-              <div class="method-in-group">
-                <span class="method-in-group-name">NavigatingTrackingLinksPage</span>
-                <br/>
-              </div> <!-- method-in-group -->
-              <div class="method-in-group">
-                <span class="method-in-group-name">RecordsOnTrackingLinks</span>
-                <br/>
-              </div> <!-- method-in-group -->
-              <div class="method-in-group">
-                <span class="method-in-group-name">SearchTrackingLinks</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -319,40 +448,60 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(7);
+data.addRows(12);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'ListViewOfAssets')
-data.setCell(0, 2, 'project.testscenarios.AssetsScript')
-data.setCell(0, 3, 37439);
+data.setCell(0, 1, 'NavigatingFuelEfficiencyPage')
+data.setCell(0, 2, 'project.testscenarios.FuelEfficiencyReportScript')
+data.setCell(0, 3, 67256);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'SearchAssets')
-data.setCell(1, 2, 'project.testscenarios.AssetsScript')
-data.setCell(1, 3, 18263);
+data.setCell(1, 1, 'FilterandVerification')
+data.setCell(1, 2, 'project.testscenarios.FuelEfficiencyReportScript')
+data.setCell(1, 3, 24895);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'validUserNameandPassword')
-data.setCell(2, 2, 'project.testscenarios.LoginScript')
-data.setCell(2, 3, 5127);
+data.setCell(2, 1, 'ShareAPIKeyFunctionality')
+data.setCell(2, 2, 'project.testscenarios.APIKeyTransferScript')
+data.setCell(2, 3, 24482);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'SearchTrackingLinks')
-data.setCell(3, 2, 'project.testscenarios.TrackingLinksScript')
-data.setCell(3, 3, 2327);
+data.setCell(3, 1, 'DownloadFunctionality')
+data.setCell(3, 2, 'project.testscenarios.FuelEfficiencyReportScript')
+data.setCell(3, 3, 23988);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'NavigatingTrackingLinksPage')
-data.setCell(4, 2, 'project.testscenarios.TrackingLinksScript')
-data.setCell(4, 3, 2250);
+data.setCell(4, 1, 'SearchandVerification')
+data.setCell(4, 2, 'project.testscenarios.DutyStatusSummaryScript')
+data.setCell(4, 3, 20316);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'NavigatingAssetPage')
-data.setCell(5, 2, 'project.testscenarios.AssetsScript')
-data.setCell(5, 3, 2178);
+data.setCell(5, 1, 'SearchandVerification')
+data.setCell(5, 2, 'project.testscenarios.FuelEfficiencyReportScript')
+data.setCell(5, 3, 20201);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'RecordsOnTrackingLinks')
-data.setCell(6, 2, 'project.testscenarios.TrackingLinksScript')
-data.setCell(6, 3, 224);
+data.setCell(6, 1, 'NavigatingDutyStatusSummaryReport')
+data.setCell(6, 2, 'project.testscenarios.DutyStatusSummaryScript')
+data.setCell(6, 3, 16035);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'DownloadFunctionality')
+data.setCell(7, 2, 'project.testscenarios.DutyStatusSummaryScript')
+data.setCell(7, 3, 9521);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'ActiveandExpiredCountPage')
+data.setCell(8, 2, 'project.testscenarios.APIKeyTransferScript')
+data.setCell(8, 3, 5447);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'FilterandVerification')
+data.setCell(9, 2, 'project.testscenarios.DutyStatusSummaryScript')
+data.setCell(9, 3, 5404);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'validUserNameandPassword')
+data.setCell(10, 2, 'project.testscenarios.LoginScript')
+data.setCell(10, 3, 5225);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'NavigatingAssetPage')
+data.setCell(11, 2, 'project.testscenarios.APIKeyTransferScript')
+data.setCell(11, 3, 2341);
 window.suiteTableData['Test_Suite']= { tableData: data, tableDiv: 'times-div-Test_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 3 minutes</span>
               <div id="times-div-Test_Suite">
               </div> <!-- times-div-Test_Suite -->
             </div> <!-- times-div -->
@@ -380,61 +529,92 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">project.testscenarios.LoginScript</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">preRequisite(org.testng.TestRunner@3830b06c)</span>
+                <span class="method-name">preRequisite(org.testng.TestRunner@4e958f08)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-class before">
                 <span class="method-name">Fetct_Repository_Object</span>
-                <span class="method-start">74006 ms</span>
+                <span class="method-start">63333 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">validUserNameandPassword</span>
-                <span class="method-start">74018 ms</span>
+                <span class="method-start">63345 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">project.testscenarios.AssetsScript</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">project.testscenarios.FuelEfficiencyReportScript</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">Fetct_Repository_Object</span>
-                <span class="method-start">79151 ms</span>
+                <span class="method-start">68575 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">NavigatingFuelEfficiencyPage</span>
+                <span class="method-start">68576 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">SearchandVerification</span>
+                <span class="method-start">135834 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">DownloadFunctionality</span>
+                <span class="method-start">156040 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">FilterandVerification</span>
+                <span class="method-start">184283 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">project.testscenarios.DutyStatusSummaryScript</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">Fetct_Repository_Object</span>
+                <span class="method-start">209180 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">NavigatingDutyStatusSummaryReport</span>
+                <span class="method-start">209181 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">SearchandVerification</span>
+                <span class="method-start">225219 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">FilterandVerification</span>
+                <span class="method-start">245536 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">DownloadFunctionality</span>
+                <span class="method-start">250942 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">project.testscenarios.APIKeyTransferScript</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">Fetct_Repository_Object</span>
+                <span class="method-start">260465 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">NavigatingAssetPage</span>
-                <span class="method-start">79151 ms</span>
+                <span class="method-start">260466 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">ListViewOfAssets</span>
-                <span class="method-start">81332 ms</span>
+                <span class="method-name">ActiveandExpiredCountPage</span>
+                <span class="method-start">262809 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">SearchAssets</span>
-                <span class="method-start">118775 ms</span>
-              </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">project.testscenarios.TrackingLinksScript</div> <!-- chronological-class-name -->
-              <div class="configuration-class before">
-                <span class="method-name">Fetct_Repository_Object</span>
-                <span class="method-start">137039 ms</span>
-              </div> <!-- configuration-class before -->
-              <div class="test-method">
-                <span class="method-name">NavigatingTrackingLinksPage</span>
-                <span class="method-start">137040 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">SearchTrackingLinks</span>
-                <span class="method-start">139292 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">RecordsOnTrackingLinks</span>
-                <span class="method-start">141622 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">ShareAPIKeyFunctionality</span>
+                <span class="method-start">268259 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">project.testscenarios.LoginScript</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">141863 ms</span>
+                <span class="method-start">297247 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

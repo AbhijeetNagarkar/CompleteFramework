@@ -6,13 +6,20 @@
   </listeners>
   <test thread-count="5" name="TruckX Test Automation(failed)">
     <classes>
-      <class name="project.testscenarios.AssetsScript">
+      <class name="project.testscenarios.FuelEfficiencyReportScript">
         <methods>
-          <include name="NavigatingAssetPage"/>
+          <include name="DownloadFunctionality"/>
           <include name="Fetct_Repository_Object"/>
-          <include name="SearchAssets"/>
+          <include name="NavigatingFuelEfficiencyPage"/>
         </methods>
-      </class> <!-- project.testscenarios.AssetsScript -->
+      </class> <!-- project.testscenarios.FuelEfficiencyReportScript -->
+      <class name="project.testscenarios.APIKeyTransferScript">
+        <methods>
+          <include name="Fetct_Repository_Object"/>
+          <include name="ShareAPIKeyFunctionality"/>
+          <include name="NavigatingAssetPage"/>
+        </methods>
+      </class> <!-- project.testscenarios.APIKeyTransferScript -->
     </classes>
   </test> <!-- TruckX Test Automation(failed) -->
 </suite> <!-- Failed suite [Test Suite] -->
