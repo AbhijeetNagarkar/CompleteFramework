@@ -49,7 +49,7 @@ public class WebPageDashCamera {
 	@FindBy(xpath = "//div[@class=\"w-1/3 xl:w-1/4 h-full\"]//input")
 	WebElement searchBox;
 	
-	@FindBy(xpath = "//div[@class=\"ml-10 mt-2\"]//span[text()=\"Dash Cameras\"]")
+	@FindBy(xpath = "//div[@class=\"ml-10 mt-2\"]//span")
 	WebElement changefocus;
 	
 	public Boolean verifyDashCameraCount() throws InterruptedException
@@ -139,15 +139,15 @@ public class WebPageDashCamera {
 	{
 		try
 		{
-			Thread.sleep(2000);
-			
-			wait.until(ExpectedConditions.elementToBeClickable(countDevices));
-			Thread.sleep(5000);
-			countDevices.click();
+			Thread.sleep(3000);
+			changefocus.click();
+			log.info("Clicked on Dash Camera title");
 			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@class=\"w-1/3 xl:w-1/4 h-full\"]//td[@class=\"rc-table-cell\"]//div[@class=\"font-semibold\"]")));
 			List<WebElement> li=driver.findElements(By.xpath("//div[@class=\"w-1/3 xl:w-1/4 h-full\"]//td[@class=\"rc-table-cell\"]//div[@class=\"font-semibold\"]"));
-			Thread.sleep(2000);
+			log.info("Created list of Dash Camera to click on it");
+			Thread.sleep(3000);
 			li.get(2).click();
+			log.info("Clicked on 3rd Dash Camera to check records");
 		}
 		catch(Exception e)
 		{

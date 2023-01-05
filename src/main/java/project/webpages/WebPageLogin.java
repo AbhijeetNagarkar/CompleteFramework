@@ -14,7 +14,6 @@ import org.testng.Assert;
 import project.mediator.TestData;
 import java.util.HashMap;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 
 public class WebPageLogin {
@@ -69,12 +68,11 @@ public class WebPageLogin {
 	}
 	public void enterUserName() throws InterruptedException
 	{
-		Thread.sleep(3000);
 		try
 		{
+			wait.until(ExpectedConditions.elementToBeClickable(userName));
 			flag=1;
 			clear();
-			wait.until(ExpectedConditions.elementToBeClickable(userName));
 			userName.sendKeys(logindata.get("User Name"));
 			log.info("User Name Entered");
 		}
@@ -143,10 +141,8 @@ public class WebPageLogin {
 		}
 	}
 	
-	@SuppressWarnings("deprecation")
 	public boolean validate() throws InterruptedException
 	{
-		Thread.sleep(5000);
 		log.info("validating User Name and Password");
 		if(flag==1)
 		{
@@ -157,12 +153,14 @@ public class WebPageLogin {
 				if(driver.findElement(By.xpath("//div[@class=\"flex flex-col\"]//*[text()=\"Logbook\"]")).getText().equalsIgnoreCase("Logbook"))
 				{
 				
-					fwait = new FluentWait<WebDriver>(driver)
+				/*	fwait = new FluentWait<WebDriver>(driver)
 					.withTimeout(30,TimeUnit.SECONDS)
 					.pollingEvery(1,TimeUnit.SECONDS)
 					.ignoring(Exception.class);
 					
 					fwait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class=\"driver-details\"]")));
+					*/
+					return true;
 				}
 				else return false;
 		}

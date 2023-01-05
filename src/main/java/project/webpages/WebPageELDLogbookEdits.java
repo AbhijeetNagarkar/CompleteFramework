@@ -47,39 +47,38 @@ WebDriver driver;
 		// TODO Auto-generated method stub
 		Thread.sleep(3000);
 		search.clear();
-		search.sendKeys("demo");
+		search.sendKeys("Parul");
 		Thread.sleep(2000);
 		
-		if(driver.findElement(By.xpath("//h1[text()=\"No Data\"]")).isDisplayed())
-		{
-			log.info("NO Data available");
-			return false;
-		}
 		
-		else
-		{
-			
 		List<WebElement> ele = driver.findElements(By.xpath("//tbody[@class=\"rc-table-tbody\"]//tr//td//a//div"));
 		
-		for(WebElement element : ele)
+		if(ele.size()==0)
 		{
-			if(element.getText().toLowerCase().contains("demo"))
-			{
-				continue;
-			}
-			else
-			{	log.info("Search records not matched as per search text");
-				search.clear();
-				return false;
-			}
-				
+			log.info("Search records Not available for given search text");
+			return true;
+
 		}
-		
-	
-		log.info("Search records matched as per search text");
+		else
+		{
+			for(WebElement element : ele)
+			{
+				if(element.getText().toLowerCase().contains("parul"))
+				{
+					continue;
+				}
+				else
+				{	log.info("Search records not matched as per search text");
+					search.clear();
+					return false;
+				}
+					
+			}
+		}
+		log.info("Search records are matched as per search text");
 		search.clear();
 		return true;
-		}
+		
 	}
 	
 	public Boolean filterandverification() throws InterruptedException

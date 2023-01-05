@@ -70,7 +70,7 @@ public class WebPageLogout {
 	 
 			try
 			{			
-				if(driver.getCurrentUrl().equals("https://web.truckx.com/#/login"))
+				if(driver.getCurrentUrl().equals("https://35.238.126.102/#/login"))
 				{
 				log.info("Validated login URL after logout click");
 					

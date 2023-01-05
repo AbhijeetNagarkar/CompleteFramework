@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>TruckX Test Automation</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>5/2/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>10/2/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Jan 03 17:11:05 IST 2023</td>
+<td>Started on:</td><td>Thu Jan 05 15:59:37 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>98 seconds (98053 ms)</td>
+<tr><td>Total time:</td><td>233 seconds (233911 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,16 +75,16 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='project.testscenarios.FuelEfficiencyReportScript.SearchandVerification()'><b>SearchandVerification</b><br>Test class: project.testscenarios.FuelEfficiencyReportScript</td>
-<td><div><pre>java.lang.AssertionError: Search functionality not working as expected expected [true] but found [false]
-	at project.testscenarios.FuelEfficiencyReportScript.SearchandVerification(FuelEfficiencyReportScript.java:39)
+<td title='project.testscenarios.FuelEfficiencyReportScript.DownloadFunctionality()'><b>DownloadFunctionality</b><br>Test class: project.testscenarios.FuelEfficiencyReportScript</td>
+<td><div><pre>java.lang.AssertionError: Download functionality Not working expected [true] but found [false]
+	at project.testscenarios.FuelEfficiencyReportScript.DownloadFunctionality(FuelEfficiencyReportScript.java:45)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1638631856", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1638631856'><pre>java.lang.AssertionError: Search functionality not working as expected expected [true] but found [false]
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace597623166", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace597623166'><pre>java.lang.AssertionError: Download functionality Not working expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:99)
 	at org.testng.Assert.failNotEquals(Assert.java:1037)
 	at org.testng.Assert.assertTrue(Assert.java:45)
-	at project.testscenarios.FuelEfficiencyReportScript.SearchandVerification(FuelEfficiencyReportScript.java:39)
+	at project.testscenarios.FuelEfficiencyReportScript.DownloadFunctionality(FuelEfficiencyReportScript.java:45)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -114,19 +114,19 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>14</td>
-<td>project.testscenarios.FuelEfficiencyReportScript@408d971b</td></tr>
+<td>23</td>
+<td>project.testscenarios.FuelEfficiencyReportScript@74d1dc36</td></tr>
 <tr>
-<td title='project.testscenarios.ELDLogbookEditsScript.SearchandVerification()'><b>SearchandVerification</b><br>Test class: project.testscenarios.ELDLogbookEditsScript</td>
-<td><div><pre>java.lang.AssertionError: Search functionality not working as expected expected [true] but found [false]
-	at project.testscenarios.ELDLogbookEditsScript.SearchandVerification(ELDLogbookEditsScript.java:39)
+<td title='project.testscenarios.APIKeyTransferScript.ShareAPIKeyFunctionality()'><b>ShareAPIKeyFunctionality</b><br>Test class: project.testscenarios.APIKeyTransferScript</td>
+<td><div><pre>java.lang.AssertionError: drop down options not available in Share Link With API Partner Prompt
+	at project.webpages.WebPageAPIKeyTransfer.shareAPIKey(WebPageAPIKeyTransfer.java:134)
+	at project.testscenarios.APIKeyTransferScript.ShareAPIKeyFunctionality(APIKeyTransferScript.java:43)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1505474932", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1505474932'><pre>java.lang.AssertionError: Search functionality not working as expected expected [true] but found [false]
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace582979874", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace582979874'><pre>java.lang.AssertionError: drop down options not available in Share Link With API Partner Prompt
 	at org.testng.Assert.fail(Assert.java:99)
-	at org.testng.Assert.failNotEquals(Assert.java:1037)
-	at org.testng.Assert.assertTrue(Assert.java:45)
-	at project.testscenarios.ELDLogbookEditsScript.SearchandVerification(ELDLogbookEditsScript.java:39)
+	at project.webpages.WebPageAPIKeyTransfer.shareAPIKey(WebPageAPIKeyTransfer.java:134)
+	at project.testscenarios.APIKeyTransferScript.ShareAPIKeyFunctionality(APIKeyTransferScript.java:43)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -156,8 +156,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>8</td>
-<td>project.testscenarios.ELDLogbookEditsScript@6c6cb480</td></tr>
+<td>24</td>
+<td>project.testscenarios.APIKeyTransferScript@663c9e7a</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -167,30 +167,55 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='project.testscenarios.LoginScript.validUserNameandPassword()'><b>validUserNameandPassword</b><br>Test class: project.testscenarios.LoginScript</td>
+<td title='project.testscenarios.DutyStatusSummaryScript.SearchandVerification()'><b>SearchandVerification</b><br>Test class: project.testscenarios.DutyStatusSummaryScript</td>
 <td></td>
-<td>17</td>
-<td>project.testscenarios.LoginScript@3754a4bf</td></tr>
+<td>20</td>
+<td>project.testscenarios.DutyStatusSummaryScript@1cf6d1be</td></tr>
 <tr>
-<td title='project.testscenarios.ELDLogbookEditsScript.NavigatingELDLogbookEditReportsPage()'><b>NavigatingELDLogbookEditReportsPage</b><br>Test class: project.testscenarios.ELDLogbookEditsScript</td>
+<td title='project.testscenarios.DutyStatusSummaryScript.DownloadFunctionality()'><b>DownloadFunctionality</b><br>Test class: project.testscenarios.DutyStatusSummaryScript</td>
 <td></td>
-<td>7</td>
-<td>project.testscenarios.ELDLogbookEditsScript@6c6cb480</td></tr>
+<td>9</td>
+<td>project.testscenarios.DutyStatusSummaryScript@1cf6d1be</td></tr>
 <tr>
-<td title='project.testscenarios.ELDLogbookEditsScript.FilterandVerification()'><b>FilterandVerification</b><br>Test class: project.testscenarios.ELDLogbookEditsScript</td>
+<td title='project.testscenarios.DutyStatusSummaryScript.NavigatingDutyStatusSummaryReport()'><b>NavigatingDutyStatusSummaryReport</b><br>Test class: project.testscenarios.DutyStatusSummaryScript</td>
 <td></td>
-<td>27</td>
-<td>project.testscenarios.ELDLogbookEditsScript@6c6cb480</td></tr>
+<td>16</td>
+<td>project.testscenarios.DutyStatusSummaryScript@1cf6d1be</td></tr>
 <tr>
 <td title='project.testscenarios.FuelEfficiencyReportScript.NavigatingFuelEfficiencyPage()'><b>NavigatingFuelEfficiencyPage</b><br>Test class: project.testscenarios.FuelEfficiencyReportScript</td>
 <td></td>
-<td>7</td>
-<td>project.testscenarios.FuelEfficiencyReportScript@408d971b</td></tr>
+<td>67</td>
+<td>project.testscenarios.FuelEfficiencyReportScript@74d1dc36</td></tr>
+<tr>
+<td title='project.testscenarios.APIKeyTransferScript.NavigatingAssetPage()'><b>NavigatingAssetPage</b><br>Test class: project.testscenarios.APIKeyTransferScript</td>
+<td></td>
+<td>2</td>
+<td>project.testscenarios.APIKeyTransferScript@663c9e7a</td></tr>
+<tr>
+<td title='project.testscenarios.LoginScript.validUserNameandPassword()'><b>validUserNameandPassword</b><br>Test class: project.testscenarios.LoginScript</td>
+<td></td>
+<td>5</td>
+<td>project.testscenarios.LoginScript@54422e18</td></tr>
+<tr>
+<td title='project.testscenarios.FuelEfficiencyReportScript.SearchandVerification()'><b>SearchandVerification</b><br>Test class: project.testscenarios.FuelEfficiencyReportScript</td>
+<td></td>
+<td>20</td>
+<td>project.testscenarios.FuelEfficiencyReportScript@74d1dc36</td></tr>
 <tr>
 <td title='project.testscenarios.FuelEfficiencyReportScript.FilterandVerification()'><b>FilterandVerification</b><br>Test class: project.testscenarios.FuelEfficiencyReportScript</td>
 <td></td>
-<td>12</td>
-<td>project.testscenarios.FuelEfficiencyReportScript@408d971b</td></tr>
+<td>24</td>
+<td>project.testscenarios.FuelEfficiencyReportScript@74d1dc36</td></tr>
+<tr>
+<td title='project.testscenarios.APIKeyTransferScript.ActiveandExpiredCountPage()'><b>ActiveandExpiredCountPage</b><br>Test class: project.testscenarios.APIKeyTransferScript</td>
+<td></td>
+<td>5</td>
+<td>project.testscenarios.APIKeyTransferScript@663c9e7a</td></tr>
+<tr>
+<td title='project.testscenarios.DutyStatusSummaryScript.FilterandVerification()'><b>FilterandVerification</b><br>Test class: project.testscenarios.DutyStatusSummaryScript</td>
+<td></td>
+<td>5</td>
+<td>project.testscenarios.DutyStatusSummaryScript@1cf6d1be</td></tr>
 </table><p>
 </body>
 </html>

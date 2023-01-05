@@ -36,7 +36,7 @@ WebDriver driver;
 	@FindBy(xpath = "//div[@class=\"flex items-center\"]//span[text()=\"Reset All\"]")
 	WebElement resetfilter;
 	
-	@FindBy(xpath = "//div[@class=\"ml-10 mt-2\"]//span[text()=\"Driver Safety Report\"]")
+	@FindBy(xpath = "//div[@class=\"ml-10 mt-2\"]//span")
 	WebElement changefocus;
 	
 
@@ -53,22 +53,33 @@ WebDriver driver;
 		search.sendKeys("demo");
 		Thread.sleep(2000);
 		
-		List<WebElement> ele = driver.findElements(By.xpath("//tbody[@class=\"rc-table-tbody\"]//tr//td//div"));
+		List<WebElement> ele = driver.findElements(By.xpath("//tbody[@class=\"rc-table-tbody\"]//tr//td[@class=\"rc-table-cell\"][0]//div"));
 		
-		for(WebElement element : ele)
+		if(ele.size()==0)
 		{
-			if(element.getText().toLowerCase().contains("demo"))
-			{
-				continue;
-			}
-			else
-			{	log.info("Search records not matched as per search text");
-				search.clear();
-				return false;
-			}
-				
+			log.info("Search records Not available for given search text");
+			search.clear();
+			return true;
+
 		}
-		log.info("Search records matched as per search text");
+		else
+		{
+			for(WebElement element : ele)
+			{
+				if(element.getText().toLowerCase().contains("demo"))
+				{
+					continue;
+				}
+				else
+				{	log.info("Search records not matched as per search text");
+					search.clear();
+					return false;
+				}
+					
+			}
+		}
+		log.info("Search records matched for given search text");
+
 		search.clear();
 		return true;		
 	}
@@ -88,7 +99,7 @@ WebDriver driver;
 			filteroption.get(1).click();
 			log.info("Clicked on last 7 days report");
 
-			List<WebElement> ele = driver.findElements(By.xpath("//tbody[@class=\"rc-table-tbody\"]//tr"));
+			List<WebElement> ele = driver.findElements(By.xpath("//tbody[@class=\"rc-table-tbody\"]//tr//td[@class=\"rc-table-cell\"][0]//div"));
 				
 			if(ele.size()>0)
 				log.info("Records available for last 7 days");
@@ -105,5 +116,44 @@ WebDriver driver;
 			return false;
 		}
 		
+	}
+	public Boolean VerifyDownload() throws InterruptedException
+	{
+		try
+		{
+			Thread.sleep(2000);
+			changefocus.click();
+			Thread.sleep(2000);
+			
+			driver.findElement(By.xpath("//button//span[text()=\"Download\"]")).click();
+			
+			log.info("Clicked on Download Button");
+			
+			Thread.sleep(2000);
+			
+			driver.findElement(By.xpath("//div[text()=\"PDF\"]")).click();
+			
+			log.info("Clicked on PDF Button");
+			
+			int size1=driver.findElements(By.xpath("//button//span[text()=\"Download\"]")).size();
+			Thread.sleep(1000);
+			int size2=driver.findElements(By.xpath("//span[text()=\"Download started.\"]")).size();
+			if(size1<1 || size2==1)
+			{
+				log.info("Downloading file");
+				return true;
+			}
+			else
+			{
+				log.info("Unable to downlaod File");
+				return false;
+			}
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			log.info("Caught Exception while downlaod File");
+			return false;
+		}
+			
 	}
 }

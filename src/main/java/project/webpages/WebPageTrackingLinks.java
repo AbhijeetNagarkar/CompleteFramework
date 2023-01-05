@@ -33,13 +33,14 @@ public class WebPageTrackingLinks {
 	@FindBy(xpath = "//input")
 	WebElement search;
 
+	@FindBy(xpath = "//div[@class=\"ml-10 mt-2\"]//span")
+	WebElement changefocus;
 	public Boolean search() throws InterruptedException
 	{
 		try
 		{
 			wait.until(ExpectedConditions.visibilityOf(search));
-			search.click();
-			Thread.sleep(2000);
+			changefocus.click();
 			
 			search.clear();
 			
@@ -47,7 +48,7 @@ public class WebPageTrackingLinks {
 			
 			log.info("Entered trailer in search box");
 			
-			Thread.sleep(3000);
+			Thread.sleep(2000);
 			
 			return true;
 		}
@@ -56,8 +57,9 @@ public class WebPageTrackingLinks {
 			return false;
 		}
 	}
-	public Boolean verifyResult()
+	public Boolean verifyResult() throws InterruptedException
 	{
+		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//tr[@class=\"rc-table-row rc-table-row-level-0 text-base text-gray-400 bg-white border-b border-gray-100 h-12 w-full rounded-md hover:bg-blue-tablerow\"]//td[2]//div")));
 		List<WebElement> rows = driver.findElements(By.xpath("//tr[@class=\"rc-table-row rc-table-row-level-0 text-base text-gray-400 bg-white border-b border-gray-100 h-12 w-full rounded-md hover:bg-blue-tablerow\"]//td[2]//div"));
 	
 		log.info("Captured result into list");

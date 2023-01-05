@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -85,6 +86,11 @@ public class WebPageReports {
 		// TODO Auto-generated method stub
 		try
 		{
+			
+			driver.findElement(By.xpath("//div[@class=\"ml-10 mt-2\"]//span")).click();
+			WebElement element1 = driver.findElement(By.xpath("//a//span[text()='"+string+"']"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", element1);
+
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a//span[text()='"+string+"']")));
 			driver.findElement(By.xpath("//a//span[text()='"+string+"']")).click();
 			log.info("Clicked on "+string+" report");
@@ -111,7 +117,9 @@ public class WebPageReports {
 	public Boolean search() throws InterruptedException
 	{
 		Thread.sleep(1000);
-		
+		driver.findElement(By.xpath("//div[@class=\"ml-10 mt-2\"]//span")).click();
+		Thread.sleep(1000);
+
 		search.sendKeys("Driver Safety");
 		
 		Thread.sleep(4000);

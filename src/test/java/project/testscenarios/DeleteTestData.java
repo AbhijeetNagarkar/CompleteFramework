@@ -50,8 +50,6 @@ public class DeleteTestData {
 					
 			repo.dashboardPageObject().clickOnTrailers();
 					
-			repo.trailerPageObject().changeFocus();
-					
 			repo.trailerPageObject().SearchTrailer();
 	
 			repo.trailerPageObject().DeleteTrailer();

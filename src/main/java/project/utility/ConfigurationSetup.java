@@ -88,8 +88,10 @@ public class ConfigurationSetup
 								 		 
 				case "Chrome"  : WebDriverManager.chromedriver().setup();
 								 ChromeOptions chrome_options = new ChromeOptions();
-								// chrome_options.addArguments("--no-sandbox");
-								// chrome_options.addArguments("--headless");
+								 chrome_options.addArguments("--no-sandbox");
+								 chrome_options.addArguments("--headless");
+								 chrome_options.addArguments("--ignore-ssl-errors=yes");
+								 chrome_options.addArguments("--ignore-certificate-errors");
 								 driver = new ChromeDriver(chrome_options);
 								
 								 break;
@@ -113,6 +115,8 @@ public class ConfigurationSetup
 		{
 			try
 			{
+			//	url="https://web.truckx.com/#/login";
+				url="https://35.238.126.102/#/login";
 				log.info(" Navigating to "+url);
 				driver.get(url);
 	

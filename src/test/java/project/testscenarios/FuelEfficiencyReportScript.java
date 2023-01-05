@@ -38,10 +38,18 @@ public class FuelEfficiencyReportScript {
 	{
 		Assert.assertTrue(repo.FuelEfficiencyPageObject().SearchandVerifyRecords(),"Search functionality not working as expected");
 	}
+	
 	@Test(priority = 3,groups = {"Fuel Efficiency Reports"},dependsOnMethods = "NavigatingFuelEfficiencyPage" )
+	public void DownloadFunctionality() throws InterruptedException 
+	{
+		Assert.assertTrue(repo.FuelEfficiencyPageObject().VerifyDownload(),"Download functionality Not working");
+	}
+	@Test(priority = 4,groups = {"Fuel Efficiency Reports"},dependsOnMethods = "NavigatingFuelEfficiencyPage" )
 	public void FilterandVerification() throws InterruptedException 
 	{
 		Assert.assertTrue(repo.FuelEfficiencyPageObject().filterandverification(),"Records not showing as per filter criteria");
 	}
 
+
+	
 }

@@ -1,128 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="5" failed="2" skipped="0">
+<testng-results ignored="0" total="12" passed="10" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-01-03T17:11:05 IST" name="Test Suite" finished-at="2023-01-03T17:12:43 IST" duration-ms="98053">
+  <suite started-at="2023-01-05T15:59:37 IST" name="Test Suite" finished-at="2023-01-05T16:03:31 IST" duration-ms="233911">
     <groups>
       <group name="Fuel Efficiency Reports">
-        <method signature="FuelEfficiencyReportScript.NavigatingFuelEfficiencyPage()[pri:1, instance:project.testscenarios.FuelEfficiencyReportScript@408d971b]" name="NavigatingFuelEfficiencyPage" class="project.testscenarios.FuelEfficiencyReportScript"/>
-        <method signature="FuelEfficiencyReportScript.FilterandVerification()[pri:3, instance:project.testscenarios.FuelEfficiencyReportScript@408d971b]" name="FilterandVerification" class="project.testscenarios.FuelEfficiencyReportScript"/>
-        <method signature="FuelEfficiencyReportScript.SearchandVerification()[pri:2, instance:project.testscenarios.FuelEfficiencyReportScript@408d971b]" name="SearchandVerification" class="project.testscenarios.FuelEfficiencyReportScript"/>
+        <method signature="FuelEfficiencyReportScript.NavigatingFuelEfficiencyPage()[pri:1, instance:project.testscenarios.FuelEfficiencyReportScript@74d1dc36]" name="NavigatingFuelEfficiencyPage" class="project.testscenarios.FuelEfficiencyReportScript"/>
+        <method signature="FuelEfficiencyReportScript.DownloadFunctionality()[pri:3, instance:project.testscenarios.FuelEfficiencyReportScript@74d1dc36]" name="DownloadFunctionality" class="project.testscenarios.FuelEfficiencyReportScript"/>
+        <method signature="FuelEfficiencyReportScript.FilterandVerification()[pri:4, instance:project.testscenarios.FuelEfficiencyReportScript@74d1dc36]" name="FilterandVerification" class="project.testscenarios.FuelEfficiencyReportScript"/>
+        <method signature="FuelEfficiencyReportScript.SearchandVerification()[pri:2, instance:project.testscenarios.FuelEfficiencyReportScript@74d1dc36]" name="SearchandVerification" class="project.testscenarios.FuelEfficiencyReportScript"/>
       </group> <!-- Fuel Efficiency Reports -->
-      <group name="ELD Logbook Edit Reports">
-        <method signature="ELDLogbookEditsScript.NavigatingELDLogbookEditReportsPage()[pri:1, instance:project.testscenarios.ELDLogbookEditsScript@6c6cb480]" name="NavigatingELDLogbookEditReportsPage" class="project.testscenarios.ELDLogbookEditsScript"/>
-        <method signature="ELDLogbookEditsScript.FilterandVerification()[pri:3, instance:project.testscenarios.ELDLogbookEditsScript@6c6cb480]" name="FilterandVerification" class="project.testscenarios.ELDLogbookEditsScript"/>
-        <method signature="ELDLogbookEditsScript.SearchandVerification()[pri:2, instance:project.testscenarios.ELDLogbookEditsScript@6c6cb480]" name="SearchandVerification" class="project.testscenarios.ELDLogbookEditsScript"/>
-      </group> <!-- ELD Logbook Edit Reports -->
+      <group name="API Key Transfer">
+        <method signature="APIKeyTransferScript.NavigatingAssetPage()[pri:1, instance:project.testscenarios.APIKeyTransferScript@663c9e7a]" name="NavigatingAssetPage" class="project.testscenarios.APIKeyTransferScript"/>
+        <method signature="APIKeyTransferScript.ActiveandExpiredCountPage()[pri:2, instance:project.testscenarios.APIKeyTransferScript@663c9e7a]" name="ActiveandExpiredCountPage" class="project.testscenarios.APIKeyTransferScript"/>
+        <method signature="APIKeyTransferScript.ShareAPIKeyFunctionality()[pri:3, instance:project.testscenarios.APIKeyTransferScript@663c9e7a]" name="ShareAPIKeyFunctionality" class="project.testscenarios.APIKeyTransferScript"/>
+      </group> <!-- API Key Transfer -->
       <group name="Login">
-        <method signature="LoginScript.validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@3754a4bf]" name="validUserNameandPassword" class="project.testscenarios.LoginScript"/>
+        <method signature="LoginScript.validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@54422e18]" name="validUserNameandPassword" class="project.testscenarios.LoginScript"/>
       </group> <!-- Login -->
+      <group name="Duty Status Summary Report">
+        <method signature="DutyStatusSummaryScript.NavigatingDutyStatusSummaryReport()[pri:1, instance:project.testscenarios.DutyStatusSummaryScript@1cf6d1be]" name="NavigatingDutyStatusSummaryReport" class="project.testscenarios.DutyStatusSummaryScript"/>
+        <method signature="DutyStatusSummaryScript.DownloadFunctionality()[pri:4, instance:project.testscenarios.DutyStatusSummaryScript@1cf6d1be]" name="DownloadFunctionality" class="project.testscenarios.DutyStatusSummaryScript"/>
+        <method signature="DutyStatusSummaryScript.FilterandVerification()[pri:3, instance:project.testscenarios.DutyStatusSummaryScript@1cf6d1be]" name="FilterandVerification" class="project.testscenarios.DutyStatusSummaryScript"/>
+        <method signature="DutyStatusSummaryScript.SearchandVerification()[pri:2, instance:project.testscenarios.DutyStatusSummaryScript@1cf6d1be]" name="SearchandVerification" class="project.testscenarios.DutyStatusSummaryScript"/>
+      </group> <!-- Duty Status Summary Report -->
     </groups>
-    <test started-at="2023-01-03T17:11:05 IST" name="TruckX Test Automation" finished-at="2023-01-03T17:12:43 IST" duration-ms="98053">
-      <class name="project.testscenarios.ELDLogbookEditsScript">
-        <test-method signature="NavigatingELDLogbookEditReportsPage()[pri:1, instance:project.testscenarios.ELDLogbookEditsScript@6c6cb480]" started-at="2023-01-03T17:11:59 IST" name="NavigatingELDLogbookEditReportsPage" finished-at="2023-01-03T17:12:06 IST" duration-ms="7230" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- NavigatingELDLogbookEditReportsPage -->
-        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.ELDLogbookEditsScript@6c6cb480]" started-at="2023-01-03T17:11:59 IST" name="Fetct_Repository_Object" finished-at="2023-01-03T17:11:59 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Fetct_Repository_Object -->
-        <test-method signature="SearchandVerification()[pri:2, instance:project.testscenarios.ELDLogbookEditsScript@6c6cb480]" started-at="2023-01-03T17:12:06 IST" name="SearchandVerification" finished-at="2023-01-03T17:12:15 IST" depends-on-methods="project.testscenarios.ELDLogbookEditsScript.NavigatingELDLogbookEditReportsPage" duration-ms="8595" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Search functionality not working as expected expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Search functionality not working as expected expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertTrue(Assert.java:45)
-at project.testscenarios.ELDLogbookEditsScript.SearchandVerification(ELDLogbookEditsScript.java:39)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SearchandVerification -->
-        <test-method signature="FilterandVerification()[pri:3, instance:project.testscenarios.ELDLogbookEditsScript@6c6cb480]" started-at="2023-01-03T17:12:16 IST" name="FilterandVerification" finished-at="2023-01-03T17:12:43 IST" depends-on-methods="project.testscenarios.ELDLogbookEditsScript.NavigatingELDLogbookEditReportsPage" duration-ms="27321" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- FilterandVerification -->
-      </class> <!-- project.testscenarios.ELDLogbookEditsScript -->
+    <test started-at="2023-01-05T15:59:37 IST" name="TruckX Test Automation" finished-at="2023-01-05T16:03:31 IST" duration-ms="233911">
       <class name="project.testscenarios.LoginScript">
-        <test-method is-config="true" signature="preRequisite(org.testng.ITestContext)[pri:0, instance:project.testscenarios.LoginScript@3754a4bf]" started-at="2023-01-03T17:10:00 IST" name="preRequisite" finished-at="2023-01-03T17:11:05 IST" duration-ms="65560" status="PASS">
+        <test-method is-config="true" signature="preRequisite(org.testng.ITestContext)[pri:0, instance:project.testscenarios.LoginScript@54422e18]" started-at="2023-01-05T15:58:34 IST" name="preRequisite" finished-at="2023-01-05T15:59:37 IST" duration-ms="63309" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@16b3c905]]>
+                <![CDATA[org.testng.TestRunner@4e958f08]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- preRequisite -->
-        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.LoginScript@3754a4bf]" started-at="2023-01-03T17:11:05 IST" name="Fetct_Repository_Object" finished-at="2023-01-03T17:11:05 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.LoginScript@54422e18]" started-at="2023-01-05T15:59:37 IST" name="Fetct_Repository_Object" finished-at="2023-01-05T15:59:37 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Fetct_Repository_Object -->
-        <test-method signature="validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@3754a4bf]" started-at="2023-01-03T17:11:05 IST" name="validUserNameandPassword" finished-at="2023-01-03T17:11:23 IST" duration-ms="17553" status="PASS">
+        <test-method signature="validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@54422e18]" started-at="2023-01-05T15:59:37 IST" name="validUserNameandPassword" finished-at="2023-01-05T15:59:42 IST" duration-ms="5225" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validUserNameandPassword -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:project.testscenarios.LoginScript@3754a4bf]" started-at="2023-01-03T17:12:43 IST" name="closeBrowser" finished-at="2023-01-03T17:12:49 IST" duration-ms="5125" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:project.testscenarios.LoginScript@54422e18]" started-at="2023-01-05T16:03:31 IST" name="closeBrowser" finished-at="2023-01-05T16:03:36 IST" duration-ms="5255" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- project.testscenarios.LoginScript -->
-      <class name="project.testscenarios.FuelEfficiencyReportScript">
-        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.FuelEfficiencyReportScript@408d971b]" started-at="2023-01-03T17:11:23 IST" name="Fetct_Repository_Object" finished-at="2023-01-03T17:11:23 IST" duration-ms="1" status="PASS">
+      <class name="project.testscenarios.DutyStatusSummaryScript">
+        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.DutyStatusSummaryScript@1cf6d1be]" started-at="2023-01-05T16:02:03 IST" name="Fetct_Repository_Object" finished-at="2023-01-05T16:02:03 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Fetct_Repository_Object -->
-        <test-method signature="NavigatingFuelEfficiencyPage()[pri:1, instance:project.testscenarios.FuelEfficiencyReportScript@408d971b]" started-at="2023-01-03T17:11:23 IST" name="NavigatingFuelEfficiencyPage" finished-at="2023-01-03T17:11:30 IST" duration-ms="7305" status="PASS">
+        <test-method signature="NavigatingDutyStatusSummaryReport()[pri:1, instance:project.testscenarios.DutyStatusSummaryScript@1cf6d1be]" started-at="2023-01-05T16:02:03 IST" name="NavigatingDutyStatusSummaryReport" finished-at="2023-01-05T16:02:19 IST" duration-ms="16035" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- NavigatingFuelEfficiencyPage -->
-        <test-method signature="SearchandVerification()[pri:2, instance:project.testscenarios.FuelEfficiencyReportScript@408d971b]" started-at="2023-01-03T17:11:30 IST" name="SearchandVerification" finished-at="2023-01-03T17:11:45 IST" depends-on-methods="project.testscenarios.FuelEfficiencyReportScript.NavigatingFuelEfficiencyPage" duration-ms="14775" status="FAIL">
+        </test-method> <!-- NavigatingDutyStatusSummaryReport -->
+        <test-method signature="SearchandVerification()[pri:2, instance:project.testscenarios.DutyStatusSummaryScript@1cf6d1be]" started-at="2023-01-05T16:02:19 IST" name="SearchandVerification" finished-at="2023-01-05T16:02:39 IST" depends-on-methods="project.testscenarios.DutyStatusSummaryScript.NavigatingDutyStatusSummaryReport" duration-ms="20316" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SearchandVerification -->
+        <test-method signature="FilterandVerification()[pri:3, instance:project.testscenarios.DutyStatusSummaryScript@1cf6d1be]" started-at="2023-01-05T16:02:39 IST" name="FilterandVerification" finished-at="2023-01-05T16:02:45 IST" depends-on-methods="project.testscenarios.DutyStatusSummaryScript.NavigatingDutyStatusSummaryReport" duration-ms="5404" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FilterandVerification -->
+        <test-method signature="DownloadFunctionality()[pri:4, instance:project.testscenarios.DutyStatusSummaryScript@1cf6d1be]" started-at="2023-01-05T16:02:45 IST" name="DownloadFunctionality" finished-at="2023-01-05T16:02:54 IST" depends-on-methods="project.testscenarios.DutyStatusSummaryScript.NavigatingDutyStatusSummaryReport" duration-ms="9521" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DownloadFunctionality -->
+      </class> <!-- project.testscenarios.DutyStatusSummaryScript -->
+      <class name="project.testscenarios.APIKeyTransferScript">
+        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.APIKeyTransferScript@663c9e7a]" started-at="2023-01-05T16:02:54 IST" name="Fetct_Repository_Object" finished-at="2023-01-05T16:02:54 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Fetct_Repository_Object -->
+        <test-method signature="NavigatingAssetPage()[pri:1, instance:project.testscenarios.APIKeyTransferScript@663c9e7a]" started-at="2023-01-05T16:02:54 IST" name="NavigatingAssetPage" finished-at="2023-01-05T16:02:56 IST" duration-ms="2341" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NavigatingAssetPage -->
+        <test-method signature="ActiveandExpiredCountPage()[pri:2, instance:project.testscenarios.APIKeyTransferScript@663c9e7a]" started-at="2023-01-05T16:02:56 IST" name="ActiveandExpiredCountPage" finished-at="2023-01-05T16:03:02 IST" depends-on-methods="project.testscenarios.APIKeyTransferScript.NavigatingAssetPage" duration-ms="5447" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ActiveandExpiredCountPage -->
+        <test-method signature="ShareAPIKeyFunctionality()[pri:3, instance:project.testscenarios.APIKeyTransferScript@663c9e7a]" started-at="2023-01-05T16:03:02 IST" name="ShareAPIKeyFunctionality" finished-at="2023-01-05T16:03:26 IST" depends-on-methods="project.testscenarios.APIKeyTransferScript.NavigatingAssetPage" duration-ms="24482" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Search functionality not working as expected expected [true] but found [false]]]>
+              <![CDATA[drop down options not available in Share Link With API Partner Prompt]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Search functionality not working as expected expected [true] but found [false]
+              <![CDATA[java.lang.AssertionError: drop down options not available in Share Link With API Partner Prompt
 at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertTrue(Assert.java:45)
-at project.testscenarios.FuelEfficiencyReportScript.SearchandVerification(FuelEfficiencyReportScript.java:39)
+at project.webpages.WebPageAPIKeyTransfer.shareAPIKey(WebPageAPIKeyTransfer.java:134)
+at project.testscenarios.APIKeyTransferScript.ShareAPIKeyFunctionality(APIKeyTransferScript.java:43)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -156,8 +129,67 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
+        </test-method> <!-- ShareAPIKeyFunctionality -->
+      </class> <!-- project.testscenarios.APIKeyTransferScript -->
+      <class name="project.testscenarios.FuelEfficiencyReportScript">
+        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.FuelEfficiencyReportScript@74d1dc36]" started-at="2023-01-05T15:59:42 IST" name="Fetct_Repository_Object" finished-at="2023-01-05T15:59:42 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Fetct_Repository_Object -->
+        <test-method signature="NavigatingFuelEfficiencyPage()[pri:1, instance:project.testscenarios.FuelEfficiencyReportScript@74d1dc36]" started-at="2023-01-05T15:59:42 IST" name="NavigatingFuelEfficiencyPage" finished-at="2023-01-05T16:00:49 IST" duration-ms="67256" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NavigatingFuelEfficiencyPage -->
+        <test-method signature="SearchandVerification()[pri:2, instance:project.testscenarios.FuelEfficiencyReportScript@74d1dc36]" started-at="2023-01-05T16:00:49 IST" name="SearchandVerification" finished-at="2023-01-05T16:01:10 IST" depends-on-methods="project.testscenarios.FuelEfficiencyReportScript.NavigatingFuelEfficiencyPage" duration-ms="20201" status="PASS">
+          <reporter-output>
+          </reporter-output>
         </test-method> <!-- SearchandVerification -->
-        <test-method signature="FilterandVerification()[pri:3, instance:project.testscenarios.FuelEfficiencyReportScript@408d971b]" started-at="2023-01-03T17:11:47 IST" name="FilterandVerification" finished-at="2023-01-03T17:11:59 IST" depends-on-methods="project.testscenarios.FuelEfficiencyReportScript.NavigatingFuelEfficiencyPage" duration-ms="12114" status="PASS">
+        <test-method signature="DownloadFunctionality()[pri:3, instance:project.testscenarios.FuelEfficiencyReportScript@74d1dc36]" started-at="2023-01-05T16:01:10 IST" name="DownloadFunctionality" finished-at="2023-01-05T16:01:34 IST" depends-on-methods="project.testscenarios.FuelEfficiencyReportScript.NavigatingFuelEfficiencyPage" duration-ms="23988" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Download functionality Not working expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Download functionality Not working expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertTrue(Assert.java:45)
+at project.testscenarios.FuelEfficiencyReportScript.DownloadFunctionality(FuelEfficiencyReportScript.java:45)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DownloadFunctionality -->
+        <test-method signature="FilterandVerification()[pri:4, instance:project.testscenarios.FuelEfficiencyReportScript@74d1dc36]" started-at="2023-01-05T16:01:38 IST" name="FilterandVerification" finished-at="2023-01-05T16:02:03 IST" depends-on-methods="project.testscenarios.FuelEfficiencyReportScript.NavigatingFuelEfficiencyPage" duration-ms="24895" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- FilterandVerification -->

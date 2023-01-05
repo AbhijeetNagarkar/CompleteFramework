@@ -6,7 +6,7 @@ import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import project.RandomVinAPI.RandomVin;
+import project.RandomVinAPI.RandomAPI;
 import project.mediator.ObjectRepository;
 import project.mediator.TestData;
 import project.utility.WebPageObjectCreation;
@@ -21,7 +21,7 @@ public class TrailerScript {
 	
 	HashMap<String,String> vehiclemap,trailermap;
 	
-	public static Logger log = Logger.getLogger(TruckScript.class);
+	public static Logger log = Logger.getLogger(TrailerScript.class);
 	
 	@BeforeClass
 	public void Fetct_Repository_Object() throws InterruptedException, IOException
@@ -36,7 +36,7 @@ public class TrailerScript {
 		
 		repo.dashboardPageObject().clickOnTrailers();
 		
-		Thread.sleep(5000);
+	//	Thread.sleep(5000);
 	}
 	
 	
@@ -44,7 +44,7 @@ public class TrailerScript {
 	public void NewTrailer() throws InterruptedException
 	{
 		
-		repo=ObjectRepository.GetInstance();
+//		repo=ObjectRepository.GetInstance();
 		
 		vehiclemap=TestData.GetVehicleData();
 		
@@ -54,7 +54,7 @@ public class TrailerScript {
 		
 		log.info("Calling API to generate Random VIN");
 		
-		vin=RandomVin.getVin();
+		vin=RandomAPI.getVin();
 		
 		log.info("API Response for Random VIN : "+vin);
 		

@@ -78,10 +78,33 @@ public class WebPageObjectCreation {
 	
 	WebPageTemperatureHumidity temperaturehumidityPage;
 	
+	WebPagePreTripDVIR preTripPage;
+	
+	WebPagePostTripDVIR postTripPage;
+	
 	WebPageFuelEfficiency fuelefficiencyPage;
 	
 	WebPageELDLogbookEdits eldlogbookeditsPage;
 	
+	public WebPagePostTripDVIR PostTripPageObject()
+	{
+		if(postTripPage==null)
+		{
+			log.info("Post Trip DVIR page object created");
+			postTripPage = new WebPagePostTripDVIR(driver);
+		}
+		return postTripPage;
+	}
+	
+	public WebPagePreTripDVIR PreTripPageObject()
+	{
+		if(preTripPage==null)
+		{
+			log.info("Pre Trip DVIR page object created");
+			preTripPage = new WebPagePreTripDVIR(driver);
+		}
+		return preTripPage;
+	}
 	
 	public WebPageTemperatureHumidity TemperatureHumidityPageObject()
 	{

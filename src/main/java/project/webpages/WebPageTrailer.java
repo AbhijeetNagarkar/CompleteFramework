@@ -17,7 +17,7 @@ public class WebPageTrailer {
 	
 	WebDriver driver;
 	
-	WebDriverWait wait;
+	WebDriverWait wait,wait5;
 
 	public static Logger log = Logger.getLogger(WebPageTrailer.class);
 	
@@ -31,7 +31,8 @@ public class WebPageTrailer {
 			
 		wait=new WebDriverWait(driver,20);
 		
-		
+		wait5=new WebDriverWait(driver,5);
+
 		trailermap = TestData.GetTrailerData();
 		
 		truckmap = TestData.GetVehicleData();
@@ -97,18 +98,22 @@ public class WebPageTrailer {
 	@FindBy(xpath = "//div[@class=\"relative w-full h-full\"]//button")
 	WebElement activateButton;
 	
-	@FindBy(xpath = "//div[text()=\"Action\"]")
+	@FindBy(xpath = "//div[@class=\"ml-10 mt-2\"]//span")
 	WebElement action;
 	
-	@FindBy(xpath = "//span[text()=\"Action\"]")
+	@FindBy(xpath = "//div[@class=\"ml-10 mt-2\"]//span")
 	WebElement spanaction;
 	
 	
-	public void clickOnAddTrailerDashboard()
+	public void clickOnAddTrailerDashboard() throws InterruptedException
 	{
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.className("rc-table-tbody")));
 		
 		wait.until(ExpectedConditions.elementToBeClickable(addTrailerButtonDashboard));
+		
+		action.click();
+		
+		Thread.sleep(1000);
 		
 		try
 		{
@@ -149,10 +154,10 @@ public class WebPageTrailer {
 		
 		log.info("Clicked on Save Trailer Button");
 		
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		
 		} 
-		catch (InterruptedException e) {
+		catch (Exception e) {
 			Assert.fail("Unable to click on Save Button of New Trailer creation");
 		}
 	}
@@ -161,7 +166,7 @@ public class WebPageTrailer {
 	{
 		try 
 		{
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		
 		wait.until(ExpectedConditions.elementToBeClickable(updateButton));
 		
@@ -169,9 +174,9 @@ public class WebPageTrailer {
 		
 		log.info("Clicked on Update Trailer Button");
 		
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		} 
-		catch (InterruptedException e) {
+		catch (Exception e) {
 			Assert.fail("Unable to click on Update Button of Edit Trailer");
 		}
 	}
@@ -180,7 +185,9 @@ public class WebPageTrailer {
 	{
 		try
 		{
-		Thread.sleep(5000);
+		Thread.sleep(3000);
+		wait.until(ExpectedConditions.elementToBeClickable(action));
+		action.click();
 		
 		wait.until(ExpectedConditions.elementToBeClickable(searchTrailer));
 		
@@ -204,11 +211,11 @@ public class WebPageTrailer {
 		{
 			wait.until(ExpectedConditions.visibilityOf(truckDropdown));
 			
-			Thread.sleep(3000);
+			Thread.sleep(2000);
 			
 			truckDropdown.click();
 			
-			Thread.sleep(5000);
+			Thread.sleep(1000);
 			
 			log.info("Clicked on Truck Dropdown in Assign Trailer");
 		}
@@ -222,8 +229,9 @@ public class WebPageTrailer {
 	{
 		try
 		{
-		Thread.sleep(5000);
+		//Thread.sleep(5000);
 		
+		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@class=\" css-1u0owcj-option\"]//div//span[text()='"+truckmap.get("Truck Identifier")+"']")));
 		driver.findElements(By.xpath("//div[@class=\" css-1u0owcj-option\"]//div//span[text()='"+truckmap.get("Truck Identifier")+"']")).get(0).click();
 		}
 		catch(Exception e)
@@ -238,8 +246,9 @@ public class WebPageTrailer {
 	{
 		try
 		{
-		Thread.sleep(5000);
+		//Thread.sleep(5000);
 		
+		wait.until(ExpectedConditions.elementToBeClickable(nomore));
 		nomore.click();
 		
 		log.info("Clicked on No More Additional Trailer Button");
@@ -255,7 +264,9 @@ public class WebPageTrailer {
 	{
 		try
 		{
-		Thread.sleep(5000);		
+		Thread.sleep(4000);
+		wait.until(ExpectedConditions.elementToBeClickable(yesButton));
+
 		yesButton.click();
 		
 		log.info("Clicked on Yes to confirm ");
@@ -272,7 +283,7 @@ public class WebPageTrailer {
 	{
 		try
 		{
-		//wait.until(ExpectedConditions.elementToBeClickable(noButton));
+		wait.until(ExpectedConditions.elementToBeClickable(noButton));
 		
 		noButton.click();
 		
@@ -290,6 +301,8 @@ public class WebPageTrailer {
 	{
 		try
 		{
+		wait.until(ExpectedConditions.elementToBeClickable(action));
+
 		action.click();
 		
 		wait.until(ExpectedConditions.elementToBeClickable(assignButton));
@@ -310,7 +323,7 @@ public class WebPageTrailer {
 		try
 		{
 		
-		Thread.sleep(2000);
+	//	Thread.sleep(2000);
 		wait.until(ExpectedConditions.elementToBeClickable(unassignButton));
 		
 		unassignButton.click();
@@ -357,10 +370,14 @@ public class WebPageTrailer {
 		
 		try
 		{
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()=\"Attached Truck\"]")));
+	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()=\"Attached Truck\"]")));
 		
-		driver.findElement(By.xpath("//span[text()=\"Attached Truck\"]")).click();
+	//	driver.findElement(By.xpath("//span[text()=\"Attached Truck\"]")).click();
 	
+		wait.until(ExpectedConditions.visibilityOfAllElements(dashtable));
+		
+		wait.until(ExpectedConditions.visibilityOf(dashtable.get(0)));
+					
 		if(vin.equalsIgnoreCase(dashtable.get(0).getText()))
 		{
 				if(string.equals(""))
@@ -394,12 +411,15 @@ public class WebPageTrailer {
 		{
 			Assert.fail("Unable to click on Delete Trailer button on Trailer Page");
 		}
-		Thread.sleep(3000);
+		Thread.sleep(2500);
 		try
 		{
+		wait.until(ExpectedConditions.visibilityOf(deleteInput));
 		deleteInput.sendKeys("DELETE");
 		
-		Thread.sleep(3000);
+		Thread.sleep(2500);
+		
+		wait.until(ExpectedConditions.elementToBeClickable(deleteButton));
 		
 		deleteButton.click();
 		
@@ -410,14 +430,14 @@ public class WebPageTrailer {
 			Assert.fail("Unable to click on Delete Button of Delete Prompt");
 			driver.navigate().refresh();
 		}
-		Thread.sleep(5000);
+		Thread.sleep(2500);
 	}
 	
 	public boolean VerifyDeletedTrailer()
 	{
 		try
 		{
-			wait.until(ExpectedConditions.elementToBeClickable(assignButton));
+			wait5.until(ExpectedConditions.elementToBeClickable(assignButton));
 		}
 		catch(Exception e)
 		{
@@ -430,6 +450,8 @@ public class WebPageTrailer {
 	{
 		try
 		{
+			
+		wait.until(ExpectedConditions.elementToBeClickable(action));
 		action.click();
 		
 		wait.until(ExpectedConditions.elementToBeClickable(editButton));
@@ -438,7 +460,7 @@ public class WebPageTrailer {
 		
 		log.info("Clicked on Edit Trailer button ");
 		
-		Thread.sleep(3000);
+	//	Thread.sleep(3000);
 		}
 		catch(Exception e)
 		{
@@ -449,22 +471,21 @@ public class WebPageTrailer {
 		
 		try
 		{
+			wait.until(ExpectedConditions.visibilityOf(edittraileridentifier));
 		edittraileridentifier.clear();
 		
 		edittraileridentifier.sendKeys(trailermap.get("Trailer Identifier"));
 		
-		Thread.sleep(3000);
+	//	Thread.sleep(3000);
+		wait.until(ExpectedConditions.elementToBeClickable(updateButton));
 		
 		updateButton.click();
 		
 		log.info("Clicked on Update trailer button");
 		
-		Thread.sleep(3000);
+	//	Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.elementToBeClickable(action));
-		action.click();
-		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()=\"Attached Truck\"]")));
+		//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()=\"Attached Truck\"]")));
 
 		}
 		catch(Exception e)
@@ -476,6 +497,7 @@ public class WebPageTrailer {
 
 	public void ActivateTrailer() throws InterruptedException
 	{
+		wait.until(ExpectedConditions.elementToBeClickable(spanaction));
 		spanaction.click();
 		
 		try
@@ -491,10 +513,11 @@ public class WebPageTrailer {
 			
 		log.info("Found deleted trailer "+trailermap.get("Trailer Identifier"));
 		
-		Thread.sleep(3000);
+	//	Thread.sleep(3000);
 		
 		try
 		{		
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//tr//td//div[text()='"+trailermap.get("Trailer Identifier")+"']//following::button")));
 		driver.findElements(By.xpath("//tr//td//div[text()='"+trailermap.get("Trailer Identifier")+"']//following::button")).get(0).click();
 		
 		log.info("Clicked on Activate Trailer Button");
@@ -503,15 +526,16 @@ public class WebPageTrailer {
 		{
 			Assert.fail("Unable to click on Activate Trailer button on Delete Trailer Page");
 		}
-		Thread.sleep(3000);
+	//	Thread.sleep(3000);
 		
 		try
 		{
+			wait.until(ExpectedConditions.visibilityOf(activateInput));
 		activateInput.sendKeys("ACTIVATE");
 		
 		log.info("Inserted Activate text in text box");
 		
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		
 		wait.until(ExpectedConditions.elementToBeClickable(activateButton));
 		
@@ -524,6 +548,7 @@ public class WebPageTrailer {
 			Assert.fail("Unable to click on Activate button on Activate Trailer Prompt");
 		}
 		driver.navigate().refresh();
+		Thread.sleep(2000);
 
 	}
 	public void changeFocus()
