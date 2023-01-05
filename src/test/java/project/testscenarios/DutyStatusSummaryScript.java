@@ -46,4 +46,9 @@ public class DutyStatusSummaryScript {
 		Assert.assertTrue(repo.DutyStatusSummaryPageObject().filterandverification(),"Records not showing as per filter criteria");
 	}
 
+	@Test(priority = 4,groups = {"Duty Status Summary Report"},dependsOnMethods = "NavigatingDutyStatusSummaryReport" )
+	public void DownloadFunctionality() throws InterruptedException 
+	{
+		Assert.assertTrue(repo.DutyStatusSummaryPageObject().VerifyDownload(),"Download functionality Not working");
+	}
 }

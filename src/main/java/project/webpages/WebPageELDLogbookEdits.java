@@ -10,14 +10,15 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class WebPageFuelEfficiency {
+public class WebPageELDLogbookEdits {
+	
 WebDriver driver;
 	
 	WebDriverWait wait;
 
-	public static Logger log = Logger.getLogger(WebPageFuelEfficiency.class);
+	public static Logger log = Logger.getLogger(WebPageELDLogbookEdits.class);
 	
-	public WebPageFuelEfficiency(WebDriver driverinstance)
+	public WebPageELDLogbookEdits(WebDriver driverinstance)
 	{
 		driver=driverinstance;
 			
@@ -36,29 +37,25 @@ WebDriver driver;
 	@FindBy(xpath = "//div[@class=\"flex items-center\"]//span[text()=\"Reset All\"]")
 	WebElement resetfilter;
 	
-	@FindBy(xpath = "//div[@class=\"ml-10 mt-2\"]//span")
-	WebElement changefocus;
-	
-
 	@FindBy(xpath = "//input")
 	WebElement search;
 	
-	@FindBy(xpath="//h1[text()=\"No Data\"]")
+	@FindBy(xpath = "//h1[text()=\"No Data\"]")
 	WebElement NoData;
 	
 	public boolean SearchandVerifyRecords() throws InterruptedException {
 		// TODO Auto-generated method stub
 		Thread.sleep(3000);
 		search.clear();
-		search.sendKeys("demo");
+		search.sendKeys("Parul");
 		Thread.sleep(2000);
 		
-		List<WebElement> ele = driver.findElements(By.xpath("//tbody[@class=\"rc-table-tbody\"]//tr//td[@class=\"rc-table-cell\"][0]//div"));
+		
+		List<WebElement> ele = driver.findElements(By.xpath("//tbody[@class=\"rc-table-tbody\"]//tr//td//a//div"));
 		
 		if(ele.size()==0)
 		{
 			log.info("Search records Not available for given search text");
-			search.clear();
 			return true;
 
 		}
@@ -66,7 +63,7 @@ WebDriver driver;
 		{
 			for(WebElement element : ele)
 			{
-				if(element.getText().toLowerCase().contains("demo"))
+				if(element.getText().toLowerCase().contains("parul"))
 				{
 					continue;
 				}
@@ -78,18 +75,18 @@ WebDriver driver;
 					
 			}
 		}
-		log.info("Search records matched for given search text");
-
+		log.info("Search records are matched as per search text");
 		search.clear();
-		return true;		
+		return true;
+		
 	}
 	
 	public Boolean filterandverification() throws InterruptedException
 	{
 		try
 		{
-			search.clear();			
-				
+			search.clear();
+
 			Thread.sleep(3000);
 			filter.click();
 			log.info("Clicked on Filter");
@@ -99,7 +96,7 @@ WebDriver driver;
 			filteroption.get(1).click();
 			log.info("Clicked on last 7 days report");
 
-			List<WebElement> ele = driver.findElements(By.xpath("//tbody[@class=\"rc-table-tbody\"]//tr//td[@class=\"rc-table-cell\"][0]//div"));
+			List<WebElement> ele = driver.findElements(By.xpath("//tbody[@class=\"rc-table-tbody\"]//tr//td//a//div"));
 				
 			if(ele.size()>0)
 				log.info("Records available for last 7 days");
@@ -109,7 +106,6 @@ WebDriver driver;
 			driver.findElement(By.xpath("//button//span[text()=\"Reset All\"]")).click();
 			
 			return true;
-		
 		}
 		catch (Exception e) {
 			log.info("Filter and verification functionality not working");
@@ -117,43 +113,5 @@ WebDriver driver;
 		}
 		
 	}
-	public Boolean VerifyDownload() throws InterruptedException
-	{
-		try
-		{
-			Thread.sleep(2000);
-			changefocus.click();
-			Thread.sleep(2000);
-			
-			driver.findElement(By.xpath("//button//span[text()=\"Download\"]")).click();
-			
-			log.info("Clicked on Download Button");
-			
-			Thread.sleep(2000);
-			
-			driver.findElement(By.xpath("//div[text()=\"PDF\"]")).click();
-			
-			log.info("Clicked on PDF Button");
-			
-			int size1=driver.findElements(By.xpath("//button//span[text()=\"Download\"]")).size();
-			Thread.sleep(1000);
-			int size2=driver.findElements(By.xpath("//span[text()=\"Download started.\"]")).size();
-			if(size1<1 || size2==1)
-			{
-				log.info("Downloading file");
-				return true;
-			}
-			else
-			{
-				log.info("Unable to downlaod File");
-				return false;
-			}
-		}
-		catch (Exception e) {
-			// TODO: handle exception
-			log.info("Caught Exception while downlaod File");
-			return false;
-		}
-			
-	}
+
 }

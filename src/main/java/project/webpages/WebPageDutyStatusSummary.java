@@ -102,5 +102,44 @@ public class WebPageDutyStatusSummary {
 		}
 		
 	}
+	public Boolean VerifyDownload() throws InterruptedException
+	{
+		try
+		{
+			Thread.sleep(2000);
+			changefocus.click();
+			Thread.sleep(2000);
+			
+			driver.findElement(By.xpath("//button//span[text()=\"Download\"]")).click();
+			
+			log.info("Clicked on Download Button");
+			
+			Thread.sleep(2000);
+			
+			driver.findElement(By.xpath("//div[text()=\"PDF\"]")).click();
+			
+			log.info("Clicked on PDF Button");
+			
+			int size1=driver.findElements(By.xpath("//button//span[text()=\"Download\"]")).size();
+			Thread.sleep(1000);
+			int size2=driver.findElements(By.xpath("//span[text()=\"Download started.\"]")).size();
+			if(size1<1 || size2==1)
+			{
+				log.info("Downloading file");
+				return true;
+			}
+			else
+			{
+				log.info("Unable to downlaod File");
+				return false;
+			}
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			log.info("Caught Exception while downlaod File");
+			return false;
+		}
+			
+	}
 
 }
