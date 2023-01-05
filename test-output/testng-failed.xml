@@ -6,21 +6,13 @@
   </listeners>
   <test thread-count="5" name="TruckX Test Automation(failed)">
     <classes>
-      <class name="project.testscenarios.TrailerScript">
+      <class name="project.testscenarios.FuelEfficiencyReportScript">
         <methods>
-          <include name="AssignTrailer"/>
-          <include name="NavigatingTrailerPage"/>
-          <include name="NavigatingDeletedTrailerPage"/>
-          <include name="NewTrailer"/>
-          <include name="DeleteTruck"/>
-          <include name="NavigatingDeletedTruckPage"/>
-          <include name="ActivateTrailer"/>
-          <include name="UnAssignTrailer"/>
-          <include name="DeleteTrailer"/>
-          <include name="ActivateTruck"/>
           <include name="Fetct_Repository_Object"/>
+          <include name="NavigatingFuelEfficiencyPage"/>
+          <include name="FilterandVerification"/>
         </methods>
-      </class> <!-- project.testscenarios.TrailerScript -->
+      </class> <!-- project.testscenarios.FuelEfficiencyReportScript -->
     </classes>
   </test> <!-- TruckX Test Automation(failed) -->
 </suite> <!-- Failed suite [Test Suite] -->
