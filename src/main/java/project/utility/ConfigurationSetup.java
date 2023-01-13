@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -92,6 +93,16 @@ public class ConfigurationSetup
 								 chrome_options.addArguments("--headless");
 								 chrome_options.addArguments("--ignore-ssl-errors=yes");
 								 chrome_options.addArguments("--ignore-certificate-errors");
+						//		 chrome_options.addArguments("start-maximized"); 
+						//		 chrome_options.addArguments("enable-automation"); 
+						//		 chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
+						//		 chrome_options.add_experimental_option("useAutomationExtension",);
+							//	 chrome_options.setExperimentalOption(browser, chrome_options)
+						//		 chrome_options.addArguments("--disable-dev-shm-usage");
+						//		 chrome_options.addArguments("--disable-browser-side-navigation"); 
+						//		 chrome_options.addArguments("--disable-gpu"); 
+						//		 chrome_options.setPageLoadStrategy(PageLoadStrategy.NONE);
+						//		 System.setProperty("webdriver.chrome.silentOutput","true");
 								 driver = new ChromeDriver(chrome_options);
 								
 								 break;
@@ -106,7 +117,9 @@ public class ConfigurationSetup
 				default 	   : break; 
 			}
 			log.info(browser+" setup completed successfully");
-			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		//	driver.manage().timeouts().pageLoadTimeout(1, TimeUnit.MINUTES);
+		//	driver.manage().timeouts().setScriptTimeout(1, TimeUnit.MINUTES);
 			driver.manage().window().maximize();
 			
 		}

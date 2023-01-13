@@ -110,7 +110,7 @@ public class WebPageDashCamera {
 	}
 	public Boolean VerifyDashCamData() throws InterruptedException
 	{
-		Thread.sleep(10000);
+		Thread.sleep(12000);
 		try
 		{
 			int size =driver.findElements(By.xpath("//div[@class=\"rc-table w-full  bg-gray-dullbg p-4 rc-table-fixed-header\"]//tr")).size();
@@ -142,10 +142,11 @@ public class WebPageDashCamera {
 			Thread.sleep(3000);
 			changefocus.click();
 			log.info("Clicked on Dash Camera title");
+			Thread.sleep(6000);
 			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@class=\"w-1/3 xl:w-1/4 h-full\"]//td[@class=\"rc-table-cell\"]//div[@class=\"font-semibold\"]")));
 			List<WebElement> li=driver.findElements(By.xpath("//div[@class=\"w-1/3 xl:w-1/4 h-full\"]//td[@class=\"rc-table-cell\"]//div[@class=\"font-semibold\"]"));
 			log.info("Created list of Dash Camera to click on it");
-			Thread.sleep(3000);
+			Thread.sleep(4000);
 			li.get(2).click();
 			log.info("Clicked on 3rd Dash Camera to check records");
 		}
