@@ -10,6 +10,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import project.mediator.Driver;
+
 public class WebPageDutyStatusSummary {
 
 	WebDriver driver;
@@ -76,17 +78,20 @@ public class WebPageDutyStatusSummary {
 	{
 		try
 		{
+		//	Driver.Refresh();
 			changefocus.click();
 
-			Thread.sleep(3000);
+			Thread.sleep(1000);
 			search.clear();
 			filter.click();
 			
 			Thread.sleep(2000);
 					
-			filteroption.get(1).click();
+			filteroption.get(2).click();
+			Thread.sleep(2000);
+
 			
-			List<WebElement> ele = driver.findElements(By.xpath("//tbody[@class=\"rc-table-tbody\"]//tr"));
+			List<WebElement> ele = driver.findElements(By.xpath("//tbody[@class=\"rc-table-tbody\"]//tr[@class=\"rc-table-row rc-table-row-level-0 text-base text-gray-400 bg-white border-b border-gray-100 h-12 w-full hover:bg-blue-tablerow focus:hover:bg-blue-tablerow rounded-md`\"]"));
 				
 			if(ele.size()>0)
 				log.info("Records available for last 7 days");
@@ -98,6 +103,7 @@ public class WebPageDutyStatusSummary {
 		}
 		catch (Exception e) {
 			log.info("Filter and verification functionality not working");
+			System.out.println(e.getLocalizedMessage());
 			return false;
 		}
 		
@@ -105,7 +111,7 @@ public class WebPageDutyStatusSummary {
 	public Boolean VerifyDownload() throws InterruptedException
 	{
 		try
-		{
+		{	//Driver.Refresh();
 			Thread.sleep(2000);
 			changefocus.click();
 			Thread.sleep(2000);
@@ -137,6 +143,8 @@ public class WebPageDutyStatusSummary {
 		catch (Exception e) {
 			// TODO: handle exception
 			log.info("Caught Exception while downlaod File");
+			System.out.println(e.getLocalizedMessage());
+
 			return false;
 		}
 			
