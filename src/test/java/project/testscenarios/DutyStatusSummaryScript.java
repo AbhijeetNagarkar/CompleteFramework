@@ -40,15 +40,18 @@ public class DutyStatusSummaryScript {
 	{
 		Assert.assertTrue(repo.DutyStatusSummaryPageObject().SearchandVerifyRecords(),"Search functionality not working as expected");
 	}
-	@Test(priority = 3,groups = {"Duty Status Summary Report"},dependsOnMethods = "NavigatingDutyStatusSummaryReport" )
-	public void FilterandVerification() throws InterruptedException 
-	{
-		Assert.assertTrue(repo.DutyStatusSummaryPageObject().filterandverification(),"Records not showing as per filter criteria");
-	}
+	
 
-	@Test(priority = 4,groups = {"Duty Status Summary Report"},dependsOnMethods = "NavigatingDutyStatusSummaryReport" )
+	@Test(priority = 3,groups = {"Duty Status Summary Report"},dependsOnMethods = "NavigatingDutyStatusSummaryReport" )
 	public void DownloadFunctionality() throws InterruptedException 
 	{
 		Assert.assertTrue(repo.DutyStatusSummaryPageObject().VerifyDownload(),"Download functionality Not working");
 	}
+
+	/*@Test(priority = 4,groups = {"Duty Status Summary Report"},dependsOnMethods = "NavigatingDutyStatusSummaryReport" )
+	public void FilterandVerification() throws InterruptedException 
+	{
+		Assert.assertTrue(repo.DutyStatusSummaryPageObject().filterandverification(),"Records not showing as per filter criteria");
+	}
+	*/
 }

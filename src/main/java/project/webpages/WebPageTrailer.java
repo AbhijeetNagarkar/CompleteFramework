@@ -186,8 +186,6 @@ public class WebPageTrailer {
 		try
 		{
 		Thread.sleep(3000);
-		wait.until(ExpectedConditions.elementToBeClickable(action));
-		action.click();
 		
 		wait.until(ExpectedConditions.elementToBeClickable(searchTrailer));
 		

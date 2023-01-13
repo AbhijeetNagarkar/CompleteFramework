@@ -86,6 +86,30 @@ public class WebPageObjectCreation {
 	
 	WebPageELDLogbookEdits eldlogbookeditsPage;
 	
+	WebPageIdleTime idletimePage;
+	
+	WebPageHOSCompliance hoscompliancePage;
+	
+	public WebPageIdleTime IdleTimePageObject()
+	{
+		if(idletimePage==null)
+		{
+			log.info("Idle Time page object created");
+			idletimePage = new WebPageIdleTime(driver);
+		}
+		return idletimePage;
+	}
+	
+	public WebPageHOSCompliance HOSCompliancePageObject()
+	{
+		if(hoscompliancePage==null)
+		{
+			log.info("HOS Compliance page object created");
+			hoscompliancePage = new WebPageHOSCompliance(driver);
+		}
+		return hoscompliancePage;
+	}
+	
 	public WebPagePostTripDVIR PostTripPageObject()
 	{
 		if(postTripPage==null)

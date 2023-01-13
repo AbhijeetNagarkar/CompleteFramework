@@ -77,6 +77,7 @@ public class WebPageDashboard {
 	@FindBy(xpath = "//div[@class=\"custom-drop-submenu\"]//div[text()=\"Unassigned Drive\"]")
 	WebElement unassigneddrive;
 	
+	
 	//Vehilces submenu
 	
 	@FindBy(xpath = "//div[@class=\"custom-drop-submenu\"]//*[text()=\"Trucks\"]")
@@ -615,7 +616,8 @@ public class WebPageDashboard {
 		try
 		{
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class=\"custom-drop-submenu\"]//*[text()=\"Drivers\"]")));
-		
+			Thread.sleep(1000);
+
 			driverssubmenu.click();
 		}
 		catch (Exception e) {
