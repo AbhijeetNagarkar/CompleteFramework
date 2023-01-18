@@ -80,8 +80,12 @@ public class WebPageReports {
 	public void ClickOnUtilization() throws InterruptedException
 	{
 		Goto("Utilization");
-	}	
-	
+	}
+	public void ClickOnCriticalEvents() throws InterruptedException
+	{
+		Goto("Critical Event");
+	}
+
 	private void Goto(String string) throws InterruptedException {
 		// TODO Auto-generated method stub
 		try

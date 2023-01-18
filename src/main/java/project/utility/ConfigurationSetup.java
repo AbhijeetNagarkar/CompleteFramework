@@ -93,7 +93,7 @@ public class ConfigurationSetup
 								 chrome_options.addArguments("--headless");
 								 chrome_options.addArguments("--ignore-ssl-errors=yes");
 								 chrome_options.addArguments("--ignore-certificate-errors");
-						//		 chrome_options.addArguments("start-maximized"); 
+								 chrome_options.addArguments("start-maximized");
 						//		 chrome_options.addArguments("enable-automation"); 
 						//		 chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
 						//		 chrome_options.add_experimental_option("useAutomationExtension",);
