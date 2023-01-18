@@ -1,62 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-01-11T16:15:32 IST" name="Test Suite" finished-at="2023-01-11T16:16:49 IST" duration-ms="77908">
+  <suite started-at="2023-01-18T13:03:58 IST" name="Test Suite" finished-at="2023-01-18T13:04:40 IST" duration-ms="41586">
     <groups>
       <group name="Login">
-        <method signature="LoginScript.validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@76b1e9b8]" name="validUserNameandPassword" class="project.testscenarios.LoginScript"/>
+        <method signature="LoginScript.validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@173ed316]" name="validUserNameandPassword" class="project.testscenarios.LoginScript"/>
       </group> <!-- Login -->
-      <group name="Duty Status Summary Report">
-        <method signature="DutyStatusSummaryScript.NavigatingDutyStatusSummaryReport()[pri:1, instance:project.testscenarios.DutyStatusSummaryScript@3e27ba32]" name="NavigatingDutyStatusSummaryReport" class="project.testscenarios.DutyStatusSummaryScript"/>
-        <method signature="DutyStatusSummaryScript.DownloadFunctionality()[pri:4, instance:project.testscenarios.DutyStatusSummaryScript@3e27ba32]" name="DownloadFunctionality" class="project.testscenarios.DutyStatusSummaryScript"/>
-        <method signature="DutyStatusSummaryScript.SearchandVerification()[pri:2, instance:project.testscenarios.DutyStatusSummaryScript@3e27ba32]" name="SearchandVerification" class="project.testscenarios.DutyStatusSummaryScript"/>
-      </group> <!-- Duty Status Summary Report -->
     </groups>
-    <test started-at="2023-01-11T16:15:32 IST" name="TruckX Test Automation" finished-at="2023-01-11T16:16:49 IST" duration-ms="77908">
+    <test started-at="2023-01-18T13:03:58 IST" name="TruckX Test Automation" finished-at="2023-01-18T13:04:40 IST" duration-ms="41586">
       <class name="project.testscenarios.LoginScript">
-        <test-method is-config="true" signature="preRequisite(org.testng.ITestContext)[pri:0, instance:project.testscenarios.LoginScript@76b1e9b8]" started-at="2023-01-11T16:14:49 IST" name="preRequisite" finished-at="2023-01-11T16:15:32 IST" duration-ms="42872" status="PASS">
+        <test-method is-config="true" signature="preRequisite(org.testng.ITestContext)[pri:0, instance:project.testscenarios.LoginScript@173ed316]" started-at="2023-01-18T13:03:22 IST" name="preRequisite" finished-at="2023-01-18T13:03:58 IST" duration-ms="36019" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@1f15e689]]>
+                <![CDATA[org.testng.TestRunner@4b87074a]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- preRequisite -->
-        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.LoginScript@76b1e9b8]" started-at="2023-01-11T16:15:32 IST" name="Fetct_Repository_Object" finished-at="2023-01-11T16:15:32 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.LoginScript@173ed316]" started-at="2023-01-18T13:03:58 IST" name="Fetct_Repository_Object" finished-at="2023-01-18T13:03:58 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Fetct_Repository_Object -->
-        <test-method signature="validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@76b1e9b8]" started-at="2023-01-11T16:15:32 IST" name="validUserNameandPassword" finished-at="2023-01-11T16:15:39 IST" duration-ms="7658" status="PASS">
+        <test-method signature="validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@173ed316]" started-at="2023-01-18T13:03:58 IST" name="validUserNameandPassword" finished-at="2023-01-18T13:04:40 IST" duration-ms="41550" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validUserNameandPassword -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:project.testscenarios.LoginScript@76b1e9b8]" started-at="2023-01-11T16:16:49 IST" name="closeBrowser" finished-at="2023-01-11T16:16:55 IST" duration-ms="5818" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:project.testscenarios.LoginScript@173ed316]" started-at="2023-01-18T13:04:40 IST" name="closeBrowser" finished-at="2023-01-18T13:04:45 IST" duration-ms="5408" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- project.testscenarios.LoginScript -->
-      <class name="project.testscenarios.DutyStatusSummaryScript">
-        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.DutyStatusSummaryScript@3e27ba32]" started-at="2023-01-11T16:15:39 IST" name="Fetct_Repository_Object" finished-at="2023-01-11T16:15:39 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Fetct_Repository_Object -->
-        <test-method signature="NavigatingDutyStatusSummaryReport()[pri:1, instance:project.testscenarios.DutyStatusSummaryScript@3e27ba32]" started-at="2023-01-11T16:15:39 IST" name="NavigatingDutyStatusSummaryReport" finished-at="2023-01-11T16:15:56 IST" duration-ms="17023" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- NavigatingDutyStatusSummaryReport -->
-        <test-method signature="SearchandVerification()[pri:2, instance:project.testscenarios.DutyStatusSummaryScript@3e27ba32]" started-at="2023-01-11T16:15:56 IST" name="SearchandVerification" finished-at="2023-01-11T16:16:32 IST" depends-on-methods="project.testscenarios.DutyStatusSummaryScript.NavigatingDutyStatusSummaryReport" duration-ms="35560" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SearchandVerification -->
-        <test-method signature="DownloadFunctionality()[pri:4, instance:project.testscenarios.DutyStatusSummaryScript@3e27ba32]" started-at="2023-01-11T16:16:32 IST" name="DownloadFunctionality" finished-at="2023-01-11T16:16:49 IST" depends-on-methods="project.testscenarios.DutyStatusSummaryScript.NavigatingDutyStatusSummaryReport" duration-ms="17604" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- DownloadFunctionality -->
-      </class> <!-- project.testscenarios.DutyStatusSummaryScript -->
     </test> <!-- TruckX Test Automation -->
   </suite> <!-- Test Suite -->
 </testng-results>

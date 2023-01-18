@@ -28,6 +28,7 @@ public class LoginScript extends ConfigurationSetup {
 	public void Fetct_Repository_Object() throws InterruptedException, IOException
 	{
 		repo = ObjectRepository.GetInstance();
+		
 	}
 /*
 	@Test(priority = 1, groups = {"Login"})
@@ -71,6 +72,8 @@ public class LoginScript extends ConfigurationSetup {
 		repo.loginPageObject().signIn();
 		
 		Assert.assertTrue(repo.loginPageObject().validate());
+		
+		repo.DOTInspectionPageObject().ValidateDOTInspectionDefault();
 	
 	}
 }	

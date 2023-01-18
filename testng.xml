@@ -10,12 +10,13 @@
 	    	
 	   	<class name="project.testscenarios.LoginScript"/>  
 
-	  	<class name="project.testscenarios.TruckScript"/>
-		<class name="project.testscenarios.TrailerScript"/>
-
-		<class name = "project.testscenarios.AssetsScript"/>
-		<class name = "project.testscenarios.TrackingLinksScript"/>
-
+	
+	  	<class name="project.testscenarios.TruckScript"/> 
+		<class name="project.testscenarios.TrailerScript"/>  
+																
+		<class name = "project.testscenarios.AssetsScript"/> 
+		<class name = "project.testscenarios.TrackingLinksScript"/> 
+	 	
 		<class name="project.testscenarios.MessageScript"/>
 
 		<class name="project.testscenarios.TrackingDevicesScript"/>
@@ -41,22 +42,23 @@
 	   	<class name="project.testscenarios.PreTripDVIRReportScript"/>
 	    <class name="project.testscenarios.TemperatureHumidityScript"/>
 	    <class name="project.testscenarios.TripHistoryReportScript"/>
-		<class name="project.testscenarios.UtilizationReportScript"/>
-         <class name="project.testscenarios.CriticalEventsReportScript"/>
 
-
-        <class name = "project.testscenarios.APIKeyTransferScript"/>
-
-		<class name = "project.testscenarios.FeatureScript"/>
-
-		<class name = "project.testscenarios.AlertsScript"/>
-
-        <class name = "project.testscenarios.DeleteTestData"/>
-
-	    <class name="project.testscenarios.LogoutScript"/>
+		<class name="project.testscenarios.UtilizationReportScript"/>  
+   	    <class name="project.testscenarios.CriticalEventsReportScript"/>
+    
+	 	<class name = "project.testscenarios.APIKeyTransferScript"/>  
+		
+		<class name = "project.testscenarios.FeatureScript"/> 
+		
+		<class name = "project.testscenarios.AlertsScript"/>  
+		
+        <class name = "project.testscenarios.DeleteTestData"/>  
+       																
+        <class name="project.testscenarios.DOTInspectionScript"/> 	  
+        
+	    <class name="project.testscenarios.LogoutScript"/> 
         <class name="project.testscenarios.ForgotPasswordScript"/>
-
-		 <!--   <class name="project.testscenarios.AdminRegistrationScript"/> -->
+ <!--   <class name="project.testscenarios.AdminRegistrationScript"/> -->
 
      </classes>
   </test> 
