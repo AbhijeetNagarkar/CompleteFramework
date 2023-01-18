@@ -1,8 +1,12 @@
 /.metadata
-/target/
 /TruckX	
 application.log
 /loadingtime.xlsx
 
+# IntelliJ IDEA
+.idea/
+*.iml
 
+# Maven
+/target/
 
