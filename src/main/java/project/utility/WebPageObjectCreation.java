@@ -89,6 +89,8 @@ public class WebPageObjectCreation {
 	WebPageIdleTime idletimePage;
 	
 	WebPageHOSCompliance hoscompliancePage;
+
+	WebPageCriticalEvents criticalEvents;
 	
 	WebPageDOTInspection dotinspectionPage;
 	
@@ -121,7 +123,17 @@ public class WebPageObjectCreation {
 		}
 		return hoscompliancePage;
 	}
-	
+
+	public WebPageCriticalEvents CriticalEventsObject()
+	{
+		if(criticalEvents == null)
+		{
+			log.info("Critical Events page object created.");
+			criticalEvents = new WebPageCriticalEvents(driver);
+		}
+		return criticalEvents;
+	}
+
 	public WebPagePostTripDVIR PostTripPageObject()
 	{
 		if(postTripPage==null)
