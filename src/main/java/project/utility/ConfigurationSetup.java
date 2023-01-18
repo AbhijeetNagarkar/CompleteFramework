@@ -6,7 +6,6 @@ import java.util.concurrent.TimeUnit;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
-import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -20,6 +19,8 @@ import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import project.mediator.Driver;
 import project.mediator.ObjectRepository;
@@ -35,18 +36,20 @@ public class ConfigurationSetup
 		
 		public WebPageObjectCreation repo;
 		
+				
 		@BeforeSuite
 		public void preRequisite(ITestContext context) throws IOException
 		{
 			configureLogger();
 			
 			loadTestData();
-						
+		
 			browserSetup(TestData.GetConfigurationData().get("Browser"));
 			
 			navigateToUrl(TestData.GetConfigurationData().get("Environment"));
 			
 			context.setAttribute("WebDriver", driver);
+			
 		}
 				
 		
@@ -91,18 +94,9 @@ public class ConfigurationSetup
 								 ChromeOptions chrome_options = new ChromeOptions();
 								 chrome_options.addArguments("--no-sandbox");
 								 chrome_options.addArguments("--headless");
+								 chrome_options.addArguments("--disable-web-security");
 								 chrome_options.addArguments("--ignore-ssl-errors=yes");
 								 chrome_options.addArguments("--ignore-certificate-errors");
-						//		 chrome_options.addArguments("start-maximized"); 
-						//		 chrome_options.addArguments("enable-automation"); 
-						//		 chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
-						//		 chrome_options.add_experimental_option("useAutomationExtension",);
-							//	 chrome_options.setExperimentalOption(browser, chrome_options)
-						//		 chrome_options.addArguments("--disable-dev-shm-usage");
-						//		 chrome_options.addArguments("--disable-browser-side-navigation"); 
-						//		 chrome_options.addArguments("--disable-gpu"); 
-						//		 chrome_options.setPageLoadStrategy(PageLoadStrategy.NONE);
-						//		 System.setProperty("webdriver.chrome.silentOutput","true");
 								 driver = new ChromeDriver(chrome_options);
 								
 								 break;
@@ -118,8 +112,6 @@ public class ConfigurationSetup
 			}
 			log.info(browser+" setup completed successfully");
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		//	driver.manage().timeouts().pageLoadTimeout(1, TimeUnit.MINUTES);
-		//	driver.manage().timeouts().setScriptTimeout(1, TimeUnit.MINUTES);
 			driver.manage().window().maximize();
 			
 		}
@@ -154,6 +146,7 @@ public class ConfigurationSetup
 		@AfterSuite
 		public void closeBrowser() throws InterruptedException 
 		{
+			
 			Thread.sleep(5000);
 			driver.quit();
 			log.info("Closing browser");

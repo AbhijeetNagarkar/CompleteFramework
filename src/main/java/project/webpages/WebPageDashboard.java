@@ -68,6 +68,9 @@ public class WebPageDashboard {
 	@FindBy(xpath = "//div[@class=\"flex flex-col\"]//span[text()=\"Alerts\"]")
 	WebElement alerts;
 	
+	@FindBy(xpath = "//div[@class=\"flex flex-col\"]//span[text()=\"Inspection\"]")
+	WebElement inspection;
+	
 	
 	//Vehilces submenu
 	
@@ -138,6 +141,10 @@ public class WebPageDashboard {
 	@FindBy(xpath = "//div[@class=\"custom-drop-submenu\"]//*[text()=\"Reports\"]")
 	WebElement iftareports;
 	
+	//Inspection submenu
+	
+	@FindBy(xpath = "//div[@class=\"custom-drop-submenu\"]//*[text()=\"DOT Inspection\"]")
+	WebElement dotinspection;
 	
 	//Profile submenu
 	
@@ -285,7 +292,21 @@ public class WebPageDashboard {
 		}
 		log.info("Clicked on IFTA Menu");
 	}
-	
+	public void clickOnInspection()
+	{
+		try
+		{
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class=\"flex flex-col\"]//span[text()=\"Inspection\"]")));
+		
+		inspection.click();
+		}
+		catch (Exception e) {
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class=\"flex flex-col\"]//span[text()=\"Inspection\"]")));
+			
+			inspection.click();
+		}
+		log.info("Clicked on Inspection Menu");
+	}
 	public void clickOnProfile()
 	{
 		try
@@ -689,6 +710,24 @@ public class WebPageDashboard {
 		Thread.sleep(2000);
 	}
 	
+	public void clickOnDOTInspection() throws InterruptedException
+	{
+		try
+		{
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class=\"custom-drop-submenu\"]//*[text()=\"DOT Inspection\"]")));
+		
+			dotinspection.click();
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			inspection.click();
+			Thread.sleep(1000);
+			dotinspection.click();
+		}
+		log.info("Clicked on DOT Inspection from Sub Menu");
+		
+		Thread.sleep(2000);
+	}
 	
 	public void clickOnCompanyProfile() throws InterruptedException
 	{

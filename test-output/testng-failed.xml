@@ -6,51 +6,27 @@
   </listeners>
   <test thread-count="5" name="TruckX Test Automation(failed)">
     <classes>
-      <class name="project.testscenarios.CompanyProfileScript">
+      <class name="project.testscenarios.ForgotPasswordScript">
         <methods>
-          <include name="Fetct_Repository_Object"/>
-          <include name="NavigatingCompanyProfilePage"/>
-          <include name="EditCompanyProfileFunctionality"/>
-        </methods>
-      </class> <!-- project.testscenarios.CompanyProfileScript -->
-      <class name="project.testscenarios.DeleteTestData">
-        <methods>
-          <include name="Fetct_Repository_Object"/>
-          <include name="DeletingTestdata"/>
-        </methods>
-      </class> <!-- project.testscenarios.DeleteTestData -->
-      <class name="project.testscenarios.APIKeyTransferScript">
-        <methods>
-          <include name="Fetct_Repository_Object"/>
-          <include name="ShareAPIKeyFunctionality"/>
-          <include name="NavigatingAssetPage"/>
-        </methods>
-      </class> <!-- project.testscenarios.APIKeyTransferScript -->
-      <class name="project.testscenarios.IFTAReportScript">
-        <methods>
-          <include name="DownloadReport"/>
-          <include name="NavigatingIFTAReportPage"/>
+          <include name="ForgotPassword"/>
           <include name="Fetct_Repository_Object"/>
         </methods>
-      </class> <!-- project.testscenarios.IFTAReportScript -->
-      <class name="project.testscenarios.DeletedDriverScript">
+      </class> <!-- project.testscenarios.ForgotPasswordScript -->
+      <class name="project.testscenarios.LogoutScript">
         <methods>
-          <include name="NavigatingDriversPage"/>
           <include name="Fetct_Repository_Object"/>
-          <include name="DeletedDriverLogBookFunctionality"/>
+          <include name="Logout"/>
         </methods>
-      </class> <!-- project.testscenarios.DeletedDriverScript -->
-      <class name="project.testscenarios.DriversScript">
+      </class> <!-- project.testscenarios.LogoutScript -->
+      <class name="project.testscenarios.DOTInspectionScript">
         <methods>
-          <include name="VerifyRecords"/>
-          <include name="EditDriverFunctionality"/>
-          <include name="NavigatingDriverPage"/>
-          <include name="CreateDriverFunctionality"/>
+          <include name="NavigatingDOTInspectionPage"/>
+          <include name="ValidateDOTInspection"/>
+          <include name="SwithOnDOTInspection"/>
+          <include name="SwitchOFFDOTInspection"/>
           <include name="Fetct_Repository_Object"/>
-          <include name="SearchFunctionality"/>
-          <include name="DeleteDriverFunctionality"/>
         </methods>
-      </class> <!-- project.testscenarios.DriversScript -->
+      </class> <!-- project.testscenarios.DOTInspectionScript -->
     </classes>
   </test> <!-- TruckX Test Automation(failed) -->
 </suite> <!-- Failed suite [Test Suite] -->

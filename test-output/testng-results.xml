@@ -1,62 +1,323 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="7" passed="1" failed="3" skipped="3">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-01-11T16:15:32 IST" name="Test Suite" finished-at="2023-01-11T16:16:49 IST" duration-ms="77908">
+  <suite started-at="2023-01-17T13:50:50 IST" name="Test Suite" finished-at="2023-01-17T13:54:31 IST" duration-ms="221037">
     <groups>
       <group name="Login">
-        <method signature="LoginScript.validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@76b1e9b8]" name="validUserNameandPassword" class="project.testscenarios.LoginScript"/>
+        <method signature="ForgotPasswordScript.ForgotPassword()[pri:1, instance:project.testscenarios.ForgotPasswordScript@53045c6c]" name="ForgotPassword" class="project.testscenarios.ForgotPasswordScript"/>
+        <method signature="LogoutScript.Logout()[pri:1, instance:project.testscenarios.LogoutScript@795509d9]" name="Logout" class="project.testscenarios.LogoutScript"/>
+        <method signature="LoginScript.validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@202b0582]" name="validUserNameandPassword" class="project.testscenarios.LoginScript"/>
       </group> <!-- Login -->
-      <group name="Duty Status Summary Report">
-        <method signature="DutyStatusSummaryScript.NavigatingDutyStatusSummaryReport()[pri:1, instance:project.testscenarios.DutyStatusSummaryScript@3e27ba32]" name="NavigatingDutyStatusSummaryReport" class="project.testscenarios.DutyStatusSummaryScript"/>
-        <method signature="DutyStatusSummaryScript.DownloadFunctionality()[pri:4, instance:project.testscenarios.DutyStatusSummaryScript@3e27ba32]" name="DownloadFunctionality" class="project.testscenarios.DutyStatusSummaryScript"/>
-        <method signature="DutyStatusSummaryScript.SearchandVerification()[pri:2, instance:project.testscenarios.DutyStatusSummaryScript@3e27ba32]" name="SearchandVerification" class="project.testscenarios.DutyStatusSummaryScript"/>
-      </group> <!-- Duty Status Summary Report -->
+      <group name="DOT Inspection">
+        <method signature="DOTInspectionScript.NavigatingDOTInspectionPage()[pri:1, instance:project.testscenarios.DOTInspectionScript@19e4653c]" name="NavigatingDOTInspectionPage" class="project.testscenarios.DOTInspectionScript"/>
+        <method signature="DOTInspectionScript.SwitchOFFDOTInspection()[pri:4, instance:project.testscenarios.DOTInspectionScript@19e4653c]" name="SwitchOFFDOTInspection" class="project.testscenarios.DOTInspectionScript"/>
+        <method signature="DOTInspectionScript.SwithOnDOTInspection()[pri:2, instance:project.testscenarios.DOTInspectionScript@19e4653c]" name="SwithOnDOTInspection" class="project.testscenarios.DOTInspectionScript"/>
+        <method signature="DOTInspectionScript.ValidateDOTInspection()[pri:3, instance:project.testscenarios.DOTInspectionScript@19e4653c]" name="ValidateDOTInspection" class="project.testscenarios.DOTInspectionScript"/>
+      </group> <!-- DOT Inspection -->
     </groups>
-    <test started-at="2023-01-11T16:15:32 IST" name="TruckX Test Automation" finished-at="2023-01-11T16:16:49 IST" duration-ms="77908">
+    <test started-at="2023-01-17T13:50:50 IST" name="TruckX Test Automation" finished-at="2023-01-17T13:54:31 IST" duration-ms="221037">
+      <class name="project.testscenarios.LogoutScript">
+        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.LogoutScript@795509d9]" started-at="2023-01-17T13:53:01 IST" name="Fetct_Repository_Object" finished-at="2023-01-17T13:53:01 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Fetct_Repository_Object -->
+        <test-method signature="Logout()[pri:1, instance:project.testscenarios.LogoutScript@795509d9]" started-at="2023-01-17T13:53:01 IST" name="Logout" finished-at="2023-01-17T13:54:11 IST" duration-ms="70147" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Unable to click on profile menu item]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Unable to click on profile menu item
+at org.testng.Assert.fail(Assert.java:99)
+at project.webpages.WebPageLogout.ProfileMenuItemClick(WebPageLogout.java:46)
+at project.testscenarios.LogoutScript.Logout(LogoutScript.java:28)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Logout -->
+      </class> <!-- project.testscenarios.LogoutScript -->
       <class name="project.testscenarios.LoginScript">
-        <test-method is-config="true" signature="preRequisite(org.testng.ITestContext)[pri:0, instance:project.testscenarios.LoginScript@76b1e9b8]" started-at="2023-01-11T16:14:49 IST" name="preRequisite" finished-at="2023-01-11T16:15:32 IST" duration-ms="42872" status="PASS">
+        <test-method is-config="true" signature="preRequisite(org.testng.ITestContext)[pri:0, instance:project.testscenarios.LoginScript@202b0582]" started-at="2023-01-17T13:50:15 IST" name="preRequisite" finished-at="2023-01-17T13:50:50 IST" duration-ms="34312" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@1f15e689]]>
+                <![CDATA[org.testng.TestRunner@4a6c0f38]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- preRequisite -->
-        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.LoginScript@76b1e9b8]" started-at="2023-01-11T16:15:32 IST" name="Fetct_Repository_Object" finished-at="2023-01-11T16:15:32 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.LoginScript@202b0582]" started-at="2023-01-17T13:50:50 IST" name="Fetct_Repository_Object" finished-at="2023-01-17T13:50:50 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Fetct_Repository_Object -->
-        <test-method signature="validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@76b1e9b8]" started-at="2023-01-11T16:15:32 IST" name="validUserNameandPassword" finished-at="2023-01-11T16:15:39 IST" duration-ms="7658" status="PASS">
+        <test-method signature="validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@202b0582]" started-at="2023-01-17T13:50:50 IST" name="validUserNameandPassword" finished-at="2023-01-17T13:51:56 IST" duration-ms="65832" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validUserNameandPassword -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:project.testscenarios.LoginScript@76b1e9b8]" started-at="2023-01-11T16:16:49 IST" name="closeBrowser" finished-at="2023-01-11T16:16:55 IST" duration-ms="5818" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:project.testscenarios.LoginScript@202b0582]" started-at="2023-01-17T13:54:31 IST" name="closeBrowser" finished-at="2023-01-17T13:54:37 IST" duration-ms="6110" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- project.testscenarios.LoginScript -->
-      <class name="project.testscenarios.DutyStatusSummaryScript">
-        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.DutyStatusSummaryScript@3e27ba32]" started-at="2023-01-11T16:15:39 IST" name="Fetct_Repository_Object" finished-at="2023-01-11T16:15:39 IST" duration-ms="1" status="PASS">
+      <class name="project.testscenarios.DOTInspectionScript">
+        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.DOTInspectionScript@19e4653c]" started-at="2023-01-17T13:51:56 IST" name="Fetct_Repository_Object" finished-at="2023-01-17T13:51:56 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Fetct_Repository_Object -->
-        <test-method signature="NavigatingDutyStatusSummaryReport()[pri:1, instance:project.testscenarios.DutyStatusSummaryScript@3e27ba32]" started-at="2023-01-11T16:15:39 IST" name="NavigatingDutyStatusSummaryReport" finished-at="2023-01-11T16:15:56 IST" duration-ms="17023" status="PASS">
+        <test-method signature="NavigatingDOTInspectionPage()[pri:1, instance:project.testscenarios.DOTInspectionScript@19e4653c]" started-at="2023-01-17T13:51:56 IST" name="NavigatingDOTInspectionPage" finished-at="2023-01-17T13:52:56 IST" duration-ms="60112" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for presence of element located by: By.xpath: //div[@class="flex flex-col"]//span[text()="Inspection"] (tried for 10 second(s) with 500 milliseconds interval)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.xpath: //div[@class="flex flex-col"]//span[text()="Inspection"] (tried for 10 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+at project.webpages.WebPageDashboard.clickOnInspection(WebPageDashboard.java:304)
+at project.testscenarios.DOTInspectionScript.NavigatingDOTInspectionPage(DOTInspectionScript.java:30)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class="flex flex-col"]//span[text()="Inspection"]"}
+  (Session info: chrome=109.0.5414.74)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: '11167-LAP-0785', ip: '192.168.3.55', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 109.0.5414.74, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\coditas\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:58451}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(manual, http=localhos..., setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 5885fc9d3fc0240c80e242ca7705e037
+*** Element info: {Using=xpath, value=//div[@class="flex flex-col"]//span[text()="Inspection"]}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:182)
+at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:179)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+... 30 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- NavigatingDutyStatusSummaryReport -->
-        <test-method signature="SearchandVerification()[pri:2, instance:project.testscenarios.DutyStatusSummaryScript@3e27ba32]" started-at="2023-01-11T16:15:56 IST" name="SearchandVerification" finished-at="2023-01-11T16:16:32 IST" depends-on-methods="project.testscenarios.DutyStatusSummaryScript.NavigatingDutyStatusSummaryReport" duration-ms="35560" status="PASS">
+        </test-method> <!-- NavigatingDOTInspectionPage -->
+        <test-method signature="SwithOnDOTInspection()[pri:2, instance:project.testscenarios.DOTInspectionScript@19e4653c]" started-at="2023-01-17T13:53:01 IST" name="SwithOnDOTInspection" finished-at="2023-01-17T13:53:01 IST" depends-on-methods="project.testscenarios.DOTInspectionScript.NavigatingDOTInspectionPage" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method DOTInspectionScript.SwithOnDOTInspection()[pri:2, instance:project.testscenarios.DOTInspectionScript@19e4653c] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method DOTInspectionScript.SwithOnDOTInspection()[pri:2, instance:project.testscenarios.DOTInspectionScript@19e4653c] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SearchandVerification -->
-        <test-method signature="DownloadFunctionality()[pri:4, instance:project.testscenarios.DutyStatusSummaryScript@3e27ba32]" started-at="2023-01-11T16:16:32 IST" name="DownloadFunctionality" finished-at="2023-01-11T16:16:49 IST" depends-on-methods="project.testscenarios.DutyStatusSummaryScript.NavigatingDutyStatusSummaryReport" duration-ms="17604" status="PASS">
+        </test-method> <!-- SwithOnDOTInspection -->
+        <test-method signature="ValidateDOTInspection()[pri:3, instance:project.testscenarios.DOTInspectionScript@19e4653c]" started-at="2023-01-17T13:53:01 IST" name="ValidateDOTInspection" finished-at="2023-01-17T13:53:01 IST" depends-on-methods="project.testscenarios.DOTInspectionScript.NavigatingDOTInspectionPage" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method DOTInspectionScript.ValidateDOTInspection()[pri:3, instance:project.testscenarios.DOTInspectionScript@19e4653c] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method DOTInspectionScript.ValidateDOTInspection()[pri:3, instance:project.testscenarios.DOTInspectionScript@19e4653c] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- DownloadFunctionality -->
-      </class> <!-- project.testscenarios.DutyStatusSummaryScript -->
+        </test-method> <!-- ValidateDOTInspection -->
+        <test-method signature="SwitchOFFDOTInspection()[pri:4, instance:project.testscenarios.DOTInspectionScript@19e4653c]" started-at="2023-01-17T13:53:01 IST" name="SwitchOFFDOTInspection" finished-at="2023-01-17T13:53:01 IST" depends-on-methods="project.testscenarios.DOTInspectionScript.NavigatingDOTInspectionPage" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method DOTInspectionScript.SwitchOFFDOTInspection()[pri:4, instance:project.testscenarios.DOTInspectionScript@19e4653c] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method DOTInspectionScript.SwitchOFFDOTInspection()[pri:4, instance:project.testscenarios.DOTInspectionScript@19e4653c] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SwitchOFFDOTInspection -->
+      </class> <!-- project.testscenarios.DOTInspectionScript -->
+      <class name="project.testscenarios.ForgotPasswordScript">
+        <test-method signature="ForgotPassword()[pri:1, instance:project.testscenarios.ForgotPasswordScript@53045c6c]" started-at="2023-01-17T13:54:14 IST" name="ForgotPassword" finished-at="2023-01-17T13:54:27 IST" duration-ms="12779" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Couldn't find an account associated with that email address expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Couldn't find an account associated with that email address expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertTrue(Assert.java:45)
+at project.testscenarios.ForgotPasswordScript.ForgotPassword(ForgotPasswordScript.java:36)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ForgotPassword -->
+        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.ForgotPasswordScript@53045c6c]" started-at="2023-01-17T13:54:14 IST" name="Fetct_Repository_Object" finished-at="2023-01-17T13:54:14 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Fetct_Repository_Object -->
+      </class> <!-- project.testscenarios.ForgotPasswordScript -->
     </test> <!-- TruckX Test Automation -->
   </suite> <!-- Test Suite -->
 </testng-results>

@@ -90,6 +90,18 @@ public class WebPageObjectCreation {
 	
 	WebPageHOSCompliance hoscompliancePage;
 	
+	WebPageDOTInspection dotinspectionPage;
+	
+	public WebPageDOTInspection DOTInspectionPageObject()
+	{
+		if(dotinspectionPage==null)
+		{
+			log.info("DOT Inspection page object created");
+			dotinspectionPage = new WebPageDOTInspection(driver);
+		}
+		return dotinspectionPage;
+	}
+	
 	public WebPageIdleTime IdleTimePageObject()
 	{
 		if(idletimePage==null)
