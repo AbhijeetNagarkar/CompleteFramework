@@ -15,8 +15,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import project.utility.EmailSendUtils;
-import project.mediator.*;
-import static project.constants.FilePathDeclaration.*;
+import static project.constants.ConstantDeclaration.*;
 
 public class ExtentReportListener implements ITestListener, ISuiteListener {
 
@@ -36,8 +35,8 @@ public class ExtentReportListener implements ITestListener, ISuiteListener {
 		//Create an html report for the suite that is executed
 		report = new com.aventstack.extentreports.ExtentReports();
 		report.attachReporter(htmlreport);
-		
-	
+		htmlreport.config().setDocumentTitle(suite.getName());
+		htmlreport.config().setReportName(suite.getName());
 	}
 	
 	@Override
@@ -73,26 +72,31 @@ public class ExtentReportListener implements ITestListener, ISuiteListener {
 	public void onTestFailure(ITestResult result) 
 	{
 		count_failedTCs = count_failedTCs + 1;
-		String fileName = String.format("Screenshot-%s.jpg", Calendar.getInstance().getTimeInMillis());
-		WebDriver driver = (WebDriver)result.getTestContext().getAttribute("WebDriver"); //use string from setAttribute from BasePage
-		File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		File destFile = new File(System.getProperty("user.dir")+File.separator+"Screenshots"+File.separator+ fileName);
-		try {
-			FileUtils.copyFile(srcFile, destFile);
-			System.out.println("Screenshot taken, saved in screenshots folder");
-			System.out.println(result.getThrowable().getMessage());
-		} catch(IOException e) {
-			System.out.println("Failed to take screenshot");
+		
+		WebDriver driver = (WebDriver)result.getTestContext().getAttribute("Driver"); //use string from setAttribute from BasePage
+		if(driver!=null)
+		{
+			String fileName = String.format("Screenshot-%s.jpg", Calendar.getInstance().getTimeInMillis());
+			
+			File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			File destFile = new File(System.getProperty("user.dir")+File.separator+"Screenshots"+File.separator+ fileName);
+			try {
+				FileUtils.copyFile(srcFile, destFile);
+				System.out.println("Screenshot taken, saved in screenshots folder");
+				System.out.println(result.getThrowable().getMessage());
+			} catch(IOException e) {
+				System.out.println("Failed to take screenshot");
+			}
+			logger.fail(result.getThrowable().getMessage());
+			String str=System.getProperty("user.dir")+File.separator+"Screenshots"+File.separator+ fileName;
+			try {
+				logger.addScreenCaptureFromPath(str);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
-		logger.fail(result.getThrowable().getMessage());
-		String str=System.getProperty("user.dir")+File.separator+"Screenshots"+File.separator+ fileName;
-		try {
-			logger.addScreenCaptureFromPath(str);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		Driver.Refresh();
+	//	DriverRepository.Refresh();
 		
 	}
 

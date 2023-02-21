@@ -1,0 +1,160 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "result": {
+      "type": "string"
+    },
+    "carrier": {
+      "type": "object",
+      "properties": {
+        "dot": {
+          "type": "string"
+        },
+        "carrier_id": {
+          "type": "string"
+        },
+        "carrier_name": {
+          "type": "string"
+        },
+        "cycle_timezone": {
+          "type": "string"
+        },
+        "device_mode": {
+          "type": "string"
+        },
+        "is_location_sharing_enabled": {
+          "type": "boolean"
+        },
+        "admin_email": {
+          "type": "string"
+        },
+        "carrier_office_address": {
+          "type": "object",
+          "properties": {
+            "address_line1": {
+              "type": "string"
+            },
+            "address_line2": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "state": {
+              "type": "string"
+            },
+            "zipcode": {
+              "type": "string"
+            },
+            "country": {
+              "type": "string"
+            },
+            "longitude": {
+              "type": "string"
+            },
+            "latitude": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "address_line1",
+            "address_line2",
+            "city",
+            "state",
+            "zipcode",
+            "country",
+            "longitude",
+            "latitude"
+          ]
+        },
+        "carrier_terminal_address": {
+          "type": "object",
+          "properties": {
+            "address_line1": {
+              "type": "string"
+            },
+            "address_line2": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "state": {
+              "type": "string"
+            },
+            "zipcode": {
+              "type": "string"
+            },
+            "country": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "address_line1",
+            "address_line2",
+            "city",
+            "state",
+            "zipcode",
+            "country"
+          ]
+        },
+        "carrier_metadata": {
+          "type": "object",
+          "properties": {
+            "page": {
+              "type": "string"
+            },
+            "alerts_fetched_till_ts": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "page",
+            "alerts_fetched_till_ts"
+          ]
+        },
+        "status": {
+          "type": "string"
+        },
+        "support": {
+          "type": "object",
+          "properties": {
+            "phone": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "phone",
+            "email"
+          ]
+        }
+      },
+      "required": [
+        "dot",
+        "carrier_id",
+        "carrier_name",
+        "cycle_timezone",
+        "device_mode",
+        "is_location_sharing_enabled",
+        "admin_email",
+        "carrier_office_address",
+        "carrier_terminal_address",
+        "carrier_metadata",
+        "status",
+        "support"
+      ]
+    },
+    "error": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "result",
+    "carrier",
+    "error"
+  ]
+}

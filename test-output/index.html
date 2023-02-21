@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 12 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,8 +39,8 @@
       <div class="suite">
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
-            <a href="#" panel-name="suite-Test_Suite" class="navigator-link">
-              <span class="suite-name border-passed">Test Suite</span>
+            <a href="#" panel-name="suite-API_Test_Automation_Suite" class="navigator-link">
+              <span class="suite-name border-failed">API Test Automation Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -50,37 +50,37 @@
             <div class="suite-section-content">
               <ul>
                 <li>
-                  <a href="#" panel-name="test-xml-Test_Suite" class="navigator-link ">
-                    <span>C:\Space\Projects\fms-automation\testng.xml</span>
+                  <a href="#" panel-name="test-xml-API_Test_Automation_Suite" class="navigator-link ">
+                    <span>C:\AutomationFramework\APItestng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="testlist-Test_Suite" class="navigator-link ">
+                  <a href="#" panel-name="testlist-API_Test_Automation_Suite" class="navigator-link ">
                     <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="group-Test_Suite" class="navigator-link ">
-                    <span>1 group</span>
+                  <a href="#" panel-name="group-API_Test_Automation_Suite" class="navigator-link ">
+                    <span>12 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="times-Test_Suite" class="navigator-link ">
+                  <a href="#" panel-name="times-API_Test_Automation_Suite" class="navigator-link ">
                     <span>Times</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="reporter-Test_Suite" class="navigator-link ">
+                  <a href="#" panel-name="reporter-API_Test_Automation_Suite" class="navigator-link ">
                     <span>Reporter output</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="ignored-methods-Test_Suite" class="navigator-link ">
+                  <a href="#" panel-name="ignored-methods-API_Test_Automation_Suite" class="navigator-link ">
                     <span>Ignored methods</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="chronological-Test_Suite" class="navigator-link ">
+                  <a href="#" panel-name="chronological-API_Test_Automation_Suite" class="navigator-link ">
                     <span>Chronological view</span>
                   </a> <!-- navigator-link  -->
                 </li>
@@ -93,21 +93,76 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">12 methods, 12 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Test_Suite" class="hide-methods passed suite-Test_Suite"> (hide)</a> <!-- hide-methods passed suite-Test_Suite -->
-                      <a href="#" panel-name="suite-Test_Suite" class="show-methods passed suite-Test_Suite"> (show)</a> <!-- show-methods passed suite-Test_Suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-API_Test_Automation_Suite" class="hide-methods failed suite-API_Test_Automation_Suite"> (hide)</a> <!-- hide-methods failed suite-API_Test_Automation_Suite -->
+                      <a href="#" panel-name="suite-API_Test_Automation_Suite" class="show-methods failed suite-API_Test_Automation_Suite"> (show)</a> <!-- show-methods failed suite-API_Test_Automation_Suite -->
                     </span>
-                    <div class="method-list-content passed suite-Test_Suite">
+                    <div class="method-list-content failed suite-API_Test_Automation_Suite">
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Test_Suite" title="project.testscenarios.LoginScript" class="method navigator-link" hash-for-method="validUserNameandPassword">validUserNameandPassword</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-API_Test_Automation_Suite" title="project.APITestScenario.ArchivedDrivers" class="method navigator-link" hash-for-method="GETArchivedDrivers(org.testng.TestRunner@49d7e8c8)">GETArchivedDrivers(org.testng.TestRunner@49d7e8c8)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Test_Suite -->
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-API_Test_Automation_Suite" title="project.APITestScenario.CarrierInfo" class="method navigator-link" hash-for-method="GETCarrierInfo(org.testng.TestRunner@49d7e8c8)">GETCarrierInfo(org.testng.TestRunner@49d7e8c8)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-API_Test_Automation_Suite" title="project.APITestScenario.Dashboard" class="method navigator-link" hash-for-method="GETDashboard(org.testng.TestRunner@49d7e8c8)">GETDashboard(org.testng.TestRunner@49d7e8c8)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-API_Test_Automation_Suite" title="project.APITestScenario.Drivers" class="method navigator-link" hash-for-method="GETDrivers(org.testng.TestRunner@49d7e8c8)">GETDrivers(org.testng.TestRunner@49d7e8c8)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-API_Test_Automation_Suite" title="project.APITestScenario.DriversList" class="method navigator-link" hash-for-method="GETDriversList(org.testng.TestRunner@49d7e8c8)">GETDriversList(org.testng.TestRunner@49d7e8c8)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-API_Test_Automation_Suite" title="project.APITestScenario.Elogs" class="method navigator-link" hash-for-method="GETElogs(org.testng.TestRunner@49d7e8c8)">GETElogs(org.testng.TestRunner@49d7e8c8)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-API_Test_Automation_Suite" title="project.APITestScenario.Gallons" class="method navigator-link" hash-for-method="GETGallons(org.testng.TestRunner@49d7e8c8)">GETGallons(org.testng.TestRunner@49d7e8c8)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-API_Test_Automation_Suite" title="project.APITestScenario.IFTA" class="method navigator-link" hash-for-method="GETIFTA(org.testng.TestRunner@49d7e8c8)">GETIFTA(org.testng.TestRunner@49d7e8c8)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-API_Test_Automation_Suite" title="project.APITestScenario.IFTAReports" class="method navigator-link" hash-for-method="GETIFTAReport(org.testng.TestRunner@49d7e8c8)">GETIFTAReport(org.testng.TestRunner@49d7e8c8)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-API_Test_Automation_Suite" title="project.APITestScenario.Trailerslist" class="method navigator-link" hash-for-method="GetTrailersList(org.testng.TestRunner@49d7e8c8)">GetTrailersList(org.testng.TestRunner@49d7e8c8)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-API_Test_Automation_Suite" title="project.APITestScenario.TruckList" class="method navigator-link" hash-for-method="GetTruckList(org.testng.TestRunner@49d7e8c8)">GetTruckList(org.testng.TestRunner@49d7e8c8)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-API_Test_Automation_Suite" title="project.APITestScenario.TruckLocation" class="method navigator-link" hash-for-method="GetTruckLocation(org.testng.TestRunner@49d7e8c8)">GetTruckLocation(org.testng.TestRunner@49d7e8c8)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-API_Test_Automation_Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -118,136 +173,863 @@
     </div> <!-- navigator-root -->
     <div class="wrapper">
       <div class="main-panel-root">
-        <div panel-name="suite-Test_Suite" class="panel Test_Suite">
-          <div class="suite-Test_Suite-class-passed">
+        <div panel-name="suite-API_Test_Automation_Suite" class="panel API_Test_Automation_Suite">
+          <div class="suite-API_Test_Automation_Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">project.testscenarios.LoginScript</span>
+              <img src="failed.png"/>
+              <span class="class-name">project.APITestScenario.IFTAReports</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="validUserNameandPassword">
-                  </a> <!-- validUserNameandPassword -->
-                  <span class="method-name">validUserNameandPassword</span>
+                  <a name="GETIFTAReport(org.testng.TestRunner@49d7e8c8)">
+                  </a> <!-- GETIFTAReport(org.testng.TestRunner@49d7e8c8) -->
+                  <span class="method-name">GETIFTAReport</span>
+                  <span class="parameters">(org.testng.TestRunner@49d7e8c8)</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;java.util.HashMap.get(Object)&quot; because the return value of &quot;project.Mediator.APITestData.GetProdTestData()&quot; is null
+	at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+	at project.APITestScenario.IFTAReports.GETIFTAReport(IFTAReports.java:45)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 18 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Test_Suite-class-passed -->
-        </div> <!-- panel Test_Suite -->
-        <div panel-name="test-xml-Test_Suite" class="panel">
+          </div> <!-- suite-API_Test_Automation_Suite-class-failed -->
+          <div class="suite-API_Test_Automation_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">project.APITestScenario.Trailerslist</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="GetTrailersList(org.testng.TestRunner@49d7e8c8)">
+                  </a> <!-- GetTrailersList(org.testng.TestRunner@49d7e8c8) -->
+                  <span class="method-name">GetTrailersList</span>
+                  <span class="parameters">(org.testng.TestRunner@49d7e8c8)</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;java.util.HashMap.get(Object)&quot; because the return value of &quot;project.Mediator.APITestData.GetProdTestData()&quot; is null
+	at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+	at project.APITestScenario.Trailerslist.GetTrailersList(Trailerslist.java:47)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 18 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-API_Test_Automation_Suite-class-failed -->
+          <div class="suite-API_Test_Automation_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">project.APITestScenario.Drivers</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="GETDrivers(org.testng.TestRunner@49d7e8c8)">
+                  </a> <!-- GETDrivers(org.testng.TestRunner@49d7e8c8) -->
+                  <span class="method-name">GETDrivers</span>
+                  <span class="parameters">(org.testng.TestRunner@49d7e8c8)</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;java.util.HashMap.get(Object)&quot; because the return value of &quot;project.Mediator.APITestData.GetProdTestData()&quot; is null
+	at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+	at project.APITestScenario.Drivers.GETDrivers(Drivers.java:48)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 18 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-API_Test_Automation_Suite-class-failed -->
+          <div class="suite-API_Test_Automation_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">project.APITestScenario.IFTA</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="GETIFTA(org.testng.TestRunner@49d7e8c8)">
+                  </a> <!-- GETIFTA(org.testng.TestRunner@49d7e8c8) -->
+                  <span class="method-name">GETIFTA</span>
+                  <span class="parameters">(org.testng.TestRunner@49d7e8c8)</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;java.util.HashMap.get(Object)&quot; because the return value of &quot;project.Mediator.APITestData.GetProdTestData()&quot; is null
+	at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+	at project.APITestScenario.IFTA.GETIFTA(IFTA.java:45)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 18 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-API_Test_Automation_Suite-class-failed -->
+          <div class="suite-API_Test_Automation_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">project.APITestScenario.Elogs</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="GETElogs(org.testng.TestRunner@49d7e8c8)">
+                  </a> <!-- GETElogs(org.testng.TestRunner@49d7e8c8) -->
+                  <span class="method-name">GETElogs</span>
+                  <span class="parameters">(org.testng.TestRunner@49d7e8c8)</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;java.util.HashMap.get(Object)&quot; because the return value of &quot;project.Mediator.APITestData.GetProdTestData()&quot; is null
+	at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+	at project.APITestScenario.Elogs.GETElogs(Elogs.java:47)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 18 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-API_Test_Automation_Suite-class-failed -->
+          <div class="suite-API_Test_Automation_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">project.APITestScenario.ArchivedDrivers</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="GETArchivedDrivers(org.testng.TestRunner@49d7e8c8)">
+                  </a> <!-- GETArchivedDrivers(org.testng.TestRunner@49d7e8c8) -->
+                  <span class="method-name">GETArchivedDrivers</span>
+                  <span class="parameters">(org.testng.TestRunner@49d7e8c8)</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;java.util.HashMap.get(Object)&quot; because the return value of &quot;project.Mediator.APITestData.GetProdTestData()&quot; is null
+	at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+	at project.APITestScenario.ArchivedDrivers.GETArchivedDrivers(ArchivedDrivers.java:45)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 18 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-API_Test_Automation_Suite-class-failed -->
+          <div class="suite-API_Test_Automation_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">project.APITestScenario.TruckList</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="GetTruckList(org.testng.TestRunner@49d7e8c8)">
+                  </a> <!-- GetTruckList(org.testng.TestRunner@49d7e8c8) -->
+                  <span class="method-name">GetTruckList</span>
+                  <span class="parameters">(org.testng.TestRunner@49d7e8c8)</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;java.util.HashMap.get(Object)&quot; because the return value of &quot;project.Mediator.APITestData.GetProdTestData()&quot; is null
+	at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+	at project.APITestScenario.TruckList.GetTruckList(TruckList.java:47)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 18 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-API_Test_Automation_Suite-class-failed -->
+          <div class="suite-API_Test_Automation_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">project.APITestScenario.Gallons</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="GETGallons(org.testng.TestRunner@49d7e8c8)">
+                  </a> <!-- GETGallons(org.testng.TestRunner@49d7e8c8) -->
+                  <span class="method-name">GETGallons</span>
+                  <span class="parameters">(org.testng.TestRunner@49d7e8c8)</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;java.util.HashMap.get(Object)&quot; because the return value of &quot;project.Mediator.APITestData.GetProdTestData()&quot; is null
+	at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+	at project.APITestScenario.Gallons.GETGallons(Gallons.java:44)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 18 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-API_Test_Automation_Suite-class-failed -->
+          <div class="suite-API_Test_Automation_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">project.APITestScenario.Dashboard</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="GETDashboard(org.testng.TestRunner@49d7e8c8)">
+                  </a> <!-- GETDashboard(org.testng.TestRunner@49d7e8c8) -->
+                  <span class="method-name">GETDashboard</span>
+                  <span class="parameters">(org.testng.TestRunner@49d7e8c8)</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;java.util.HashMap.get(Object)&quot; because the return value of &quot;project.Mediator.APITestData.GetProdTestData()&quot; is null
+	at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+	at project.APITestScenario.Dashboard.GETDashboard(Dashboard.java:48)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 18 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-API_Test_Automation_Suite-class-failed -->
+          <div class="suite-API_Test_Automation_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">project.APITestScenario.DriversList</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="GETDriversList(org.testng.TestRunner@49d7e8c8)">
+                  </a> <!-- GETDriversList(org.testng.TestRunner@49d7e8c8) -->
+                  <span class="method-name">GETDriversList</span>
+                  <span class="parameters">(org.testng.TestRunner@49d7e8c8)</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;java.util.HashMap.get(Object)&quot; because the return value of &quot;project.Mediator.APITestData.GetProdTestData()&quot; is null
+	at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+	at project.APITestScenario.DriversList.GETDriversList(DriversList.java:45)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 18 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-API_Test_Automation_Suite-class-failed -->
+          <div class="suite-API_Test_Automation_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">project.APITestScenario.CarrierInfo</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="GETCarrierInfo(org.testng.TestRunner@49d7e8c8)">
+                  </a> <!-- GETCarrierInfo(org.testng.TestRunner@49d7e8c8) -->
+                  <span class="method-name">GETCarrierInfo</span>
+                  <span class="parameters">(org.testng.TestRunner@49d7e8c8)</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;java.util.HashMap.get(Object)&quot; because the return value of &quot;project.Mediator.APITestData.GetProdTestData()&quot; is null
+	at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+	at project.APITestScenario.CarrierInfo.GETCarrierInfo(CarrierInfo.java:46)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 18 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-API_Test_Automation_Suite-class-failed -->
+          <div class="suite-API_Test_Automation_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">project.APITestScenario.TruckLocation</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="GetTruckLocation(org.testng.TestRunner@49d7e8c8)">
+                  </a> <!-- GetTruckLocation(org.testng.TestRunner@49d7e8c8) -->
+                  <span class="method-name">GetTruckLocation</span>
+                  <span class="parameters">(org.testng.TestRunner@49d7e8c8)</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;java.util.HashMap.get(Object)&quot; because the return value of &quot;project.Mediator.APITestData.GetProdTestData()&quot; is null
+	at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+	at project.APITestScenario.TruckLocation.GetTruckLocation(TruckLocation.java:45)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 18 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-API_Test_Automation_Suite-class-failed -->
+        </div> <!-- panel API_Test_Automation_Suite -->
+        <div panel-name="test-xml-API_Test_Automation_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Space\Projects\fms-automation\testng.xml</span>
+            <span class="header-content">C:\AutomationFramework\APItestng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite name=&quot;Test Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+&lt;suite thread-count=&quot;12&quot; parallel=&quot;tests&quot; name=&quot;API Test Automation Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;parameter name=&quot;Suite Type&quot; value=&quot;API&quot;/&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;project.listners.ExtentReportListener&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;1&quot; name=&quot;TruckX Test Automation&quot;&gt;
+  &lt;test thread-count=&quot;12&quot; parallel=&quot;tests&quot; name=&quot;API Test Automation&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;project.testscenarios.LoginScript&quot;/&gt;
+      &lt;class name=&quot;project.APITestScenario.Dashboard&quot;/&gt;
+      &lt;class name=&quot;project.APITestScenario.Elogs&quot;/&gt;
+      &lt;class name=&quot;project.APITestScenario.Drivers&quot;/&gt;
+      &lt;class name=&quot;project.APITestScenario.TruckList&quot;/&gt;
+      &lt;class name=&quot;project.APITestScenario.TruckLocation&quot;/&gt;
+      &lt;class name=&quot;project.APITestScenario.CarrierInfo&quot;/&gt;
+      &lt;class name=&quot;project.APITestScenario.Trailerslist&quot;/&gt;
+      &lt;class name=&quot;project.APITestScenario.ArchivedDrivers&quot;/&gt;
+      &lt;class name=&quot;project.APITestScenario.DriversList&quot;/&gt;
+      &lt;class name=&quot;project.APITestScenario.IFTAReports&quot;/&gt;
+      &lt;class name=&quot;project.APITestScenario.IFTA&quot;/&gt;
+      &lt;class name=&quot;project.APITestScenario.Gallons&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- TruckX Test Automation --&gt;
-&lt;/suite&gt; &lt;!-- Test Suite --&gt;
+  &lt;/test&gt; &lt;!-- API Test Automation --&gt;
+&lt;/suite&gt; &lt;!-- API Test Automation Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="testlist-Test_Suite" class="panel">
+        <div panel-name="testlist-API_Test_Automation_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Tests for Test Suite</span>
+            <span class="header-content">Tests for API Test Automation Suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">TruckX Test Automation (1 class)</span>
+                <span class="test-name">API Test Automation (12 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="group-Test_Suite" class="panel">
+        <div panel-name="group-API_Test_Automation_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Groups for Test Suite</span>
+            <span class="header-content">Groups for API Test Automation Suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="test-group">
-              <span class="test-group-name">Login</span>
+              <span class="test-group-name">Archived Drivers</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">validUserNameandPassword</span>
+                <span class="method-in-group-name">GETArchivedDrivers</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">Carrier Info</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">GETCarrierInfo</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">Dashboard</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">GETDashboard</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">Drivers</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">GETDrivers</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">Drivers List</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">GETDriversList</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">Elogs</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">GETElogs</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">Gallons</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">GETGallons</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">IFTA</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">GETIFTA</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">IFTA Report</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">GETIFTAReport</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">Trailers List</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">GetTrailersList</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">Truck List</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">GetTruckList</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">Truck Location</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">GetTruckLocation</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="times-Test_Suite" class="panel">
+        <div panel-name="times-API_Test_Automation_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Times for Test Suite</span>
+            <span class="header-content">Times for API Test Automation Suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="times-div">
               <script type="text/javascript">
-suiteTableInitFunctions.push('tableData_Test_Suite');
-function tableData_Test_Suite() {
+suiteTableInitFunctions.push('tableData_API_Test_Automation_Suite');
+function tableData_API_Test_Automation_Suite() {
 var data = new google.visualization.DataTable();
 data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(12);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'validUserNameandPassword')
-data.setCell(0, 2, 'project.testscenarios.LoginScript')
-data.setCell(0, 3, 41550);
-window.suiteTableData['Test_Suite']= { tableData: data, tableDiv: 'times-div-Test_Suite'}
+data.setCell(0, 1, 'GETCarrierInfo')
+data.setCell(0, 2, 'project.APITestScenario.CarrierInfo')
+data.setCell(0, 3, 21);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'GETGallons')
+data.setCell(1, 2, 'project.APITestScenario.Gallons')
+data.setCell(1, 3, 3);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'GetTruckLocation')
+data.setCell(2, 2, 'project.APITestScenario.TruckLocation')
+data.setCell(2, 3, 3);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'GETDriversList')
+data.setCell(3, 2, 'project.APITestScenario.DriversList')
+data.setCell(3, 3, 3);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'GETDrivers')
+data.setCell(4, 2, 'project.APITestScenario.Drivers')
+data.setCell(4, 3, 3);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'GetTruckList')
+data.setCell(5, 2, 'project.APITestScenario.TruckList')
+data.setCell(5, 3, 3);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'GETElogs')
+data.setCell(6, 2, 'project.APITestScenario.Elogs')
+data.setCell(6, 3, 3);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'GETArchivedDrivers')
+data.setCell(7, 2, 'project.APITestScenario.ArchivedDrivers')
+data.setCell(7, 3, 3);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'GETDashboard')
+data.setCell(8, 2, 'project.APITestScenario.Dashboard')
+data.setCell(8, 3, 2);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'GETIFTA')
+data.setCell(9, 2, 'project.APITestScenario.IFTA')
+data.setCell(9, 3, 2);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'GetTrailersList')
+data.setCell(10, 2, 'project.APITestScenario.Trailerslist')
+data.setCell(10, 3, 2);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'GETIFTAReport')
+data.setCell(11, 2, 'project.APITestScenario.IFTAReports')
+data.setCell(11, 3, 2);
+window.suiteTableData['API_Test_Automation_Suite']= { tableData: data, tableDiv: 'times-div-API_Test_Automation_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 41 seconds</span>
-              <div id="times-div-Test_Suite">
-              </div> <!-- times-div-Test_Suite -->
+              <span class="suite-total-time">Total running time: 131 ms</span>
+              <div id="times-div-API_Test_Automation_Suite">
+              </div> <!-- times-div-API_Test_Automation_Suite -->
             </div> <!-- times-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="reporter-Test_Suite" class="panel">
+        <div panel-name="reporter-API_Test_Automation_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Reporter output for Test Suite</span>
+            <span class="header-content">Reporter output for API Test Automation Suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="ignored-methods-Test_Suite" class="panel">
+        <div panel-name="ignored-methods-API_Test_Automation_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">22 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">project.APITestScenario.ArchivedDrivers</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">preRequisite</span>
+                <br/>
+                <span class="ignored-method-name">closeBrowser</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">project.APITestScenario.IFTAReports</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">preRequisite</span>
+                <br/>
+                <span class="ignored-method-name">closeBrowser</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">project.APITestScenario.Trailerslist</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">preRequisite</span>
+                <br/>
+                <span class="ignored-method-name">closeBrowser</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">project.APITestScenario.TruckList</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">preRequisite</span>
+                <br/>
+                <span class="ignored-method-name">closeBrowser</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">project.APITestScenario.Gallons</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">preRequisite</span>
+                <br/>
+                <span class="ignored-method-name">closeBrowser</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">project.APITestScenario.Drivers</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">preRequisite</span>
+                <br/>
+                <span class="ignored-method-name">closeBrowser</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">project.APITestScenario.DriversList</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">preRequisite</span>
+                <br/>
+                <span class="ignored-method-name">closeBrowser</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">project.APITestScenario.CarrierInfo</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">preRequisite</span>
+                <br/>
+                <span class="ignored-method-name">closeBrowser</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">project.APITestScenario.IFTA</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">preRequisite</span>
+                <br/>
+                <span class="ignored-method-name">closeBrowser</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">project.APITestScenario.TruckLocation</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">preRequisite</span>
+                <br/>
+                <span class="ignored-method-name">closeBrowser</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">project.APITestScenario.Elogs</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">preRequisite</span>
+                <br/>
+                <span class="ignored-method-name">closeBrowser</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="chronological-Test_Suite" class="panel">
+        <div panel-name="chronological-API_Test_Automation_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">Methods in chronological order</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">project.testscenarios.LoginScript</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">project.APITestScenario.Dashboard</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">preRequisite(org.testng.TestRunner@4b87074a)</span>
+                <span class="method-name">preRequisite(API, org.testng.TestRunner@49d7e8c8)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
-              <div class="configuration-class before">
-                <span class="method-name">Fetct_Repository_Object</span>
-                <span class="method-start">36039 ms</span>
-              </div> <!-- configuration-class before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">project.APITestScenario.ArchivedDrivers</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">initialise</span>
+                <span class="method-start">1507 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">project.APITestScenario.Dashboard</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">initialise</span>
+                <span class="method-start">1511 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">project.APITestScenario.DriversList</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">initialise</span>
+                <span class="method-start">1511 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">project.APITestScenario.Elogs</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">initialise</span>
+                <span class="method-start">1511 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">project.APITestScenario.CarrierInfo</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">initialise</span>
+                <span class="method-start">1511 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">project.APITestScenario.Drivers</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">initialise</span>
+                <span class="method-start">1511 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">project.APITestScenario.TruckLocation</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">initialise</span>
+                <span class="method-start">1512 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">project.APITestScenario.Trailerslist</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">initialise</span>
+                <span class="method-start">1512 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">project.APITestScenario.IFTA</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">initialise</span>
+                <span class="method-start">1512 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">project.APITestScenario.TruckList</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">initialise</span>
+                <span class="method-start">1512 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">project.APITestScenario.Gallons</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">initialise</span>
+                <span class="method-start">1512 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">project.APITestScenario.IFTAReports</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">initialise</span>
+                <span class="method-start">1512 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">project.APITestScenario.CarrierInfo</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">validUserNameandPassword</span>
-                <span class="method-start">36046 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">GETCarrierInfo(org.testng.TestRunner@49d7e8c8)</span>
+                <span class="method-start">1544 ms</span>
               </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">project.APITestScenario.Dashboard</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">GETDashboard(org.testng.TestRunner@49d7e8c8)</span>
+                <span class="method-start">1575 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">project.APITestScenario.Drivers</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">GETDrivers(org.testng.TestRunner@49d7e8c8)</span>
+                <span class="method-start">1581 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">project.APITestScenario.Elogs</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">GETElogs(org.testng.TestRunner@49d7e8c8)</span>
+                <span class="method-start">1587 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">project.APITestScenario.Trailerslist</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">GetTrailersList(org.testng.TestRunner@49d7e8c8)</span>
+                <span class="method-start">1593 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">project.APITestScenario.TruckList</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">GetTruckList(org.testng.TestRunner@49d7e8c8)</span>
+                <span class="method-start">1598 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">project.APITestScenario.TruckLocation</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">GetTruckLocation(org.testng.TestRunner@49d7e8c8)</span>
+                <span class="method-start">1603 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">project.APITestScenario.ArchivedDrivers</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">GETArchivedDrivers(org.testng.TestRunner@49d7e8c8)</span>
+                <span class="method-start">1610 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">project.APITestScenario.DriversList</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">GETDriversList(org.testng.TestRunner@49d7e8c8)</span>
+                <span class="method-start">1615 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">project.APITestScenario.Gallons</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">GETGallons(org.testng.TestRunner@49d7e8c8)</span>
+                <span class="method-start">1620 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">project.APITestScenario.IFTA</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">GETIFTA(org.testng.TestRunner@49d7e8c8)</span>
+                <span class="method-start">1626 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">project.APITestScenario.IFTAReports</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">GETIFTAReport(org.testng.TestRunner@49d7e8c8)</span>
+                <span class="method-start">1631 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">project.APITestScenario.Dashboard</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
-                <span class="method-name">closeBrowser</span>
-                <span class="method-start">77631 ms</span>
+                <span class="method-name">closeBrowser(API)</span>
+                <span class="method-start">1730 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

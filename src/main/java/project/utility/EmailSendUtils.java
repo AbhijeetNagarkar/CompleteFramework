@@ -1,10 +1,7 @@
 package project.utility;
 
 import javax.mail.MessagingException;
-
-import project.mediator.TestData;
-
-import static project.constants.FilePathDeclaration.*;
+import static project.constants.ConstantDeclaration.*;
 import static project.utility.EmailConfig.*;
 
 public class EmailSendUtils {
@@ -12,28 +9,56 @@ public class EmailSendUtils {
     public static void sendEmail(int count_totalTCs, int count_passedTCs, int count_failedTCs, int count_skippedTCs) {
 
         try {
-			if ((TestData.GetConfigurationData().get("Send Mail")).equalsIgnoreCase("yes")) {
-			    System.out.println("****************************************");
-			    System.out.println("Send Email - START");
-			    System.out.println("****************************************");
+	        	
+				if ((EmailConfig.SendEmail).equalsIgnoreCase("yes")) 
+				{
+				    System.out.println("****************************************");
+				    System.out.println("Send Email - START");
+				    System.out.println("****************************************");
+	
+				    String messageBody = getTestCasesCountInFormat(count_totalTCs, count_passedTCs, count_failedTCs,
+				    					 count_skippedTCs);
+				   
+				    try 
+				    {
+				    	if((System.getenv().get("LOGBOOKENVIRONMENT"))!=null)
+						{
+							if((System.getenv().get("LOGBOOKENVIRONMENT")).equalsIgnoreCase(LOCALENVIRONMENT))
+							{	EmailAttachmentsSender.sendEmailWithAttachments(SERVER, PORT, LOCALFROM, LOCALPASSWORD, TO, SUBJECT, messageBody,
+					        		ExtendReportPath);
+								printTemplate();
+							}
+							else
+							{
+								System.out.println("Send Email failed...");
+								System.out.println("Incorrect LOGBOOKENVIRONMENT in Environment variable");
+							}
+						}
+				    	else if((System.getProperty("LOGBOOKENVIRONMENT"))!=null)
+						{
+							if((System.getProperty("LOGBOOKENVIRONMENT")).equalsIgnoreCase(JENKINSENVIRONMENT))
+							{
+								EmailAttachmentsSender.sendEmailWithAttachments(SERVER, PORT, CLOUDFROM, CLOUDPASSWORD, TO, SUBJECT, messageBody,
+									        		ExtendReportPath);
+								printTemplate();
+							}
+							else
+							{
+								System.out.println("Send Email failed...");
+								System.out.println("Incorrect LOGBOOKENVIRONMENT in Environment variable");
+							}
+						}
+						else
+						{
+							System.out.println("Send Email failed...");
+							System.out.println("Email ID/Password Missing. Please setup Environment variable");
+						}
+				        
+				    } catch (MessagingException e) {
+				        e.printStackTrace();
+				    }
 
-			    String messageBody = getTestCasesCountInFormat(count_totalTCs, count_passedTCs, count_failedTCs,
-			    					 count_skippedTCs);
-			    
-			    try 
-			    {
-			        EmailAttachmentsSender.sendEmailWithAttachments(SERVER, PORT, FROM, PASSWORD, TO, SUBJECT, messageBody,
-			        		ExtendReportPath);
-
-			        System.out.println("****************************************");
-			        System.out.println("Email sent successfully.");
-			        System.out.println("Send Email - END");
-			        System.out.println("****************************************");
-			    } catch (MessagingException e) {
-			        e.printStackTrace();
-			    }
-
-			}
+				}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -41,7 +66,16 @@ public class EmailSendUtils {
 
     }
 
-    private static String getTestCasesCountInFormat(int count_totalTCs, int count_passedTCs, int count_failedTCs,
+    private static void printTemplate() {
+		// TODO Auto-generated method stub
+    	System.out.println("****************************************");
+        System.out.println("Email sent successfully.");
+        System.out.println("Send Email - END");
+        System.out.println("****************************************");
+		
+	}
+
+	private static String getTestCasesCountInFormat(int count_totalTCs, int count_passedTCs, int count_failedTCs,
                                                     int count_skippedTCs) {
         System.out.println("count_totalTCs: " + count_totalTCs);
         System.out.println("count_passedTCs: " + count_passedTCs);

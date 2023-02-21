@@ -1,7 +1,6 @@
+# User Specified
 /.metadata
-/TruckX	
 application.log
-/loadingtime.xlsx
 
 # IntelliJ IDEA
 .idea/

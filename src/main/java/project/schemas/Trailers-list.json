@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "result": {
+      "type": "string"
+    },
+    "trailer_list": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "uuid": {
+              "type": "string"
+            },
+            "status": {
+              "type": "integer"
+            },
+            "id": {
+              "type": "integer"
+            },
+            "trailer_identifier": {
+              "type": "string"
+            },
+            "truck": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "uuid",
+            "status",
+            "id",
+            "trailer_identifier",
+            "truck"
+          ]
+        }
+      ]
+    },
+    "error": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "result",
+    "trailer_list",
+    "error"
+  ]
+}

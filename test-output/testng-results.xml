@@ -1,39 +1,686 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="22" total="34" passed="0" failed="12" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-01-18T13:03:58 IST" name="Test Suite" finished-at="2023-01-18T13:04:40 IST" duration-ms="41586">
+  <suite started-at="2023-02-17T22:35:11 IST" name="API Test Automation Suite" finished-at="2023-02-17T22:35:11 IST" duration-ms="131">
     <groups>
-      <group name="Login">
-        <method signature="LoginScript.validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@173ed316]" name="validUserNameandPassword" class="project.testscenarios.LoginScript"/>
-      </group> <!-- Login -->
+      <group name="Drivers List">
+        <method signature="DriversList.GETDriversList(org.testng.ITestContext)[pri:1, instance:project.APITestScenario.DriversList@6f204a1a]" name="GETDriversList" class="project.APITestScenario.DriversList"/>
+      </group> <!-- Drivers List -->
+      <group name="Archived Drivers">
+        <method signature="ArchivedDrivers.GETArchivedDrivers(org.testng.ITestContext)[pri:1, instance:project.APITestScenario.ArchivedDrivers@2a8448fa]" name="GETArchivedDrivers" class="project.APITestScenario.ArchivedDrivers"/>
+      </group> <!-- Archived Drivers -->
+      <group name="Drivers">
+        <method signature="Drivers.GETDrivers(org.testng.ITestContext)[pri:0, instance:project.APITestScenario.Drivers@2ab4bc72]" name="GETDrivers" class="project.APITestScenario.Drivers"/>
+      </group> <!-- Drivers -->
+      <group name="Carrier Info">
+        <method signature="CarrierInfo.GETCarrierInfo(org.testng.ITestContext)[pri:0, instance:project.APITestScenario.CarrierInfo@740fb309]" name="GETCarrierInfo" class="project.APITestScenario.CarrierInfo"/>
+      </group> <!-- Carrier Info -->
+      <group name="IFTA">
+        <method signature="IFTA.GETIFTA(org.testng.ITestContext)[pri:1, instance:project.APITestScenario.IFTA@5f8e8a9d]" name="GETIFTA" class="project.APITestScenario.IFTA"/>
+      </group> <!-- IFTA -->
+      <group name="Dashboard">
+        <method signature="Dashboard.GETDashboard(org.testng.ITestContext)[pri:0, instance:project.APITestScenario.Dashboard@4007f65e]" name="GETDashboard" class="project.APITestScenario.Dashboard"/>
+      </group> <!-- Dashboard -->
+      <group name="Elogs">
+        <method signature="Elogs.GETElogs(org.testng.ITestContext)[pri:0, instance:project.APITestScenario.Elogs@3de8f619]" name="GETElogs" class="project.APITestScenario.Elogs"/>
+      </group> <!-- Elogs -->
+      <group name="Truck Location">
+        <method signature="TruckLocation.GetTruckLocation(org.testng.ITestContext)[pri:0, instance:project.APITestScenario.TruckLocation@eadd4fb]" name="GetTruckLocation" class="project.APITestScenario.TruckLocation"/>
+      </group> <!-- Truck Location -->
+      <group name="Truck List">
+        <method signature="TruckList.GetTruckList(org.testng.ITestContext)[pri:0, instance:project.APITestScenario.TruckList@4e5ed836]" name="GetTruckList" class="project.APITestScenario.TruckList"/>
+      </group> <!-- Truck List -->
+      <group name="Trailers List">
+        <method signature="Trailerslist.GetTrailersList(org.testng.ITestContext)[pri:0, instance:project.APITestScenario.Trailerslist@7bd7d6d6]" name="GetTrailersList" class="project.APITestScenario.Trailerslist"/>
+      </group> <!-- Trailers List -->
+      <group name="IFTA Report">
+        <method signature="IFTAReports.GETIFTAReport(org.testng.ITestContext)[pri:1, instance:project.APITestScenario.IFTAReports@2de56eb2]" name="GETIFTAReport" class="project.APITestScenario.IFTAReports"/>
+      </group> <!-- IFTA Report -->
+      <group name="Gallons">
+        <method signature="Gallons.GETGallons(org.testng.ITestContext)[pri:1, instance:project.APITestScenario.Gallons@5745ca0e]" name="GETGallons" class="project.APITestScenario.Gallons"/>
+      </group> <!-- Gallons -->
     </groups>
-    <test started-at="2023-01-18T13:03:58 IST" name="TruckX Test Automation" finished-at="2023-01-18T13:04:40 IST" duration-ms="41586">
-      <class name="project.testscenarios.LoginScript">
-        <test-method is-config="true" signature="preRequisite(org.testng.ITestContext)[pri:0, instance:project.testscenarios.LoginScript@173ed316]" started-at="2023-01-18T13:03:22 IST" name="preRequisite" finished-at="2023-01-18T13:03:58 IST" duration-ms="36019" status="PASS">
+    <test started-at="2023-02-17T22:35:11 IST" name="API Test Automation" finished-at="2023-02-17T22:35:11 IST" duration-ms="131">
+      <class name="project.APITestScenario.Gallons">
+        <test-method is-config="true" signature="initialise()[pri:0, instance:project.APITestScenario.Gallons@5745ca0e]" started-at="2023-02-17T22:35:11 IST" name="initialise" finished-at="2023-02-17T22:35:11 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialise -->
+        <test-method signature="GETGallons(org.testng.ITestContext)[pri:1, instance:project.APITestScenario.Gallons@5745ca0e]" started-at="2023-02-17T22:35:11 IST" name="GETGallons" finished-at="2023-02-17T22:35:11 IST" duration-ms="3" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@4b87074a]]>
+                <![CDATA[org.testng.TestRunner@49d7e8c8]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "java.util.HashMap.get(Object)" because the return value of "project.Mediator.APITestData.GetProdTestData()" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "java.util.HashMap.get(Object)" because the return value of "project.Mediator.APITestData.GetProdTestData()" is null
+at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+at project.APITestScenario.Gallons.GETGallons(Gallons.java:44)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GETGallons -->
+      </class> <!-- project.APITestScenario.Gallons -->
+      <class name="project.APITestScenario.CarrierInfo">
+        <test-method is-config="true" signature="initialise()[pri:0, instance:project.APITestScenario.CarrierInfo@740fb309]" started-at="2023-02-17T22:35:11 IST" name="initialise" finished-at="2023-02-17T22:35:11 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialise -->
+        <test-method signature="GETCarrierInfo(org.testng.ITestContext)[pri:0, instance:project.APITestScenario.CarrierInfo@740fb309]" started-at="2023-02-17T22:35:11 IST" name="GETCarrierInfo" finished-at="2023-02-17T22:35:11 IST" duration-ms="21" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@49d7e8c8]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "java.util.HashMap.get(Object)" because the return value of "project.Mediator.APITestData.GetProdTestData()" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "java.util.HashMap.get(Object)" because the return value of "project.Mediator.APITestData.GetProdTestData()" is null
+at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+at project.APITestScenario.CarrierInfo.GETCarrierInfo(CarrierInfo.java:46)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GETCarrierInfo -->
+      </class> <!-- project.APITestScenario.CarrierInfo -->
+      <class name="project.APITestScenario.DriversList">
+        <test-method is-config="true" signature="initialise()[pri:0, instance:project.APITestScenario.DriversList@6f204a1a]" started-at="2023-02-17T22:35:11 IST" name="initialise" finished-at="2023-02-17T22:35:11 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialise -->
+        <test-method signature="GETDriversList(org.testng.ITestContext)[pri:1, instance:project.APITestScenario.DriversList@6f204a1a]" started-at="2023-02-17T22:35:11 IST" name="GETDriversList" finished-at="2023-02-17T22:35:11 IST" duration-ms="3" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@49d7e8c8]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "java.util.HashMap.get(Object)" because the return value of "project.Mediator.APITestData.GetProdTestData()" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "java.util.HashMap.get(Object)" because the return value of "project.Mediator.APITestData.GetProdTestData()" is null
+at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+at project.APITestScenario.DriversList.GETDriversList(DriversList.java:45)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GETDriversList -->
+      </class> <!-- project.APITestScenario.DriversList -->
+      <class name="project.APITestScenario.TruckLocation">
+        <test-method is-config="true" signature="initialise()[pri:0, instance:project.APITestScenario.TruckLocation@eadd4fb]" started-at="2023-02-17T22:35:11 IST" name="initialise" finished-at="2023-02-17T22:35:11 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialise -->
+        <test-method signature="GetTruckLocation(org.testng.ITestContext)[pri:0, instance:project.APITestScenario.TruckLocation@eadd4fb]" started-at="2023-02-17T22:35:11 IST" name="GetTruckLocation" finished-at="2023-02-17T22:35:11 IST" duration-ms="3" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@49d7e8c8]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "java.util.HashMap.get(Object)" because the return value of "project.Mediator.APITestData.GetProdTestData()" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "java.util.HashMap.get(Object)" because the return value of "project.Mediator.APITestData.GetProdTestData()" is null
+at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+at project.APITestScenario.TruckLocation.GetTruckLocation(TruckLocation.java:45)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GetTruckLocation -->
+      </class> <!-- project.APITestScenario.TruckLocation -->
+      <class name="project.APITestScenario.TruckList">
+        <test-method is-config="true" signature="initialise()[pri:0, instance:project.APITestScenario.TruckList@4e5ed836]" started-at="2023-02-17T22:35:11 IST" name="initialise" finished-at="2023-02-17T22:35:11 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialise -->
+        <test-method signature="GetTruckList(org.testng.ITestContext)[pri:0, instance:project.APITestScenario.TruckList@4e5ed836]" started-at="2023-02-17T22:35:11 IST" name="GetTruckList" finished-at="2023-02-17T22:35:11 IST" duration-ms="3" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@49d7e8c8]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "java.util.HashMap.get(Object)" because the return value of "project.Mediator.APITestData.GetProdTestData()" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "java.util.HashMap.get(Object)" because the return value of "project.Mediator.APITestData.GetProdTestData()" is null
+at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+at project.APITestScenario.TruckList.GetTruckList(TruckList.java:47)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GetTruckList -->
+      </class> <!-- project.APITestScenario.TruckList -->
+      <class name="project.APITestScenario.Trailerslist">
+        <test-method is-config="true" signature="initialise()[pri:0, instance:project.APITestScenario.Trailerslist@7bd7d6d6]" started-at="2023-02-17T22:35:11 IST" name="initialise" finished-at="2023-02-17T22:35:11 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialise -->
+        <test-method signature="GetTrailersList(org.testng.ITestContext)[pri:0, instance:project.APITestScenario.Trailerslist@7bd7d6d6]" started-at="2023-02-17T22:35:11 IST" name="GetTrailersList" finished-at="2023-02-17T22:35:11 IST" duration-ms="2" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@49d7e8c8]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "java.util.HashMap.get(Object)" because the return value of "project.Mediator.APITestData.GetProdTestData()" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "java.util.HashMap.get(Object)" because the return value of "project.Mediator.APITestData.GetProdTestData()" is null
+at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+at project.APITestScenario.Trailerslist.GetTrailersList(Trailerslist.java:47)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GetTrailersList -->
+      </class> <!-- project.APITestScenario.Trailerslist -->
+      <class name="project.APITestScenario.Drivers">
+        <test-method is-config="true" signature="initialise()[pri:0, instance:project.APITestScenario.Drivers@2ab4bc72]" started-at="2023-02-17T22:35:11 IST" name="initialise" finished-at="2023-02-17T22:35:11 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialise -->
+        <test-method signature="GETDrivers(org.testng.ITestContext)[pri:0, instance:project.APITestScenario.Drivers@2ab4bc72]" started-at="2023-02-17T22:35:11 IST" name="GETDrivers" finished-at="2023-02-17T22:35:11 IST" duration-ms="3" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@49d7e8c8]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "java.util.HashMap.get(Object)" because the return value of "project.Mediator.APITestData.GetProdTestData()" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "java.util.HashMap.get(Object)" because the return value of "project.Mediator.APITestData.GetProdTestData()" is null
+at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+at project.APITestScenario.Drivers.GETDrivers(Drivers.java:48)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GETDrivers -->
+      </class> <!-- project.APITestScenario.Drivers -->
+      <class name="project.APITestScenario.ArchivedDrivers">
+        <test-method is-config="true" signature="initialise()[pri:0, instance:project.APITestScenario.ArchivedDrivers@2a8448fa]" started-at="2023-02-17T22:35:11 IST" name="initialise" finished-at="2023-02-17T22:35:11 IST" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialise -->
+        <test-method signature="GETArchivedDrivers(org.testng.ITestContext)[pri:1, instance:project.APITestScenario.ArchivedDrivers@2a8448fa]" started-at="2023-02-17T22:35:11 IST" name="GETArchivedDrivers" finished-at="2023-02-17T22:35:11 IST" duration-ms="3" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@49d7e8c8]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "java.util.HashMap.get(Object)" because the return value of "project.Mediator.APITestData.GetProdTestData()" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "java.util.HashMap.get(Object)" because the return value of "project.Mediator.APITestData.GetProdTestData()" is null
+at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+at project.APITestScenario.ArchivedDrivers.GETArchivedDrivers(ArchivedDrivers.java:45)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GETArchivedDrivers -->
+      </class> <!-- project.APITestScenario.ArchivedDrivers -->
+      <class name="project.APITestScenario.IFTAReports">
+        <test-method is-config="true" signature="initialise()[pri:0, instance:project.APITestScenario.IFTAReports@2de56eb2]" started-at="2023-02-17T22:35:11 IST" name="initialise" finished-at="2023-02-17T22:35:11 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialise -->
+        <test-method signature="GETIFTAReport(org.testng.ITestContext)[pri:1, instance:project.APITestScenario.IFTAReports@2de56eb2]" started-at="2023-02-17T22:35:11 IST" name="GETIFTAReport" finished-at="2023-02-17T22:35:11 IST" duration-ms="2" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@49d7e8c8]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "java.util.HashMap.get(Object)" because the return value of "project.Mediator.APITestData.GetProdTestData()" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "java.util.HashMap.get(Object)" because the return value of "project.Mediator.APITestData.GetProdTestData()" is null
+at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+at project.APITestScenario.IFTAReports.GETIFTAReport(IFTAReports.java:45)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GETIFTAReport -->
+      </class> <!-- project.APITestScenario.IFTAReports -->
+      <class name="project.APITestScenario.Dashboard">
+        <test-method is-config="true" signature="preRequisite(java.lang.String,org.testng.ITestContext)[pri:0, instance:project.APITestScenario.Dashboard@4007f65e]" started-at="2023-02-17T22:35:09 IST" name="preRequisite" finished-at="2023-02-17T22:35:10 IST" duration-ms="1079" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[API]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@49d7e8c8]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- preRequisite -->
-        <test-method is-config="true" signature="Fetct_Repository_Object()[pri:0, instance:project.testscenarios.LoginScript@173ed316]" started-at="2023-01-18T13:03:58 IST" name="Fetct_Repository_Object" finished-at="2023-01-18T13:03:58 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="initialise()[pri:0, instance:project.APITestScenario.Dashboard@4007f65e]" started-at="2023-02-17T22:35:11 IST" name="initialise" finished-at="2023-02-17T22:35:11 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Fetct_Repository_Object -->
-        <test-method signature="validUserNameandPassword()[pri:3, instance:project.testscenarios.LoginScript@173ed316]" started-at="2023-01-18T13:03:58 IST" name="validUserNameandPassword" finished-at="2023-01-18T13:04:40 IST" duration-ms="41550" status="PASS">
+        </test-method> <!-- initialise -->
+        <test-method signature="GETDashboard(org.testng.ITestContext)[pri:0, instance:project.APITestScenario.Dashboard@4007f65e]" started-at="2023-02-17T22:35:11 IST" name="GETDashboard" finished-at="2023-02-17T22:35:11 IST" duration-ms="2" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@49d7e8c8]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "java.util.HashMap.get(Object)" because the return value of "project.Mediator.APITestData.GetProdTestData()" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "java.util.HashMap.get(Object)" because the return value of "project.Mediator.APITestData.GetProdTestData()" is null
+at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+at project.APITestScenario.Dashboard.GETDashboard(Dashboard.java:48)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validUserNameandPassword -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:project.testscenarios.LoginScript@173ed316]" started-at="2023-01-18T13:04:40 IST" name="closeBrowser" finished-at="2023-01-18T13:04:45 IST" duration-ms="5408" status="PASS">
+        </test-method> <!-- GETDashboard -->
+        <test-method is-config="true" signature="closeBrowser(java.lang.String)[pri:0, instance:project.APITestScenario.Dashboard@4007f65e]" started-at="2023-02-17T22:35:11 IST" name="closeBrowser" finished-at="2023-02-17T22:35:18 IST" duration-ms="7022" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[API]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- project.testscenarios.LoginScript -->
-    </test> <!-- TruckX Test Automation -->
-  </suite> <!-- Test Suite -->
+      </class> <!-- project.APITestScenario.Dashboard -->
+      <class name="project.APITestScenario.Elogs">
+        <test-method is-config="true" signature="initialise()[pri:0, instance:project.APITestScenario.Elogs@3de8f619]" started-at="2023-02-17T22:35:11 IST" name="initialise" finished-at="2023-02-17T22:35:11 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialise -->
+        <test-method signature="GETElogs(org.testng.ITestContext)[pri:0, instance:project.APITestScenario.Elogs@3de8f619]" started-at="2023-02-17T22:35:11 IST" name="GETElogs" finished-at="2023-02-17T22:35:11 IST" duration-ms="3" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@49d7e8c8]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "java.util.HashMap.get(Object)" because the return value of "project.Mediator.APITestData.GetProdTestData()" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "java.util.HashMap.get(Object)" because the return value of "project.Mediator.APITestData.GetProdTestData()" is null
+at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+at project.APITestScenario.Elogs.GETElogs(Elogs.java:47)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GETElogs -->
+      </class> <!-- project.APITestScenario.Elogs -->
+      <class name="project.APITestScenario.IFTA">
+        <test-method is-config="true" signature="initialise()[pri:0, instance:project.APITestScenario.IFTA@5f8e8a9d]" started-at="2023-02-17T22:35:11 IST" name="initialise" finished-at="2023-02-17T22:35:11 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialise -->
+        <test-method signature="GETIFTA(org.testng.ITestContext)[pri:1, instance:project.APITestScenario.IFTA@5f8e8a9d]" started-at="2023-02-17T22:35:11 IST" name="GETIFTA" finished-at="2023-02-17T22:35:11 IST" duration-ms="2" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@49d7e8c8]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "java.util.HashMap.get(Object)" because the return value of "project.Mediator.APITestData.GetProdTestData()" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "java.util.HashMap.get(Object)" because the return value of "project.Mediator.APITestData.GetProdTestData()" is null
+at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+at project.APITestScenario.IFTA.GETIFTA(IFTA.java:45)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GETIFTA -->
+      </class> <!-- project.APITestScenario.IFTA -->
+    </test> <!-- API Test Automation -->
+  </suite> <!-- API Test Automation Suite -->
 </testng-results>

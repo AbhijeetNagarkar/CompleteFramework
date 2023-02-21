@@ -1,0 +1,100 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "result": {
+      "type": "string"
+    },
+    "truck_list": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "uuid": {
+              "type": "string"
+            },
+            "userId": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "truckId": {
+              "type": "string"
+            },
+            "truck_name": {
+              "type": "null"
+            },
+            "truck_type": {
+              "type": "string"
+            },
+            "aobrd_flag": {
+              "type": "string"
+            },
+            "vin_no": {
+              "type": "string"
+            },
+            "driver_assigned": {
+              "type": "boolean"
+            },
+            "device_installed": {
+              "type": "boolean"
+            },
+            "device_mode": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "uuid",
+            "userId",
+            "truckId",
+            "truck_name",
+            "truck_type",
+            "aobrd_flag",
+            "vin_no",
+            "driver_assigned",
+            "device_installed",
+            "device_mode"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "result",
+    "truck_list"
+  ]
+}

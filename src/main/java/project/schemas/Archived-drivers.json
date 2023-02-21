@@ -1,0 +1,202 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "result": {
+      "type": "string"
+    },
+    "drivers_info": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "driver_uuid": {
+              "type": "string"
+            },
+            "first_name": {
+              "type": "string"
+            },
+            "last_name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "phone_country_prefix": {
+              "type": "string"
+            },
+            "phone_number": {
+              "type": "string"
+            },
+            "date_of_hire": {
+              "type": "string"
+            },
+            "manual_pin": {
+              "type": "string"
+            },
+            "eld_activation_date": {
+              "type": "string"
+            },
+            "license": {
+              "type": "string"
+            },
+            "license_state": {
+              "type": "string"
+            },
+            "license_exp": {
+              "type": "string"
+            },
+            "dob": {
+              "type": "null"
+            },
+            "type": {
+              "type": "string"
+            },
+            "employment_status": {
+              "type": "string"
+            },
+            "nickname": {
+              "type": "string"
+            },
+            "note": {
+              "type": "string"
+            },
+            "license_country": {
+              "type": "string"
+            },
+            "home_address": {
+              "type": "object"
+            },
+            "cycle_info": {
+              "type": "object",
+              "properties": {
+                "cycle_timezone": {
+                  "type": "string"
+                },
+                "cycle_type": {
+                  "type": "string"
+                },
+                "cargo_type": {
+                  "type": "string"
+                },
+                "restart_hours": {
+                  "type": "string"
+                },
+                "rest_break_required": {
+                  "type": "string"
+                },
+                "short_haul_exception": {
+                  "type": "string"
+                },
+                "region": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "cycle_timezone",
+                "cycle_type",
+                "cargo_type",
+                "restart_hours",
+                "rest_break_required",
+                "short_haul_exception",
+                "region",
+                "status"
+              ]
+            },
+            "device_mode": {
+              "type": "string"
+            },
+            "last_day_of_employment": {
+              "type": "string"
+            },
+            "cycles": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "cycle_timezone": {
+                      "type": "string"
+                    },
+                    "cycle_type": {
+                      "type": "string"
+                    },
+                    "cargo_type": {
+                      "type": "string"
+                    },
+                    "restart_hours": {
+                      "type": "string"
+                    },
+                    "rest_break_required": {
+                      "type": "string"
+                    },
+                    "short_haul_exception": {
+                      "type": "string"
+                    },
+                    "region": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "cycle_timezone",
+                    "cycle_type",
+                    "cargo_type",
+                    "restart_hours",
+                    "rest_break_required",
+                    "short_haul_exception",
+                    "region",
+                    "status"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "driver_uuid",
+            "first_name",
+            "last_name",
+            "email",
+            "phone_country_prefix",
+            "phone_number",
+            "date_of_hire",
+            "manual_pin",
+            "eld_activation_date",
+            "license",
+            "license_state",
+            "license_exp",
+            "dob",
+            "type",
+            "employment_status",
+            "nickname",
+            "note",
+            "license_country",
+            "home_address",
+            "cycle_info",
+            "device_mode",
+            "last_day_of_employment",
+            "cycles"
+          ]
+        }
+      ]
+    },
+    "user_profile": {
+      "type": "object"
+    },
+    "error": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "result",
+    "drivers_info",
+    "user_profile",
+    "error"
+  ]
+}

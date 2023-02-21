@@ -8,11 +8,118 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Test Suite</th></tr>
-<tr><td><a href="#t0">TruckX Test Automation</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">41,586</td><td></td><td></td></tr>
+<tr><th colspan="8">API Test Automation Suite</th></tr>
+<tr><td><a href="#t0">API Test Automation</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">12</td><td class="num">131</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Test Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">TruckX Test Automation &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">project.testscenarios.LoginScript</td><td><a href="#m0">validUserNameandPassword</a></td><td rowspan="1">1674027238970</td><td rowspan="1">41550</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">API Test Automation Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">API Test Automation &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">project.APITestScenario.ArchivedDrivers</td><td><a href="#m0">GETArchivedDrivers</a></td><td rowspan="1">1676653511141</td><td rowspan="1">3</td></tr><tr class="failedodd"><td rowspan="1">project.APITestScenario.CarrierInfo</td><td><a href="#m1">GETCarrierInfo</a></td><td rowspan="1">1676653511075</td><td rowspan="1">21</td></tr><tr class="failedeven"><td rowspan="1">project.APITestScenario.Dashboard</td><td><a href="#m2">GETDashboard</a></td><td rowspan="1">1676653511106</td><td rowspan="1">2</td></tr><tr class="failedodd"><td rowspan="1">project.APITestScenario.Drivers</td><td><a href="#m3">GETDrivers</a></td><td rowspan="1">1676653511112</td><td rowspan="1">3</td></tr><tr class="failedeven"><td rowspan="1">project.APITestScenario.DriversList</td><td><a href="#m4">GETDriversList</a></td><td rowspan="1">1676653511146</td><td rowspan="1">3</td></tr><tr class="failedodd"><td rowspan="1">project.APITestScenario.Elogs</td><td><a href="#m5">GETElogs</a></td><td rowspan="1">1676653511118</td><td rowspan="1">3</td></tr><tr class="failedeven"><td rowspan="1">project.APITestScenario.Gallons</td><td><a href="#m6">GETGallons</a></td><td rowspan="1">1676653511151</td><td rowspan="1">3</td></tr><tr class="failedodd"><td rowspan="1">project.APITestScenario.IFTA</td><td><a href="#m7">GETIFTA</a></td><td rowspan="1">1676653511157</td><td rowspan="1">2</td></tr><tr class="failedeven"><td rowspan="1">project.APITestScenario.IFTAReports</td><td><a href="#m8">GETIFTAReport</a></td><td rowspan="1">1676653511162</td><td rowspan="1">2</td></tr><tr class="failedodd"><td rowspan="1">project.APITestScenario.Trailerslist</td><td><a href="#m9">GetTrailersList</a></td><td rowspan="1">1676653511124</td><td rowspan="1">2</td></tr><tr class="failedeven"><td rowspan="1">project.APITestScenario.TruckList</td><td><a href="#m10">GetTruckList</a></td><td rowspan="1">1676653511129</td><td rowspan="1">3</td></tr><tr class="failedodd"><td rowspan="1">project.APITestScenario.TruckLocation</td><td><a href="#m11">GetTruckLocation</a></td><td rowspan="1">1676653511134</td><td rowspan="1">3</td></tr></tbody>
 </table>
-<h2>TruckX Test Automation</h2><h3 id="m0">project.testscenarios.LoginScript#validUserNameandPassword</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>API Test Automation</h2><h3 id="m0">project.APITestScenario.ArchivedDrivers#GETArchivedDrivers</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>org.testng.TestRunner@49d7e8c8</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;java.util.HashMap.get(Object)&quot; because the return value of &quot;project.Mediator.APITestData.GetProdTestData()&quot; is null
+	at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+	at project.APITestScenario.ArchivedDrivers.GETArchivedDrivers(ArchivedDrivers.java:45)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">project.APITestScenario.CarrierInfo#GETCarrierInfo</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>org.testng.TestRunner@49d7e8c8</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;java.util.HashMap.get(Object)&quot; because the return value of &quot;project.Mediator.APITestData.GetProdTestData()&quot; is null
+	at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+	at project.APITestScenario.CarrierInfo.GETCarrierInfo(CarrierInfo.java:46)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">project.APITestScenario.Dashboard#GETDashboard</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>org.testng.TestRunner@49d7e8c8</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;java.util.HashMap.get(Object)&quot; because the return value of &quot;project.Mediator.APITestData.GetProdTestData()&quot; is null
+	at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+	at project.APITestScenario.Dashboard.GETDashboard(Dashboard.java:48)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">project.APITestScenario.Drivers#GETDrivers</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>org.testng.TestRunner@49d7e8c8</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;java.util.HashMap.get(Object)&quot; because the return value of &quot;project.Mediator.APITestData.GetProdTestData()&quot; is null
+	at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+	at project.APITestScenario.Drivers.GETDrivers(Drivers.java:48)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">project.APITestScenario.DriversList#GETDriversList</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>org.testng.TestRunner@49d7e8c8</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;java.util.HashMap.get(Object)&quot; because the return value of &quot;project.Mediator.APITestData.GetProdTestData()&quot; is null
+	at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+	at project.APITestScenario.DriversList.GETDriversList(DriversList.java:45)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">project.APITestScenario.Elogs#GETElogs</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>org.testng.TestRunner@49d7e8c8</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;java.util.HashMap.get(Object)&quot; because the return value of &quot;project.Mediator.APITestData.GetProdTestData()&quot; is null
+	at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+	at project.APITestScenario.Elogs.GETElogs(Elogs.java:47)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">project.APITestScenario.Gallons#GETGallons</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>org.testng.TestRunner@49d7e8c8</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;java.util.HashMap.get(Object)&quot; because the return value of &quot;project.Mediator.APITestData.GetProdTestData()&quot; is null
+	at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+	at project.APITestScenario.Gallons.GETGallons(Gallons.java:44)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">project.APITestScenario.IFTA#GETIFTA</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>org.testng.TestRunner@49d7e8c8</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;java.util.HashMap.get(Object)&quot; because the return value of &quot;project.Mediator.APITestData.GetProdTestData()&quot; is null
+	at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+	at project.APITestScenario.IFTA.GETIFTA(IFTA.java:45)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">project.APITestScenario.IFTAReports#GETIFTAReport</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>org.testng.TestRunner@49d7e8c8</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;java.util.HashMap.get(Object)&quot; because the return value of &quot;project.Mediator.APITestData.GetProdTestData()&quot; is null
+	at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+	at project.APITestScenario.IFTAReports.GETIFTAReport(IFTAReports.java:45)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">project.APITestScenario.Trailerslist#GetTrailersList</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>org.testng.TestRunner@49d7e8c8</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;java.util.HashMap.get(Object)&quot; because the return value of &quot;project.Mediator.APITestData.GetProdTestData()&quot; is null
+	at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+	at project.APITestScenario.Trailerslist.GetTrailersList(Trailerslist.java:47)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">project.APITestScenario.TruckList#GetTruckList</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>org.testng.TestRunner@49d7e8c8</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;java.util.HashMap.get(Object)&quot; because the return value of &quot;project.Mediator.APITestData.GetProdTestData()&quot; is null
+	at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+	at project.APITestScenario.TruckList.GetTruckList(TruckList.java:47)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">project.APITestScenario.TruckLocation#GetTruckLocation</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>org.testng.TestRunner@49d7e8c8</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;java.util.HashMap.get(Object)&quot; because the return value of &quot;project.Mediator.APITestData.GetProdTestData()&quot; is null
+	at project.APIConfiguration.Headers.AddHeaders(Headers.java:35)
+	at project.APITestScenario.TruckLocation.GetTruckLocation(TruckLocation.java:45)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

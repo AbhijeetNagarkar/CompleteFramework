@@ -1,0 +1,114 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "result": {
+      "type": "string"
+    },
+    "truck_locs_details": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "longitude": {
+              "type": "string"
+            },
+            "latitude": {
+              "type": "string"
+            },
+            "altitude": {
+              "type": "string"
+            },
+            "event_date": {
+              "type": "string"
+            },
+            "meta_data": {
+              "type": "object",
+              "properties": {
+                "rpm": {
+                  "type": "integer"
+                },
+                "fuel": {
+                  "type": "number"
+                },
+                "speed": {
+                  "type": "integer"
+                },
+                "eld_id": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "vin_no": {
+                  "type": "string"
+                },
+                "eld_lat": {
+                  "type": "number"
+                },
+                "eld_long": {
+                  "type": "number"
+                },
+                "eld_type": {
+                  "type": "string"
+                },
+                "truck_id": {
+                  "type": "integer"
+                },
+                "direction": {
+                  "type": "string"
+                },
+                "status_ts": {
+                  "type": "string"
+                },
+                "engine_hours": {
+                  "type": "integer"
+                },
+                "fuel_economy": {
+                  "type": "integer"
+                },
+                "vin_from_eld": {
+                  "type": "boolean"
+                },
+                "idle_time_hours": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "rpm",
+                "fuel",
+                "speed",
+                "eld_id",
+                "vin_no",
+                "eld_lat",
+                "eld_long",
+                "eld_type",
+                "direction",
+                "engine_hours",
+                "fuel_economy",
+                "vin_from_eld",
+                "idle_time_hours"
+              ]
+            }
+          },
+          "required": [
+            "longitude",
+            "latitude",
+            "altitude",
+            "event_date",
+            "meta_data"
+          ]
+        }
+      ]
+    },
+    "error": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "result",
+    "truck_locs_details",
+    "error"
+  ]
+}

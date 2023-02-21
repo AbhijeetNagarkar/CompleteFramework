@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="All Suite Test Automation Suite" parallel="false" >
+
+<suite-files>
+	<suite-file path="C:\AutomationFramework\UItestng.xml" />
+	<suite-file path="C:\AutomationFramework\APItestng.xml" />
+	<suite-file path="C:\AutomationFramework\Mobiletestng.xml" />
+	
+</suite-files>
+</suite>
+ 

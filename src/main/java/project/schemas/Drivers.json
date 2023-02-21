@@ -1,0 +1,267 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "result": {
+      "type": "string"
+    },
+    "drivers_info": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "driver_uuid": {
+              "type": "string"
+            },
+            "first_name": {
+              "type": "string"
+            },
+            "last_name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "phone_country_prefix": {
+              "type": "string"
+            },
+            "phone_number": {
+              "type": "string"
+            },
+            "date_of_hire": {
+              "type": "string"
+            },
+            "manual_pin": {
+              "type": "string"
+            },
+            "eld_activation_date": {
+              "type": "string"
+            },
+            "license": {
+              "type": "string"
+            },
+            "license_state": {
+              "type": "string"
+            },
+            "license_exp": {
+              "type": "string"
+            },
+            "dob": {
+              "type": "null"
+            },
+            "type": {
+              "type": "string"
+            },
+            "employment_status": {
+              "type": "string"
+            },
+            "nickname": {
+              "type": "string"
+            },
+            "note": {
+              "type": "string"
+            },
+            "license_country": {
+              "type": "string"
+            },
+            "home_address": {
+              "type": "object"
+            },
+            "cycle_info": {
+              "type": "object",
+              "properties": {
+                "cycle_timezone": {
+                  "type": "string"
+                },
+                "cycle_type": {
+                  "type": "string"
+                },
+                "cargo_type": {
+                  "type": "string"
+                },
+                "restart_hours": {
+                  "type": "string"
+                },
+                "rest_break_required": {
+                  "type": "string"
+                },
+                "short_haul_exception": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "cycle_timezone",
+                "cycle_type",
+                "cargo_type",
+                "restart_hours",
+                "rest_break_required",
+                "short_haul_exception"
+              ]
+            },
+            "truck_info": {
+              "type": "object",
+              "properties": {
+                "truck_type": {
+                  "type": "string"
+                },
+                "odometer_reading": {
+                  "type": "string"
+                },
+                "truck_no": {
+                  "type": "string"
+                },
+                "truck_uuid": {
+                  "type": "string"
+                },
+                "max_weight": {
+                  "type": "string"
+                },
+                "trailer_type": {
+                  "type": "string"
+                },
+                "max_units": {
+                  "type": "string"
+                },
+                "unit_type": {
+                  "type": "string"
+                },
+                "trailer_no": {
+                  "type": "string"
+                },
+                "truck_load": {
+                  "type": "string"
+                },
+                "truck_photos": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "truck_type",
+                "odometer_reading",
+                "truck_no",
+                "truck_uuid",
+                "max_weight",
+                "trailer_type",
+                "max_units",
+                "unit_type",
+                "trailer_no",
+                "truck_load",
+                "truck_photos"
+              ]
+            },
+            "device_mode": {
+              "type": "string"
+            },
+            "driver_settings": {
+              "type": "object",
+              "properties": {
+                "editsBlocked": {
+                  "type": "boolean"
+                },
+                "minAutoDrivingSpeed": {
+                  "type": "integer"
+                },
+                "personalMoveAllowed": {
+                  "type": "string"
+                },
+                "extendShiftHoursForSmallSplitSleeper": {
+                  "type": "boolean"
+                },
+                "useRpmForSpeed": {
+                  "type": "boolean"
+                },
+                "sharpTurnStaticFrictionCoefficient": {
+                  "type": "number"
+                },
+                "sharpTurnWheelbaseMeter": {
+                  "type": "integer"
+                },
+                "sharpTurnSteeringRatio": {
+                  "type": "integer"
+                },
+                "sharpTurnThresholdKmph": {
+                  "type": "integer"
+                },
+                "overspeedingThresholdKmph": {
+                  "type": "integer"
+                },
+                "locationPingIntervalDrivingMin": {
+                  "type": "integer"
+                },
+                "locationPingIntervalNonDrivingMin": {
+                  "type": "integer"
+                },
+                "overspeedingThresholdMph": {
+                  "type": "number"
+                },
+                "minAutoDrivingSpeedMph": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "editsBlocked",
+                "minAutoDrivingSpeed",
+                "personalMoveAllowed",
+                "extendShiftHoursForSmallSplitSleeper",
+                "useRpmForSpeed",
+                "sharpTurnStaticFrictionCoefficient",
+                "sharpTurnWheelbaseMeter",
+                "sharpTurnSteeringRatio",
+                "sharpTurnThresholdKmph",
+                "overspeedingThresholdKmph",
+                "locationPingIntervalDrivingMin",
+                "locationPingIntervalNonDrivingMin"
+              ]
+            },
+            "profile_picture": {
+              "type": "string"
+            },
+            "document_name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "driver_uuid",
+            "first_name",
+            "last_name",
+            "email",
+            "phone_country_prefix",
+            "phone_number",
+            "date_of_hire",
+            "manual_pin",
+            "eld_activation_date",
+            "license",
+            "license_state",
+            "license_exp",
+            "dob",
+            "type",
+            "employment_status",
+            "nickname",
+            "note",
+            "license_country",
+            "home_address",
+            "cycle_info",
+            "truck_info",
+            "device_mode",
+            "driver_settings",
+            "profile_picture",
+            "document_name"
+          ]
+        }
+      ]
+    },
+    "user_profile": {
+      "type": "object"
+    },
+    "error": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "result",
+    "drivers_info",
+    "user_profile",
+    "error"
+  ]
+}

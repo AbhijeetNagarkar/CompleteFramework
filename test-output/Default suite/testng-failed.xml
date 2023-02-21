@@ -3,11 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="project.testscenarios.AdminRegistrationScript">
+      <class name="project.APITestScenario.ArchivedDrivers">
         <methods>
-          <include name="RegisterHereClick"/>
+          <include name="initialise"/>
+          <include name="preRequisite"/>
+          <include name="GETArchivedDrivers"/>
+          <include name="closeBrowser"/>
         </methods>
-      </class> <!-- project.testscenarios.AdminRegistrationScript -->
+      </class> <!-- project.APITestScenario.ArchivedDrivers -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

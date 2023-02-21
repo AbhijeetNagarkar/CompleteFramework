@@ -1,0 +1,407 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "result": {
+      "type": "string"
+    },
+    "error": {
+      "type": "object"
+    },
+    "drivers_info": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "driver_uuid": {
+              "type": "string"
+            },
+            "first_name": {
+              "type": "string"
+            },
+            "last_name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "phone_country_prefix": {
+              "type": "string"
+            },
+            "phone_number": {
+              "type": "string"
+            },
+            "date_of_hire": {
+              "type": "string"
+            },
+            "manual_pin": {
+              "type": "string"
+            },
+            "eld_activation_date": {
+              "type": "string"
+            },
+            "license": {
+              "type": "string"
+            },
+            "license_state": {
+              "type": "string"
+            },
+            "license_exp": {
+              "type": "string"
+            },
+            "dob": {
+              "type": "null"
+            },
+            "type": {
+              "type": "string"
+            },
+            "employment_status": {
+              "type": "string"
+            },
+            "nickname": {
+              "type": "string"
+            },
+            "note": {
+              "type": "string"
+            },
+            "license_country": {
+              "type": "string"
+            },
+            "timelogs": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "timelog_id": {
+                      "type": "string"
+                    },
+                    "timelog_events": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "timelog_id": {
+                              "type": "string"
+                            },
+                            "event_start_time": {
+                              "type": "string"
+                            },
+                            "event_end_time": {
+                              "type": "null"
+                            },
+                            "driver_status": {
+                              "type": "string"
+                            },
+                            "remarks": {
+                              "type": "string"
+                            },
+                            "timezone": {
+                              "type": "integer"
+                            },
+                            "error_code": {
+                              "type": "string"
+                            },
+                            "error_message": {
+                              "type": "string"
+                            },
+                            "error_minutes": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "timelog_id",
+                            "event_start_time",
+                            "event_end_time",
+                            "driver_status",
+                            "remarks",
+                            "timezone",
+                            "error_code",
+                            "error_message",
+                            "error_minutes"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "timelog_id",
+                    "timelog_events"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "timelog_id": {
+                      "type": "string"
+                    },
+                    "timelog_events": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "timelog_id": {
+                              "type": "string"
+                            },
+                            "event_start_time": {
+                              "type": "string"
+                            },
+                            "event_end_time": {
+                              "type": "null"
+                            },
+                            "driver_status": {
+                              "type": "string"
+                            },
+                            "remarks": {
+                              "type": "string"
+                            },
+                            "timezone": {
+                              "type": "integer"
+                            },
+                            "error_code": {
+                              "type": "string"
+                            },
+                            "error_message": {
+                              "type": "string"
+                            },
+                            "error_minutes": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "timelog_id",
+                            "event_start_time",
+                            "event_end_time",
+                            "driver_status",
+                            "remarks",
+                            "timezone",
+                            "error_code",
+                            "error_message",
+                            "error_minutes"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "timelog_id",
+                    "timelog_events"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "timelog_id": {
+                      "type": "string"
+                    },
+                    "timelog_events": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "timelog_id": {
+                              "type": "string"
+                            },
+                            "event_start_time": {
+                              "type": "string"
+                            },
+                            "event_end_time": {
+                              "type": "null"
+                            },
+                            "driver_status": {
+                              "type": "string"
+                            },
+                            "remarks": {
+                              "type": "string"
+                            },
+                            "timezone": {
+                              "type": "integer"
+                            },
+                            "error_code": {
+                              "type": "string"
+                            },
+                            "error_message": {
+                              "type": "string"
+                            },
+                            "error_minutes": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "timelog_id",
+                            "event_start_time",
+                            "event_end_time",
+                            "driver_status",
+                            "remarks",
+                            "timezone",
+                            "error_code",
+                            "error_message",
+                            "error_minutes"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "timelog_id",
+                    "timelog_events"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "timelog_id": {
+                      "type": "string"
+                    },
+                    "timelog_events": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "timelog_id": {
+                              "type": "string"
+                            },
+                            "event_start_time": {
+                              "type": "string"
+                            },
+                            "event_end_time": {
+                              "type": "null"
+                            },
+                            "driver_status": {
+                              "type": "string"
+                            },
+                            "remarks": {
+                              "type": "string"
+                            },
+                            "timezone": {
+                              "type": "integer"
+                            },
+                            "error_code": {
+                              "type": "string"
+                            },
+                            "error_message": {
+                              "type": "string"
+                            },
+                            "error_minutes": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "timelog_id",
+                            "event_start_time",
+                            "event_end_time",
+                            "driver_status",
+                            "remarks",
+                            "timezone",
+                            "error_code",
+                            "error_message",
+                            "error_minutes"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "timelog_id",
+                    "timelog_events"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "timelog_id": {
+                      "type": "string"
+                    },
+                    "timelog_events": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "timelog_id": {
+                              "type": "string"
+                            },
+                            "event_start_time": {
+                              "type": "string"
+                            },
+                            "event_end_time": {
+                              "type": "null"
+                            },
+                            "driver_status": {
+                              "type": "string"
+                            },
+                            "remarks": {
+                              "type": "string"
+                            },
+                            "timezone": {
+                              "type": "integer"
+                            },
+                            "error_code": {
+                              "type": "string"
+                            },
+                            "error_message": {
+                              "type": "string"
+                            },
+                            "error_minutes": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "timelog_id",
+                            "event_start_time",
+                            "event_end_time",
+                            "driver_status",
+                            "remarks",
+                            "timezone",
+                            "error_code",
+                            "error_message",
+                            "error_minutes"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "timelog_id",
+                    "timelog_events"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "driver_uuid",
+            "first_name",
+            "last_name",
+            "email",
+            "phone_country_prefix",
+            "phone_number",
+            "date_of_hire",
+            "manual_pin",
+            "eld_activation_date",
+            "license",
+            "license_state",
+            "license_exp",
+            "dob",
+            "type",
+            "employment_status",
+            "nickname",
+            "note",
+            "license_country",
+            "timelogs"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "result",
+    "error",
+    "drivers_info"
+  ]
+}

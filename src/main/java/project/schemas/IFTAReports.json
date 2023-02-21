@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "result": {
+      "type": "string"
+    },
+    "ifta_events": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "truck_id": {
+              "type": "string"
+            },
+            "state": {
+              "type": "string"
+            },
+            "state_abbreviation": {
+              "type": "string"
+            },
+            "event_date": {
+              "type": "string"
+            },
+            "distance": {
+              "type": "string"
+            },
+            "amount": {
+              "type": "integer"
+            },
+            "quantity": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "truck_id",
+            "state",
+            "state_abbreviation",
+            "event_date",
+            "distance",
+            "amount",
+            "quantity"
+          ]
+        }
+      ]
+    },
+    "error": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "result",
+    "ifta_events",
+    "error"
+  ]
+}

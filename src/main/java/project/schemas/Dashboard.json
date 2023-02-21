@@ -1,0 +1,16 @@
+{
+  "result": "string",
+  "error": [
+    "string"
+  ],
+  "user_profile": {
+    "first_name": "string",
+    "last_name": "string"
+  },
+  "carrier_info": [
+    {}
+  ],
+  "drivers_truck_load": [
+    {}
+  ]
+}

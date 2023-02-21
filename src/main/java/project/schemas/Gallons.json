@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "result": {
+      "type": "string"
+    },
+    "values": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "truck_id": {
+              "type": "string"
+            },
+            "state": {
+              "type": "string"
+            },
+            "latitude": {
+              "type": "string"
+            },
+            "longitude": {
+              "type": "string"
+            },
+            "amount": {
+              "type": "number"
+            },
+            "quantity": {
+              "type": "number"
+            },
+            "event_datetime": {
+              "type": "string"
+            },
+            "gallon_id": {
+              "type": "integer"
+            },
+            "document_uuid": {
+              "type": "null"
+            },
+            "gallons_uuid": {
+              "type": "null"
+            },
+            "address": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "truck_id",
+            "state",
+            "latitude",
+            "longitude",
+            "amount",
+            "quantity",
+            "event_datetime",
+            "gallon_id",
+            "document_uuid",
+            "gallons_uuid",
+            "address",
+            "url"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "result",
+    "values"
+  ]
+}

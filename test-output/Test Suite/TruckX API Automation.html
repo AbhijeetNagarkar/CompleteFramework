@@ -1,0 +1,139 @@
+<html>
+<head>
+<title>TestNG:  TruckX API Automation</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>TruckX API Automation</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>12/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Thu Feb 16 16:17:42 IST 2023</td>
+</tr>
+<tr><td>Total time:</td><td>30 seconds (30388 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='project.APItestScenario.TruckList.GetTruckList()'><b>GetTruckList</b><br>Test class: project.APItestScenario.TruckList<br>Parameters: org.testng.TestRunner@39fc6b2c</td>
+<td></td>
+<td>1</td>
+<td>project.APItestScenario.TruckList@7a5ceedd</td></tr>
+<tr>
+<td title='project.APItestScenario.Dashboard.GETDashboard()'><b>GETDashboard</b><br>Test class: project.APItestScenario.Dashboard<br>Parameters: org.testng.TestRunner@39fc6b2c</td>
+<td></td>
+<td>10</td>
+<td>project.APItestScenario.Dashboard@4f32a3ad</td></tr>
+<tr>
+<td title='project.APItestScenario.CarrierInfo.GETCarrierInfo()'><b>GETCarrierInfo</b><br>Test class: project.APItestScenario.CarrierInfo<br>Parameters: org.testng.TestRunner@39fc6b2c</td>
+<td></td>
+<td>1</td>
+<td>project.APItestScenario.CarrierInfo@5b799640</td></tr>
+<tr>
+<td title='project.APItestScenario.DriversList.GETDriversList()'><b>GETDriversList</b><br>Test class: project.APItestScenario.DriversList<br>Parameters: org.testng.TestRunner@39fc6b2c</td>
+<td></td>
+<td>1</td>
+<td>project.APItestScenario.DriversList@4e5ed836</td></tr>
+<tr>
+<td title='project.APItestScenario.TruckLocation.GetTruckLocation()'><b>GetTruckLocation</b><br>Test class: project.APItestScenario.TruckLocation<br>Parameters: org.testng.TestRunner@39fc6b2c</td>
+<td></td>
+<td>1</td>
+<td>project.APItestScenario.TruckLocation@4201c465</td></tr>
+<tr>
+<td title='project.APItestScenario.Elogs.GETElogs()'><b>GETElogs</b><br>Test class: project.APItestScenario.Elogs<br>Parameters: org.testng.TestRunner@39fc6b2c</td>
+<td></td>
+<td>6</td>
+<td>project.APItestScenario.Elogs@673fdbce</td></tr>
+<tr>
+<td title='project.APItestScenario.Trailerslist.GetTrailersList()'><b>GetTrailersList</b><br>Test class: project.APItestScenario.Trailerslist<br>Parameters: org.testng.TestRunner@39fc6b2c</td>
+<td></td>
+<td>1</td>
+<td>project.APItestScenario.Trailerslist@6cb107fd</td></tr>
+<tr>
+<td title='project.APItestScenario.ArchivedDrivers.GETArchivedDrivers()'><b>GETArchivedDrivers</b><br>Test class: project.APItestScenario.ArchivedDrivers<br>Parameters: org.testng.TestRunner@39fc6b2c</td>
+<td></td>
+<td>1</td>
+<td>project.APItestScenario.ArchivedDrivers@2ab4bc72</td></tr>
+<tr>
+<td title='project.APItestScenario.Drivers.GETDrivers()'><b>GETDrivers</b><br>Test class: project.APItestScenario.Drivers<br>Parameters: org.testng.TestRunner@39fc6b2c</td>
+<td></td>
+<td>1</td>
+<td>project.APItestScenario.Drivers@5965d37</td></tr>
+<tr>
+<td title='project.APItestScenario.IFTAReports.GETIFTAReport()'><b>GETIFTAReport</b><br>Test class: project.APItestScenario.IFTAReports<br>Parameters: org.testng.TestRunner@39fc6b2c</td>
+<td></td>
+<td>1</td>
+<td>project.APItestScenario.IFTAReports@eadd4fb</td></tr>
+<tr>
+<td title='project.APItestScenario.IFTA.GETIFTA()'><b>GETIFTA</b><br>Test class: project.APItestScenario.IFTA<br>Parameters: org.testng.TestRunner@39fc6b2c</td>
+<td></td>
+<td>1</td>
+<td>project.APItestScenario.IFTA@740fb309</td></tr>
+<tr>
+<td title='project.APItestScenario.Gallons.GETGallons()'><b>GETGallons</b><br>Test class: project.APItestScenario.Gallons<br>Parameters: org.testng.TestRunner@39fc6b2c</td>
+<td></td>
+<td>1</td>
+<td>project.APItestScenario.Gallons@7bd7d6d6</td></tr>
+</table><p>
+</body>
+</html>

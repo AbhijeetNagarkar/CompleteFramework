@@ -18,43 +18,47 @@
   </properties>
 
 <dependencies>
- 
+
+
+ <!-- Appium Dependencies -->	
+    <dependency>
+    <groupId>io.appium</groupId>
+    <artifactId>java-client</artifactId>
+    <version>8.3.0</version>
+	</dependency>
+	
+	
+<!-- TestNG Dependencies -->	
 	<dependency>
 	    <groupId>org.testng</groupId>
 	    <artifactId>testng</artifactId>
 	    <version>7.4.0</version>
 	</dependency>
-		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
-	<dependency>
-	    <groupId>org.slf4j</groupId>
-	    <artifactId>slf4j-api</artifactId>
-	    <version>2.0.3</version>
-	</dependency>
-	<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
-	<dependency>
-	    <groupId>org.slf4j</groupId>
-	    <artifactId>slf4j-simple</artifactId>
-	    <version>2.0.3</version>
-	</dependency>
 	
+	
+<!-- Selenium Driver Dependencies -->	
 	<dependency>
 	    <groupId>org.seleniumhq.selenium</groupId>
 	    <artifactId>selenium-java</artifactId>
-	    <version>3.141.59</version>
+	    <version>4.8.0</version>
 	</dependency>
-	
+
 	<dependency>
 	    <groupId>io.github.bonigarcia</groupId>
 	    <artifactId>webdrivermanager</artifactId>
-	    <version>5.0.3</version>
+	    <version>5.3.2</version>
 	</dependency>
-	
+
+
+<!-- Logger Dependencies -->		
 	<dependency>
 	    <groupId>log4j</groupId>
 	    <artifactId>log4j</artifactId>
 	    <version>1.2.16</version>
 	</dependency>
 	
+	
+<!-- Extent Report Dependencies -->	
 	<dependency>
 	    <groupId>com.aventstack</groupId>
 	    <artifactId>extentreports</artifactId>
@@ -62,60 +66,70 @@
 	</dependency>
 	
 	
-		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi</artifactId>
-			<version>5.0.0</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi-ooxml</artifactId>
-			<version>5.0.0</version>
-		</dependency>
+<!-- Excel Dependencies -->
+	<dependency>
+		<groupId>org.apache.poi</groupId>
+		<artifactId>poi</artifactId>
+		<version>5.0.0</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.poi</groupId>
+		<artifactId>poi-ooxml</artifactId>
+		<version>5.0.0</version>
+	</dependency>
+
+
+<!-- Mail Dependencies -->
 	<dependency> 
 	     <groupId>com.sun.mail</groupId>
 	     <artifactId>javax.mail</artifactId>
 	     <version>1.6.2</version>
 	</dependency>
 
+
+<!-- API Dependencies -->
 	<dependency>
 		<groupId>io.rest-assured</groupId>
 	    <artifactId>rest-assured</artifactId>
 	    <version>4.5.1</version>
 	    <scope>test</scope>
 	</dependency>
-	
 	<dependency>
 	    <groupId>org.hamcrest</groupId>
 	    <artifactId>hamcrest</artifactId>
 	    <version>2.2</version>
 	    <scope>test</scope>
 	</dependency>
-
 	<dependency>
 	    <groupId>org.hamcrest</groupId>
 	    <artifactId>hamcrest-core</artifactId>
 	    <version>2.2</version>
 	    <scope>test</scope>
 	</dependency>
-
 	<dependency>
 	    <groupId>com.google.code.gson</groupId>
 	    <artifactId>gson</artifactId>
 	    <version>2.9.0</version>
 	</dependency>
-	
-	
-<dependency>
-    <groupId>org.seleniumhq.selenium</groupId>
-    <artifactId>selenium-devtools-v102</artifactId>
-    <version>4.2.2</version>
-    <scope>test</scope>
-</dependency>
+	<dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>json-schema-validator</artifactId>
+    <version>3.3.0</version>
+    </dependency>
 
 
+<!-- SL4j Dependencies -->  
+    <dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>slf4j-api</artifactId>
+	    <version>2.0.3</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>slf4j-simple</artifactId>
+	    <version>2.0.3</version>
+	    <scope>test</scope>
+	</dependency>
 	
 </dependencies>
 
@@ -124,19 +138,8 @@
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       
       <plugins>
-      <plugin>
-   <groupId>org.sonarsource.scanner.maven</groupId>
-   <artifactId>sonar-maven-plugin</artifactId>
-   <version>3.6.0.1398</version>
-   
- </plugin>
- <plugin>
-        <groupId>org.codehaus.sonar</groupId>
-        <artifactId>sonar-maven-plugin</artifactId>
-        <version>3.0.2</version>
-  </plugin>
   
-        <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
+  <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.1.0</version>
@@ -150,13 +153,21 @@
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.0</version>
         </plugin>
+        
+        
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.22.1</version>
           <configuration>
-          	<suiteXmlFiles>
-          		<suiteXmlFile>testng.xml</suiteXmlFile>
-          	</suiteXmlFiles>
+          <parallel>suites</parallel>
+          <forkCount>3</forkCount>
+   			 <threadCountSuites>3</threadCountSuites>
+ 			    <suiteXmlFiles>
+	       <!--   		<suiteXmlFile>APItestng.xml</suiteXmlFile>
+	          		<suiteXmlFile>UItestng.xml</suiteXmlFile>-->
+	          		<suiteXmlFile>logbooktestng.xml</suiteXmlFile>
+	            </suiteXmlFiles>
+	       
           </configuration>
         </plugin>
         <plugin>

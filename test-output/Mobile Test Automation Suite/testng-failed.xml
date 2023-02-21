@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Mobile Test Automation Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="Suite Type" value="Mobile"/>
+  <listeners>
+    <listener class-name="project.listners.ExtentReportListener"/>
+  </listeners>
+  <test thread-count="5" name="Mobile Test Automation(failed)">
+    <classes>
+      <class name="project.MobileTestScenarios.MobileScript">
+        <methods>
+          <include name="initialize"/>
+          <include name="preRequisite"/>
+          <include name="Login"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- project.MobileTestScenarios.MobileScript -->
+    </classes>
+  </test> <!-- Mobile Test Automation(failed) -->
+</suite> <!-- Failed suite [Mobile Test Automation Suite] -->

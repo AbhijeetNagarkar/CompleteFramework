@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "result": {
+      "type": "string"
+    },
+    "ifta_values": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "truck_identifier": {
+              "type": "string"
+            },
+            "truck_id": {
+              "type": "string"
+            },
+            "state": {
+              "type": "string"
+            },
+            "state_abbreviation": {
+              "type": "string"
+            },
+            "entered_at": {
+              "type": "string"
+            },
+            "distance": {
+              "type": "string"
+            },
+            "event_date": {
+              "type": "string"
+            },
+            "start_odometer": {
+              "type": "integer"
+            },
+            "end_odometer": {
+              "type": "string"
+            },
+            "user_id": {
+              "type": "integer"
+            },
+            "is_edited": {
+              "type": "integer"
+            },
+            "ifta_id": {
+              "type": "integer"
+            },
+            "gallons": {
+              "type": "integer"
+            },
+            "amount": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "truck_identifier",
+            "truck_id",
+            "state",
+            "state_abbreviation",
+            "entered_at",
+            "distance",
+            "event_date",
+            "start_odometer",
+            "end_odometer",
+            "user_id",
+            "is_edited",
+            "ifta_id",
+            "gallons",
+            "amount"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "result",
+    "ifta_values"
+  ]
+}
